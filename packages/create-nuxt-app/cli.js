@@ -7,19 +7,18 @@ const templatePkg = require('template-nuxt/package')
 
 const cli = cac()
 
-cli
-  .command('*', 'Generate a new project', input => {
-    const folderName = input[0] || '.'
-    const targetPath = path.resolve(folderName)
-    console.log(`> Generating project in ${targetPath}`)
+cli.command('*', 'Generate a new project', input => {
+  const folderName = input[0] || '.'
+  const targetPath = path.resolve(folderName)
+  console.log(`> Generating project in ${targetPath}`)
 
-    const templatePath = path.dirname(require.resolve('template-nuxt/package'))
+  const templatePath = path.dirname(require.resolve('template-nuxt/package'))
 
-    return sao({
-      template: templatePath,
-      targetPath
-    })
+  return sao({
+    template: templatePath,
+    targetPath
   })
+})
 
 cli.parse()
 
