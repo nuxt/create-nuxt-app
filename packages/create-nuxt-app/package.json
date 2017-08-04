@@ -8,10 +8,15 @@
     "cli.js"
   ],
   "bin": "cli.js",
+  "license": "MIT",
+  "author": {
+    "name": "EGOIST",
+    "email": "0x142857@gmail.com"
+  },
   "dependencies": {
     "cac": "^4.2.0",
     "sao": "^0.21.1",
-    "template-nuxt": "latest",
+    "template-nuxt": "*",
     "update-notifier": "^2.2.0"
   }
 }

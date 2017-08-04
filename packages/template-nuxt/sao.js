@@ -10,6 +10,12 @@ module.exports = {
       message: 'Project description',
       default: `My ${superb()} Nuxt.js project`
     },
+    server: {
+      message: 'Use a custom server framework',
+      type: 'list',
+      choices: ['none', 'express'],
+      default: 'none'
+    },
     author: {
       type: 'string',
       message: 'Author name',
@@ -17,7 +23,11 @@ module.exports = {
     }
   },
   move: {
-    gitignore: '.gitignore'
+    gitignore: '.gitignore',
+    'server-*/**': filepath => filepath.replace(/^server-[^/]+/, 'server')
+  },
+  filters: {
+    'server-express/**': 'server === "express"'
   },
   post({ yarnInstall, gitInit, chalk, pm, isNewFolder, folderName }) {
     gitInit()
