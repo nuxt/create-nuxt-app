@@ -13,7 +13,7 @@ module.exports = {
     server: {
       message: 'Use a custom server framework',
       type: 'list',
-      choices: ['none', 'express'],
+      choices: ['none', 'express', 'koa'],
       default: 'none'
     },
     author: {
@@ -22,16 +22,17 @@ module.exports = {
       default: ':gitUser:'
     }
   },
+  filters: {
+    'server/index-express.js': 'server === "express"',
+    'server/index-koa.js': 'server === "koa"'
+  },
   move: {
     gitignore: '.gitignore',
-    'server-*/**': filepath => filepath.replace(/^server-[^/]+/, 'server')
+    'server/index-*.js': 'server/index.js'
   },
-  filters: {
-    'server-express/**': 'server === "express"'
-  },
-  post({ yarnInstall, gitInit, chalk, pm, isNewFolder, folderName }) {
+  post({ npmInstall, gitInit, chalk, pm, isNewFolder, folderName }) {
     gitInit()
-    yarnInstall()
+    npmInstall()
 
     const cd = () => {
       if (isNewFolder) {

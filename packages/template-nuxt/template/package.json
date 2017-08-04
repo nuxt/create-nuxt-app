@@ -14,7 +14,8 @@
   },
   "dependencies": {
     "nuxt": "^1.0.0-rc3"<% if (server === 'express') { %>,
-    "express": "^4.15.3"<% } %><% if (server !== 'none') { %>,
+    "express": "^4.15.3"<% } else if (server === 'koa') { %>,
+    "koa": "^2.3.0"<% } %><% if (server !== 'none') { %>,
     "cross-env": "^5.0.1"<% } %>
   },
   "devDependencies": {

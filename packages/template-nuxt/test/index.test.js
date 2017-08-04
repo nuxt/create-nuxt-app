@@ -30,3 +30,13 @@ test('use express', async t => {
   t.snapshot(stream.fileList, 'Generated files')
   t.snapshot(getPkgFields(pkg), 'package.json')
 })
+
+test('use koa', async t => {
+  const stream = await sao.mockPrompt(template, {
+    server: 'koa'
+  })
+
+  const pkg = stream.fileContents('package.json')
+  t.snapshot(stream.fileList, 'Generated files')
+  t.snapshot(getPkgFields(pkg), 'package.json')
+})
