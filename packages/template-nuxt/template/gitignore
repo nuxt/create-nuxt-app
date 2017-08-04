@@ -8,7 +8,4 @@ npm-debug.log
 .nuxt
 
 # Nuxt generate
-dist<% if (server !== 'none') { %>
-
-server-bundle.js
-<% } %>
+dist
