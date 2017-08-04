@@ -3,7 +3,7 @@ const path = require('path')
 const cac = require('cac')
 const sao = require('sao')
 const update = require('update-notifier')
-const templatePkg = require('template-nuxt/package')
+const pkg = require('./package')
 
 const cli = cac()
 
@@ -22,12 +22,6 @@ cli.command('*', 'Generate a new project', input => {
 
 cli.parse()
 
-const notifier = update({
-  pkg: templatePkg
-})
-
-if (notifier.update) {
-  console.log(`
-  Update for the template we use is avalable, run npm i -g create-nuxt-app to update it!
-  `)
-}
+update({
+  pkg
+}).notify()
