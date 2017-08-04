@@ -3,35 +3,32 @@ const path = require('path')
 const cac = require('cac')
 const sao = require('sao')
 const update = require('update-notifier')
+const templatePkg = require('template-nuxt/package')
 
 const cli = cac()
 
 cli
-  .command('*', 'Generate a new project', (input, flags) => {
+  .command('*', 'Generate a new project', input => {
     const folderName = input[0] || '.'
     const targetPath = path.resolve(folderName)
     console.log(`> Generating project in ${targetPath}`)
 
+    const templatePath = path.dirname(require.resolve('template-nuxt/package'))
+
     return sao({
-      template: 'nuxt',
-      targetPath,
-      install: flags.update
+      template: templatePath,
+      targetPath
     })
-  })
-  .option('update', {
-    desc: 'Update template before generating',
-    type: 'boolean'
   })
 
 cli.parse()
 
-try {
-  // eslint-disable-next-line import/no-extraneous-dependencies
-  const templatePkg = require('template-nuxt/package')
+const notifier = update({
+  pkg: templatePkg
+})
 
-  update({
-    pkg: templatePkg
-  }).notify()
-} catch (err) {
-  /* omit errors */
+if (notifier.update) {
+  console.log(`
+  Update for the template we use is avalable, run npm i -g create-nuxt-app to update it!
+  `)
 }
