@@ -1,6 +1,6 @@
 {
   "name": "create-nuxt-app",
-  "version": "0.0.0",
+  "version": "0.2.0",
   "scripts": {
     "test": "echo lol"
   },
