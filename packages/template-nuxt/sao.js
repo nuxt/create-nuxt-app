@@ -30,9 +30,10 @@ module.exports = {
     gitignore: '.gitignore',
     'server/index-*.js': 'server/index.js'
   },
-  post({ npmInstall, gitInit, chalk, pm, isNewFolder, folderName }) {
+  post({ yarnInstall, gitInit, chalk, pm, isNewFolder, folderName }) {
     gitInit()
-    npmInstall()
+
+    yarnInstall()
 
     const cd = () => {
       if (isNewFolder) {
