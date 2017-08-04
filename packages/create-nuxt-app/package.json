@@ -1,0 +1,16 @@
+{
+  "name": "create-nuxt-app",
+  "version": "0.0.0",
+  "scripts": {
+    "test": "echo lol"
+  },
+  "files": [
+    "cli.js"
+  ],
+  "bin": "cli.js",
+  "dependencies": {
+    "cac": "^4.2.0",
+    "sao": "^0.21.1",
+    "update-notifier": "^2.2.0"
+  }
+}
