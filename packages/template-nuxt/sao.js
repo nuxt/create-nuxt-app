@@ -10,18 +10,29 @@ module.exports = {
       message: 'Project description',
       default: `My ${superb()} Nuxt.js project`
     },
+    server: {
+      message: 'Use a custom server framework',
+      type: 'list',
+      choices: ['none', 'express', 'koa'],
+      default: 'none'
+    },
     author: {
       type: 'string',
       message: 'Author name',
       default: ':gitUser:'
     }
   },
-  move: {
-    gitignore: '.gitignore'
+  filters: {
+    'server/index-express.js': 'server === "express"',
+    'server/index-koa.js': 'server === "koa"'
   },
-  post({ yarnInstall, gitInit, chalk, pm, isNewFolder, folderName }) {
+  move: {
+    gitignore: '.gitignore',
+    'server/index-*.js': 'server/index.js'
+  },
+  post({ npmInstall, gitInit, chalk, pm, isNewFolder, folderName }) {
     gitInit()
-    yarnInstall()
+    npmInstall()
 
     const cd = () => {
       if (isNewFolder) {
