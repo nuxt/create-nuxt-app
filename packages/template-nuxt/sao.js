@@ -19,7 +19,8 @@ module.exports = {
     author: {
       type: 'string',
       message: 'Author name',
-      default: ':gitUser:'
+      default: ':gitUser:',
+      store: true
     }
   },
   filters: {
