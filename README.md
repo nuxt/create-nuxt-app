@@ -1,5 +1,7 @@
 # create-nuxt-app
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/nuxt-community/create-nuxt-app.svg)](https://greenkeeper.io/)
+
 [![NPM version](https://img.shields.io/npm/v/create-nuxt-app.svg?style=flat)](https://npmjs.com/package/create-nuxt-app) [![NPM downloads](https://img.shields.io/npm/dm/create-nuxt-app.svg?style=flat)](https://npmjs.com/package/create-nuxt-app) [![CircleCI](https://circleci.com/gh/nuxt-community/create-nuxt-app/tree/master.svg?style=shield)](https://circleci.com/gh/nuxt-community/create-nuxt-app/tree/master)  [![donate](https://img.shields.io/badge/$-donate-ff69b4.svg?maxAge=2592000&style=flat)](https://github.com/egoist/donate)
 
 <details><summary>Preview</summary>
