@@ -17,6 +17,13 @@ cli.command('*', 'Generate a new project', input => {
   return sao({
     template: templatePath,
     targetPath
+  }).catch(err => {
+    process.exitCode = 1
+    if (err.name === 'SAOError') {
+      sao.log.error(err.message)
+    } else {
+      console.error(err.stack)
+    }
   })
 })
 

@@ -14,8 +14,8 @@
     "email": "0x142857@gmail.com"
   },
   "dependencies": {
-    "cac": "^4.2.0",
-    "sao": "^0.21.1",
+    "cac": "^4.2.1",
+    "sao": "^0.21.7",
     "template-nuxt": "^0.3.2",
     "update-notifier": "^2.2.0"
   }
