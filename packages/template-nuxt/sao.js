@@ -13,7 +13,28 @@ module.exports = {
     server: {
       message: 'Use a custom server framework',
       type: 'list',
-      choices: ['none', 'express', 'koa', 'hapi', 'feathers', 'micro'],
+      choices: [
+        'none',
+        'express',
+        'koa',
+        // 'adonis',
+        'hapi',
+        'feathers',
+        'micro'
+      ],
+      default: 'none'
+    },
+    ui: {
+      message: 'Use a custom UI framework',
+      type: 'list',
+      choices: [
+        'none',
+        'bootstrap',
+        'vuetify',
+        'bulma',
+        // 'tailwind',
+        'element-ui'
+      ],
       default: 'none'
     },
     axios: {
@@ -44,6 +65,8 @@ module.exports = {
     'server/feathers/**': 'server === "feathers"',
     'server/index-micro.js': 'server === "micro"',
     'server/micro/**': 'server === "micro"',
+    'plugins/vuetify.js': 'ui === "vuetify"',
+    'plugins/element-ui.js': 'ui === "element-ui"',
     '.eslintrc.js': 'eslint === "yes"'
   },
   move(answers) {
