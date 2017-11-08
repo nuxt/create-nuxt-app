@@ -1,4 +1,19 @@
 const superb = require('superb')
+const glob = require('glob')
+
+const rootDir = __dirname
+
+const globMoveable = answer => {
+  const result = {}
+  const options = { cwd: rootDir + '/template', nodir: true }
+  const prefix = `frameworks/${answer}`
+  if (answer !== 'none') {
+    for (const file of glob.sync(`${prefix}/**`, options)) {
+      result[file] = file.replace(`${prefix}/`, '')
+    }
+  }
+  return result
+}
 
 module.exports = {
   prompts: {
@@ -62,12 +77,13 @@ module.exports = {
     'server/index-adonis.js': 'server === "adonis"',
     'server/index-hapi.js': 'server === "hapi"',
     'server/index-feathers.js': 'server === "feathers"',
-    'server/feathers/**': 'server === "feathers"',
     'server/index-micro.js': 'server === "micro"',
-    'server/micro/**': 'server === "micro"',
-    'ui/vuetify/**': 'ui === "vuetify"',
-    'ui/element-ui/**': 'ui === "element-ui"',
-    'ui/tailwind/**': 'ui === "tailwind"',
+    'frameworks/adonis/**': 'server === "adonis"',
+    'frameworks/feathers/**': 'server === "feathers"',
+    'frameworks/micro/**': 'server === "micro"',
+    'frameworks/vuetify/**': 'ui === "vuetify"',
+    'frameworks/element-ui/**': 'ui === "element-ui"',
+    'frameworks/tailwind/**': 'ui === "tailwind"',
     '.eslintrc.js': 'eslint === "yes"'
   },
   move(answers) {
@@ -75,9 +91,11 @@ module.exports = {
       gitignore: '.gitignore',
       'server/index-*.js': 'server/index.js'
     }
-    const serverMapping = require('./config/server.json')[answers.server]
-    const uiMapping = require('./config/ui.json')[answers.ui]
-    return Object.assign(moveable, serverMapping, uiMapping)
+    return Object.assign(
+      moveable,
+      globMoveable(answers.server),
+      globMoveable(answers.ui)
+    )
   },
   post({ yarnInstall, gitInit, chalk, pm, isNewFolder, folderName }) {
     gitInit()
