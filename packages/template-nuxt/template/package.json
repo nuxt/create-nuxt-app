@@ -14,9 +14,14 @@
   },
   "dependencies": {
     "es6-promise": "^4.1.1",
-    "nuxt": "^1.0.0-rc3"<% if (server === 'express') { %>,
+    "nuxt": "^1.0.0-rc11"<% if (server === 'express') { %>,
     "express": "^4.15.3"<% } else if (server === 'koa') { %>,
-    "koa": "^2.3.0"<% } %><% if (server !== 'none') { %>,
+    "koa": "^2.3.0"<% } %><% if (server === 'hapi') { %>,
+    "hapi-nuxt": "^0.6.0"<% } %><% if (server === 'micro') { %>,
+    "micro": "^9.0.0",
+    "micro-route": "^2.4.0"<% } %><% if (server === 'feathers') { %>,
+    "feathers": "^2.0.3",
+    "feathers-configuration": "^0.3.3"<% } %><% if (server !== 'none') { %>,
     "cross-env": "^5.0.1"<% } %>
   },
   "devDependencies": {

@@ -13,7 +13,7 @@ module.exports = {
     server: {
       message: 'Use a custom server framework',
       type: 'list',
-      choices: ['none', 'express', 'koa'],
+      choices: ['none', 'express', 'koa', 'hapi', 'feathers', 'micro'],
       default: 'none'
     },
     author: {
@@ -25,11 +25,26 @@ module.exports = {
   },
   filters: {
     'server/index-express.js': 'server === "express"',
-    'server/index-koa.js': 'server === "koa"'
+    'server/index-koa.js': 'server === "koa"',
+    'server/index-adonis.js': 'server === "adonis"',
+    'server/index-hapi.js': 'server === "hapi"',
+    'server/index-feathers.js': 'server === "feathers"',
+    'server/feathers/**': 'server === "feathers"',
+    'server/index-micro.js': 'server === "micro"',
+    'server/micro/**': 'server === "micro"'
   },
-  move: {
-    gitignore: '.gitignore',
-    'server/index-*.js': 'server/index.js'
+  move(answers) {
+    const list = {
+      gitignore: '.gitignore',
+      'server/index-*.js': 'server/index.js'
+    }
+    const serverMapping = require('./config/server.json')[answers.server]
+    for (const key in serverMapping) {
+      if (Object.prototype.hasOwnProperty.call(serverMapping, key)) {
+        list[key] = serverMapping[key]
+      }
+    }
+    return list
   },
   post({ yarnInstall, gitInit, chalk, pm, isNewFolder, folderName }) {
     gitInit()
