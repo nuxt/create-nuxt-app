@@ -26,8 +26,15 @@ module.exports = {
     /*
     ** You can extend webpack config here
     */
-    extend(config, ctx) {
+    extend (config, ctx) {
       // ...
     }
-  }
+  },
+  modules: [<% if (axios === 'yes') { %>
+    // Doc: https://github.com/nuxt-community/axios-module#usage
+    '@nuxtjs/axios'<% } %>
+  ],
+  <% if (axios === 'yes') { %>axios: {
+    // proxyHeaders: false
+  }<% } %>
 }

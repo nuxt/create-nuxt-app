@@ -16,6 +16,18 @@ module.exports = {
       choices: ['none', 'express', 'koa', 'hapi', 'feathers', 'micro'],
       default: 'none'
     },
+    axios: {
+      message: 'Use axios module',
+      type: 'list',
+      choices: ['no', 'yes'],
+      default: 'no'
+    },
+    eslint: {
+      message: 'Use eslint',
+      type: 'list',
+      choices: ['no', 'yes'],
+      default: 'no'
+    },
     author: {
       type: 'string',
       message: 'Author name',
@@ -31,7 +43,8 @@ module.exports = {
     'server/index-feathers.js': 'server === "feathers"',
     'server/feathers/**': 'server === "feathers"',
     'server/index-micro.js': 'server === "micro"',
-    'server/micro/**': 'server === "micro"'
+    'server/micro/**': 'server === "micro"',
+    '.eslintrc.js': 'eslint === "yes"'
   },
   move(answers) {
     const list = {
