@@ -37,7 +37,8 @@ module.exports = {
   ** Global CSS
   */
   css: [<% if (ui === 'element-ui') { %>
-    'element-ui/lib/theme-default/index.css'<% } %>
+    'element-ui/lib/theme-default/index.css'<% } else if (ui === 'tailwind') { %>
+    '~/assets/css/tailwind.css'<% } %>
   ],
 
   plugins: [<% if (ui === 'element-ui') { %>

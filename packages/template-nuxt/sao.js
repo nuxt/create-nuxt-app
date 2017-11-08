@@ -32,7 +32,7 @@ module.exports = {
         'bootstrap',
         'vuetify',
         'bulma',
-        // 'tailwind',
+        'tailwind',
         'element-ui'
       ],
       default: 'none'
@@ -65,22 +65,19 @@ module.exports = {
     'server/feathers/**': 'server === "feathers"',
     'server/index-micro.js': 'server === "micro"',
     'server/micro/**': 'server === "micro"',
-    'plugins/vuetify.js': 'ui === "vuetify"',
-    'plugins/element-ui.js': 'ui === "element-ui"',
+    'ui/vuetify/**': 'ui === "vuetify"',
+    'ui/element-ui/**': 'ui === "element-ui"',
+    'ui/tailwind/**': 'ui === "tailwind"',
     '.eslintrc.js': 'eslint === "yes"'
   },
   move(answers) {
-    const list = {
+    const moveable = {
       gitignore: '.gitignore',
       'server/index-*.js': 'server/index.js'
     }
     const serverMapping = require('./config/server.json')[answers.server]
-    for (const key in serverMapping) {
-      if (Object.prototype.hasOwnProperty.call(serverMapping, key)) {
-        list[key] = serverMapping[key]
-      }
-    }
-    return list
+    const uiMapping = require('./config/ui.json')[answers.ui]
+    return Object.assign(moveable, serverMapping, uiMapping)
   },
   post({ yarnInstall, gitInit, chalk, pm, isNewFolder, folderName }) {
     gitInit()
