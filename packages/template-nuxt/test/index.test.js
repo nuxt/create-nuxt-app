@@ -54,3 +54,15 @@ test('use micro', async t => {
     server: 'koa'
   })
 })
+
+test('use eslint', async t => {
+  await verifyPkg(t, {
+    eslint: 'yes'
+  })
+})
+
+test('use axios', async t => {
+  await verifyPkg(t, {
+    axios: 'yes'
+  })
+})
