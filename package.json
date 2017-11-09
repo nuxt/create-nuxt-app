@@ -1,25 +1,34 @@
 {
   "private": true,
   "name": "create-nuxt-app",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Create Nuxt.js App in seconds.",
+  "bin": "cli.js",
+  "files": [
+    "cli.js",
+    "sao.js",
+    "template/"
+  ],
   "repository": {
-    "url": "egoist/create-nuxt-app",
+    "url": "git+https://github.com/nuxt/create-nuxt-app.git",
     "type": "git"
   },
   "scripts": {
-    "test": "lerna bootstrap && xo && lerna exec -- npm test",
-    "lint": "xo"
+    "test": "ava"
   },
-  "author": "egoist <0x142857@gmail.com>",
-  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "minimist": "^1.2.0",
+    "sao": "^0.22.5",
+    "superb": "^2.0.0"
+  },
   "devDependencies": {
-    "eslint-config-rem": "^3.0.0",
-    "lerna": "^2.0.0-rc.5",
-    "xo": "^0.18.0"
+    "ava": "^0.22.0"
   },
-  "xo": {
-    "extends": "rem/prettier",
-    "ignores": ["**/template/**"]
-  }
+  "authors": [
+    "Egoist <0x142857@gmail.com>",
+    "Nuxt team <team@nuxtjs.org>",
+    "Clark Du"
+  ],
+  "license": "MIT"
 }

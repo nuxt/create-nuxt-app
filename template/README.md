@@ -19,4 +19,4 @@ $ <%= _.pm %> start
 $ <%= _.pm %> run generate
 ```
 
-For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
+For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).

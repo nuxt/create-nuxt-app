@@ -22,18 +22,6 @@ module.exports = {
   loading: { color: '#3B8070' },
 
   /*
-  ** Build configuration
-  */
-  build: {
-    /*
-    ** You can extend webpack config here
-    */
-    extend (config, ctx) {
-      // ...
-    }
-  },
-
-  /*
   ** Global CSS
   */
   css: [<% if (ui === 'element-ui') { %>
@@ -41,19 +29,50 @@ module.exports = {
     '~/assets/css/tailwind.css'<% } %>
   ],
 
+	/*
+	** Plugins to load before mounting the App
+	*/
   plugins: [<% if (ui === 'element-ui') { %>
     '@/plugins/element-ui'<% } else if (ui === 'vuetify') { %>
     '@/plugins/vuetify'<% } %>
   ],
 
+	/*
+	** Nuxt.js modules
+	*/
   modules: [<% if (axios === 'yes') { %>
     // Doc: https://github.com/nuxt-community/axios-module#usage
     '@nuxtjs/axios'<% } %><% if (ui === 'bootstrap') { %>,
     // Doc: https://bootstrap-vue.js.org/docs/
-    'bootstrap-vue/nuxt'<% } %>
-  ]<% if (axios === 'yes') { %>,
+    'bootstrap-vue/nuxt'<% } %><% if (ui === 'bulma') { %>,
+		// Doc:https://github.com/nuxt-community/modules/tree/master/packages/bulma
+		'@nuxtjs/bulma'<% } %>
+  ],<% if (axios === 'yes') { %>
 
+	/*
+	** Axios module configuration
+	*/
   axios: {
-    // proxyHeaders: false
-  }<% } %>
+    // See https://github.com/nuxt-community/axios-module#options
+	},<% } %>
+
+  /*
+  ** Build configuration
+  */
+  build: {
+    /*
+    ** You can extend webpack config here
+    */
+    extend (config, ctx) {
+			<% if (eslint === 'yes') { %>// Run ESLint on save
+			if (ctx.isDev && ctx.isClient) {
+				config.module.rules.push({
+					enforce: 'pre',
+					test: /\.(js|vue)$/,
+					loader: 'eslint-loader',
+					exclude: /(node_modules)/
+				})
+			}<% } %>
+    }
+  }
 }

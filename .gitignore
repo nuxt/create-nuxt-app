@@ -1,4 +1,16 @@
+# Dependencies
 node_modules
-packages/*/yarn.lock
-packages/*/package-lock.json
-lerna-debug.log
+
+# Logs
+npm-debug.log
+
+# Coverage
+coverage
+.nyc_output
+
+# Editors
+.vscode
+.idea
+
+# Misc
+.DS_Store

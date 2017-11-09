@@ -88,7 +88,8 @@ module.exports = {
   },
   move(answers) {
     const moveable = {
-      gitignore: '.gitignore',
+      'gitignore': '.gitignore',
+      '_package.json': 'package.json',
       'server/index-*.js': 'server/index.js'
     }
     return Object.assign(
