@@ -13,30 +13,56 @@ const getPkgFields = pkg => {
   return pkg
 }
 
-test('defaults', async t => {
-  const stream = await sao.mockPrompt(template)
+const verifyPkg = async (t, answers) => {
+  const stream = await sao.mockPrompt(template, answers)
 
   const pkg = stream.fileContents('package.json')
   t.snapshot(stream.fileList, 'Generated files')
   t.snapshot(getPkgFields(pkg), 'package.json')
+}
+
+test('defaults', async t => {
+  await verifyPkg(t)
 })
 
 test('use express', async t => {
-  const stream = await sao.mockPrompt(template, {
+  await verifyPkg(t, {
     server: 'express'
   })
-
-  const pkg = stream.fileContents('package.json')
-  t.snapshot(stream.fileList, 'Generated files')
-  t.snapshot(getPkgFields(pkg), 'package.json')
 })
 
 test('use koa', async t => {
-  const stream = await sao.mockPrompt(template, {
+  await verifyPkg(t, {
     server: 'koa'
   })
+})
 
-  const pkg = stream.fileContents('package.json')
-  t.snapshot(stream.fileList, 'Generated files')
-  t.snapshot(getPkgFields(pkg), 'package.json')
+test('use hapi', async t => {
+  await verifyPkg(t, {
+    server: 'hapi'
+  })
+})
+
+test('use feathers', async t => {
+  await verifyPkg(t, {
+    server: 'feathers'
+  })
+})
+
+test('use micro', async t => {
+  await verifyPkg(t, {
+    server: 'koa'
+  })
+})
+
+test('use eslint', async t => {
+  await verifyPkg(t, {
+    eslint: 'yes'
+  })
+})
+
+test('use axios', async t => {
+  await verifyPkg(t, {
+    axios: 'yes'
+  })
 })

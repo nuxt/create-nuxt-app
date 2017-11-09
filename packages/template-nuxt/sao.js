@@ -1,4 +1,19 @@
 const superb = require('superb')
+const glob = require('glob')
+
+const rootDir = __dirname
+
+const globMoveable = answer => {
+  const result = {}
+  const options = { cwd: rootDir + '/template', nodir: true }
+  const prefix = `frameworks/${answer}`
+  if (answer !== 'none') {
+    for (const file of glob.sync(`${prefix}/**`, options)) {
+      result[file] = file.replace(`${prefix}/`, '')
+    }
+  }
+  return result
+}
 
 module.exports = {
   prompts: {
@@ -13,8 +28,41 @@ module.exports = {
     server: {
       message: 'Use a custom server framework',
       type: 'list',
-      choices: ['none', 'express', 'koa'],
+      choices: [
+        'none',
+        'express',
+        'koa',
+        // 'adonis',
+        'hapi',
+        'feathers',
+        'micro'
+      ],
       default: 'none'
+    },
+    ui: {
+      message: 'Use a custom UI framework',
+      type: 'list',
+      choices: [
+        'none',
+        'bootstrap',
+        'vuetify',
+        'bulma',
+        'tailwind',
+        'element-ui'
+      ],
+      default: 'none'
+    },
+    axios: {
+      message: 'Use axios module',
+      type: 'list',
+      choices: ['no', 'yes'],
+      default: 'no'
+    },
+    eslint: {
+      message: 'Use eslint',
+      type: 'list',
+      choices: ['no', 'yes'],
+      default: 'no'
     },
     author: {
       type: 'string',
@@ -25,11 +73,29 @@ module.exports = {
   },
   filters: {
     'server/index-express.js': 'server === "express"',
-    'server/index-koa.js': 'server === "koa"'
+    'server/index-koa.js': 'server === "koa"',
+    'server/index-adonis.js': 'server === "adonis"',
+    'server/index-hapi.js': 'server === "hapi"',
+    'server/index-feathers.js': 'server === "feathers"',
+    'server/index-micro.js': 'server === "micro"',
+    'frameworks/adonis/**': 'server === "adonis"',
+    'frameworks/feathers/**': 'server === "feathers"',
+    'frameworks/micro/**': 'server === "micro"',
+    'frameworks/vuetify/**': 'ui === "vuetify"',
+    'frameworks/element-ui/**': 'ui === "element-ui"',
+    'frameworks/tailwind/**': 'ui === "tailwind"',
+    '.eslintrc.js': 'eslint === "yes"'
   },
-  move: {
-    gitignore: '.gitignore',
-    'server/index-*.js': 'server/index.js'
+  move(answers) {
+    const moveable = {
+      gitignore: '.gitignore',
+      'server/index-*.js': 'server/index.js'
+    }
+    return Object.assign(
+      moveable,
+      globMoveable(answers.server),
+      globMoveable(answers.ui)
+    )
   },
   post({ yarnInstall, gitInit, chalk, pm, isNewFolder, folderName }) {
     gitInit()
