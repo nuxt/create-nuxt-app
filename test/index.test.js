@@ -51,18 +51,18 @@ test('use feathers', async t => {
 
 test('use micro', async t => {
   await verifyPkg(t, {
-    server: 'koa'
-  })
-})
-
-test('use eslint', async t => {
-  await verifyPkg(t, {
-    eslint: 'yes'
+    server: 'micro'
   })
 })
 
 test('use axios', async t => {
   await verifyPkg(t, {
     axios: 'yes'
+  })
+})
+
+test('use eslint', async t => {
+  await verifyPkg(t, {
+    eslint: 'yes'
   })
 })

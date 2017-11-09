@@ -1,6 +1,6 @@
 # Create Nuxt App
 
-[![NPM version](https://img.shields.io/npm/v/create-nuxt-app.svg?style=flat)](https://npmjs.com/package/create-nuxt-app) [![NPM downloads](https://img.shields.io/npm/dm/create-nuxt-app.svg?style=flat)](https://npmjs.com/package/create-nuxt-app)
+[![NPM version](https://img.shields.io/npm/v/create-nuxt-app.svg?style=flat)](https://npmjs.com/package/create-nuxt-app) [![NPM downloads](https://img.shields.io/npm/dm/create-nuxt-app.svg?style=flat)](https://npmjs.com/package/create-nuxt-app) [![CircleCI](https://circleci.com/gh/nuxt-community/create-nuxt-app/tree/master.svg?style=shield)](https://circleci.com/gh/nuxt-community/create-nuxt-app/tree/master)
 
 > Create a [Nuxt.js](https://github.com/nuxt/nuxt.js) project in seconds
 
