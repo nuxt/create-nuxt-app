@@ -1,0 +1,22 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:latest
+    working_directory: ~/app
+    branches:
+      only:
+        - master
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+          - craete-nuxt-deps-{{ checksum "package-lock.json" }}
+          # fallback to using the latest cache if no exact match is found
+          - craete-nuxt-deps-
+      - run: npm install
+      - save_cache:
+          paths:
+            - node_modules
+          key: craete-nuxt-deps-{{ checksum "package-lock.json }}
+      - run: npm run test
