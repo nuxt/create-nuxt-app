@@ -98,10 +98,10 @@ module.exports = {
       globMoveable(answers.ui)
     )
   },
-  post({ yarnInstall, gitInit, chalk, pm, isNewFolder, folderName }) {
+  post({ npmInstall, gitInit, chalk, isNewFolder, folderName }) {
     gitInit()
 
-    yarnInstall()
+    npmInstall()
 
     const cd = () => {
       if (isNewFolder) {
@@ -112,11 +112,11 @@ module.exports = {
     console.log()
     console.log(chalk.bold(`  To get started:\n`))
     cd()
-    console.log(`    ${chalk.cyan(pm)} run dev\n`)
-    console.log(chalk.bold(`  To build for production:\n`))
+    console.log(`    npm run dev\n`)
+    console.log(chalk.bold(`  To build & start for production:\n`))
     cd()
-    console.log(`    ${chalk.cyan(pm)} run build`)
-    console.log(`    ${chalk.cyan(pm)} start`)
+    console.log(`    npm run build`)
+    console.log(`    npm start`)
     console.log()
   }
 }
