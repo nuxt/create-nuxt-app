@@ -1,23 +1,15 @@
 version: 2
 jobs:
   build:
-    working_directory: /usr/src/app
+    working_directory: ~/create-nuxt-app
     docker:
       - image: circleci/node:latest
     steps:
       - checkout
-      # Restore cache
-      - restore_cache:
-          key: package-{{ checksum "package-lock.json" }}
       # Install dependencies
       - run:
           name: install-dependencies
           command: npm install
-      # Keep cache
-      - save_cache:
-          key: package-{{ checksum "package-lock.json" }}
-          paths:
-            - ./node_modules
       # Test
       - run:
           name: test

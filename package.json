@@ -22,7 +22,7 @@
     "superb": "^2.0.0"
   },
   "devDependencies": {
-    "ava": "^0.22.0"
+    "ava": "^0.23.0"
   },
   "authors": [
     "Egoist <0x142857@gmail.com>",
