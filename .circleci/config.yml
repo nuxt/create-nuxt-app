@@ -1,7 +1,6 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/create-nuxt-app
     docker:
       - image: circleci/node:latest
     steps:
