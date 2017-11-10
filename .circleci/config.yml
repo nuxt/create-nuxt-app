@@ -5,11 +5,15 @@ jobs:
       - image: circleci/node:latest
     steps:
       - checkout
-      # Install dependencies
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package-lock.json" }}
       - run:
-          name: install-dependencies
+          name: install dependences
           command: npm install
-      # Test
+      - save_cache:
+          key: dependency-cache-{{ checksum "package-lock.json" }}
+          paths:
+            - ./node_modules
       - run:
           name: test
           command: npm test
