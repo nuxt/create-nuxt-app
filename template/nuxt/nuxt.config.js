@@ -1,7 +1,12 @@
-const pkg = require('./package')
-
+<% if (server === 'adonis') { %>const pkg = require('../package')
+const resolve = require('path').resolve
+<% } else { %>const pkg = require('./package')
+<% } %>
 module.exports = {
-  mode: "<%= mode %>",
+  mode: '<%= mode %>',
+<% if (server === 'adonis') { %>
+  srcDir: resolve(__dirname, '..', 'resources'),
+<% } %>
   /*
   ** Headers of the page
   */
@@ -64,7 +69,7 @@ module.exports = {
     /*
     ** You can extend webpack config here
     */
-    extend (config, ctx) {
+    extend(config, ctx) {
       <% if (eslint === 'yes') { %>// Run ESLint on save
       if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
