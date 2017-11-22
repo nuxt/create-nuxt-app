@@ -1,16 +1,19 @@
 const superb = require('superb')
 const glob = require('glob')
+const join = require('path').join
 
 const rootDir = __dirname
 
-const globMoveable = answer => {
+const moveFramework = (answer, to = '') => {
+  if (answer === 'none') return
+  return move(`frameworks/${answer}`, to)
+}
+
+const move = (from, to = '') => {
   const result = {}
-  const options = { cwd: rootDir + '/template', nodir: true }
-  const prefix = `frameworks/${answer}`
-  if (answer !== 'none') {
-    for (const file of glob.sync(`${prefix}/**`, options)) {
-      result[file] = file.replace(`${prefix}/`, '')
-    }
+  const options = { cwd: join(rootDir, 'template'), nodir: true, dot: true }
+  for (const file of glob.sync(`${from}/**`, options)) {
+    result[file] = (to ? to + '/' : '') + file.replace(`${from}/`, '')
   }
   return result
 }
@@ -32,7 +35,7 @@ module.exports = {
         'none',
         'express',
         'koa',
-        // 'adonis',
+        'adonis',
         'hapi',
         'feathers',
         'micro'
@@ -101,10 +104,19 @@ module.exports = {
       '_package.json': 'package.json',
       'server/index-*.js': 'server/index.js'
     }
+    let nuxtDir
+    if (answers.server === 'adonis') {
+      nuxtDir = 'resources'
+    }
     return Object.assign(
       moveable,
-      globMoveable(answers.server),
-      globMoveable(answers.ui)
+      move('nuxt', nuxtDir),
+      moveFramework(answers.server),
+      moveFramework(answers.ui, nuxtDir),
+      answers.server === 'adonis' ? {
+        'server/index-*.js': 'server.js',
+        'nuxt/nuxt.config.js': 'config/nuxt.js',
+      } : null
     )
   },
   post({ npmInstall, gitInit, chalk, isNewFolder, folderName }) {
