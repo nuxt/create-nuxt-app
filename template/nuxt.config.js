@@ -1,6 +1,7 @@
 const pkg = require('./package')
 
 module.exports = {
+  mode: "<%= mode %>",
   /*
   ** Headers of the page
   */
@@ -29,32 +30,32 @@ module.exports = {
     '~/assets/css/tailwind.css'<% } %>
   ],
 
-	/*
-	** Plugins to load before mounting the App
-	*/
+  /*
+  ** Plugins to load before mounting the App
+  */
   plugins: [<% if (ui === 'element-ui') { %>
     '@/plugins/element-ui'<% } else if (ui === 'vuetify') { %>
     '@/plugins/vuetify'<% } %>
   ],
 
-	/*
-	** Nuxt.js modules
-	*/
+  /*
+  ** Nuxt.js modules
+  */
   modules: [<% if (axios === 'yes') { %>
     // Doc: https://github.com/nuxt-community/axios-module#usage
     '@nuxtjs/axios'<% } %><% if (ui === 'bootstrap') { %>,
     // Doc: https://bootstrap-vue.js.org/docs/
     'bootstrap-vue/nuxt'<% } %><% if (ui === 'bulma') { %>,
-		// Doc:https://github.com/nuxt-community/modules/tree/master/packages/bulma
-		'@nuxtjs/bulma'<% } %>
+    // Doc:https://github.com/nuxt-community/modules/tree/master/packages/bulma
+    '@nuxtjs/bulma'<% } %>
   ],<% if (axios === 'yes') { %>
 
-	/*
-	** Axios module configuration
-	*/
+  /*
+  ** Axios module configuration
+  */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
-	},<% } %>
+  },<% } %>
 
   /*
   ** Build configuration
@@ -64,15 +65,15 @@ module.exports = {
     ** You can extend webpack config here
     */
     extend (config, ctx) {
-			<% if (eslint === 'yes') { %>// Run ESLint on save
-			if (ctx.isDev && ctx.isClient) {
-				config.module.rules.push({
-					enforce: 'pre',
-					test: /\.(js|vue)$/,
-					loader: 'eslint-loader',
-					exclude: /(node_modules)/
-				})
-			}<% } %>
+      <% if (eslint === 'yes') { %>// Run ESLint on save
+      if (ctx.isDev && ctx.isClient) {
+        config.module.rules.push({
+          enforce: 'pre',
+          test: /\.(js|vue)$/,
+          loader: 'eslint-loader',
+          exclude: /(node_modules)/
+        })
+      }<% } %>
     }
   }
 }
