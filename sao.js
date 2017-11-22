@@ -13,7 +13,7 @@ const move = (from, to = '') => {
   const result = {}
   const options = { cwd: join(rootDir, 'template'), nodir: true, dot: true }
   for (const file of glob.sync(`${from}/**`, options)) {
-    result[file] = to + '/' + file.replace(`${from}/`, '')
+    result[file] = (to ? to + '/' : '') + file.replace(`${from}/`, '')
   }
   return result
 }
