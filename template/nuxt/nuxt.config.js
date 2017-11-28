@@ -1,6 +1,8 @@
 <% if (server === 'adonis') { %>const pkg = require('../package')
 const resolve = require('path').resolve
 <% } else { %>const pkg = require('./package')
+<% } %><% if (ui === 'vuetify') { %>
+const nodeExternals = require('webpack-node-externals')
 <% } %>
 module.exports = {
   mode: '<%= mode %>',
@@ -18,7 +20,8 @@ module.exports = {
       { hid: 'description', name: 'description', content: pkg.description }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }<% if (ui === 'vuetify') { %>,
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' }<% } %>
     ]
   },
 
@@ -32,7 +35,8 @@ module.exports = {
   */
   css: [<% if (ui === 'element-ui') { %>
     'element-ui/lib/theme-default/index.css'<% } else if (ui === 'tailwind') { %>
-    '~/assets/css/tailwind.css'<% } %>
+    '~/assets/css/tailwind.css'<% } else if (ui === 'vuetify') { %>
+    'vuetify/src/stylus/main.styl'<% } %>
   ],
 
   /*
@@ -78,6 +82,13 @@ module.exports = {
           loader: 'eslint-loader',
           exclude: /(node_modules)/
         })
+      }<% } %><% if (ui === 'vuetify') { %>
+      if (ctx.isServer) {
+        config.externals = [
+          nodeExternals({
+            whitelist: [/^vuetify/]
+          })
+        ]
       }<% } %>
     }
   }
