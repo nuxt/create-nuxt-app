@@ -20,5 +20,8 @@ module.exports = {
       }
     ],
   },
-  globals: {}
+  globals: {<% if (server === 'adonis') { %>
+    use: true,
+    make: true<% } %>
+  }
 }

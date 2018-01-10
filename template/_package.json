@@ -17,7 +17,7 @@
     "precommit": "npm run lint"<% } %>
   },
   "dependencies": {
-    "nuxt": "^1.0.0-rc11"<% if (server === 'express') { %>,
+    "nuxt": "^1.0.0"<% if (server === 'express') { %>,
     "express": "^4.15.3"<% } else if (server === 'koa') { %>,
     "koa": "^2.3.0"<% } else if (server === 'hapi') { %>,
     "hapi-nuxt": "^0.6.0"<% } else if (server === 'micro') { %>,
@@ -46,6 +46,7 @@
     "cross-env": "^5.0.1"<% if (eslint === 'yes') { %>,
     "babel-eslint": "^7.2.3",
     "eslint": "^4.3.0",
+    "eslint-loader": "^1.9.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-plugin-html": "^3.1.1",
     "eslint-plugin-import": "^2.7.0",
