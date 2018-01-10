@@ -5,8 +5,7 @@ const Config = use('Config')
 const { Nuxt, Builder } = require('nuxt')
 
 class NuxtController {
-
-  constructor () {
+  constructor() {
     let config = Config.get('nuxt')
     config.dev = Env.get('NODE_ENV') === 'development'
     this.nuxt = new Nuxt(config)
@@ -16,7 +15,7 @@ class NuxtController {
     }
   }
 
-  async render ({request : { request: req }, response: { response: res }}) {
+  async render({request: { request: req }, response: { response: res }}) {
     await new Promise((resolve, reject) => {
       this.nuxt.render(req, res, promise => {
         promise.then(resolve).catch(reject)

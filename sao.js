@@ -115,7 +115,7 @@ module.exports = {
       moveFramework(answers.ui, nuxtDir),
       answers.server === 'adonis' ? {
         'server/index-*.js': 'server.js',
-        'nuxt/nuxt.config.js': 'config/nuxt.js',
+        'nuxt/nuxt.config.js': 'config/nuxt.js'
       } : null
     )
   },
