@@ -69,7 +69,16 @@ module.exports = {
   /*
   ** Build configuration
   */
-  build: {
+  build: {<% if (ui === 'bulma') { %>
+    postcss: {
+      plugins: {
+        'postcss-cssnext': {
+          features: {
+            customProperties: false
+          }
+        }
+      }
+    },<% } %>
     /*
     ** You can extend webpack config here
     */
