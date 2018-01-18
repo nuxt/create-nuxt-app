@@ -84,7 +84,7 @@ module.exports = {
     */
     extend(config, ctx) {
       <% if (eslint === 'yes') { %>// Run ESLint on save
-      if (ctx.isDev && ctx.isClient) {
+      if (ctx.isDev && process.client) {
         config.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,
@@ -92,7 +92,7 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }<% } %><% if (ui === 'vuetify') { %>
-      if (ctx.isServer) {
+      if (process.server) {
         config.externals = [
           nodeExternals({
             whitelist: [/^vuetify/]
