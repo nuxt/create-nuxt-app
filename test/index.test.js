@@ -66,3 +66,9 @@ test('use eslint', async t => {
     eslint: 'yes'
   })
 })
+
+test('use yarn', async t => {
+  await verifyPkg(t, {
+    pm: 'yarn'
+  })
+})
