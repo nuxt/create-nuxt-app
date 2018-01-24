@@ -59,8 +59,8 @@ module.exports = {
       message: 'Choose rendering mode',
       type: 'list',
       choices: [
-        {name: 'Universal', value: 'universal'},
-        {name: 'Single Page App', value: 'spa'}
+        { name: 'Universal', value: 'universal' },
+        { name: 'Single Page App', value: 'spa' }
       ],
       default: 'universal'
     },
@@ -81,6 +81,12 @@ module.exports = {
       message: 'Author name',
       default: ':gitUser:',
       store: true
+    },
+    pm: {
+      message: 'Choose a package manager',
+      choices: ['npm', 'yarn'],
+      type: 'list',
+      default: 'npm'
     }
   },
   filters: {
@@ -100,7 +106,7 @@ module.exports = {
   },
   move(answers) {
     const moveable = {
-      'gitignore': '.gitignore',
+      gitignore: '.gitignore',
       '_package.json': 'package.json',
       'server/index-*.js': 'server/index.js'
     }
@@ -113,16 +119,22 @@ module.exports = {
       move('nuxt', nuxtDir),
       moveFramework(answers.server),
       moveFramework(answers.ui, nuxtDir),
-      answers.server === 'adonis' ? {
-        'server/index-*.js': 'server.js',
-        'nuxt/nuxt.config.js': 'config/nuxt.js'
-      } : null
+      answers.server === 'adonis'
+        ? {
+            'server/index-*.js': 'server.js',
+            'nuxt/nuxt.config.js': 'config/nuxt.js'
+          }
+        : null
     )
   },
-  post({ npmInstall, gitInit, chalk, isNewFolder, folderName }) {
+  post(
+    { npmInstall, yarnInstall, gitInit, chalk, isNewFolder, folderName },
+    { meta }
+  ) {
     gitInit()
 
-    npmInstall()
+    if (meta.answers.pm === 'yarn') yarnInstall()
+    else npmInstall()
 
     const cd = () => {
       if (isNewFolder) {
