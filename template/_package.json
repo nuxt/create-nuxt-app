@@ -40,7 +40,7 @@
     "vuetify": "^0.17.3"<% } else if (ui === 'bulma') { %>,
     "@nuxtjs/bulma": "^1.0.3"<% } else if (ui === 'element-ui') { %>,
     "element-ui": "^1.4.9"<% } %><% if (axios === 'yes') { %>,
-    "@nuxtjs/axios": "^4.4.0"<% } %>
+    "@nuxtjs/axios": "^5.0.0"<% } %>
   },
   "devDependencies": {
     "cross-env": "^5.0.1"<% if (eslint === 'yes') { %>,
