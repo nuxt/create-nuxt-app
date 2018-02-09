@@ -20,7 +20,7 @@ npx create-nuxt-app <my-project>
 Or with [yarn](https://yarnpkg.com/en/):
 
 ```bash
-yarn create nuxt-app <my-project>
+yarn create-nuxt-app <my-project>
 ```
 
 ## Features :tada:
