@@ -6,17 +6,17 @@
 
 ``` bash
 # install dependencies
-$ <%= _.pm %> install
+$ <% if (pm === 'npm') { %><%= pm %> install<% } else if (pm === 'yarn') { %><%= pm %><% } %>
 
 # serve with hot reload at localhost:3000
-$ <%= _.pm %> run dev
+$ <% if (pm === 'npm') { %><%= pm %> run dev<% } else if (pm === 'yarn') { %><%= pm %> dev<% } %>
 
 # build for production and launch server
-$ <%= _.pm %> run build
-$ <%= _.pm %> start
+$ <% if (pm === 'npm') { %><%= pm %> run build<% } else if (pm === 'yarn') { %><%= pm %> build<% } %>
+$ <%= pm %> start
 
 # generate static project
-$ <%= _.pm %> run generate
+$ <% if (pm === 'npm') { %><%= pm %> run generate<% } else if (pm === 'yarn') { %><%= pm %> generate<% } %>
 ```
 
 For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
