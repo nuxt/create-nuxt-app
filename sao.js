@@ -1,3 +1,5 @@
+const path = require('path')
+const yarnInstall = require('yarn-install')
 const superb = require('superb')
 const glob = require('glob')
 const join = require('path').join
@@ -18,6 +20,19 @@ const move = (from, to = '') => {
   return result
 }
 
+const installDependency = (pm, folderPath, folderName = '') => {
+  switch (pm) {
+    case 'yarn':
+      yarnInstall()
+      break;
+    case 'npm':
+      yarnInstall({
+        cwd: path.resolve(folderPath, folderName),
+        respectNpm5: typeof forceNpm === 'boolean' ? forceNpm : true
+      })
+  }
+}
+
 module.exports = {
   prompts: {
     name: {
@@ -33,6 +48,7 @@ module.exports = {
       type: 'list',
       choices: [
         'none',
+        'firebase',
         'express',
         'koa',
         'adonis',
@@ -41,6 +57,14 @@ module.exports = {
         'micro'
       ],
       default: 'none'
+    },
+    firebase: {
+      message: 'Enter firebase project id',
+      type: 'string',
+      default: 'your-id',
+      when(answers) {
+        return answers.server === 'firebase'
+      }
     },
     ui: {
       message: 'Use a custom UI framework',
@@ -100,6 +124,7 @@ module.exports = {
     'frameworks/adonis/**': 'server === "adonis"',
     'frameworks/feathers/**': 'server === "feathers"',
     'frameworks/micro/**': 'server === "micro"',
+    'frameworks/firebase/**': 'server === "firebase"',
     'frameworks/vuetify/**': 'ui === "vuetify"',
     'frameworks/element-ui/**': 'ui === "element-ui"',
     'frameworks/tailwind/**': 'ui === "tailwind"',
@@ -107,14 +132,26 @@ module.exports = {
     '.eslintrc.js': 'eslint === "yes"'
   },
   move(answers) {
-    const moveable = {
+    let moveable = {
       gitignore: '.gitignore',
-      '_package.json': 'package.json',
+      'pkg/_package-index.json': 'package.json',
       'server/index-*.js': 'server/index.js'
     }
+    if (answers.server === 'firebase') {
+      moveable = {
+        gitignore: '.gitignore',
+        'pkg/_package-index.json': 'src/package.json',
+        'pkg/_package-functions.json': 'functions/package.json',
+        'pkg/_package-firebase-index.json': 'package.json'
+      }
+    }
+
     let nuxtDir
     if (answers.server === 'adonis') {
       nuxtDir = 'resources'
+    }
+    if (answers.server === 'firebase') {
+      nuxtDir = 'src'
     }
     return Object.assign(
       moveable,
@@ -126,32 +163,78 @@ module.exports = {
             'server/index-*.js': 'server.js',
             'nuxt/nuxt.config.js': 'config/nuxt.js'
           }
+        : null,
+      answers.server === 'firebase'
+        ? {
+            '.firebaserc' : '.firebaserc',
+            'firebase.json' : 'firebase.json'
+          }
         : null
     )
   },
   post(
-    { npmInstall, yarnInstall, gitInit, chalk, isNewFolder, folderName },
+    { gitInit, chalk, isNewFolder, folderName, folderPath },
     { meta }
   ) {
     gitInit()
 
-    if (meta.answers.pm === 'yarn') yarnInstall()
-    else npmInstall()
+    console.log()
+    console.log(chalk.bold(`Installing module...`))
+    installDependency(meta.answers.pm, folderPath)
+
+    if (meta.answers.server === 'firebase') {
+      console.log()
+      console.log(chalk.bold(`Installing module for Nuxt...`))
+      installDependency(meta.answers.pm, folderPath, 'src')
+
+      console.log()
+      console.log(chalk.bold(`Installing module for Firebase Cloud Function...`))
+      installDependency(meta.answers.pm, folderPath, 'functions')
+    }
 
     const cd = () => {
       if (isNewFolder) {
-        console.log(`    ${chalk.cyan('cd')} ${folderName}`)
+        if (meta.answers.server === 'firebase') {
+          console.log(`    ${chalk.cyan('cd')} ${folderName}`)
+        } else {
+          console.log(`    ${chalk.cyan('cd')} ${folderName}`)
+        }
       }
     }
 
     console.log()
     console.log(chalk.bold(`  To get started:\n`))
     cd()
-    console.log(`    ${meta.answers.pm} run dev\n`)
+    switch (meta.answers.pm) {
+      case 'npm':
+    console.log(`    npm run dev\n`)
+        break;
+      case 'yarn':
+        console.log(`    yarn dev\n`)
+        break;
+    }
     console.log(chalk.bold(`  To build & start for production:\n`))
     cd()
-    console.log(`    ${meta.answers.pm} run build`)
-    console.log(`    ${meta.answers.pm} start`)
+    switch (meta.answers.pm) {
+      case 'npm':
+        if (meta.answers.server === 'firebase') {
+          console.log(`    npm run build:firebase`)
+          console.log(`    npm run start:firebase`)
+        } else {
+          console.log(`    npm run build`)
+          console.log(`    npm start`)
+        }
+        break;
+      case 'yarn':
+        if (meta.answers.server === 'firebase') {
+          console.log(`    yarn build:firebase`)
+          console.log(`    yarn start:firebase`)
+        } else {
+          console.log(`    yarn build`)
+          console.log(`    yarn start`)
+        }
+        break;
+    }
     console.log()
   }
 }
