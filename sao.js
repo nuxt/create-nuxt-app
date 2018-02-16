@@ -176,11 +176,11 @@ module.exports = {
     { gitInit, chalk, isNewFolder, folderName, folderPath },
     { meta }
   ) {
-    // gitInit()
+    gitInit()
 
-    // console.log()
-    // console.log(chalk.bold(`Installing module for nuxt project...`))
-    // installDependency(meta.answers.pm, folderPath, 'src')
+    console.log()
+    console.log(chalk.bold(`Installing module for nuxt project...`))
+    installDependency(meta.answers.pm, folderPath, 'src')
 
     console.log()
     console.log(chalk.bold(`Installing module...`))
