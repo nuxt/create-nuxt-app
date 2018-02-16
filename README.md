@@ -27,6 +27,7 @@ yarn create nuxt-app <my-project>
 
 1. Choose between integrated server-side frameworks:
     - None (Nuxt default server)
+    - [Firebase Hosting](https://firebase.google.com/products/hosting)
     - [Express](https://github.com/expressjs/express)
     - [Koa](https://github.com/koajs/koa)
     - [Hapi](https://github.com/hapijs/hapi)
