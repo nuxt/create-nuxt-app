@@ -22,7 +22,8 @@
     "superb": "^2.0.0"
   },
   "devDependencies": {
-    "ava": "^0.23.0"
+    "ava": "^0.23.0",
+    "yarn-install": "^0.5.1"
   },
   "authors": [
     "Egoist <0x142857@gmail.com>",

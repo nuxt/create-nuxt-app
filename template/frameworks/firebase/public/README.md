@@ -1,0 +1,1 @@
+This directory contains build result file from Nuxt.js framework.

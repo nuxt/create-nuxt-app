@@ -12,6 +12,8 @@
     "dev": "<% if (server === 'none') { %>nuxt<% } else { %>cross-env NODE_ENV=development nodemon server/index.js --watch server<% } %>",
     "build": "nuxt build",
     "start": "<% if (server === 'none') { %>nuxt start<% } else { %>cross-env NODE_ENV=production node server/index.js<% } %>",
+    "start:firebase": "firebase serve --only functions,hosting",<% if (server === 'firebase') { %>
+    "copy:dist": "cp -R ../functions/nuxt/dist/* ../public",<% } %>
     "generate": "nuxt generate"<% } %><% if (eslint === 'yes') { %>,
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint"<% } %>
@@ -54,5 +56,45 @@
     "tailwindcss": "~0.6.6"<% } else if (ui === 'vuetify') { %>,
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1"<% } %>
+    "nuxt": "^1.3.0"<% if (server === 'express') { %>,
+    "express": "^4.16.2"<% } else if (server === 'koa') { %>,
+    "koa": "^2.5.0"<% } else if (server === 'hapi') { %>,
+    "hapi-nuxt": "^1.0.0"<% } else if (server === 'micro') { %>,
+    "micro": "^9.1.0",
+    "micro-route": "^2.5.0"<% } else if (server === 'feathers') { %>,
+    "feathers": "^3.1.2",
+    "feathers-configuration": "^1.0.2"<% } else if (server === 'adonis') { %>,
+    "@adonisjs/ace": "^5.0.0",
+    "@adonisjs/auth": "^3.0.1",
+    "@adonisjs/bodyparser": "^2.0.2",
+    "@adonisjs/cors": "^1.0.5",
+    "@adonisjs/fold": "^4.0.7",
+    "@adonisjs/framework": "^5.0.4",
+    "@adonisjs/ignitor": "^2.0.5",
+    "@adonisjs/lucid": "^5.0.2",
+    "@adonisjs/session": "^1.0.20",
+    "@adonisjs/shield": "^1.0.6"<% } %><% if (ui === 'bootstrap') { %>,
+    "bootstrap-vue": "^2.0.0-rc.1",
+    "bootstrap": "^4.0.0-beta.3"<% } else if (ui === 'vuetify') { %>,
+    "vuetify": "^1.0.1"<% } else if (ui === 'bulma') { %>,
+    "@nuxtjs/bulma": "^1.1.0"<% } else if (ui === 'element-ui') { %>,
+    "element-ui": "^2.2.0"<% } %><% if (axios === 'yes') { %>,
+    "@nuxtjs/axios": "^5.0.1"<% } %>
+  },
+  "devDependencies": {
+    "cross-env": "^5.1.3"<% if (server === 'firebase') { %>,
+    "babel-plugin-module-resolver": "^3.1.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-0": "^6.24.1"<% } %><% if (eslint === 'yes') { %>,
+    "babel-eslint": "^8.2.1",
+    "eslint": "^4.17.0",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-vue": "^4.2.2"<% } %><% if (ui === 'tailwind') { %>,
+    "autoprefixer": "^8.0.0",
+    "tailwindcss": "^0.4.1"<% } else if (ui === 'vuetify') { %>,
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.1"<% } %><% if (server !== 'none') { %>,
+    "nodemon": "^1.15.0"<% } %>
   }
 }

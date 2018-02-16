@@ -1,14 +1,28 @@
-# dependencies
+# dependencies<% if (server === 'firebase') { %>
+functions/node_modules
+src/node_modules
+<% } else { %>
 node_modules
+<% } %>
 
-# logs
+# logs<% if (server === 'firebase') { %>
+functions/npm-debug.log
+src/npm-debug.log
+<% } else { %>
 npm-debug.log
+<% } %>
 
-# Nuxt build
+# Nuxt build<% if (server === 'firebase') { %>
+src/.nuxt
+<% } else { %>
 .nuxt
+<% } %>
 
-# Nuxt generate
+# Nuxt generate<% if (server === 'firebase') { %>
+functions/dist
+<% } else { %>
 dist
 
 # IDE
 .idea
+<% } %>

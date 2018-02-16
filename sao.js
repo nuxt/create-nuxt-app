@@ -176,7 +176,11 @@ module.exports = {
     { gitInit, chalk, isNewFolder, folderName, folderPath },
     { meta }
   ) {
-    gitInit()
+    // gitInit()
+
+    // console.log()
+    // console.log(chalk.bold(`Installing module for nuxt project...`))
+    // installDependency(meta.answers.pm, folderPath, 'src')
 
     console.log()
     console.log(chalk.bold(`Installing module...`))
@@ -195,7 +199,7 @@ module.exports = {
     const cd = () => {
       if (isNewFolder) {
         if (meta.answers.server === 'firebase') {
-          console.log(`    ${chalk.cyan('cd')} ${folderName}`)
+          console.log(`    ${chalk.cyan('cd')} ${folderName}/src`)
         } else {
           console.log(`    ${chalk.cyan('cd')} ${folderName}`)
         }
@@ -220,6 +224,9 @@ module.exports = {
         if (meta.answers.server === 'firebase') {
           console.log(`    npm run build:firebase`)
           console.log(`    npm run start:firebase`)
+          console.log(`    npm run build`)
+          console.log(`    npm run copy:dist`)
+          console.log(`    npm run serve:firebase`)
         } else {
           console.log(`    npm run build`)
           console.log(`    npm start`)
@@ -229,6 +236,9 @@ module.exports = {
         if (meta.answers.server === 'firebase') {
           console.log(`    yarn build:firebase`)
           console.log(`    yarn start:firebase`)
+          console.log(`    yarn build`)
+          console.log(`    yarn copy:dist`)
+          console.log(`    yarn serve:firebase`)
         } else {
           console.log(`    yarn build`)
           console.log(`    yarn start`)
