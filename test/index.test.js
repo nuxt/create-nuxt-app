@@ -16,13 +16,28 @@ const getPkgFields = pkg => {
 const verifyPkg = async (t, answers) => {
   const stream = await sao.mockPrompt(template, answers)
 
-  const pkg = stream.fileContents('package.json')
+  let pkg
+  if (answers !== undefined && answers.server === 'firebase') {
+    pkg = stream.fileContents('src/package.json')
+    
+    const cloudFuncPkg = stream.fileContents('functions/package.json')
+    t.snapshot(getPkgFields(cloudFuncPkg), 'Firebase Cloud Function package.json')
+  } else {
+    pkg = stream.fileContents('package.json')
+  }
+
   t.snapshot(stream.fileList, 'Generated files')
   t.snapshot(getPkgFields(pkg), 'package.json')
 }
 
 test('defaults', async t => {
   await verifyPkg(t)
+})
+
+test('use firebase', async t => {
+  await verifyPkg(t, {
+    server: 'firebase'
+  })
 })
 
 test('use express', async t => {
