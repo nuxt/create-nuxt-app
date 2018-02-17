@@ -1,7 +1,7 @@
 <template>
   <v-app dark>
     <v-navigation-drawer
-      :mini-variant="miniVariant"
+      :mini-variant.sync="miniVariant"
       :clipped="clipped"
       v-model="drawer"
       fixed
@@ -87,7 +87,7 @@
 
 <script>
   export default {
-    data() {
+    data () {
       return {
         clipped: false,
         drawer: true,

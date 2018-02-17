@@ -1,8 +1,6 @@
 <% if (server === 'adonis') { %>const pkg = require('../package')
 const resolve = require('path').resolve
 <% } else { %>const pkg = require('./package')
-<% } %><% if (ui === 'vuetify') { %>
-const nodeExternals = require('webpack-node-externals')
 <% } %>
 module.exports = {
   mode: '<%= mode %>',
@@ -36,15 +34,15 @@ module.exports = {
   css: [<% if (ui === 'element-ui') { %>
     'element-ui/lib/theme-chalk/index.css'<% } else if (ui === 'tailwind') { %>
     '~/assets/css/tailwind.css'<% } else if (ui === 'vuetify') { %>
-    'vuetify/src/stylus/main.styl'<% } %>
+    '~/assets/style/main.styl'<% } %>
   ],
 
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [<% if (ui === 'element-ui') { %>
-    '@/plugins/element-ui'<% } else if (ui === 'vuetify') { %>
-    '@/plugins/vuetify'<% } %>
+    '~/plugins/element-ui.js'<% } else if (ui === 'vuetify') { %>
+    '~/plugins/vuetify.js'<% } %>
   ],
 
   /*
@@ -52,9 +50,9 @@ module.exports = {
   */
   modules: [<% if (axios === 'yes') { %>
     // Doc: https://github.com/nuxt-community/axios-module#usage
-    '@nuxtjs/axios'<% } %><% if (ui === 'bootstrap') { %>,
+    '@nuxtjs/axios',<% } %><% if (ui === 'bootstrap') { %>
     // Doc: https://bootstrap-vue.js.org/docs/
-    'bootstrap-vue/nuxt'<% } %><% if (ui === 'bulma') { %>,
+    'bootstrap-vue/nuxt'<% } else if (ui === 'bulma') { %>
     // Doc:https://github.com/nuxt-community/modules/tree/master/packages/bulma
     '@nuxtjs/bulma'<% } %><% if (ui === 'buefy') { %>,
     // Doc: https://buefy.github.io/#/documentation
@@ -70,7 +68,7 @@ module.exports = {
   /*
   ** Build directory
   */
-  buildDir: '../functions/nuxt',<% } %>
+  buildDir: '../functions/.nuxt',<% } %>
 
   /*
   ** Build configuration
@@ -82,7 +80,11 @@ module.exports = {
           customProperties: false
         }
       }
-    },<% } %>
+    },<% } %><% if (ui === 'vuetify') { %>
+    vendor: [
+      '~/plugins/vuetify.js'
+    ],
+    <% } %>
     /*
     ** You can extend webpack config here
     */
@@ -95,13 +97,6 @@ module.exports = {
           loader: 'eslint-loader',
           exclude: /(node_modules)/
         })
-      }<% } %><% if (ui === 'vuetify') { %>
-      if (ctx.isServer) {
-        config.externals = [
-          nodeExternals({
-            whitelist: [/^vuetify/]
-          })
-        ]
       }<% } %>
     },<% if (server === 'firebase') { %>
     extractCSS: true,

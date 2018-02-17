@@ -1,0 +1,26 @@
+{
+  "name": "<%= name %>",
+  "version": "1.0.0",
+  "description": "<%= description %>",
+  "author": "<%= author %>",
+  "private": true,
+  "scripts": {
+    "setup": "<% if (pm === 'npm') { %>npm run<% } else if (pm === 'yarn' ) { %>yarn<% } %> setup:nuxt && <% if (pm === 'npm') { %>npm run<% } else if (pm === 'yarn' ) { %>yarn<% } %> setup:firebase",
+    "setup:nuxt": "cd \"src\" && <% if (pm === 'npm') { %>npm<% } else if (pm === 'yarn' ) { %>yarn<% } %> install",
+    "setup:firebase": "cd \"functions\" && <% if (pm === 'npm') { %>npm<% } else if (pm === 'yarn' ) { %>yarn<% } %> install",
+    "dev": "cd \"src\" && <% if (pm === 'npm') { %>npm run<% } else if (pm === 'yarn' ) { %>yarn<% } %> dev",
+    "build": "cd \"src\" && <% if (pm === 'npm') { %>npm run<% } else if (pm === 'yarn' ) { %>yarn<% } %> build",
+    "build:firebase": "<% if (pm === 'npm') { %>npm run<% } else if (pm === 'yarn' ) { %>yarn<% } %> clean && <% if (pm === 'npm') { %>npm run<% } else if (pm === 'yarn' ) { %>yarn<% } %> build && <% if (pm === 'npm') { %>npm run<% } else if (pm === 'yarn' ) { %>yarn<% } %> copy:dist",
+    "start": "cd \"src\" && <% if (pm === 'npm') { %>npm run<% } else if (pm === 'yarn' ) { %>yarn<% } %> start",
+    "start:firebase": "firebase serve --only functions,hosting",
+    "copy:dist": "cpx \"functions/.nuxt/dist/**\" \"public\"",
+    "clean": "rimraf \"functions/.nuxt/dist\" && rimraf \"public/**\"",
+    "generate": "cd \"src\" && <% if (pm === 'npm') { %>npm run<% } else if (pm === 'yarn' ) { %>yarn<% } %> generate"<% if (eslint === 'yes') { %>,
+    "lint": "cd \"src\" && eslint --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "<% if (pm === 'npm') { %>npm run<% } else if (pm === 'yarn' ) { %>yarn<% } %> lint"<% } %>
+  },
+  "devDependencies": {
+    "cpx": "^1.5.0",
+    "rimraf": "^2.6.2"
+  }
+}

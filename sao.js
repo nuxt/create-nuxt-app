@@ -176,11 +176,11 @@ module.exports = {
     { gitInit, chalk, isNewFolder, folderName, folderPath },
     { meta }
   ) {
-    gitInit()
+    // gitInit()
 
     console.log()
-    console.log(chalk.bold(`Installing module for nuxt project...`))
-    installDependency(meta.answers.pm, folderPath, 'src')
+    console.log(chalk.bold(`Installing module...`))
+    installDependency(meta.answers.pm, folderPath)
 
     console.log()
     console.log(chalk.bold(`Installing module...`))
@@ -199,7 +199,7 @@ module.exports = {
     const cd = () => {
       if (isNewFolder) {
         if (meta.answers.server === 'firebase') {
-          console.log(`    ${chalk.cyan('cd')} ${folderName}/src`)
+          console.log(`    ${chalk.cyan('cd')} ${folderName}`)
         } else {
           console.log(`    ${chalk.cyan('cd')} ${folderName}`)
         }

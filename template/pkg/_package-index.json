@@ -5,19 +5,16 @@
   "author": "<%= author %>",
   "private": true,
   "scripts": {<% if (server === 'adonis') { %>
-    "serve:dev": "npm run dev",
+    "serve:dev": "<% if (pm === 'npm') { %>npm run<% } else if (pm === 'yarn' ) { %>yarn<% } %> dev",
     "dev": "nodemon --watch app --watch bootstrap --watch config --watch .env -x node server.js",
     "build": "node ./ace nuxtbuild",
     "start": "cross-env NODE_ENV=production node server.js"<% } else { %>
     "dev": "<% if (server === 'none' || server === 'firebase') { %>nuxt<% } else { %>cross-env NODE_ENV=development nodemon server/index.js --watch server<% } %>",
-    "build": "nuxt build",<% if (server === 'firebase') { %>
-    "build:firebase": "npm run build && npm run copy:dist",<% } %>
-    "start": "<% if (server === 'none' || server === 'firebase') { %>nuxt start<% } else { %>cross-env NODE_ENV=production node server/index.js<% } %>",<% if (server === 'firebase') { %>
-    "start:firebase": "firebase serve --only functions,hosting",
-    "copy:dist": "cp -R ../functions/nuxt/dist/* ../public",<% } %>
+    "build": "nuxt build",
+    "start": "<% if (server === 'none' || server === 'firebase') { %>nuxt start<% } else { %>cross-env NODE_ENV=production node server/index.js<% } %>",
     "generate": "nuxt generate"<% } %><% if (eslint === 'yes') { %>,
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "precommit": "npm run lint"<% } %>
+    "precommit": "<% if (pm === 'npm') { %>npm run<% } else if (pm === 'yarn' ) { %>yarn<% } %> lint"<% } %>
   },
   "dependencies": {
     "cross-env": "^5.2.0",
@@ -95,7 +92,7 @@
     "autoprefixer": "^8.0.0",
     "tailwindcss": "^0.4.1"<% } else if (ui === 'vuetify') { %>,
     "stylus": "^0.54.5",
-    "stylus-loader": "^3.0.1"<% } %><% if (server !== 'none' || server !== 'firebase') { %>,
+    "stylus-loader": "^3.0.1"<% } %><% if (server !== 'none' && server !== 'firebase') { %>,
     "nodemon": "^1.15.0"<% } %>
   }
 }

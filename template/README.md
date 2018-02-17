@@ -20,8 +20,7 @@ $ <%= pm %> start
 <% if (server === 'firebase') { %>
 # build for production and serve firebase locally
 $ cd src
-$ <% if (pm === 'npm') { %><%= pm %> run build<% } else if (pm === 'yarn') { %><%= pm %> build<% } %>
-$ <% if (pm === 'npm') { %><%= pm %> run copy:dist<% } else if (pm === 'yarn') { %><%= pm %> copy:dist<% } %>
+$ <% if (pm === 'npm') { %><%= pm %> run build:firebase<% } else if (pm === 'yarn') { %><%= pm %> build<% } %>
 $ <%= pm %> start:firebase
 <% } %>
 # generate static project
