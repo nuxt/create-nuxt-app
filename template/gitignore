@@ -1,4 +1,5 @@
-# dependencies<% if (server === 'firebase') { %>
+# dependencies
+node_modules<% if (server === 'firebase') { %>
 functions/node_modules
 src/node_modules
 <% } else { %>
@@ -14,6 +15,7 @@ npm-debug.log
 
 # Nuxt build<% if (server === 'firebase') { %>
 src/.nuxt
+functions/.nuxt
 <% } else { %>
 .nuxt
 <% } %>
