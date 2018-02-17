@@ -14,7 +14,7 @@
     "start": "cd \"src\" && <% if (pm === 'npm') { %>npm run<% } else if (pm === 'yarn' ) { %>yarn<% } %> start",
     "start:firebase": "firebase serve --only functions,hosting",
     "copy:dist": "cpx \"functions/.nuxt/dist/**\" \"public\"",
-    "clean": "rimraf \"functions/.nuxt/dist\" && rimraf \"public/**\"",
+    "clean": "rimraf \"functions/.nuxt/dist\" && rimraf \"public/*\"",
     "generate": "cd \"src\" && <% if (pm === 'npm') { %>npm run<% } else if (pm === 'yarn' ) { %>yarn<% } %> generate"<% if (eslint === 'yes') { %>,
     "lint": "cd \"src\" && eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "<% if (pm === 'npm') { %>npm run<% } else if (pm === 'yarn' ) { %>yarn<% } %> lint"<% } %>
