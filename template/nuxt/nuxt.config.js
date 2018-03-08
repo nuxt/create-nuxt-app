@@ -34,7 +34,7 @@ module.exports = {
   ** Global CSS
   */
   css: [<% if (ui === 'element-ui') { %>
-    'element-ui/lib/theme-default/index.css'<% } else if (ui === 'tailwind') { %>
+    'element-ui/lib/theme-chalk/index.css'<% } else if (ui === 'tailwind') { %>
     '~/assets/css/tailwind.css'<% } else if (ui === 'vuetify') { %>
     'vuetify/src/stylus/main.styl'<% } %>
   ],
