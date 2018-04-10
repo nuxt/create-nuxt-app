@@ -51,7 +51,8 @@ module.exports = {
         'vuetify',
         'bulma',
         'tailwind',
-        'element-ui'
+        'element-ui',
+        'buefy'
       ],
       default: 'none'
     },
@@ -102,6 +103,7 @@ module.exports = {
     'frameworks/vuetify/**': 'ui === "vuetify"',
     'frameworks/element-ui/**': 'ui === "element-ui"',
     'frameworks/tailwind/**': 'ui === "tailwind"',
+    'frameworks/buefy/**': 'ui === "buefy"',
     '.eslintrc.js': 'eslint === "yes"'
   },
   move(answers) {

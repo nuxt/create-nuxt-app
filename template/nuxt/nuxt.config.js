@@ -28,7 +28,7 @@ module.exports = {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#3B8070' },
+  loading: { color: '#FFFFFF' },
 
   /*
   ** Global CSS
@@ -56,9 +56,10 @@ module.exports = {
     // Doc: https://bootstrap-vue.js.org/docs/
     'bootstrap-vue/nuxt'<% } %><% if (ui === 'bulma') { %>,
     // Doc:https://github.com/nuxt-community/modules/tree/master/packages/bulma
-    '@nuxtjs/bulma'<% } %>
+    '@nuxtjs/bulma'<% } %><% if (ui === 'buefy') { %>,
+    // Doc: https://buefy.github.io/#/documentation
+    'nuxt-buefy'<% } %>
   ],<% if (axios === 'yes') { %>
-
   /*
   ** Axios module configuration
   */
