@@ -47,7 +47,7 @@
     "cross-env": "^5.0.1"<% if (eslint === 'yes') { %>,
     "babel-eslint": "^8.2.1",
     "eslint": "^4.15.0",
-    "eslint-loader": "^1.7.1",
+    "eslint-loader": "^2.0.0",
     "eslint-plugin-vue": "^4.0.0"<% } %><% if (ui === 'tailwind') { %>,
     "autoprefixer": "^7.1.6",
     "tailwindcss": "^0.1.3"<% } else if (ui === 'vuetify') { %>,
