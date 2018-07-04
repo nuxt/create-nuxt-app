@@ -46,10 +46,10 @@
   "devDependencies": {
     "cross-env": "^5.0.1"<% if (eslint === 'yes') { %>,
     "babel-eslint": "^8.2.1",
-    "eslint": "^4.15.0",
+    "eslint": "^5.0.1",
     "eslint-loader": "^2.0.0",
     "eslint-plugin-vue": "^4.0.0"<% } %><% if (ui === 'tailwind') { %>,
-    "autoprefixer": "^7.1.6",
+    "autoprefixer": "^8.6.4",
     "tailwindcss": "^0.6.1"<% } else if (ui === 'vuetify') { %>,
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1"<% } %><% if (server !== 'none') { %>,
