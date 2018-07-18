@@ -147,11 +147,11 @@ module.exports = {
     console.log()
     console.log(chalk.bold(`  To get started:\n`))
     cd()
-    console.log(`    npm run dev\n`)
+    console.log(`    ${meta.answers.pm} run dev\n`)
     console.log(chalk.bold(`  To build & start for production:\n`))
     cd()
-    console.log(`    npm run build`)
-    console.log(`    npm start`)
+    console.log(`    ${meta.answers.pm} run build`)
+    console.log(`    ${meta.answers.pm} start`)
     console.log()
   }
 }
