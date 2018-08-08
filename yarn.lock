@@ -2957,9 +2957,9 @@ safe-buffer@^5.0.1, safe-buffer@^5.1.1, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   version "5.1.1"
   resolved "https://registry.npmjs.org/safe-buffer/-/safe-buffer-5.1.1.tgz#893312af69b2123def71f57889001671eeb2c853"
 
-sao@^0.22.5:
-  version "0.22.12"
-  resolved "https://registry.npmjs.org/sao/-/sao-0.22.12.tgz#fe13bb32bb0d32892c188024f77c5ac26c19eaf9"
+sao@^0.22.17:
+  version "0.22.17"
+  resolved "https://registry.yarnpkg.com/sao/-/sao-0.22.17.tgz#f678ab240cd1695260491fba9f3a864cd1fc02e9"
   dependencies:
     boxen "^1.2.2"
     cac "^4.3.4"
@@ -2981,7 +2981,7 @@ sao@^0.22.5:
     tildify "^1.2.0"
     update-notifier "^2.2.0"
     user-home "^2.0.0"
-    yarn-install "^0.5.1"
+    yarn-install "^1.0.0"
 
 seek-bzip@^1.0.5:
   version "1.0.5"
@@ -3551,9 +3551,9 @@ yargs@~3.10.0:
     decamelize "^1.0.0"
     window-size "0.1.0"
 
-yarn-install@^0.5.1:
-  version "0.5.1"
-  resolved "https://registry.npmjs.org/yarn-install/-/yarn-install-0.5.1.tgz#f3c55e8646b6ac8da360b2f8e31afe5c4a067340"
+yarn-install@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/yarn-install/-/yarn-install-1.0.0.tgz#57f45050b82efd57182b3973c54aa05cb5d25230"
   dependencies:
     cac "^3.0.3"
     chalk "^1.1.3"
