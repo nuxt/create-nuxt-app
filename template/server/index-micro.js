@@ -1,4 +1,5 @@
 const micro = require('micro')
+const consola = require('consola')
 const serviceConfig = require('./micro.config.js')
 
 const server = micro(serviceConfig)
@@ -8,4 +9,7 @@ const port = process.env.PORT || '3000'
 
 // Listen the server
 server.listen(port, host)
-console.log('Server listening on ' + host + ':' + port) // eslint-disable-line no-console
+consola.ready({
+  message: `Server listening on http://${host}:${port}`,
+  badge: true
+})

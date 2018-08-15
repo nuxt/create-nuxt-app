@@ -72,11 +72,9 @@ module.exports = {
   */
   build: {<% if (ui === 'bulma') { %>
     postcss: {
-      plugins: {
-        'postcss-cssnext': {
-          features: {
-            customProperties: false
-          }
+      preset: {
+        features: {
+          customProperties: false
         }
       }
     },<% } %>
