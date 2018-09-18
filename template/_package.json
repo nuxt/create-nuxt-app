@@ -41,7 +41,7 @@
     "vuetify": "^1.0.19"<% } else if (ui === 'bulma') { %>,
     "@nuxtjs/bulma": "^1.0.3"<% } else if (ui === 'element-ui') { %>,
     "element-ui": "^2.2.1"<% } else if (ui === 'buefy') { %>,
-    "nuxt-buefy": "^0.0.4"<% } %><% if (axios === 'yes') { %>,
+    "nuxt-buefy": "^0.2.1"<% } %><% if (axios === 'yes') { %>,
     "@nuxtjs/axios": "^5.0.0"<% } %>
   },
   "devDependencies": {<% if (eslint === 'yes') { %>
