@@ -2,11 +2,11 @@
 
 const Env = use('Env')
 const Config = use('Config')
-const { Nuxt, Builder } = require('nuxt')
+const { Nuxt, Builder } = require('nuxt-edge')
 
 class NuxtController {
   constructor() {
-    let config = Config.get('nuxt')
+    const config = Config.get('nuxt')
     config.dev = Env.get('NODE_ENV') === 'development'
     this.nuxt = new Nuxt(config)
     // Start build process (only in development)

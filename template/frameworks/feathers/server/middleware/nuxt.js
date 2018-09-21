@@ -1,5 +1,5 @@
 const resolve = require('path').resolve
-const { Nuxt, Builder } = require('nuxt')
+const { Nuxt, Builder } = require('nuxt-edge')
 
 // Setup nuxt.js
 let config = {}

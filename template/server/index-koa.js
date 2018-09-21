@@ -1,6 +1,7 @@
 
 const Koa = require('koa')
-const { Nuxt, Builder } = require('nuxt')
+const consola = require('consola')
+const { Nuxt, Builder } = require('nuxt-edge')
 
 const app = new Koa()
 const host = process.env.HOST || '127.0.0.1'
@@ -34,7 +35,10 @@ async function start() {
   })
 
   app.listen(port, host)
-  console.log('Server listening on http://' + host + ':' + port) // eslint-disable-line no-console
+  consola.ready({
+    message: `Server listening on http://${host}:${port}`,
+    badge: true
+  })
 }
 
 start()
