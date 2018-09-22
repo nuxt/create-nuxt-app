@@ -51,7 +51,7 @@
     "eslint-loader": "^2.0.0",
     "eslint-plugin-vue": "^4.0.0"<% } %><% if (ui === 'tailwind') { %>,
     "autoprefixer": "^8.6.4",
-    "tailwindcss": "^0.6.5"<% } else if (ui === 'vuetify') { %>,
+    "tailwindcss": "~0.6.6"<% } else if (ui === 'vuetify') { %>,
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1"<% } %>
   }
