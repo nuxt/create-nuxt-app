@@ -110,7 +110,7 @@ module.exports = {
     'frameworks/element-ui/**': 'ui === "element-ui"',
     'frameworks/tailwind/**': 'ui === "tailwind"',
     'frameworks/buefy/**': 'ui === "buefy"',
-    '.eslintrc.js': 'eslint === "yes"',
+    '_.eslintrc.js': 'eslint === "yes"',
     '.prettierrc': 'prettier === "yes"'
   },
   move(answers) {
