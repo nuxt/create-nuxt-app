@@ -1,5 +1,5 @@
 const dispatch = require('micro-route/dispatch')
-const { Nuxt, Builder } = require('nuxt-edge')
+const { Nuxt, Builder } = require('nuxt')
 
 // Require nuxt config
 const config = require('../nuxt.config.js')
