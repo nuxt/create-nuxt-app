@@ -4,11 +4,6 @@ const join = require('path').join
 
 const rootDir = __dirname
 
-const moveFramework = (answer, to = '') => {
-  if (answer === 'none') return
-  return move(`frameworks/${answer}`, to)
-}
-
 const move = (from, to = '') => {
   const result = {}
   const options = { cwd: join(rootDir, 'template'), nodir: true, dot: true }
@@ -16,6 +11,11 @@ const move = (from, to = '') => {
     result[file] = (to ? to + '/' : '') + file.replace(`${from}/`, '')
   }
   return result
+}
+
+const moveFramework = (answer, to = '') => {
+  if (answer === 'none') return
+  return move(`frameworks/${answer}`, to)
 }
 
 module.exports = {
@@ -77,6 +77,12 @@ module.exports = {
       choices: ['no', 'yes'],
       default: 'no'
     },
+    prettier: {
+      message: 'Use prettier',
+      type: 'list',
+      choices: ['no', 'yes'],
+      default: 'no'
+    },
     author: {
       type: 'string',
       message: 'Author name',
@@ -104,12 +110,14 @@ module.exports = {
     'frameworks/element-ui/**': 'ui === "element-ui"',
     'frameworks/tailwind/**': 'ui === "tailwind"',
     'frameworks/buefy/**': 'ui === "buefy"',
-    '.eslintrc.js': 'eslint === "yes"'
+    '_.eslintrc.js': 'eslint === "yes"',
+    '.prettierrc': 'prettier === "yes"'
   },
   move(answers) {
     const moveable = {
       gitignore: '.gitignore',
       '_package.json': 'package.json',
+      '_.eslintrc.js': '.eslintrc.js',
       'server/index-*.js': 'server/index.js'
     }
     let nuxtDir

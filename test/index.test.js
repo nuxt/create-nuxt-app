@@ -72,3 +72,9 @@ test('use yarn', async t => {
     pm: 'yarn'
   })
 })
+
+test('use prettier', async t => {
+  await verifyPkg(t, {
+    prettier: 'yes'
+  })
+})
