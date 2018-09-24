@@ -53,6 +53,6 @@
     "autoprefixer": "^8.6.4",
     "tailwindcss": "~0.6.6"<% } else if (ui === 'vuetify') { %>,
     "stylus": "^0.54.5",
-    "stylus-loader": "^3.0.1"<% } %>
+    "stylus-loader": "^3.0.2"<% } %>
   }
 }

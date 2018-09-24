@@ -1,8 +1,6 @@
 <% if (server === 'adonis') { %>const pkg = require('../package')
 const resolve = require('path').resolve
 <% } else { %>const pkg = require('./package')
-<% } %><% if (ui === 'vuetify') { %>
-const nodeExternals = require('webpack-node-externals')
 <% } %>
 module.exports = {
   mode: '<%= mode %>',
@@ -36,7 +34,7 @@ module.exports = {
   css: [<% if (ui === 'element-ui') { %>
     'element-ui/lib/theme-chalk/index.css'<% } else if (ui === 'tailwind') { %>
     '~/assets/css/tailwind.css'<% } else if (ui === 'vuetify') { %>
-    'vuetify/src/stylus/main.styl'<% } %>
+    '~/assets/style/app.styl'<% } %>
   ],
 
   /*
@@ -90,13 +88,6 @@ module.exports = {
           loader: 'eslint-loader',
           exclude: /(node_modules)/
         })
-      }<% } %><% if (ui === 'vuetify') { %>
-      if (ctx.isServer) {
-        config.externals = [
-          nodeExternals({
-            whitelist: [/^vuetify/]
-          })
-        ]
       }<% } %>
     }
   }
