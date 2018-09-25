@@ -13,7 +13,8 @@
     "type": "git"
   },
   "scripts": {
-    "test": "ava --verbose"
+    "test": "ava --verbose",
+    "test:snapshot": "ava --verbose --update-snapshots"
   },
   "dependencies": {
     "lodash": "^4.17.4",
