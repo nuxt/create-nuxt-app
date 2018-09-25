@@ -16,7 +16,7 @@
           exact
         >
           <v-list-tile-action>
-            <v-icon v-html="item.icon" /><% if (eslint === 'yes') { %><!-- eslint-disable-line vue/no-v-html --><% } %>
+            <v-icon>{{ item.icon }}</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
             <v-list-tile-title v-text="item.title" />
@@ -34,7 +34,7 @@
         icon
         @click.stop="miniVariant = !miniVariant"
       >
-        <v-icon v-html="miniVariant ? 'chevron_right' : 'chevron_left'" /><% if (eslint === 'yes') { %><!-- eslint-disable-line vue/no-v-html --><% } %>
+        <v-icon>{{ `chevron_${miniVariant ? 'right' : 'left'}` }}</v-icon>
       </v-btn>
       <v-btn
         icon
