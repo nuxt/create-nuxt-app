@@ -1,7 +1,7 @@
 <template>
   <section class="container">
     <div>
-      <logo/>
+      <logo />
       <h1 class="title">
         <%= name %>
       </h1>
@@ -12,11 +12,13 @@
         <a
           href="https://nuxtjs.org/"
           target="_blank"
-          class="button--green">Documentation</a>
+          class="button--green"
+        >Documentation</a>
         <a
           href="https://github.com/nuxt/nuxt.js"
           target="_blank"
-          class="button--grey">GitHub</a>
+          class="button--grey"
+        >GitHub</a>
       </div>
     </div>
   </section>
@@ -40,6 +42,7 @@ export default {
 */
 
 <% } %>.container {
+  margin: 0 auto;
   min-height: 100vh;
   display: flex;
   justify-content: center;

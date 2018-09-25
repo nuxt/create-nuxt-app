@@ -1,22 +1,22 @@
 <template>
   <v-app dark>
     <v-navigation-drawer
+      v-model="drawer"
       :mini-variant="miniVariant"
       :clipped="clipped"
-      v-model="drawer"
       fixed
       app
     >
       <v-list>
         <v-list-tile
           v-for="(item, i) in items"
-          :to="item.to"
           :key="i"
+          :to="item.to"
           router
           exact
         >
           <v-list-tile-action>
-            <v-icon v-html="item.icon" />
+            <v-icon v-html="item.icon" /><% if (eslint === 'yes') { %><!-- eslint-disable-line vue/no-v-html --><% } %>
           </v-list-tile-action>
           <v-list-tile-content>
             <v-list-tile-title v-text="item.title" />
@@ -34,7 +34,7 @@
         icon
         @click.stop="miniVariant = !miniVariant"
       >
-        <v-icon v-html="miniVariant ? 'chevron_right' : 'chevron_left'" />
+        <v-icon v-html="miniVariant ? 'chevron_right' : 'chevron_left'" /><% if (eslint === 'yes') { %><!-- eslint-disable-line vue/no-v-html --><% } %>
       </v-btn>
       <v-btn
         icon
@@ -48,7 +48,7 @@
       >
         <v-icon>remove</v-icon>
       </v-btn>
-      <v-toolbar-title v-text="title"/>
+      <v-toolbar-title v-text="title" />
       <v-btn
         icon
         @click.stop="rightDrawer = !rightDrawer"
@@ -62,8 +62,8 @@
       </v-container>
     </v-content>
     <v-navigation-drawer
-      :right="right"
       v-model="rightDrawer"
+      :right="right"
       temporary
       fixed
     >
