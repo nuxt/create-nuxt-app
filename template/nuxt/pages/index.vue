@@ -1,7 +1,7 @@
 <template>
   <section class="container">
     <div>
-      <logo/>
+      <logo />
       <h1 class="title">
         <%= name %>
       </h1>
@@ -12,11 +12,13 @@
         <a
           href="https://nuxtjs.org/"
           target="_blank"
-          class="button--green">Documentation</a>
+          class="button--green"
+        >Documentation</a>
         <a
           href="https://github.com/nuxt/nuxt.js"
           target="_blank"
-          class="button--grey">GitHub</a>
+          class="button--grey"
+        >GitHub</a>
       </div>
     </div>
   </section>
@@ -33,15 +35,14 @@ export default {
 </script>
 
 <style>
-<% if (ui === 'tailwind') { %>
-/* Sample `apply` at-rules with Tailwind CSS
+<% if (ui === 'tailwind') { %>/* Sample `apply` at-rules with Tailwind CSS
 .container {
   @apply min-h-screen flex justify-center items-center text-center mx-auto;
 }
 */
 
-<% } %>
-.container {
+<% } %>.container {
+  margin: 0 auto;
   min-height: 100vh;
   display: flex;
   justify-content: center;

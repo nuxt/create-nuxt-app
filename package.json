@@ -1,7 +1,7 @@
 {
   "name": "create-nuxt-app",
   "version": "2.1.1",
-  "description": "Create Nuxt.js App in seconds.",
+  "description": "Create a Nuxt.js App in seconds.",
   "bin": "cli.js",
   "files": [
     "cli.js",
@@ -13,7 +13,8 @@
     "type": "git"
   },
   "scripts": {
-    "test": "ava --verbose"
+    "test": "ava --verbose",
+    "test:snapshot": "ava --verbose --update-snapshots"
   },
   "dependencies": {
     "lodash": "^4.17.4",

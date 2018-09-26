@@ -3,21 +3,24 @@
     <nav
       class="navbar header has-shadow is-primary"
       role="navigation"
-      aria-label="main navigation">
+      aria-label="main navigation"
+    >
       <div class="navbar-brand">
         <a
           class="navbar-item"
-          href="/">
+          href="/"
+        >
           <img
             src="~assets/buefy.png"
             alt="Buefy"
-            height="28">
+            height="28"
+          >
         </a>
 
         <div class="navbar-burger">
-          <span/>
-          <span/>
-          <span/>
+          <span />
+          <span />
+          <span />
         </div>
       </div>
     </nav>
@@ -29,11 +32,13 @@
         <ul class="menu-list">
           <li
             v-for="(item, key) of items"
-            :key="key">
+            :key="key"
+          >
             <nuxt-link
               :to="item.to"
-              exact-active-class="is-active">
-              <b-icon :icon="item.icon"/> {{ item.title }}
+              exact-active-class="is-active"
+            >
+              <b-icon :icon="item.icon" /> {{ item.title }}
             </nuxt-link>
           </li>
         </ul>
@@ -52,8 +57,16 @@ export default {
   data() {
     return {
       items: [
-        { title: 'Home', icon: 'home', to: { name: 'index' } },
-        { title: 'Inspire', icon: 'lightbulb', to: { name: 'inspire' } }
+        {
+          title: 'Home',
+          icon: 'home',
+          to: { name: 'index' }
+        },
+        {
+          title: 'Inspire',
+          icon: 'lightbulb',
+          to: { name: 'inspire' }
+        }
       ]
     }
   }
