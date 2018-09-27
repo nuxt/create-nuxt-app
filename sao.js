@@ -6,7 +6,11 @@ const rootDir = __dirname
 
 const move = (from, to = '') => {
   const result = {}
-  const options = { cwd: join(rootDir, 'template'), nodir: true, dot: true }
+  const options = {
+    cwd: join(rootDir, 'template'),
+    nodir: true,
+    dot: true
+  }
   for (const file of glob.sync(`${from}/**`, options)) {
     result[file] = (to ? to + '/' : '') + file.replace(`${from}/`, '')
   }
@@ -51,6 +55,7 @@ module.exports = {
         'vuetify',
         'bulma',
         'tailwind',
+        'iview',
         'element-ui',
         'buefy'
       ],
@@ -59,9 +64,14 @@ module.exports = {
     mode: {
       message: 'Choose rendering mode',
       type: 'list',
-      choices: [
-        { name: 'Universal', value: 'universal' },
-        { name: 'Single Page App', value: 'spa' }
+      choices: [{
+          name: 'Universal',
+          value: 'universal'
+        },
+        {
+          name: 'Single Page App',
+          value: 'spa'
+        }
       ],
       default: 'universal'
     },
@@ -110,6 +120,7 @@ module.exports = {
     'frameworks/element-ui/**': 'ui === "element-ui"',
     'frameworks/tailwind/**': 'ui === "tailwind"',
     'frameworks/buefy/**': 'ui === "buefy"',
+    'frameworks/iview/**': 'ui === "iview"',
     '_.eslintrc.js': 'eslint === "yes"',
     '.prettierrc': 'prettier === "yes"'
   },
@@ -129,18 +140,23 @@ module.exports = {
       move('nuxt', nuxtDir),
       moveFramework(answers.server),
       moveFramework(answers.ui, nuxtDir),
-      answers.server === 'adonis'
-        ? {
-            'server/index-*.js': 'server.js',
-            'nuxt/nuxt.config.js': 'config/nuxt.js'
-          }
-        : null
+      answers.server === 'adonis' ? {
+        'server/index-*.js': 'server.js',
+        'nuxt/nuxt.config.js': 'config/nuxt.js'
+      } :
+      null
     )
   },
-  post(
-    { npmInstall, yarnInstall, gitInit, chalk, isNewFolder, folderName },
-    { meta }
-  ) {
+  post({
+    npmInstall,
+    yarnInstall,
+    gitInit,
+    chalk,
+    isNewFolder,
+    folderName
+  }, {
+    meta
+  }) {
     gitInit()
 
     if (meta.answers.pm === 'yarn') yarnInstall()
