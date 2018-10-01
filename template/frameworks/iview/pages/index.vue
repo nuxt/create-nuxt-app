@@ -6,16 +6,12 @@
         <%= name %>
       </h1>
       <h2 class="subtitle">
-        <%= description %>
+        Welcome to the iView + Nuxt.js template
       </h2>
       <div class="links">
-        <% if (ui === 'iview') { %>
         <Button type="primary" target="_blank" to="https://nuxtjs.org/">Documentation</Button>
         <Button target="_blank" to="https://github.com/nuxt/nuxt.js">GitHub</Button>
-        <% } else { %>
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green">Documentation</a>
-        <a href="https://github.com/nuxt/nuxt.js" target="_blank" class="button--grey">GitHub</a>
-        <% } %>
+        <Button target="_blank" to="https://www.iviewui.com/">iView</Button>
       </div>
     </div>
   </section>
@@ -32,13 +28,7 @@ export default {
 </script>
 
 <style>
-<% if (ui === 'tailwind') { %>/* Sample `apply` at-rules with Tailwind CSS
 .container {
-  @apply min-h-screen flex justify-center items-center text-center mx-auto;
-}
-*/
-
-<% } %>.container {
   margin: 0 auto;
   min-height: 100vh;
   display: flex;
