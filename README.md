@@ -9,18 +9,16 @@
 ![preview](https://ooo.0o0.ooo/2017/08/05/5984b16ed9749.gif)
 </details>
 
-## Usage
-
-Make sure you have [npx](https://www.npmjs.com/package/npx) installed (`npx` is shipped by default since NPM `5.2.0`)
+## Installation
 
 ```bash
-npx create-nuxt-app <my-project>
+npm install --global create-nuxt-app
 ```
 
-Or with [yarn](https://yarnpkg.com/en/):
+## Usage
 
 ```bash
-yarn create nuxt-app <my-project>
+create-nuxt-app <my-project>
 ```
 
 ## Features :tada:
