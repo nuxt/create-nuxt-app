@@ -52,6 +52,7 @@ module.exports = {
         'bulma',
         'tailwind',
         'element-ui',
+        'ant-desing-vue',
         'buefy'
       ],
       default: 'none'
