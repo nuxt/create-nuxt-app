@@ -34,7 +34,8 @@ module.exports = {
   css: [<% if (ui === 'element-ui') { %>
     'element-ui/lib/theme-chalk/index.css'<% } else if (ui === 'tailwind') { %>
     '~/assets/css/tailwind.css'<% } else if (ui === 'vuetify') { %>
-    '~/assets/style/app.styl'<% } %>
+    '~/assets/style/app.styl'<% } else if (ui === 'iview') { %>
+    'iview/dist/styles/iview.css'<% } %>
   ],
 
   /*
@@ -42,7 +43,8 @@ module.exports = {
   */
   plugins: [<% if (ui === 'element-ui') { %>
     '@/plugins/element-ui'<% } else if (ui === 'vuetify') { %>
-    '@/plugins/vuetify'<% } %>
+    '@/plugins/vuetify'<% } else if (ui === 'iview') { %>
+    '@/plugins/iview'<% } %>
   ],
 
   /*
