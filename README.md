@@ -41,6 +41,7 @@ yarn create nuxt-app <my-project>
     - [Tailwind](https://github.com/tailwindcss/tailwindcss)
     - [Element UI](https://github.com/ElemeFE/element)
     - [Buefy](https://buefy.github.io)
+    - [iView](https://www.iviewui.com/)
 3. Add [axios module](https://github.com/nuxt-community/axios-module) to make HTTP request easily into your application.
 4. Add [EsLint](https://eslint.org/) to Lint your code on save.
 5. Add [Prettier](https://prettier.io/) to prettify your code on save.
