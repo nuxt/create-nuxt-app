@@ -52,7 +52,8 @@ module.exports = {
         'bulma',
         'tailwind',
         'element-ui',
-        'buefy'
+        'buefy',
+        'iview'
       ],
       default: 'none'
     },
@@ -110,6 +111,7 @@ module.exports = {
     'frameworks/element-ui/**': 'ui === "element-ui"',
     'frameworks/tailwind/**': 'ui === "tailwind"',
     'frameworks/buefy/**': 'ui === "buefy"',
+    'frameworks/iview/**': 'ui === "iview"',
     '_.eslintrc.js': 'eslint === "yes"',
     '.prettierrc': 'prettier === "yes"'
   },
