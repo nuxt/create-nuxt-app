@@ -9,7 +9,7 @@
     "template/"
   ],
   "repository": {
-    "url": "git+https://github.com/nuxt-community/create-nuxt-app.git",
+    "url": "git+https://github.com/nuxt/create-nuxt-app.git",
     "type": "git"
   },
   "scripts": {

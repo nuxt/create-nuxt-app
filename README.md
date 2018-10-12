@@ -51,4 +51,4 @@ yarn create nuxt-app <my-project>
 
 - [egoist](https://github.com/egoist)
 - [clarko](https://github.com/clarkdo)
-- All our contributors ([list](https://github.com/nuxt-community/create-nuxt-app/contributors)).
+- All our contributors ([list](https://github.com/nuxt/create-nuxt-app/contributors)).
