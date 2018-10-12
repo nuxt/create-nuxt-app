@@ -109,6 +109,7 @@ module.exports = {
     'frameworks/micro/**': 'server === "micro"',
     'frameworks/vuetify/**': 'ui === "vuetify"',
     'frameworks/element-ui/**': 'ui === "element-ui"',
+    'frameworks/ant-design-vue/**': 'ui === "ant-design-vue"',
     'frameworks/tailwind/**': 'ui === "tailwind"',
     'frameworks/buefy/**': 'ui === "buefy"',
     '_.eslintrc.js': 'eslint === "yes"',
