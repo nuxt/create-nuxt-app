@@ -38,7 +38,8 @@ module.exports = {
         'adonis',
         'hapi',
         'feathers',
-        'micro'
+        'micro',
+        'sails'
       ],
       default: 'none'
     },
