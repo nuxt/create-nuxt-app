@@ -17,8 +17,9 @@
     "precommit": "npm run lint"<% } %>
   },
   "dependencies": {
-    "cross-env": "^5.2.0",
-    "nuxt": "^2.0.0"<% if (server === 'express') { %>,
+    "cross-env": "^5.2.0"<% if (edge) { %>,
+    "nuxt-edge": "latest"<% } else { %>,
+    "nuxt": "^2.0.0"<% } %><% if (server === 'express') { %>,
     "express": "^4.16.3"<% } else if (server === 'koa') { %>,
     "koa": "^2.5.2"<% } else if (server === 'hapi') { %>,
     "hapi-nuxt": "^1.0.0"<% } else if (server === 'micro') { %>,
