@@ -1,6 +1,8 @@
 # Create Nuxt App
 
-[![NPM version](https://img.shields.io/npm/v/create-nuxt-app.svg?style=flat)](https://npmjs.com/package/create-nuxt-app) [![NPM downloads](https://img.shields.io/npm/dm/create-nuxt-app.svg?style=flat)](https://npmjs.com/package/create-nuxt-app) [![CircleCI](https://circleci.com/gh/nuxt-community/create-nuxt-app/tree/master.svg?style=shield)](https://circleci.com/gh/nuxt-community/create-nuxt-app/tree/master)
+[![NPM version](https://img.shields.io/npm/v/create-nuxt-app.svg?style=flat)](https://npmjs.com/package/create-nuxt-app)
+[![NPM downloads](https://img.shields.io/npm/dm/create-nuxt-app.svg?style=flat)](https://npmjs.com/package/create-nuxt-app)
+[![CircleCI](https://img.shields.io/circleci/project/github/nuxt/create-nuxt-app/master.svg?style=flat)](https://circleci.com/gh/nuxt/create-nuxt-app/master)
 
 > Create a [Nuxt.js](https://github.com/nuxt/nuxt.js) project in seconds
 
@@ -42,11 +44,11 @@ yarn create nuxt-app <my-project>
     - [Element UI](https://github.com/ElemeFE/element)
     - [Buefy](https://buefy.github.io)
 3. Add [axios module](https://github.com/nuxt-community/axios-module) to make HTTP request easily into your application.
-4. Add [EsLint](https://eslint.org/) to Lint your code on save.
+4. Add [ESLint](https://eslint.org/) to Lint your code on save.
 5. Add [Prettier](https://prettier.io/) to prettify your code on save.
 
 ## Credits
 
 - [egoist](https://github.com/egoist)
 - [clarko](https://github.com/clarkdo)
-- All our contributors ([list](https://github.com/nuxt-community/create-nuxt-app/contributors)).
+- All our contributors ([list](https://github.com/nuxt/create-nuxt-app/contributors)).
