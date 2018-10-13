@@ -19,8 +19,8 @@
   "dependencies": {
     "cross-env": "^5.2.0",
     "nuxt": "^2.0.0"<% if (server === 'express') { %>,
-    "express": "^4.16.3"<% } else if (server === 'koa') { %>,
-    "koa": "^2.5.2"<% } else if (server === 'hapi') { %>,
+    "express": "^4.16.4"<% } else if (server === 'koa') { %>,
+    "koa": "^2.5.3"<% } else if (server === 'hapi') { %>,
     "hapi-nuxt": "^1.0.0"<% } else if (server === 'micro') { %>,
     "micro": "^9.3.3",
     "micro-route": "^2.5.0"<% } else if (server === 'feathers') { %>,
@@ -38,17 +38,17 @@
     "@adonisjs/shield": "^1.0.4"<% } %><% if (ui === 'bootstrap') { %>,
     "bootstrap-vue": "^2.0.0-beta",
     "bootstrap": "^4.1.3"<% } else if (ui === 'vuetify') { %>,
-    "vuetify": "^1.2.4"<% } else if (ui === 'bulma') { %>,
+    "vuetify": "^1.2.9"<% } else if (ui === 'bulma') { %>,
     "@nuxtjs/bulma": "^1.2.0"<% } else if (ui === 'element-ui') { %>,
     "element-ui": "^2.4.6"<% } else if (ui === 'buefy') { %>,
     "nuxt-buefy": "^0.2.1"<% } %><% if (axios === 'yes') { %>,
-    "@nuxtjs/axios": "^5.0.0"<% } %>
+    "@nuxtjs/axios": "^5.3.3"<% } %>
   },
   "devDependencies": {
-    "nodemon": "^1.11.0"<% if (eslint === 'yes') { %>,
-    "babel-eslint": "^8.2.1",
+    "nodemon": "^1.18.4"<% if (eslint === 'yes') { %>,
+    "babel-eslint": "^10.0.1",
     "eslint": "^5.0.1",
-    "eslint-loader": "^2.0.0",
+    "eslint-loader": "^2.1.1",
     "eslint-plugin-vue": "^5.0.0-beta.3"<% } %><% if (prettier === 'yes') { %>,
     "eslint-config-prettier": "^3.1.0",
     "eslint-plugin-prettier": "2.6.2",
