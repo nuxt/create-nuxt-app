@@ -38,7 +38,7 @@
     "@adonisjs/shield": "^1.0.4"<% } %><% if (ui === 'bootstrap') { %>,
     "bootstrap-vue": "^2.0.0-beta",
     "bootstrap": "^4.1.3"<% } else if (ui === 'vuetify') { %>,
-    "vuetify": "^1.2.4"<% } else if (ui === 'bulma') { %>,
+    "vuetify": "^1.2.9"<% } else if (ui === 'bulma') { %>,
     "@nuxtjs/bulma": "^1.2.0"<% } else if (ui === 'element-ui') { %>,
     "element-ui": "^2.4.6"<% } else if (ui === 'buefy') { %>,
     "nuxt-buefy": "^0.2.1"<% } %><% if (axios === 'yes') { %>,
