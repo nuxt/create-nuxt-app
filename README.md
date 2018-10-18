@@ -41,7 +41,7 @@ yarn create nuxt-app <my-project>
     - [Tailwind](https://github.com/tailwindcss/tailwindcss)
     - [Element UI](https://github.com/ElemeFE/element)
     - [Buefy](https://buefy.github.io)
-3. Choose between this tow different rendering options:
+3. Choose between this two different rendering options:
     - Universal
     - Single Page App
 4. Add [axios module](https://github.com/nuxt-community/axios-module) to make HTTP request easily into your application.
