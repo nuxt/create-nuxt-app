@@ -2,6 +2,9 @@
 const resolve = require('path').resolve
 <% } else { %>const pkg = require('./package')
 <% } %>
+<% if (ui === 'vuetify') { %>
+const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
+<% } %>
 module.exports = {
   mode: '<%= mode %>',
 <% if (server === 'adonis') { %>
@@ -75,7 +78,10 @@ module.exports = {
           customProperties: false
         }
       }
-    },<% } %>
+    },<% } %><% if (ui === 'vuetify') { %>
+    transpile: ['vuetify/lib'],
+    plugins: [new VuetifyLoaderPlugin()],
+    <% } %>
     /*
     ** You can extend webpack config here
     */
