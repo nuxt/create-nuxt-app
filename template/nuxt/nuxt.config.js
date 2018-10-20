@@ -81,6 +81,11 @@ module.exports = {
     },<% } %><% if (ui === 'vuetify') { %>
     transpile: ['vuetify/lib'],
     plugins: [new VuetifyLoaderPlugin()],
+    loaders: {
+      stylus: {
+        import: ["~assets/style/variables.styl"]
+      }
+    },
     <% } %>
     /*
     ** You can extend webpack config here
