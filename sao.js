@@ -1,6 +1,7 @@
 const superb = require('superb')
 const glob = require('glob')
 const { join } = require('path')
+const spawn = require('cross-spawn')
 
 const rootDir = __dirname
 
@@ -137,11 +138,11 @@ module.exports = {
     )
   },
   post(
-    { npmInstall, yarnInstall, gitInit, chalk, isNewFolder, folderName },
+    { npmInstall, yarnInstall, gitInit, chalk, isNewFolder, folderName, folderPath },
     { meta }
   ) {
     gitInit()
-     
+
     // using yarn or npm
     meta.answers.pm === 'yarn' ? yarnInstall() : npmInstall()
 
@@ -149,6 +150,12 @@ module.exports = {
       if (isNewFolder) {
         console.log(`\t${chalk.cyan('cd')} ${folderName}`)
       }
+    }
+    if (meta.answers.eslint === 'yes') {
+      spawn.sync(meta.answers.pm, ['run','lint', '--', '--fix'], {
+        cwd: folderPath,
+        stdio: 'inherit'
+      })
     }
 
     console.log()
