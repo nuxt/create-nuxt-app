@@ -1,11 +1,8 @@
 const superb = require('superb')
 const glob = require('glob')
 const { join } = require('path')
-const minimist = require('minimist')
 
 const rootDir = __dirname
-
-const argv = minimist(process.argv.slice(2))
 
 const move = (from, to = '') => {
   const result = {}
@@ -99,7 +96,7 @@ module.exports = {
     }
   },
   data: {
-    edge: Boolean(argv.edge)
+    edge: process.argv.includes('--edge')
   },
   filters: {
     'server/index-express.js': 'server === "express"',
