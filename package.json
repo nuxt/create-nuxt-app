@@ -9,7 +9,7 @@
     "template/"
   ],
   "repository": {
-    "url": "git+https://github.com/nuxt-community/create-nuxt-app.git",
+    "url": "git+https://github.com/nuxt/create-nuxt-app.git",
     "type": "git"
   },
   "scripts": {
@@ -17,6 +17,7 @@
     "test:snapshot": "ava --verbose --update-snapshots"
   },
   "dependencies": {
+    "cross-spawn": "^6.0.5",
     "lodash": "^4.17.4",
     "minimist": "^1.2.0",
     "sao": "^0.22.5",

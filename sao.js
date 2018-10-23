@@ -1,6 +1,7 @@
 const superb = require('superb')
 const glob = require('glob')
-const join = require('path').join
+const { join } = require('path')
+const spawn = require('cross-spawn')
 
 const rootDir = __dirname
 
@@ -14,8 +15,7 @@ const move = (from, to = '') => {
 }
 
 const moveFramework = (answer, to = '') => {
-  if (answer === 'none') return
-  return move(`frameworks/${answer}`, to)
+  return answer !== 'none' && move(`frameworks/${answer}`, to);
 }
 
 module.exports = {
@@ -140,28 +140,34 @@ module.exports = {
     )
   },
   post(
-    { npmInstall, yarnInstall, gitInit, chalk, isNewFolder, folderName },
+    { npmInstall, yarnInstall, gitInit, chalk, isNewFolder, folderName, folderPath },
     { meta }
   ) {
     gitInit()
 
-    if (meta.answers.pm === 'yarn') yarnInstall()
-    else npmInstall()
+    // using yarn or npm
+    meta.answers.pm === 'yarn' ? yarnInstall() : npmInstall()
 
     const cd = () => {
       if (isNewFolder) {
-        console.log(`    ${chalk.cyan('cd')} ${folderName}`)
+        console.log(`\t${chalk.cyan('cd')} ${folderName}`)
       }
+    }
+    if (meta.answers.eslint === 'yes') {
+      spawn.sync(meta.answers.pm, ['run','lint', '--', '--fix'], {
+        cwd: folderPath,
+        stdio: 'inherit'
+      })
     }
 
     console.log()
-    console.log(chalk.bold(`  To get started:\n`))
+    console.log(chalk.bold(`\tTo get started:\n`))
     cd()
-    console.log(`    ${meta.answers.pm} run dev\n`)
+    console.log(`\t ${meta.answers.pm} run dev\n`)
     console.log(chalk.bold(`  To build & start for production:\n`))
     cd()
-    console.log(`    ${meta.answers.pm} run build`)
-    console.log(`    ${meta.answers.pm} start`)
+    console.log(`\t ${meta.answers.pm} run build`)
+    console.log(`\t ${meta.answers.pm} start`)
     console.log()
   }
 }
