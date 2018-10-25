@@ -38,15 +38,17 @@ module.exports = {
   /*
   ** Global CSS
   */
-  css: [<% if (ui === 'element-ui') { %>'element-ui/lib/theme-chalk/index.css'<% }
-           else if (ui === 'tailwind') { %>'~/assets/css/tailwind.css'<% }
-           else if (ui === 'vuetify') { %>'~/assets/style/app.styl'<% } %>],
+  css: [<% if (ui === 'element-ui') { %>'element-ui/lib/theme-chalk/index.css'<% } 
+        else if (ui === 'tailwind') { %>'~/assets/css/tailwind.css'<% } 
+        else if (ui === 'vuetify') { %>'~/assets/style/app.styl'<% } 
+        else if (ui === 'ant-design-vue') { %>'ant-design-vue/dist/antd.css'<% } %>],
 
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: [<% if (ui === 'element-ui') { %>'@/plugins/element-ui'<% }
-               else if (ui === 'vuetify') { %>'@/plugins/vuetify'<% } %>],
+  plugins: [<% if (ui === 'element-ui') { %>'@/plugins/element-ui'<% } 
+            else if (ui === 'vuetify') { %>'@/plugins/vuetify'<% } 
+            else if (ui === 'ant-design-vue') { %>'@/plugins/antd-ui'<% } %>],
 
   /*
   ** Nuxt.js modules

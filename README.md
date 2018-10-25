@@ -42,6 +42,7 @@ yarn create nuxt-app <my-project>
     - [Bulma](https://github.com/jgthms/bulma)
     - [Tailwind](https://github.com/tailwindcss/tailwindcss)
     - [Element UI](https://github.com/ElemeFE/element)
+    - [Ant Design Vue](https://github.com/vueComponent/ant-design-vue)
     - [Buefy](https://buefy.github.io)
 3. Add [axios module](https://github.com/nuxt-community/axios-module) to make HTTP request easily into your application.
 4. Add [ESLint](https://eslint.org/) to Lint your code on save.
