@@ -10,7 +10,10 @@ if (nuxt.options.dev) {
   new Builder(nuxt).build()
 }
 
-module.exports = async (req, res) => {
+exports.host = nuxt.options.server.host || process.env.HOST || '127.0.0.1'
+exports.port = nuxt.options.server.port || process.env.PORT || 3000
+
+exports.middleware = async (req, res) => {
   await dispatch()
     .dispatch('*', ['GET'], (req, res) => nuxt.render(req, res))(req, res)
 }

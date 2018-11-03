@@ -4,8 +4,8 @@ const serviceConfig = require('./micro.config.js')
 
 const server = micro(serviceConfig)
 
-const host = process.env.HOST || 'localhost'
-const port = process.env.PORT || '3000'
+const host = serviceConfig.host
+const port = serviceConfig.port
 
 // Listen the server
 server.listen(port, host)
