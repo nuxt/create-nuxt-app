@@ -44,6 +44,7 @@ yarn create nuxt-app <my-project>
     - [Element UI](https://github.com/ElemeFE/element)
     - [Ant Design Vue](https://github.com/vueComponent/ant-design-vue)
     - [Buefy](https://buefy.github.io)
+    - [iView](https://www.iviewui.com/)
 3. Add [axios module](https://github.com/nuxt-community/axios-module) to make HTTP request easily into your application.
 4. Add [ESLint](https://eslint.org/) to Lint your code on save.
 5. Add [Prettier](https://prettier.io/) to prettify your code on save.
