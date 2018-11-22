@@ -48,6 +48,20 @@ yarn create nuxt-app <my-project>
 4. Add [ESLint](https://eslint.org/) to Lint your code on save.
 5. Add [Prettier](https://prettier.io/) to prettify your code on save.
 
+## Optional
+
+To install [nuxt-edge](https://www.npmjs.com/package/nuxt-edge) instead of [nuxt](https://www.npmjs.com/package/nuxt), add the command line flag `--edge`:
+
+```bash
+npx create-nuxt-app <my-project> --edge
+```
+
+Or
+
+```bash
+yarn create nuxt-app <my-project> --edge
+```
+
 ## Credits
 
 - [egoist](https://github.com/egoist)

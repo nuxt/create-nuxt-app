@@ -97,6 +97,9 @@ module.exports = {
       default: 'npm'
     }
   },
+  data: {
+    edge: process.argv.includes('--edge')
+  },
   filters: {
     'server/index-express.js': 'server === "express"',
     'server/index-koa.js': 'server === "koa"',
