@@ -109,7 +109,6 @@ module.exports = {
     'server/index-micro.js': 'server === "micro"',
     'frameworks/adonis/**': 'server === "adonis"',
     'frameworks/feathers/**': 'server === "feathers"',
-    'frameworks/micro/**': 'server === "micro"',
     'frameworks/vuetify/**': 'ui === "vuetify"',
     'frameworks/element-ui/**': 'ui === "element-ui"',
     'frameworks/ant-design-vue/**': 'ui === "ant-design-vue"',
