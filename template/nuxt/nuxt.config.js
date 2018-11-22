@@ -2,6 +2,9 @@
 const resolve = require('path').resolve
 <% } else { %>const pkg = require('./package')
 <% } %>
+<% if (ui === 'vuetify') { %>
+const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
+<% } %>
 module.exports = {
   mode: '<%= mode %>',
 <% if (server === 'adonis') { %>
@@ -19,7 +22,11 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }<% if (ui === 'vuetify') { %>,
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' }<% } %>
+      {
+        rel: 'stylesheet',
+        href:
+          'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons'
+      }<% } %>
     ]
   },
 
@@ -35,7 +42,8 @@ module.exports = {
     'element-ui/lib/theme-chalk/index.css'<% } else if (ui === 'tailwind') { %>
     '~/assets/css/tailwind.css'<% } else if (ui === 'vuetify') { %>
     '~/assets/style/app.styl'<% } else if (ui === 'iview') { %>
-    'iview/dist/styles/iview.css'<% } %>
+    'iview/dist/styles/iview.css'<% } else if (ui === 'ant-design-vue') { %>
+    'ant-design-vue/dist/antd.css'<% } %>
   ],
 
   /*
@@ -44,7 +52,8 @@ module.exports = {
   plugins: [<% if (ui === 'element-ui') { %>
     '@/plugins/element-ui'<% } else if (ui === 'vuetify') { %>
     '@/plugins/vuetify'<% } else if (ui === 'iview') { %>
-    '@/plugins/iview'<% } %>
+    '@/plugins/iview'<% } else if (ui === 'ant-design-vue') { %>
+    '@/plugins/antd-ui'<% } %>
   ],
 
   /*
@@ -77,7 +86,15 @@ module.exports = {
           customProperties: false
         }
       }
-    },<% } %>
+    },<% } %><% if (ui === 'vuetify') { %>
+    transpile: ['vuetify/lib'],
+    plugins: [new VuetifyLoaderPlugin()],
+    loaders: {
+      stylus: {
+        import: ["~assets/style/variables.styl"]
+      }
+    },
+    <% } %>
     /*
     ** You can extend webpack config here
     */

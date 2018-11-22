@@ -1,6 +1,8 @@
 # Create Nuxt App
 
-[![NPM version](https://img.shields.io/npm/v/create-nuxt-app.svg?style=flat)](https://npmjs.com/package/create-nuxt-app) [![NPM downloads](https://img.shields.io/npm/dm/create-nuxt-app.svg?style=flat)](https://npmjs.com/package/create-nuxt-app) [![CircleCI](https://circleci.com/gh/nuxt-community/create-nuxt-app/tree/master.svg?style=shield)](https://circleci.com/gh/nuxt-community/create-nuxt-app/tree/master)
+[![NPM version](https://img.shields.io/npm/v/create-nuxt-app.svg?style=flat)](https://npmjs.com/package/create-nuxt-app)
+[![NPM downloads](https://img.shields.io/npm/dm/create-nuxt-app.svg?style=flat)](https://npmjs.com/package/create-nuxt-app)
+[![CircleCI](https://img.shields.io/circleci/project/github/nuxt/create-nuxt-app/master.svg?style=flat)](https://circleci.com/gh/nuxt/create-nuxt-app/master)
 
 > Create a [Nuxt.js](https://github.com/nuxt/nuxt.js) project in seconds
 
@@ -11,7 +13,7 @@
 
 ## Usage
 
-Make sure you have [npx](https://www.npmjs.com/package/npx) installed (`npx` is shipped by default since NPM `5.2.0`)
+Make sure you have [npx](https://www.npmjs.com/package/npx) installed (`npx` is shipped by default since [npm](https://www.npmjs.com/get-npm) `5.2.0`)
 
 ```bash
 npx create-nuxt-app <my-project>
@@ -40,14 +42,29 @@ yarn create nuxt-app <my-project>
     - [Bulma](https://github.com/jgthms/bulma)
     - [Tailwind](https://github.com/tailwindcss/tailwindcss)
     - [Element UI](https://github.com/ElemeFE/element)
+    - [Ant Design Vue](https://github.com/vueComponent/ant-design-vue)
     - [Buefy](https://buefy.github.io)
     - [iView](https://www.iviewui.com/)
 3. Add [axios module](https://github.com/nuxt-community/axios-module) to make HTTP request easily into your application.
-4. Add [EsLint](https://eslint.org/) to Lint your code on save.
+4. Add [ESLint](https://eslint.org/) to Lint your code on save.
 5. Add [Prettier](https://prettier.io/) to prettify your code on save.
+
+## Optional
+
+To install [nuxt-edge](https://www.npmjs.com/package/nuxt-edge) instead of [nuxt](https://www.npmjs.com/package/nuxt), add the command line flag `--edge`:
+
+```bash
+npx create-nuxt-app <my-project> --edge
+```
+
+Or
+
+```bash
+yarn create nuxt-app <my-project> --edge
+```
 
 ## Credits
 
 - [egoist](https://github.com/egoist)
 - [clarko](https://github.com/clarkdo)
-- All our contributors ([list](https://github.com/nuxt-community/create-nuxt-app/contributors)).
+- All our contributors ([list](https://github.com/nuxt/create-nuxt-app/contributors)).

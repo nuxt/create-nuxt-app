@@ -1,11 +1,28 @@
 const micro = require('micro')
 const consola = require('consola')
-const serviceConfig = require('./micro.config.js')
+const dispatch = require('micro-route/dispatch')
+const { Nuxt, Builder } = require('nuxt')
 
-const server = micro(serviceConfig)
+// Require nuxt config
+const config = require('../nuxt.config.js')
 
-const host = process.env.HOST || 'localhost'
-const port = process.env.PORT || '3000'
+// Create a new nuxt instance
+const nuxt = new Nuxt(config)
+
+// Enable live build & reloading on dev
+if (nuxt.options.dev) {
+  new Builder(nuxt).build()
+}
+
+const server = micro(async (req, res) => {
+  await dispatch()
+    .dispatch('*', ['GET'], (req, res) => nuxt.render(req, res))(req, res)
+})
+
+const {
+  host = process.env.HOST || '127.0.0.1',
+  port = process.env.PORT || 3000
+} = nuxt.options.server
 
 // Listen the server
 server.listen(port, host)
