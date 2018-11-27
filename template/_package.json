@@ -49,7 +49,7 @@
     "@nuxtjs/axios": "^5.0.0"<% } %>
   },
   "devDependencies": {
-    "nodemon": "^1.11.0"<% if (eslint === 'yes') { %>,
+    "nodemon": "^1.18.7"<% if (eslint === 'yes') { %>,
     "babel-eslint": "^8.2.1",
     "eslint": "^5.0.1",
     "eslint-loader": "^2.0.0",
