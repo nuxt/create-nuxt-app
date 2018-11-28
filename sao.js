@@ -50,11 +50,11 @@ module.exports = {
           name: 'TypeScript',
           value: "typescript"
         },
+        {
+          name: 'Progressive Web App (PWA) Support',
+          value: 'pwa'
+        },
         // TODO
-        // {
-        //   name: 'Progressive Web App (PWA) Support',
-        //   value: 'pwa'
-        // },
         // {
         //   name: 'Linter / Formatter',
         //   value: 'linter'
@@ -129,6 +129,7 @@ module.exports = {
   },
   data(answers) {
     return {
+      pwa: answers.modules.includes('pwa'),
       typescript: answers.modules.includes('typescript'),
       edge: process.argv.includes('--edge')
     }
@@ -152,7 +153,8 @@ module.exports = {
     '.prettierrc': 'prettier === "yes"',
     'modules/typescript.js': 'typescript',
     '_tsconfig.json': 'typescript',
-    'vue-shims.d.ts': 'typescript'
+    'vue-shims.d.ts': 'typescript',
+    'nuxt/static/icon.png': 'pwa'
   },
   move(answers) {
     const moveable = {

@@ -24,8 +24,7 @@
   </section>
 </template>
 
-<script <% if (typescript) { %>lang="ts"<% } %> >
-
+<script <% if (typescript) { %>lang="ts"<% } %>>
 <% if (typescript) { %>import { Component, Vue } from 'nuxt-property-decorator'<% } %>
 import Logo from '~/components/Logo.vue'
 

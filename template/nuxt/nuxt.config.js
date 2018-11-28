@@ -69,6 +69,8 @@ module.exports = {
     // Doc: https://buefy.github.io/#/documentation
     'nuxt-buefy'<% } %><% if (typescript) { %>,
     resolve(__dirname, 'modules/typescript.js')
+    <% } %><% if (pwa) { %>,
+    '@nuxtjs/pwa'
     <% } %>
   ],<% if (axios === 'yes') { %>
   /*

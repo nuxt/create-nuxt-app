@@ -47,7 +47,8 @@
     "nuxt-buefy": "^0.2.1"<% } else if (ui === 'iview') { %>,
     "iview": "3.1.2"<% } %><% if (axios === 'yes') { %>,
     "@nuxtjs/axios": "^5.0.0"<% } %><% if (typescript) { %>,
-    "nuxt-property-decorator": "^1.2.0"<% } %>
+    "nuxt-property-decorator": "^1.2.0"<% } %><% if (pwa) { %>,
+    "@nuxtjs/pwa": "^2.6.0"<% } %>
   },
   "devDependencies": {
     "nodemon": "^1.18.7"<% if (eslint === 'yes') { %>,
@@ -64,7 +65,6 @@
     "stylus-loader": "^3.0.2"<% } %><% if (typescript) { %>,
     "ts-loader": "^5.3.1",
     "tslint": "^5.11.0",
-    "typescript": "^3.1.6"
-    <% } %>
+    "typescript": "^3.1.6"<% } %>
   }
 }
