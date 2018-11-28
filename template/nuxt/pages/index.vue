@@ -24,14 +24,22 @@
   </section>
 </template>
 
-<script>
+<script <% if (typescript) { %>lang="ts"<% } %> >
+
+<% if (typescript) { %>import { Component, Vue } from 'nuxt-property-decorator'<% } %>
 import Logo from '~/components/Logo.vue'
 
+<% if (typescript) { %>@Component({
+  components: {
+    Logo
+  }
+})
+export default class Index extends Vue {}<% } else { %>
 export default {
   components: {
     Logo
   }
-}
+}<% } %>
 </script>
 
 <style>

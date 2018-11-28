@@ -1,7 +1,7 @@
 <% if (server === 'adonis') { %>const pkg = require('../package')
-const resolve = require('path').resolve
-<% } else { %>const pkg = require('./package')
-<% } %>
+<% } else { %>const pkg = require('./package')<% } %>
+<% if (server === 'adonis' || typescript) { %>const resolve = require('path').resolve<% } %>
+
 <% if (ui === 'vuetify') { %>
 const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
 <% } %>
@@ -67,7 +67,9 @@ module.exports = {
     // Doc:https://github.com/nuxt-community/modules/tree/master/packages/bulma
     '@nuxtjs/bulma'<% } %><% if (ui === 'buefy') { %>,
     // Doc: https://buefy.github.io/#/documentation
-    'nuxt-buefy'<% } %>
+    'nuxt-buefy'<% } %><% if (typescript) { %>,
+    resolve(__dirname, 'modules/typescript.js')
+    <% } %>
   ],<% if (axios === 'yes') { %>
   /*
   ** Axios module configuration

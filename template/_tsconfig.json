@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "jsx": "preserve",
+    "target": "es2015",
+    "module": "es2015",
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./*"],
+      "@/*": ["./*"]
+    },
+    "sourceMap": true,
+    "noUnusedLocals": true,
+    "experimentalDecorators": true
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.vue"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

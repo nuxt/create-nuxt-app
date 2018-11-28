@@ -42,6 +42,35 @@ module.exports = {
       ],
       default: 'none'
     },
+    modules: {
+      message: 'Choose modules to install',
+      type: 'checkbox',
+      choices: [
+        {
+          name: 'TypeScript',
+          value: "typescript"
+        },
+        // TODO
+        // {
+        //   name: 'Progressive Web App (PWA) Support',
+        //   value: 'pwa'
+        // },
+        // {
+        //   name: 'Linter / Formatter',
+        //   value: 'linter'
+        // },
+        // {
+        //   name: 'Unit Testing',
+        //   value: 'test:unit'
+        // },
+        // {
+        //   name: 'E2E Testing',
+        //   value: 'test:e2e'
+        // },
+      ],
+      default: [],
+      when: (answers) => answers.server !== 'adonis'
+    },
     ui: {
       message: 'Use a custom UI framework',
       type: 'list',
@@ -98,8 +127,11 @@ module.exports = {
       default: 'npm'
     }
   },
-  data: {
-    edge: process.argv.includes('--edge')
+  data(answers) {
+    return {
+      typescript: answers.modules.includes('typescript'),
+      edge: process.argv.includes('--edge')
+    }
   },
   filters: {
     'server/index-express.js': 'server === "express"',
@@ -117,13 +149,17 @@ module.exports = {
     'frameworks/buefy/**': 'ui === "buefy"',
     'frameworks/iview/**': 'ui === "iview"',
     '_.eslintrc.js': 'eslint === "yes"',
-    '.prettierrc': 'prettier === "yes"'
+    '.prettierrc': 'prettier === "yes"',
+    'modules/typescript.js': 'typescript',
+    '_tsconfig.json': 'typescript',
+    'vue-shims.d.ts': 'typescript'
   },
   move(answers) {
     const moveable = {
       gitignore: '.gitignore',
       '_package.json': 'package.json',
       '_.eslintrc.js': '.eslintrc.js',
+      '_tsconfig.json': 'tsconfig.json',
       'server/index-*.js': 'server/index.js'
     }
     let nuxtDir
