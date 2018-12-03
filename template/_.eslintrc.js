@@ -8,12 +8,12 @@ module.exports = {
     parser: 'babel-eslint'
   },
   extends: [
-    'plugin:vue/recommended'<% if (prettier === 'yes'){ %>,
+    'plugin:vue/recommended'<% if (prettier){ %>,
     'plugin:prettier/recommended'<% } %>
   ],
   // required to lint *.vue files
   plugins: [
-    'vue'<% if (prettier === 'yes'){ %>,
+    'vue'<% if (prettier){ %>,
     'prettier'<% } %>
   ],
   // add your custom rules here

@@ -54,11 +54,15 @@ module.exports = {
           name: 'Progressive Web App (PWA) Support',
           value: 'pwa'
         },
+        {
+          name: 'Linter / Formatter',
+          value: 'linter'
+        },
+        {
+          name: 'Prettier',
+          value: 'prettier'
+        },
         // TODO
-        // {
-        //   name: 'Linter / Formatter',
-        //   value: 'linter'
-        // },
         // {
         //   name: 'Unit Testing',
         //   value: 'test:unit'
@@ -102,18 +106,6 @@ module.exports = {
       choices: ['no', 'yes'],
       default: 'no'
     },
-    eslint: {
-      message: 'Use eslint',
-      type: 'list',
-      choices: ['no', 'yes'],
-      default: 'no'
-    },
-    prettier: {
-      message: 'Use prettier',
-      type: 'list',
-      choices: ['no', 'yes'],
-      default: 'no'
-    },
     author: {
       type: 'string',
       message: 'Author name',
@@ -128,9 +120,14 @@ module.exports = {
     }
   },
   data(answers) {
+    const typescript = answers.modules.includes('typescript')
+    const linter = answers.modules.includes('linter')
     return {
+      typescript,
       pwa: answers.modules.includes('pwa'),
-      typescript: answers.modules.includes('typescript'),
+      eslint: !typescript && linter,
+      tslint: typescript && linter,
+      prettier: answers.modules.includes('prettier'),
       edge: process.argv.includes('--edge')
     }
   },
@@ -149,8 +146,9 @@ module.exports = {
     'frameworks/tailwind/**': 'ui === "tailwind"',
     'frameworks/buefy/**': 'ui === "buefy"',
     'frameworks/iview/**': 'ui === "iview"',
-    '_.eslintrc.js': 'eslint === "yes"',
-    '.prettierrc': 'prettier === "yes"',
+    '_.eslintrc.js': 'eslint',
+    '_.tslint.json': 'tslint',
+    '.prettierrc': 'prettier',
     'modules/typescript.js': 'typescript',
     '_tsconfig.json': 'typescript',
     'vue-shims.d.ts': 'typescript',
@@ -161,6 +159,7 @@ module.exports = {
       gitignore: '.gitignore',
       '_package.json': 'package.json',
       '_.eslintrc.js': '.eslintrc.js',
+      '_tslint.json': 'tslint.json',
       '_tsconfig.json': 'tsconfig.json',
       'server/index-*.js': 'server/index.js'
     }

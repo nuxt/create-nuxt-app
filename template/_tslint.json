@@ -1,0 +1,16 @@
+{
+  "extends": ["tslint:latest"<% if (tslint && prettier) { %>, "tslint-config-prettier"<% } %>],
+  "defaultSeverity": "warn",
+  "linterOptions": {
+    "exclude": ["node_modules/**"]
+  },
+  "rules": {
+    "no-submodule-imports": [true, "@", "~"],
+    "no-implicit-dependencies": [true, ["@", "~"]],
+    "interface-name": [true, "never-prefix"],
+    "variable-name": false,
+    "ban-types": false,
+    "member-ordering": false,
+    "curly": false
+  }
+}
