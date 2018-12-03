@@ -147,7 +147,7 @@ module.exports = {
     'frameworks/buefy/**': 'ui === "buefy"',
     'frameworks/iview/**': 'ui === "iview"',
     '_.eslintrc.js': 'eslint',
-    '_.tslint.json': 'tslint',
+    '_tslint.json': 'tslint',
     '.prettierrc': 'prettier',
     'modules/typescript.js': 'typescript',
     '_tsconfig.json': 'typescript',

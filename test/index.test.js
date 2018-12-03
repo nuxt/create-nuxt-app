@@ -63,7 +63,7 @@ test('use axios', async t => {
 
 test('use eslint', async t => {
   await verifyPkg(t, {
-    eslint: 'yes'
+    modules: ['linter']
   })
 })
 
@@ -75,6 +75,36 @@ test('use yarn', async t => {
 
 test('use prettier', async t => {
   await verifyPkg(t, {
-    prettier: 'yes'
+    modules: ['prettier']
+  })
+})
+
+test('use eslint prettier', async t => {
+  await verifyPkg(t, {
+    modules: ['linter', 'prettier']
+  })
+})
+
+test('use typescript', async t => {
+  await verifyPkg(t, {
+    modules: ['typescript']
+  })
+})
+
+test('use tslint', async t => {
+  await verifyPkg(t, {
+    modules: ['typescript', 'linter']
+  })
+})
+
+test('use tslint prettier', async t => {
+  await verifyPkg(t, {
+    modules: ['typescript', 'linter', 'prettier']
+  })
+})
+
+test('use pwa', async t => {
+  await verifyPkg(t, {
+    modules: ['pwa']
   })
 })
