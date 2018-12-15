@@ -113,7 +113,7 @@ module.exports = {
     const typescript = answers.modules.includes('typescript')
     const linter = answers.modules.includes('linter')
     return {
-      nuxtDir: (answers.server === 'adonis') ? 'resources' : undefined,
+      nuxtDir: (answers.server === 'adonis') ? 'resources' : '',
       typescript,
       pwa: answers.modules.includes('pwa'),
       eslint: !typescript && linter,
