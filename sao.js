@@ -61,19 +61,9 @@ module.exports = {
         {
           name: 'Prettier',
           value: 'prettier'
-        },
-        // TODO
-        // {
-        //   name: 'Unit Testing',
-        //   value: 'test:unit'
-        // },
-        // {
-        //   name: 'E2E Testing',
-        //   value: 'test:e2e'
-        // },
+        }
       ],
       default: [],
-      when: (answers) => answers.server !== 'adonis'
     },
     ui: {
       message: 'Use a custom UI framework',
@@ -123,6 +113,7 @@ module.exports = {
     const typescript = answers.modules.includes('typescript')
     const linter = answers.modules.includes('linter')
     return {
+      nuxtDir: (answers.server === 'adonis') ? 'resources' : undefined,
       typescript,
       pwa: answers.modules.includes('pwa'),
       eslint: !typescript && linter,
@@ -160,17 +151,14 @@ module.exports = {
       '_.eslintrc.js': '.eslintrc.js',
       '_tslint.json': 'tslint.json',
       '_tsconfig.json': 'tsconfig.json',
-      'server/index-*.js': 'server/index.js'
-    }
-    let nuxtDir
-    if (answers.server === 'adonis') {
-      nuxtDir = 'resources'
+      'server/index-*.js': 'server/index.js',
+      'vue-shims.d.ts': join(answers.nuxtDir, 'vue-shims.d.ts')
     }
     return Object.assign(
       moveable,
-      move('nuxt', nuxtDir),
+      move('nuxt', answers.nuxtDir),
       moveFramework(answers.server),
-      moveFramework(answers.ui, nuxtDir),
+      moveFramework(answers.ui, answers.nuxtDir),
       answers.server === 'adonis'
         ? {
             'server/index-*.js': 'server.js',

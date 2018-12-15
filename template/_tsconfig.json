@@ -14,8 +14,8 @@
     "experimentalDecorators": true
   },
   "include": [
-    "**/*.ts",
-    "**/*.vue"
+    "<% if (nuxtDir) { %><%= nuxtDir %>/<% } %>**/*.ts",
+    "<% if (nuxtDir) { %><%= nuxtDir %>/<% } %>**/*.vue"
   ],
   "exclude": [
     "node_modules"

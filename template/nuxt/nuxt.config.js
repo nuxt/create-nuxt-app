@@ -1,6 +1,7 @@
 <% if (server === 'adonis') { %>const pkg = require('../package')
-<% } else { %>const pkg = require('./package')<% } %>
-<% if (server === 'adonis' || typescript) { %>const resolve = require('path').resolve<% } %>
+const resolve = require('path').resolve
+<% } else { %>const pkg = require('./package')
+<% } %>
 
 <% if (ui === 'vuetify') { %>
 const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
