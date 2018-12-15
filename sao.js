@@ -149,7 +149,6 @@ module.exports = {
     '_.eslintrc.js': 'eslint',
     '_tslint.json': 'tslint',
     '.prettierrc': 'prettier',
-    'modules/typescript.js': 'typescript',
     '_tsconfig.json': 'typescript',
     'vue-shims.d.ts': 'typescript',
     'nuxt/static/icon.png': 'pwa'

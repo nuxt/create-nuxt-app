@@ -68,7 +68,8 @@ module.exports = {
     '@nuxtjs/bulma'<% } %><% if (ui === 'buefy') { %>,
     // Doc: https://buefy.github.io/#/documentation
     'nuxt-buefy'<% } %><% if (typescript) { %>,
-    resolve(__dirname, 'modules/typescript.js')<% } %><% if (pwa) { %>,
+    'nuxt-ts'<% } %><% if (tslint) { %>,
+    'nuxt-tslint'<% } %><% if (pwa) { %>,
     '@nuxtjs/pwa'<% } %>
   ],<% if (axios === 'yes') { %>
   /*
@@ -107,15 +108,6 @@ module.exports = {
           enforce: 'pre',
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
-      }<% } %>
-      <% if (tslint) { %>// Run TSLint on save
-      if (ctx.isDev && ctx.isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(ts)$/,
-          loader: 'tslint-loader',
           exclude: /(node_modules)/
         })
       }<% } %>
