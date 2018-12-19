@@ -2,6 +2,7 @@ const superb = require('superb')
 const glob = require('glob')
 const { join } = require('path')
 const spawn = require('cross-spawn')
+const validate = require("validate-npm-package-name")
 
 const rootDir = __dirname
 
@@ -120,6 +121,15 @@ module.exports = {
     '.prettierrc': 'prettier === "yes"'
   },
   move(answers) {
+    const validation = validate(answers.name)
+    validation.warnings && validation.warnings.forEach(warn => {
+      console.warn('Warning:', warn)
+    })
+    validation.errors && validation.errors.forEach(err => {
+      console.error('Error:', err)
+    })
+    validation.errors && validation.errors.length && process.exit(1)
+
     const moveable = {
       gitignore: '.gitignore',
       '_package.json': 'package.json',
