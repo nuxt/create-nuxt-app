@@ -78,3 +78,9 @@ test('use prettier', async t => {
     features: ['prettier']
   })
 })
+
+test('use pwa', async t => {
+  await verifyPkg(t, {
+    features: ['pwa']
+  })
+})

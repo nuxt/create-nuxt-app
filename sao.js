@@ -48,6 +48,10 @@ module.exports = {
       type: "checkbox",
       choices: [
         {
+          name: 'Progressive Web App (PWA) Support',
+          value: 'pwa'
+        },
+        {
           name: 'Linter / Formatter',
           value: 'linter'
         },
@@ -102,12 +106,14 @@ module.exports = {
   },
   data(answers) {
     const edge = process.argv.includes('--edge');
+    const pwa = answers.features.includes("pwa");
     const linter = answers.features.includes("linter");
     const prettier = answers.features.includes("prettier");
     const axios = answers.features.includes("axios");
 
     return {
       edge,
+      pwa: pwa ? 'yes' : 'no',
       eslint: linter ? 'yes' : 'no',
       prettier: prettier ? 'yes' : 'no',
       axios: axios ? 'yes' : 'no'
@@ -129,7 +135,8 @@ module.exports = {
     'frameworks/buefy/**': 'ui === "buefy"',
     'frameworks/iview/**': 'ui === "iview"',
     '_.eslintrc.js': 'eslint === "yes"',
-    '.prettierrc': 'prettier === "yes"'
+    '.prettierrc': 'prettier === "yes"',
+    'nuxt/static/icon.png': 'pwa === "yes"'
   },
   move(answers) {
     const validation = validate(answers.name)
