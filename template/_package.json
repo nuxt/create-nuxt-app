@@ -68,11 +68,16 @@
     "autoprefixer": "^8.6.4",
     "tailwindcss": "^0.7.0"<% } else if (ui === 'vuetify') { %>,
     "stylus": "^0.54.5",
-    "stylus-loader": "^3.0.2"<% } %><% if (test === 'jest') { %>,
-    "@vue/test-utils": "^1.0.0-beta.27",
+    "stylus-loader": "^3.0.2"<% } %><% if (test !== 'none') { %>,
+    "@vue/test-utils": "^1.0.0-beta.27"<% } %><% if (test === 'jest') { %>,
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^23.6.0",
     "jest": "^23.6.0",
-    "vue-jest": "^3.0.2"<% } %>
+    "vue-jest": "^3.0.2"<% } %><% if (test === 'ava') { %>,
+    "ava": "^1.0.1",
+    "browser-env": "^3.2.5",
+    "require-extension-hooks": "^0.3.3",
+    "require-extension-hooks-babel": "^0.1.1",
+    "require-extension-hooks-vue": "^2.0.0"<% } %>
   }
 }
