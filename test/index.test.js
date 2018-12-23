@@ -61,6 +61,18 @@ test('use axios', async t => {
   })
 })
 
+test('use jest', async t => {
+  await verifyPkg(t, {
+    test: 'jest'
+  })
+})
+
+test('use ava', async t => {
+  await verifyPkg(t, {
+    test: 'ava'
+  })
+})
+
 test('use eslint', async t => {
   await verifyPkg(t, {
     eslint: 'yes'
