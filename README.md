@@ -45,9 +45,13 @@ yarn create nuxt-app <my-project>
     - [Ant Design Vue](https://github.com/vueComponent/ant-design-vue)
     - [Buefy](https://buefy.github.io)
     - [iView](https://www.iviewui.com/)
-3. Add [axios module](https://github.com/nuxt-community/axios-module) to make HTTP request easily into your application.
-4. Add [ESLint](https://eslint.org/) to Lint your code on save.
-5. Add [Prettier](https://prettier.io/) to prettify your code on save.
+3. Choose your favorite test framework:
+    - None
+    - [Jest](https://github.com/facebook/jest)
+    - [AVA](https://github.com/avajs/ava)
+4. Add [axios module](https://github.com/nuxt-community/axios-module) to make HTTP request easily into your application.
+5. Add [ESLint](https://eslint.org/) to Lint your code on save.
+6. Add [Prettier](https://prettier.io/) to prettify your code on save.
 
 ## Optional
 
