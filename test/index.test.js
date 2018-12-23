@@ -57,13 +57,13 @@ test('use micro', async t => {
 
 test('use axios', async t => {
   await verifyPkg(t, {
-    axios: 'yes'
+    features: ['axios']
   })
 })
 
 test('use eslint', async t => {
   await verifyPkg(t, {
-    eslint: 'yes'
+    features: ['linter']
   })
 })
 
@@ -75,6 +75,6 @@ test('use yarn', async t => {
 
 test('use prettier', async t => {
   await verifyPkg(t, {
-    prettier: 'yes'
+    features: ['prettier']
   })
 })
