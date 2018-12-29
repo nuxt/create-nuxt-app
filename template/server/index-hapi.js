@@ -3,7 +3,7 @@ const consola = require('consola')
 const HapiNuxt = require('hapi-nuxt')
 
 const server = new Hapi.Server({
-  host: process.env.HOST || '127.0.0.1',
+  host: process.env.HOST || 'localhost',
   port: process.env.PORT || 3000
 })
 

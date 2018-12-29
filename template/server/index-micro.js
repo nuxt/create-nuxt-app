@@ -15,12 +15,14 @@ if (nuxt.options.dev) {
 }
 
 const server = micro(async (req, res) => {
-  await dispatch()
-    .dispatch('*', ['GET'], (req, res) => nuxt.render(req, res))(req, res)
+  await dispatch().dispatch('*', ['GET'], (req, res) => nuxt.render(req, res))(
+    req,
+    res
+  )
 })
 
 const {
-  host = process.env.HOST || '127.0.0.1',
+  host = process.env.HOST || 'localhost',
   port = process.env.PORT || 3000
 } = nuxt.options.server
 
