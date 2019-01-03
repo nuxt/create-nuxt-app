@@ -59,6 +59,16 @@ module.exports = {
       ],
       default: 'none'
     },
+    test: {
+      message: 'Use a custom test framework',
+      type: 'list',
+      choices: [
+        'none',
+        'jest',
+        'ava'
+      ],
+      default: 'none'
+    },
     mode: {
       message: 'Choose rendering mode',
       type: 'list',
@@ -117,6 +127,8 @@ module.exports = {
     'frameworks/tailwind/**': 'ui === "tailwind"',
     'frameworks/buefy/**': 'ui === "buefy"',
     'frameworks/iview/**': 'ui === "iview"',
+    'frameworks/jest/**': 'test === "jest"',
+    'frameworks/ava/**': 'test === "ava"',
     '_.eslintrc.js': 'eslint === "yes"',
     '.prettierrc': 'prettier === "yes"'
   },
@@ -145,6 +157,7 @@ module.exports = {
       move('nuxt', nuxtDir),
       moveFramework(answers.server),
       moveFramework(answers.ui, nuxtDir),
+      moveFramework(answers.test, nuxtDir),
       answers.server === 'adonis'
         ? {
             'server/index-*.js': 'server.js',
@@ -182,6 +195,12 @@ module.exports = {
     cd()
     console.log(`\t ${meta.answers.pm} run build`)
     console.log(`\t ${meta.answers.pm} start`)
+
+    if (meta.answers.test !== 'none') {
+      console.log(chalk.bold(`\n  To test:\n`))
+      cd()
+      console.log(`\t ${meta.answers.pm} run test`)
+    }
     console.log()
   }
 }
