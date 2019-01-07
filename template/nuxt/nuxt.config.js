@@ -60,7 +60,7 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [<% if (axios === 'yes') { %>
-    // Doc: https://github.com/nuxt-community/axios-module#usage
+    // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios'<% } %><% if (ui === 'bootstrap') { %>,
     // Doc: https://bootstrap-vue.js.org/docs/
     'bootstrap-vue/nuxt'<% } %><% if (ui === 'bulma') { %>,
