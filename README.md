@@ -35,7 +35,12 @@ yarn create nuxt-app <my-project>
     - [Feathers](https://github.com/feathersjs/feathers)
     - [Micro](https://github.com/zeit/micro)
     - [Adonis](https://github.com/adonisjs/adonis-framework) (WIP)
-2. Choose your favorite UI framework:
+2. Check the features needed for your project:
+    - [PWA](https://pwa.nuxtjs.org/)
+    - Linter / Formatter
+    - [Prettier](https://prettier.io/)
+    - [Axios](https://github.com/nuxt-community/axios-module)
+3. Choose your favorite UI framework:
     - None (feel free to add one later)
     - [Bootstrap](https://github.com/bootstrap-vue/bootstrap-vue)
     - [Vuetify](https://github.com/vuetifyjs/vuetify)
@@ -45,13 +50,10 @@ yarn create nuxt-app <my-project>
     - [Ant Design Vue](https://github.com/vueComponent/ant-design-vue)
     - [Buefy](https://buefy.github.io)
     - [iView](https://www.iviewui.com/)
-3. Choose your favorite test framework:
+4. Choose your favorite test framework:
     - None
     - [Jest](https://github.com/facebook/jest)
     - [AVA](https://github.com/avajs/ava)
-4. Add [axios module](https://github.com/nuxt-community/axios-module) to make HTTP request easily into your application.
-5. Add [ESLint](https://eslint.org/) to Lint your code on save.
-6. Add [Prettier](https://prettier.io/) to prettify your code on save.
 
 ## Optional
 

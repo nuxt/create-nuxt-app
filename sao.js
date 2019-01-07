@@ -43,6 +43,29 @@ module.exports = {
       ],
       default: 'none'
     },
+    features: {
+      message: "Choose features to install",
+      type: "checkbox",
+      choices: [
+        {
+          name: 'Progressive Web App (PWA) Support',
+          value: 'pwa'
+        },
+        {
+          name: 'Linter / Formatter',
+          value: 'linter'
+        },
+        {
+          name: 'Prettier',
+          value: 'prettier'
+        },
+        {
+          name: "Axios",
+          value: "axios"
+        }
+      ],
+      default: [],
+    },
     ui: {
       message: 'Use a custom UI framework',
       type: 'list',
@@ -78,24 +101,6 @@ module.exports = {
       ],
       default: 'universal'
     },
-    axios: {
-      message: 'Use axios module',
-      type: 'list',
-      choices: ['no', 'yes'],
-      default: 'no'
-    },
-    eslint: {
-      message: 'Use eslint',
-      type: 'list',
-      choices: ['no', 'yes'],
-      default: 'no'
-    },
-    prettier: {
-      message: 'Use prettier',
-      type: 'list',
-      choices: ['no', 'yes'],
-      default: 'no'
-    },
     author: {
       type: 'string',
       message: 'Author name',
@@ -109,8 +114,20 @@ module.exports = {
       default: 'npm'
     }
   },
-  data: {
-    edge: process.argv.includes('--edge')
+  data(answers) {
+    const edge = process.argv.includes('--edge');
+    const pwa = answers.features.includes("pwa");
+    const linter = answers.features.includes("linter");
+    const prettier = answers.features.includes("prettier");
+    const axios = answers.features.includes("axios");
+
+    return {
+      edge,
+      pwa: pwa ? 'yes' : 'no',
+      eslint: linter ? 'yes' : 'no',
+      prettier: prettier ? 'yes' : 'no',
+      axios: axios ? 'yes' : 'no'
+    }
   },
   filters: {
     'server/index-express.js': 'server === "express"',
@@ -130,7 +147,8 @@ module.exports = {
     'frameworks/jest/**': 'test === "jest"',
     'frameworks/ava/**': 'test === "ava"',
     '_.eslintrc.js': 'eslint === "yes"',
-    '.prettierrc': 'prettier === "yes"'
+    '.prettierrc': 'prettier === "yes"',
+    'nuxt/static/icon.png': 'pwa === "yes"'
   },
   move(answers) {
     const validation = validate(answers.name)
