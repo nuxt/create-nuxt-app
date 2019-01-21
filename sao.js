@@ -198,7 +198,7 @@ module.exports = {
         console.log(`\t${chalk.cyan('cd')} ${folderName}`)
       }
     }
-    if (meta.answers.eslint === 'yes') {
+    if (meta.answers.features.includes("linter")) {
       spawn.sync(meta.answers.pm, ['run','lint', '--', '--fix'], {
         cwd: folderPath,
         stdio: 'inherit'
