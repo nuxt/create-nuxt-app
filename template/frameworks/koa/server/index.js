@@ -1,6 +1,6 @@
 const Koa = require('koa')
 const consola = require('consola')
-const { Nuxt, Builder } = require('nuxt')
+const { Nuxt, Builder } = require('nuxt<% if (edge) { %>-edge<% } %>')
 
 const app = new Koa()
 
