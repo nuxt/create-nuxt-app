@@ -1,7 +1,7 @@
 const micro = require('micro')
 const consola = require('consola')
 const dispatch = require('micro-route/dispatch')
-const { Nuxt, Builder } = require('nuxt')
+const { Nuxt, Builder } = require('nuxt<% if (edge) { %>-edge<% } %>')
 
 // Require nuxt config
 const config = require('../nuxt.config.js')
