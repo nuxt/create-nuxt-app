@@ -34,6 +34,7 @@ yarn create nuxt-app <my-project>
     - [Hapi](https://github.com/hapijs/hapi)
     - [Feathers](https://github.com/feathersjs/feathers)
     - [Micro](https://github.com/zeit/micro)
+    - [Fastify](https://github.com/fastify/fastify)
     - [Adonis](https://github.com/adonisjs/adonis-framework) (WIP)
 2. Check the features needed for your project:
     - [PWA](https://pwa.nuxtjs.org/)

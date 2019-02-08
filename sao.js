@@ -39,7 +39,8 @@ module.exports = {
         'adonis',
         'hapi',
         'feathers',
-        'micro'
+        'micro',
+        'fastify'
       ],
       default: 'none'
     },
@@ -136,6 +137,7 @@ module.exports = {
     'server/index-hapi.js': 'server === "hapi"',
     'server/index-feathers.js': 'server === "feathers"',
     'server/index-micro.js': 'server === "micro"',
+    'server/index-fastify.js': 'server === "fastify"',
     'frameworks/adonis/**': 'server === "adonis"',
     'frameworks/feathers/**': 'server === "feathers"',
     'frameworks/vuetify/**': 'ui === "vuetify"',
