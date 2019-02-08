@@ -55,13 +55,13 @@ test('use micro', async (t) => {
   })
 })
 
-test('use fastify', async t => {
+test('use fastify', async (t) => {
   await verifyPkg(t, {
     server: 'fastify'
   })
 })
 
-test('use axios', async t => {
+test('use axios', async (t) => {
   await verifyPkg(t, {
     features: ['axios']
   })
