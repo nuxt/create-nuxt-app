@@ -135,138 +135,73 @@ module.exports = {
     })
     validation.errors && validation.errors.length && process.exit(1)
 
-    const moveable = {
-      gitignore: '.gitignore',
-      '_package.json': 'package.json',
-      '_.eslintrc.js': '.eslintrc.js'
-    }
-
-    const hasAdonis = this.answers.server === 'adonis'
-    if (hasAdonis) {
-      moveable['nuxt'] = 'resources'
-      moveable[this.answers.ui] = 'resources'
-      moveable[this.answers.test] = 'resources'
-      moveable['nuxt.config.js'] = 'config/nuxt.js'
-    }
-
-    return [
-      {
-        type: 'add',
-        files: hasAdonis ? 'nuxt/**' : '**',
-        templateDir: hasAdonis ? 'template' : 'template/nuxt',
-        filters: {
-          [`${hasAdonis ? '' : 'nuxt'}static/icon.png`]: 'features.includes("pwa")'
-        }
-      },
-      {
-        type: 'add',
-        files: '**',
-        templateDir: 'template/frameworks/adonis',
-        filters: {
-          '**': 'server !== "adonis"'
-        }
-      },
-      {
-        type: 'add',
-        files: '**',
-        templateDir: 'template/frameworks/express',
-        filters: {
-          '**': 'server !== "express"'
-        }
-      },
-      {
-        type: 'add',
-        files: '**',
-        templateDir: 'template/frameworks/koa',
-        filters: {
-          '**': 'server !== "koa"'
-        }
-      },
-      {
-        type: 'add',
-        files: '**',
-        templateDir: 'template/frameworks/hapi',
-        filters: {
-          '**': 'server !== "hapi"'
-        }
-      },
-      {
-        type: 'add',
-        files: '**',
-        templateDir: 'template/frameworks/feathers',
-        filters: {
-          '**': 'server !== "feathers"'
-        }
-      },
-      {
-        type: 'add',
-        files: '**',
-        templateDir: 'template/frameworks/vuetify',
-        filters: {
-          '**': 'ui !== "vuetify"'
-        }
-      },
-      {
-        type: 'add',
-        files: '**',
-        templateDir: 'template/frameworks/element-ui',
-        filters: {
-          '**': 'ui !== "element-ui"'
-        }
-      },
-      {
-        type: 'add',
-        files: '**',
-        templateDir: 'template/frameworks/tailwind',
-        filters: {
-          '**': 'ui !== "tailwind"'
-        }
-      },
-      {
-        type: 'add',
-        files: '**',
-        templateDir: 'template/frameworks/buefy',
-        filters: {
-          '**': 'ui !== "buefy"'
-        }
-      },
-      {
-        type: 'add',
-        files: '**',
-        templateDir: 'template/frameworks/iview',
-        filters: {
-          '**': 'ui !== "iview"'
-        }
-      },
-      {
-        type: 'add',
-        files: '**',
-        templateDir: 'template/frameworks/jest',
-        filters: {
-          '**': 'test !== "jest"'
-        }
-      },
-      {
-        type: 'add',
-        files: '**',
-        templateDir: 'template/frameworks/ava',
-        filters: {
-          '**': 'test !== "ava"'
-        }
-      },
-      {
-        type: 'add',
-        files: '*',
-        filters: {
-          '_.eslintrc.js': 'features.includes("linter")',
-          '.prettierrc': 'features.includes("prettier")'
-        }
-      },
-      {
-        type: 'move',
-        patterns: moveable
+    const actions = [{
+      type: 'add',
+      files: '**',
+      templateDir: 'template/nuxt',
+      filters: {
+        'static/icon.png': 'features.includes("pwa")'
       }
-    ]
+    }]
+
+    if(this.answers.ui !== 'none' ) {
+      actions.push({
+        type: 'add',
+        files: '**',
+        templateDir: `template/frameworks/${this.answers.ui}`
+      })
+    }
+
+    if(this.answers.test !== 'none' ) {
+      actions.push({
+        type: 'add',
+        files: '**',
+        templateDir: `template/frameworks/${this.answers.test}`
+      })
+    }
+
+    if(this.answers.server !== 'none' ) {
+      if (this.answers.server === 'adonis') {
+        const files = {}
+        for (const action of actions) {
+          const options = { cwd: join(__dirname, action.templateDir), dot: true }
+          for (const file of glob.sync(`*`, options)) {
+            files[file] = `resources/${file}`
+          }
+        }
+        files['nuxt.config.js'] = 'config/nuxt.js'
+
+        actions.push({
+          type: 'move',
+          patterns: files
+        })
+      }
+      actions.push({
+        type: 'add',
+        files: '**',
+        templateDir: `template/frameworks/${this.answers.server}`
+      })
+    }
+
+    actions.push({
+      type: 'add',
+      files: '*',
+      filters: {
+        '_.eslintrc.js': 'features.includes("linter")',
+        '.prettierrc': 'features.includes("prettier")'
+      }
+    })
+
+    actions.push({
+      type: 'move',
+      patterns: {
+        gitignore: '.gitignore',
+        '_package.json': 'package.json',
+        '_.eslintrc.js': '.eslintrc.js'
+      }
+    })
+
+    return actions
   },
   async completed() {
     this.gitInit()
