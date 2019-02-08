@@ -29,7 +29,8 @@ module.exports = {
         'adonis',
         'hapi',
         'feathers',
-        'micro'
+        'micro',
+        'fastify'
       ],
       default: 'none'
     },
