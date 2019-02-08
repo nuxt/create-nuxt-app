@@ -3,7 +3,10 @@ module.exports = {
   env: {
     browser: true,
     node: true
-  },
+  },<% if (server === 'adonis') { %>
+  globals: {
+    use: true
+  },<% } %>
   parserOptions: {
     parser: 'babel-eslint'
   },
