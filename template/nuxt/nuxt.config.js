@@ -95,6 +95,8 @@ module.exports = {
         import: ["~assets/style/variables.styl"]
       }
     },
+    <% } %><% if (ui === 'element-ui') { %>
+    transpile: [/^element-ui/],
     <% } %>
     /*
     ** You can extend webpack config here
