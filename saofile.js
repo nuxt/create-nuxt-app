@@ -1,8 +1,8 @@
+const { join } = require('path')
 const superb = require('superb')
 const glob = require('glob')
-const { join } = require('path')
 const spawn = require('cross-spawn')
-const validate = require("validate-npm-package-name")
+const validate = require('validate-npm-package-name')
 
 const rootDir = __dirname
 
@@ -35,8 +35,8 @@ module.exports = {
     },
     {
       name: 'features',
-      message: "Choose features to install",
-      type: "checkbox",
+      message: 'Choose features to install',
+      type: 'checkbox',
       choices: [
         {
           name: 'Progressive Web App (PWA) Support',
@@ -51,11 +51,11 @@ module.exports = {
           value: 'prettier'
         },
         {
-          name: "Axios",
-          value: "axios"
+          name: 'Axios',
+          value: 'axios'
         }
       ],
-      default: [],
+      default: []
     },
     {
       name: 'ui',
@@ -111,11 +111,11 @@ module.exports = {
     }
   ],
   templateData() {
-    const edge = process.argv.includes('--edge');
-    const pwa = this.answers.features.includes("pwa");
-    const linter = this.answers.features.includes("linter");
-    const prettier = this.answers.features.includes("prettier");
-    const axios = this.answers.features.includes("axios");
+    const edge = process.argv.includes('--edge')
+    const pwa = this.answers.features.includes('pwa')
+    const linter = this.answers.features.includes('linter')
+    const prettier = this.answers.features.includes('prettier')
+    const axios = this.answers.features.includes('axios')
 
     return {
       edge,
@@ -127,10 +127,10 @@ module.exports = {
   },
   actions() {
     const validation = validate(this.answers.name)
-    validation.warnings && validation.warnings.forEach(warn => {
+    validation.warnings && validation.warnings.forEach((warn) => {
       console.warn('Warning:', warn)
     })
-    validation.errors && validation.errors.forEach(err => {
+    validation.errors && validation.errors.forEach((err) => {
       console.error('Error:', err)
     })
     validation.errors && validation.errors.length && process.exit(1)
@@ -144,7 +144,7 @@ module.exports = {
       }
     }]
 
-    if(this.answers.ui !== 'none' ) {
+    if (this.answers.ui !== 'none') {
       actions.push({
         type: 'add',
         files: '**',
@@ -152,7 +152,7 @@ module.exports = {
       })
     }
 
-    if(this.answers.test !== 'none' ) {
+    if (this.answers.test !== 'none') {
       actions.push({
         type: 'add',
         files: '**',
@@ -160,11 +160,11 @@ module.exports = {
       })
     }
 
-    if(this.answers.server !== 'none' ) {
+    if (this.answers.server !== 'none') {
       if (this.answers.server === 'adonis') {
         const files = {}
         for (const action of actions) {
-          const options = { cwd: join(__dirname, action.templateDir), dot: true }
+          const options = { cwd: join(rootDir, action.templateDir), dot: true }
           for (const file of glob.sync(`*`, options)) {
             files[file] = `resources/${file}`
           }
@@ -215,8 +215,8 @@ module.exports = {
       }
     }
 
-    if (this.answers.features.includes("linter")) {
-      spawn.sync(this.answers.pm, ['run','lint', '--', '--fix'], {
+    if (this.answers.features.includes('linter')) {
+      spawn.sync(this.answers.pm, ['run', 'lint', '--', '--fix'], {
         cwd: this.outDir,
         stdio: 'inherit'
       })

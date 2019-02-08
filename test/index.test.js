@@ -4,7 +4,7 @@ import sao from 'sao'
 
 const generator = path.join(__dirname, '..')
 
-const getPkgFields = pkg => {
+const getPkgFields = (pkg) => {
   pkg = JSON.parse(pkg)
   delete pkg.name
   delete pkg.author
@@ -21,77 +21,77 @@ const verifyPkg = async (t, answers) => {
   t.snapshot(getPkgFields(pkg), 'package.json')
 }
 
-test('defaults', async t => {
+test('defaults', async (t) => {
   await verifyPkg(t)
 })
 
-test('use express', async t => {
+test('use express', async (t) => {
   await verifyPkg(t, {
     server: 'express'
   })
 })
 
-test('use koa', async t => {
+test('use koa', async (t) => {
   await verifyPkg(t, {
     server: 'koa'
   })
 })
 
-test('use hapi', async t => {
+test('use hapi', async (t) => {
   await verifyPkg(t, {
     server: 'hapi'
   })
 })
 
-test('use feathers', async t => {
+test('use feathers', async (t) => {
   await verifyPkg(t, {
     server: 'feathers'
   })
 })
 
-test('use micro', async t => {
+test('use micro', async (t) => {
   await verifyPkg(t, {
     server: 'micro'
   })
 })
 
-test('use axios', async t => {
+test('use axios', async (t) => {
   await verifyPkg(t, {
     features: ['axios']
   })
 })
 
-test('use jest', async t => {
+test('use jest', async (t) => {
   await verifyPkg(t, {
     test: 'jest'
   })
 })
 
-test('use ava', async t => {
+test('use ava', async (t) => {
   await verifyPkg(t, {
     test: 'ava'
   })
 })
 
-test('use eslint', async t => {
+test('use eslint', async (t) => {
   await verifyPkg(t, {
     features: ['linter']
   })
 })
 
-test('use yarn', async t => {
+test('use yarn', async (t) => {
   await verifyPkg(t, {
     pm: 'yarn'
   })
 })
 
-test('use prettier', async t => {
+test('use prettier', async (t) => {
   await verifyPkg(t, {
     features: ['prettier']
   })
 })
 
-test('use pwa', async t => {
+test('use pwa', async (t) => {
   await verifyPkg(t, {
     features: ['pwa']
   })
