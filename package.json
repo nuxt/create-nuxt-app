@@ -26,7 +26,7 @@
     "validate-npm-package-name": "^3.0.0"
   },
   "devDependencies": {
-    "ava": "^0.23.0"
+    "ava": "^1.2.1"
   },
   "authors": [
     "Egoist <0x142857@gmail.com>",
