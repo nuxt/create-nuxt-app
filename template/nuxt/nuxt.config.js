@@ -1,5 +1,5 @@
-<% if (server === 'adonis') { %>const pkg = require('../package')
-const resolve = require('path').resolve
+<% if (server === 'adonis') { %>const { resolve } = require('path')
+const pkg = require('../package')
 <% } else { %>const pkg = require('./package')
 <% } %>
 <% if (ui === 'vuetify') { %>
