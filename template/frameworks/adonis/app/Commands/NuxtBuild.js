@@ -2,7 +2,7 @@
 
 const { Command } = use('@adonisjs/ace')
 const Config = use('Config')
-const { Nuxt, Builder } = require('nuxt')
+const { Nuxt, Builder } = require('nuxt<% if (edge) { %>-edge<% } %>')
 
 class NuxtBuild extends Command {
   /**
