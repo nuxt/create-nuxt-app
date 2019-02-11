@@ -1,30 +1,40 @@
 'use strict'
 const path = require('path')
 const consola = require('consola')
-const feathers = require('feathers')
-const configuration = require('feathers-configuration')
-const middleware = require('./middleware')
+const feathers = require('@feathersjs/feathers')
+const express = require('@feathersjs/express')
 
-const app = feathers()
+process.env.NODE_CONFIG_DIR = path.join(__dirname, 'config/')
 
-app.configure(configuration(path.join(__dirname, './')))
-  .configure(middleware)
+async function start() {
+  const app = express(feathers())
 
-const host = app.get('host')
-const port = app.get('port')
+  const { Nuxt, Builder } = require('nuxt')
 
-process.on('nuxt:build:done', (err) => {
-  if (err) {
-    consola.error(err)
-    process.exit(1)
+  // Setup nuxt.js
+  const config = require('../nuxt.config.js')
+  config.rootDir = path.resolve(__dirname, '..')
+  config.dev = process.env.NODE_ENV !== 'production'
+
+  const nuxt = new Nuxt(config)
+  if (config.dev) {
+    const builder = new Builder(nuxt)
+    await builder.build()
   }
-  const server = app.listen(port)
-  server.on('listening', () =>
-    consola.ready({
-      message: `Feathers application started on ${host}:${port}`,
-      badge: true
-    })
-  )
-})
 
-module.exports = app
+  const configuration = require('@feathersjs/configuration')
+  app.configure(configuration()).use(nuxt.render)
+
+  const host = app.get('host')
+  const port = app.get('port')
+
+  app.listen(port)
+
+  consola.ready({
+    message: `Feathers application started on ${host}:${port}`,
+    badge: true
+  })
+}
+
+start()
+
