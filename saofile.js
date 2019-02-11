@@ -224,7 +224,7 @@ module.exports = {
     }
 
     console.log()
-    console.log(this.chalk.bold(`\tTo get started:\n`))
+    console.log(this.chalk.bold(`  To get started:\n`))
     cd()
     console.log(`\t${this.answers.pm} run dev\n`)
     console.log(this.chalk.bold(`  To build & start for production:\n`))
