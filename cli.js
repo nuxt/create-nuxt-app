@@ -1,19 +1,17 @@
 #!/usr/bin/env node
 const path = require('path')
 const sao = require('sao')
-const minimist = require('minimist')
 
-const argv = minimist(process.argv.slice(2))
+const generator = path.resolve(__dirname, './')
 // In a custom directory or current directory
-const targetPath = path.resolve(argv._[0] || '.')
+const outDir = path.resolve(process.argv[2] || '.')
 
-console.log(`> Generating Nuxt.js project in ${targetPath}`)
+console.log(`> Generating Nuxt.js project in ${outDir}`)
 
 // See https://sao.js.org/#/advanced/standalone-cli
-sao({
-  template: __dirname,
-  targetPath
-}).catch(err => {
-  console.error(err.name === 'SAOError' ? err.message : err.stack)
-  process.exit(1)
-})
+sao({ generator, outDir, logLevel: 2 })
+  .run()
+  .catch((err) => {
+    console.trace(err)
+    process.exit(1)
+  })
