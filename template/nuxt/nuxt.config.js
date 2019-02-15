@@ -43,7 +43,8 @@ module.exports = {
     '~/assets/css/tailwind.css'<% } else if (ui === 'vuetify') { %>
     '~/assets/style/app.styl'<% } else if (ui === 'iview') { %>
     'iview/dist/styles/iview.css'<% } else if (ui === 'ant-design-vue') { %>
-    'ant-design-vue/dist/antd.css'<% } %>
+    'ant-design-vue/dist/antd.css'<% } else if (ui === 'tachyons') { %>
+    'tachyons/css/tachyons.css'<% } %>
   ],
 
   /*
