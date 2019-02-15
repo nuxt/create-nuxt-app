@@ -72,7 +72,7 @@ module.exports = {
         'buefy',
         'ant-design-vue',
         'iview',
-        'tachyons',
+        'tachyons'
       ],
       default: 'none'
     },
