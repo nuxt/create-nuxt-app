@@ -51,6 +51,7 @@ yarn create nuxt-app <my-project>
     - [Ant Design Vue](https://github.com/vueComponent/ant-design-vue)
     - [Buefy](https://buefy.github.io)
     - [iView](https://www.iviewui.com/)
+    - [Tachyons](https://tachyons.io)
 4. Choose your favorite test framework:
     - None
     - [Jest](https://github.com/facebook/jest)
