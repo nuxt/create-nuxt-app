@@ -50,7 +50,8 @@
     "nuxt-buefy": "^0.3.2"<% } else if (ui === 'iview') { %>,
     "iview": "3.1.5"<% } %><% if (axios === 'yes') { %>,
     "@nuxtjs/axios": "^5.3.6"<% } %><% if (pwa === 'yes') { %>,
-    "@nuxtjs/pwa": "^2.6.0"<% } %>
+    "@nuxtjs/pwa": "^2.6.0"<% } %><% if (ui === 'tachyons') { %>,
+    "tachyons": "^4.11.1"<% } %>
   },
   "devDependencies": {
     "nodemon": "^1.18.9"<% if (eslint === 'yes') { %>,

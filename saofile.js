@@ -71,7 +71,8 @@ module.exports = {
         'element-ui',
         'buefy',
         'ant-design-vue',
-        'iview'
+        'iview',
+        'tachyons'
       ],
       default: 'none'
     },
