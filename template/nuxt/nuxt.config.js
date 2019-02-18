@@ -62,14 +62,14 @@ module.exports = {
   */
   modules: [<% if (axios === 'yes') { %>
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios'<% } %><% if (ui === 'bootstrap') { %>,
+    '@nuxtjs/axios',<% } %><% if (ui === 'bootstrap') { %>
     // Doc: https://bootstrap-vue.js.org/docs/
-    'bootstrap-vue/nuxt'<% } %><% if (ui === 'bulma') { %>,
+    'bootstrap-vue/nuxt',<% } %><% if (ui === 'bulma') { %>
     // Doc:https://github.com/nuxt-community/modules/tree/master/packages/bulma
-    '@nuxtjs/bulma'<% } %><% if (ui === 'buefy') { %>,
+    '@nuxtjs/bulma',<% } %><% if (ui === 'buefy') { %>
     // Doc: https://buefy.github.io/#/documentation
-    'nuxt-buefy'<% } %><% if (pwa === 'yes') { %>,
-    '@nuxtjs/pwa'<% } %>
+    'nuxt-buefy',<% } %><% if (pwa === 'yes') { %>
+    '@nuxtjs/pwa',<% } %>
   ],<% if (axios === 'yes') { %>
   /*
   ** Axios module configuration
