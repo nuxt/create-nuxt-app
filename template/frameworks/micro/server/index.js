@@ -13,6 +13,8 @@ async function start() {
   // Enable live build & reloading on dev
   if (nuxt.options.dev) {
     await new Builder(nuxt).build()
+  } else {
+    await nuxt.ready()
   }
 
   const server = micro(async (req, res) => {
