@@ -1,8 +1,7 @@
 'use strict'
 
 const { Command } = use('@adonisjs/ace')
-const Config = use('Config')
-const { Nuxt, Builder } = require('nuxt<% if (edge) { %>-edge<% } %>')
+const { Builder } = require('nuxt<% if (edge) { %>-edge<% } %>')
 
 class NuxtBuild extends Command {
   /**
@@ -33,11 +32,9 @@ class NuxtBuild extends Command {
    * @param  {Object} options [description]
    */
   async handle(args, options) {
-    let config = Config.get('nuxt')
-    config.dev = false
-    this.nuxt = new Nuxt(config)
+    const nuxt = use('Service/Nuxt')
     this.info('Building nuxt.js application...')
-    await new Builder(this.nuxt).build()
+    await new Builder(nuxt).build()
   }
 }
 

@@ -8,6 +8,7 @@ const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
 module.exports = {
   mode: '<%= mode %>',
 <% if (server === 'adonis') { %>
+  dev: process.env.NODE_ENV === 'development',
   srcDir: resolve(__dirname, '..', 'resources'),
 <% } %>
   /*

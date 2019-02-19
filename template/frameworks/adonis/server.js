@@ -21,7 +21,5 @@ const { Ignitor } = require('@adonisjs/ignitor')
 
 new Ignitor(require('@adonisjs/fold'))
   .appRoot(__dirname)
-  .fireHttpServer(() => {
-    use('App/Controllers/Http/NuxtController')
-  })
+  .fireHttpServer()
   .catch(console.error) // eslint-disable-line no-console

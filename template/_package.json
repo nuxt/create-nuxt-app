@@ -7,7 +7,7 @@
   "scripts": {<% if (server === 'adonis') { %>
     "serve:dev": "npm run dev",
     "dev": "nodemon --watch app --watch bootstrap --watch config --watch .env -x node server.js",
-    "build": "node ./ace nuxtbuild",
+    "build": "cross-env NODE_ENV=production node ./ace nuxtbuild",
     "start": "cross-env NODE_ENV=production node server.js"<% } else { %>
     "dev": "<% if (server === 'none') { %>nuxt<% } else { %>cross-env NODE_ENV=development nodemon server/index.js --watch server<% } %>",
     "build": "nuxt build",
