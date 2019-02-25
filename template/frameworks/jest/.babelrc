@@ -9,8 +9,7 @@
               "node": "current"
             }
           }
-        ],
-        "@nuxt/babel-preset-app"
+        ]
       ]
     }
   }
