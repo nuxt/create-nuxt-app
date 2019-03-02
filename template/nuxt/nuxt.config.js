@@ -5,7 +5,7 @@ const pkg = require('../package')
 <% if (ui === 'vuetify') { %>
 const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
 <% } %>
-module.exports = {
+export default const config = {
   mode: '<%= mode %>',
 <% if (server === 'adonis') { %>
   dev: process.env.NODE_ENV === 'development',
