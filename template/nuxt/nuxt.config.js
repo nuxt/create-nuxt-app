@@ -1,9 +1,9 @@
-<% if (server === 'adonis') { %>const { resolve } = require('path')
-const pkg = require('../package')
-<% } else { %>const pkg = require('./package')
+<% if (server === 'adonis') { %>import { resolve } from 'path'
+import pkg from '../package'
+<% } else { %>import pkg  './package'
 <% } %>
 <% if (ui === 'vuetify') { %>
-const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
+import VuetifyLoaderPlugin from 'vuetify-loader/lib/plugin'
 <% } %>
 export default const config = {
   mode: '<%= mode %>',
