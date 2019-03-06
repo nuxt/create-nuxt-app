@@ -1,6 +1,6 @@
 {
   "name": "create-nuxt-app",
-  "version": "2.4.3",
+  "version": "2.5.0",
   "description": "Create a Nuxt.js App in seconds.",
   "bin": "cli.js",
   "files": [
