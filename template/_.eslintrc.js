@@ -13,7 +13,9 @@ module.exports = {
   extends: [
     '@nuxtjs',
     'plugin:nuxt/recommended'<% if (prettier === 'yes'){ %>,
-    'plugin:prettier/recommended'<% } %>
+    'plugin:prettier/recommended',
+    'prettier',
+    'prettier/vue'<% } %>
   ],<% if (prettier === 'yes'){ %>
   plugins: [
     'prettier'
