@@ -19,6 +19,12 @@ Make sure you have [npx](https://www.npmjs.com/package/npx) installed (`npx` is 
 npx create-nuxt-app <my-project>
 ```
 
+Or starting with npm v6.1 you can do:
+
+```bash
+npm init nuxt-app <my-project>
+```
+
 Or with [yarn](https://yarnpkg.com/en/):
 
 ```bash
@@ -63,6 +69,12 @@ To install [nuxt-edge](https://www.npmjs.com/package/nuxt-edge) instead of [nuxt
 
 ```bash
 npx create-nuxt-app <my-project> --edge
+```
+
+Or
+
+```bash
+npm init nuxt-app <my-project> --edge
 ```
 
 Or

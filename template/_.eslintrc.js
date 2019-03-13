@@ -11,8 +11,11 @@ module.exports = {
     parser: 'babel-eslint'
   },
   extends: [
-    '@nuxtjs'<% if (prettier === 'yes'){ %>,
-    'plugin:prettier/recommended'<% } %>
+    '@nuxtjs',
+    'plugin:nuxt/recommended'<% if (prettier === 'yes'){ %>,
+    'plugin:prettier/recommended',
+    'prettier',
+    'prettier/vue'<% } %>
   ],<% if (prettier === 'yes'){ %>
   plugins: [
     'prettier'
