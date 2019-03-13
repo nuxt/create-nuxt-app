@@ -18,5 +18,9 @@ module.exports = {
     'prettier'
   ],<% } %>
   // add your custom rules here
-  rules: {}
+  rules: {
+<% if (!esm){ -%>
+    'nuxt/no-cjs-in-config': 'off'
+<% } -%>
+  }
 }
