@@ -1,11 +1,23 @@
-<% if (server === 'adonis') { %>const { resolve } = require('path')
+<% if (esm) { -%>
+<% if (ui === 'vuetify') { -%>
+import VuetifyLoaderPlugin from 'vuetify-loader/lib/plugin'
+<% } -%>
+import pkg from './package'
+<% } else if (server === 'adonis') { -%>
+const { resolve } = require('path')
 const pkg = require('../package')
-<% } else { %>const pkg = require('./package')
-<% } %>
-<% if (ui === 'vuetify') { %>
-const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
-<% } %>
+<%} else { -%>
+const pkg = require('./package')
+<% } -%>
+<% if (!esm) { -%>
+<% if (ui === 'vuetify') { %>const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')<% } %>
+<% } -%>
+
+<% if (esm) { -%>
+export default {
+<% } else { -%>
 module.exports = {
+<% } -%>
   mode: '<%= mode %>',
 <% if (server === 'adonis') { %>
   dev: process.env.NODE_ENV === 'development',
@@ -94,17 +106,16 @@ module.exports = {
     plugins: [new VuetifyLoaderPlugin()],
     loaders: {
       stylus: {
-        import: ["~assets/style/variables.styl"]
+        import: ['~assets/style/variables.styl']
       }
-    },
-    <% } %><% if (ui === 'element-ui') { %>
+    },<% } %><% if (ui === 'element-ui') { %>
     transpile: [/^element-ui/],
     <% } %>
     /*
     ** You can extend webpack config here
     */
-    extend(config, ctx) {
-      <% if (eslint === 'yes') { %>// Run ESLint on save
+    extend(config, ctx) {<% if (eslint === 'yes') { %>
+      // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
           enforce: 'pre',
