@@ -220,9 +220,9 @@ module.exports = {
     }
 
     if (this.answers.features.includes('linter')) {
-      const options = ['run', 'lint', '--', '--fix'];
+      const options = ['run', 'lint', '--', '--fix']
       if (this.answers.pm === 'yarn') {
-        options.splice(2, 1);
+        options.splice(2, 1)
       }
       spawn.sync(this.answers.pm, options, {
         cwd: this.outDir,
