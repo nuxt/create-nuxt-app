@@ -54,6 +54,10 @@ module.exports = {
         {
           name: 'Axios',
           value: 'axios'
+        },
+        {
+          name: 'TypeScript support',
+          value: 'typescript'
         }
       ],
       default: []
@@ -118,6 +122,7 @@ module.exports = {
     const linter = this.answers.features.includes('linter')
     const prettier = this.answers.features.includes('prettier')
     const axios = this.answers.features.includes('axios')
+    const typescript = this.answers.features.includes('typescript')
     const esm = this.answers.server === 'none'
 
     return {
@@ -126,6 +131,7 @@ module.exports = {
       eslint: linter ? 'yes' : 'no',
       prettier: prettier ? 'yes' : 'no',
       axios: axios ? 'yes' : 'no',
+      typescript: typescript ? 'yes' : 'no',
       esm
     }
   },
@@ -184,6 +190,14 @@ module.exports = {
         type: 'add',
         files: '**',
         templateDir: `template/frameworks/${this.answers.server}`
+      })
+    }
+
+    if (this.answers.features.includes('typescript')) {
+      actions.push({
+        type: 'add',
+        files: '**',
+        templateDir: 'template/frameworks/typescript'
       })
     }
 
