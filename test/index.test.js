@@ -102,3 +102,9 @@ test('use pwa', async (t) => {
     features: ['pwa']
   })
 })
+
+test('use typescript', async (t) => {
+  await verifyPkg(t, {
+    features: ['typescript']
+  })
+})
