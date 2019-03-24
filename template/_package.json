@@ -51,7 +51,8 @@
     "iview": "3.1.5"<% } %><% if (axios === 'yes') { %>,
     "@nuxtjs/axios": "^5.3.6"<% } %><% if (pwa === 'yes') { %>,
     "@nuxtjs/pwa": "^2.6.0"<% } %><% if (typescript === 'yes') { %>,
-    "@nuxt/typescript": "^2.5.1"<% } %><% if (ui === 'tachyons') { %>,
+    "@nuxt/typescript": "^2.5.1",
+    "vue-property-decorator": "^8.1.0"<% } %><% if (ui === 'tachyons') { %>,
     "tachyons": "^4.11.1"<% } %>
   },
   "devDependencies": {

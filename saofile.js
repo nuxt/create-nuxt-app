@@ -154,7 +154,19 @@ module.exports = {
       }
     }]
 
-    if (this.answers.ui !== 'none') {
+    if (this.answers.ui !== 'none' && this.answers.features.includes('typescript')) {
+      actions.push({
+        type: 'add',
+        files: '**',
+        templateDir: `template/frameworks/${this.answers.ui}-ts`
+      })
+    } else if (this.answers.ui === 'none' && this.answers.features.includes('typescript')) {
+      actions.push({
+        type: 'add',
+        files: '**',
+        templateDir: `template/frameworks/nuxt-ts`
+      })
+    } else if (this.answers.ui !== 'none') {
       actions.push({
         type: 'add',
         files: '**',
