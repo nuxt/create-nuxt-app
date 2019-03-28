@@ -1,42 +1,34 @@
 'use strict'
-const path = require('path')
-const consola = require('consola')
-const feathers = require('@feathersjs/feathers')
-const express = require('@feathersjs/express')
+const consola = require('consola');
+const { Nuxt, Builder } = require('nuxt');
+const app = require('./app');
+const host = process.env.HOST || '127.0.0.1';
+const port = process.env.PORT || 3000;
 
-process.env.NODE_CONFIG_DIR = path.join(__dirname, 'config/')
+app.set('port', port);
+
+// Import and Set Nuxt.js options
+let config = require('../nuxt.config.js');
+config.dev = !(process.env.NODE_ENV === 'production');
 
 async function start() {
-  const app = express(feathers())
+  // Init Nuxt.js
+  const nuxt = new Nuxt(config);
 
-  const { Nuxt, Builder } = require('nuxt<% if (edge) { %>-edge<% } %>')
-
-  // Setup nuxt.js
-  const config = require('../nuxt.config.js')
-  config.rootDir = path.resolve(__dirname, '..')
-  config.dev = process.env.NODE_ENV !== 'production'
-
-  const nuxt = new Nuxt(config)
+  // Build only in dev mode
   if (config.dev) {
-    const builder = new Builder(nuxt)
-    await builder.build()
-  } else {
-    await nuxt.ready()
+    const builder = new Builder(nuxt);
+    await builder.build();
   }
 
-  const configuration = require('@feathersjs/configuration')
-  app.configure(configuration()).use(nuxt.render)
+  // Give nuxt middleware to express
+  app.use(nuxt.render);
 
-  const host = app.get('host')
-  const port = app.get('port')
-
-  app.listen(port)
-
+  // Listen the server
+  app.listen(port, host);
   consola.ready({
-    message: `Feathers application started on ${host}:${port}`,
+    message: `Server listening on http://${host}:${port}`,
     badge: true
-  })
+  });
 }
-
-start()
-
+start();

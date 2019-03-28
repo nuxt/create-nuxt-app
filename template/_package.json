@@ -5,7 +5,8 @@
   "author": "<%= author %>",
   "private": true, <% if (server === 'feathers') { %>
   "directories": {
-    "lib": "server"
+    "lib": "server",
+    "config": "config"
   }, <% } %>
   "scripts": {<% if (server === 'feathers') { %>
     "feathers": "feathers",<% } %><% if (server === 'adonis') { %>
