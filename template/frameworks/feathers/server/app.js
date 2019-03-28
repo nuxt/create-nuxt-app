@@ -1,6 +1,10 @@
 const compress = require('compression');
 const helmet = require('helmet');
 const cors = require('cors');
+const logger = require('./logger');
+
+const path = require('path');
+process.env['NODE_CONFIG_DIR'] = path.join(__dirname, 'config/');
 
 const feathers = require('@feathersjs/feathers');
 const configuration = require('@feathersjs/configuration');
@@ -33,6 +37,10 @@ app.configure(middleware);
 app.configure(services);
 // Set up event channels (see channels.js)
 app.configure(channels);
+
+// Configure a middleware for 404s and the error handler
+app.use(express.notFound());
+app.use(express.errorHandler({ logger }));
 
 app.hooks(appHooks);
 

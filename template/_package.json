@@ -6,7 +6,8 @@
   "private": true, <% if (server === 'feathers') { %>
   "directories": {
     "lib": "server",
-    "config": "config"
+    "config": "server/config",
+    "test": "server/test"
   }, <% } %>
   "scripts": {<% if (server === 'feathers') { %>
     "feathers": "feathers",<% } %><% if (server === 'adonis') { %>
