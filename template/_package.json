@@ -3,12 +3,10 @@
   "version": "1.0.0",
   "description": "<%= description %>",
   "author": "<%= author %>",
-  "private": true,
-  <% if (server === 'feathers') { %>
+  "private": true, <% if (server === 'feathers') { %>
   "directories": {
-  "lib": "server"
-  },
-  <% } %>
+    "lib": "server"
+  }, <% } %>
   "scripts": {<% if (server === 'adonis') { %>
     "serve:dev": "<%= pm %> run dev",
     "dev": "nodemon --watch app --watch bootstrap --watch config --watch .env -x node server.js",
