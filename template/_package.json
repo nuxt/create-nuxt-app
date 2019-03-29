@@ -66,9 +66,9 @@
     "@nuxtjs/pwa": "^2.6.0"<% } %><% if (ui === 'tachyons') { %>,
     "tachyons": "^4.11.1"<% } %>
   },
-  "devDependencies": { <% if (server === 'feathers') { %>
-    "@feathersjs/cli": "^3.8.5",<% } %>
-    "nodemon": "^1.18.9"<% if (eslint === 'yes') { %>,
+  "devDependencies": {
+    "nodemon": "^1.18.9"<% if (server === 'feathers') { %>,
+    "@feathersjs/cli": "^3.8.5"<% } %><% if (eslint === 'yes') { %>,
     "@nuxtjs/eslint-config": "^0.0.1",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.15.1",
