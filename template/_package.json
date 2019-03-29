@@ -9,8 +9,7 @@
     "config": "server/config",
     "test": "server/test"
   }, <% } %>
-  "scripts": {<% if (server === 'feathers') { %>
-    "feathers": "feathers",<% } %><% if (server === 'adonis') { %>
+  "scripts": {<% if (server === 'adonis') { %>
     "serve:dev": "<%= pm %> run dev",
     "dev": "nodemon --watch app --watch bootstrap --watch config --watch .env -x node server.js",
     "build": "cross-env NODE_ENV=production node ./ace nuxtbuild",
@@ -21,7 +20,8 @@
     "generate": "nuxt generate"<% } %><% if (eslint === 'yes') { %>,
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "<%= pm %> run lint"<% } %><% if (test !== 'none') { %>,
-    "test": "<%= test %>"<% } %>
+    "test": "<%= test %>"<% } %><% if (server === 'feathers') { %>,
+    "feathers": "feathers"<% } %>
   },
   "dependencies": {
     "cross-env": "^5.2.0"<% if (edge) { %>,
