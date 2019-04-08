@@ -52,6 +52,7 @@
     "@nuxtjs/axios": "^5.3.6"<% } %><% if (pwa === 'yes') { %>,
     "@nuxtjs/pwa": "^2.6.0"<% } %><% if (typescript === 'yes') { %>,
     "ts-node": "^8.0.3",
+    "typescript": "^3.4.2",
     "vue-property-decorator": "^8.1.0"<% } %><% if (ui === 'tachyons') { %>,
     "tachyons": "^4.11.1"<% } %>
   },
