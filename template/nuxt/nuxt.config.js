@@ -52,7 +52,8 @@ module.exports = {
   ** Global CSS
   */
   css: [<% if (ui === 'element-ui') { %>
-    'element-ui/lib/theme-chalk/index.css'<% } else if (ui === 'tailwind') { %>
+    'node_modules/element-ui/lib/theme-chalk/reset.css',
+    'node_modules/element-ui/lib/theme-chalk/index.css'<% } else if (ui === 'tailwind') { %>
     '~/assets/css/tailwind.css'<% } else if (ui === 'vuetify') { %>
     '~/assets/style/app.styl'<% } else if (ui === 'iview') { %>
     'iview/dist/styles/iview.css'<% } else if (ui === 'ant-design-vue') { %>
