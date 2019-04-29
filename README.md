@@ -47,6 +47,7 @@ yarn create nuxt-app <my-project>
     - Linter / Formatter
     - [Prettier](https://prettier.io/)
     - [Axios](https://github.com/nuxt-community/axios-module)
+    - [Typescript](https://github.com/nuxt/nuxt.js)
 3. Choose your favorite UI framework:
     - None (feel free to add one later)
     - [Bootstrap](https://github.com/bootstrap-vue/bootstrap-vue)
