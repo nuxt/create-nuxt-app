@@ -90,16 +90,16 @@
 import { Component, Vue } from 'nuxt-property-decorator'
 
 interface Item {
-  icon: string | null
-  title: string | null
-  to: string | null
+  icon: String | null
+  title: String | null
+  to: String | null
 }
 
 @Component
 export default class Default extends Vue {
-  clipped: boolean = false
-  drawer: boolean = false
-  fixed: boolean = false
+  clipped: Boolean = false
+  drawer: Boolean = false
+  fixed: Boolean = false
   items: Item[] = [
     {
       icon: 'apps',
@@ -112,9 +112,9 @@ export default class Default extends Vue {
       to: '/inspire'
     }
   ]
-  miniVariant: boolean = false
-  right: boolean = true
-  rightDrawer: boolean = false
-  title: string = 'Vuetify.js'
+  miniVariant: Boolean = false
+  right: Boolean = true
+  rightDrawer: Boolean = false
+  title: String = 'Vuetify.js'
 }
 </script>
