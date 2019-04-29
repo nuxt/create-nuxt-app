@@ -13,6 +13,7 @@
 </template>
 
 <script lang="ts">
+import pkg from '../package'
 import { Vue, Component, Prop } from 'nuxt-property-decorator'
 
 @Component({})
@@ -22,15 +23,14 @@ export default class Error extends Vue {
   otherError:String = 'An error occurred'
   @Prop({ type: Object, default: null }) error: Object
   head() {
-    const pageTitle =
+    const title =
       this.error.statusCode === 404
-      ? this.pageNotFound
-      : this.otherError
+      ? pkg.name + ' | ' + this.pageNotFound
+      : pkg.name + ' | ' + this.otherError
     return {
-      pageTitle
+      title
     }
   }
-  
 }
 </script>
 
