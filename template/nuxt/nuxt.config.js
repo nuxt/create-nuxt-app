@@ -1,16 +1,13 @@
 <% if (esm) { -%>
-<% if (ui === 'vuetify') { -%>
-import VuetifyLoaderPlugin from 'vuetify-loader/lib/plugin'
-<% } -%>
 import pkg from './package'
+<% if (ui === 'vuetify') { -%>
+import colors from 'vuetify/es5/util/colors'
+<% } -%>
 <% } else if (server === 'adonis') { -%>
 const { resolve } = require('path')
 const pkg = require('../package')
 <%} else { -%>
 const pkg = require('./package')
-<% } -%>
-<% if (!esm) { -%>
-<% if (ui === 'vuetify') { %>const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')<% } %>
 <% } -%>
 
 <% if (esm) { -%>
@@ -53,8 +50,7 @@ module.exports = {
   */
   css: [<% if (ui === 'element-ui') { %>
     'element-ui/lib/theme-chalk/index.css'<% } else if (ui === 'tailwind') { %>
-    '~/assets/css/tailwind.css'<% } else if (ui === 'vuetify') { %>
-    '~/assets/style/app.styl'<% } else if (ui === 'iview') { %>
+    '~/assets/css/tailwind.css'<% } else if (ui === 'iview') { %>
     'iview/dist/styles/iview.css'<% } else if (ui === 'ant-design-vue') { %>
     'ant-design-vue/dist/antd.css'<% } else if (ui === 'tachyons') { %>
     'tachyons/css/tachyons.css'<% } %>
@@ -64,8 +60,7 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [<% if (ui === 'element-ui') { %>
-    '@/plugins/element-ui'<% } else if (ui === 'vuetify') { %>
-    '@/plugins/vuetify'<% } else if (ui === 'iview') { %>
+    '@/plugins/element-ui'<% } else if (ui === 'iview') { %>
     '@/plugins/iview'<% } else if (ui === 'ant-design-vue') { %>
     '@/plugins/antd-ui'<% } %>
   ],
@@ -82,13 +77,30 @@ module.exports = {
     '@nuxtjs/bulma',<% } %><% if (ui === 'buefy') { %>
     // Doc: https://buefy.github.io/#/documentation
     'nuxt-buefy',<% } %><% if (pwa === 'yes') { %>
-    '@nuxtjs/pwa',<% } %>
+    '@nuxtjs/pwa',<% } %><% if (ui === 'vuetify') { %>
+    '@nuxtjs/vuetify',<% } %>
   ],<% if (axios === 'yes') { %>
   /*
   ** Axios module configuration
   */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
+  },<% } %>
+
+  <% if (ui === 'vuetify') { %>
+    /*
+    ** vuetify module configuration
+    */
+  vuetify: {
+    theme: {
+      primary: colors.blue.darken2,
+      accent: colors.grey.darken3,
+      secondary: colors.amber.darken3,
+      info: colors.teal.lighten1,
+      warning: colors.amber.base,
+      error: colors.deepOrange.accent4,
+      success: colors.green.accent3
+    }
   },<% } %>
 
   /*
@@ -100,13 +112,6 @@ module.exports = {
         features: {
           customProperties: false
         }
-      }
-    },<% } %><% if (ui === 'vuetify') { %>
-    transpile: ['vuetify/lib'],
-    plugins: [new VuetifyLoaderPlugin()],
-    loaders: {
-      stylus: {
-        import: ['~assets/style/variables.styl']
       }
     },<% } %><% if (ui === 'element-ui') { %>
     transpile: [/^element-ui/],
