@@ -18,9 +18,9 @@ import { Vue, Component, Prop } from 'nuxt-property-decorator'
 
 @Component({})
 export default class Error extends Vue {
-  layout: String = 'empty'
-  pageNotFound:String = '404 Not Found'
-  otherError:String = 'An error occurred'
+  layout: string = 'empty'
+  pageNotFound:string = '404 Not Found'
+  otherError:string = 'An error occurred'
   @Prop({ type: Object, default: null }) error: Object
   head() {
     const title =
