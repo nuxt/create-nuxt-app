@@ -87,7 +87,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
+import { Component, Vue } from 'nuxt-property-decorator'
 
 interface Item {
   icon: string | null
@@ -96,7 +96,7 @@ interface Item {
 }
 
 @Component
-export default class DefaultLayout extends Vue {
+export default class Default extends Vue {
   clipped: boolean = false
   drawer: boolean = false
   fixed: boolean = false

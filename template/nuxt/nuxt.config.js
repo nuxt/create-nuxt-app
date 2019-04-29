@@ -124,6 +124,10 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }<% } %>
-    }
+    }<% if (typescript === 'yes') { %>,
+    // typescript setting 
+    typescript: {
+      typeCheck: false // or ForkTsChecker options
+    }<% } %>
   }
 }
