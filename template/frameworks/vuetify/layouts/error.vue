@@ -15,7 +15,12 @@
 <script>
 export default {
   layout: 'empty',
-  props: ['error'],
+  props: {
+    error: {
+      type: Object,
+      default: null
+    }
+  },
   head () {
     const pageTitle = this.error.statusCode === 404
       ? this.pageNotFound
