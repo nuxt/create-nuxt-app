@@ -20,7 +20,7 @@ export default class Error extends Vue {
   layout: String = 'empty'
   pageNotFound:string = '404 Not Found'
   otherError:string = 'An error occurred'
-  @Prop({ type: Object, default: null }) error: any
+  @Prop({ type: Object, default: null }) error: object
   head() {
     const pageTitle =
       this.error.statusCode === 404
