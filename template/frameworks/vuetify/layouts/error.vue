@@ -13,6 +13,7 @@
 </template>
 
 <script>
+import pkg from '../package'
 export default {
   layout: 'empty',
   props: {
@@ -22,11 +23,11 @@ export default {
     }
   },
   head () {
-    const pageTitle = this.error.statusCode === 404
-      ? this.pageNotFound
-      : this.otherError
+    const title = this.error.statusCode === 404
+      ? pkg.name + ' | ' + this.pageNotFound
+      : pkg.name + ' | ' + this.otherError
     return {
-      pageTitle
+      title
     }
   },
   data() {
