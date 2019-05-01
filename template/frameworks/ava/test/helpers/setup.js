@@ -4,5 +4,12 @@ const Vue = require('vue')
 
 Vue.config.productionTip = false
 
-hooks('vue').plugin('vue').push();
-hooks(['vue', 'js']).plugin('babel').push();
+// Setup vue files to be processed by `require-extension-hooks-vue`
+hooks('vue')
+  .plugin('vue')
+  .push();
+// Setup vue and js files to be processed by `require-extension-hooks-babel`
+hooks(['vue', 'js'])
+  .exclude(({ filename }) => filename.match(/\/node_modules\//))
+  .plugin('babel')
+  .push();
