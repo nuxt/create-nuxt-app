@@ -79,6 +79,7 @@
     "babel-jest": "^24.1.0",
     "jest": "^24.1.0",
     "vue-jest": "^3.0.3"<% } %><% if (test === 'ava') { %>,
+    "babel-plugin-module-resolver": "^3.2.0",
     "ava": "^1.0.1",
     "browser-env": "^3.2.5",
     "require-extension-hooks": "^0.3.3",
