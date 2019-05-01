@@ -1,0 +1,33 @@
+{
+  "env": {
+    "test": {
+      "plugins": [
+        [
+          "module-resolver",
+          {
+            "root": [
+              "./"
+            ],
+            "alias": {
+              "@": "./",
+              "~": "./"
+            }
+          }
+        ]
+      ],
+      "ignore": [
+        "ava.config.js"
+      ],
+      "presets": [
+        [
+          "@babel/preset-env",
+          {
+            "targets": {
+              "node": "current"
+            }
+          }
+        ]
+      ]
+    }
+  }
+}
