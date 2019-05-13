@@ -1,24 +1,28 @@
-const Hapi = require('hapi')
 const consola = require('consola')
-const HapiNuxt = require('hapi-nuxt')
+const Hapi = require('@hapi/hapi')
+const HapiNuxt = require('@nuxtjs/hapi')
 
-const server = new Hapi.Server({
-  host: process.env.HOST || '127.0.0.1',
-  port: process.env.PORT || 3000
+function start() {
+  const server = new Hapi.Server({
+    host: process.env.HOST || '127.0.0.1',
+    port: process.env.PORT || 3000
+  })
+
+  await server.register({
+    plugin: HapiNuxt,
+    options: {}
+  })
+
+  await server.start()
+
+  consola.ready({
+    message: `Server running at: ${server.info.uri}`,
+    badge: true
+  })
+}
+
+process.on('unhandledRejection', error => {
+  consola.error(error)
 })
 
-server
-  .register({
-    plugin: HapiNuxt
-  })
-  .then(() => server.start())
-  .then(() =>
-    consola.ready({
-      message: `Server running at: ${server.info.uri}`,
-      badge: true
-    })
-  )
-  .catch(err => {
-    consola.error(err)
-    throw err
-  })
+start()
