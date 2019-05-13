@@ -82,12 +82,13 @@ module.exports = {
     // Doc: https://buefy.github.io/#/documentation
     'nuxt-buefy',<% } %><% if (pwa === 'yes') { %>
     '@nuxtjs/pwa',<% } %>
-  ],<% if (axios === 'yes') { %>
+  ],
+  <% if (axios === 'yes') { %>
   /*
   ** Axios module configuration
+  ** See https://axios.nuxtjs.org/options
   */
   axios: {
-    // See https://axios.nuxtjs.org/options
   },<% } %>
 
   /*
