@@ -4,7 +4,6 @@ import VuetifyLoaderPlugin from 'vuetify-loader/lib/plugin'
 <% } -%>
 <% } else if (server === 'adonis') { -%>
 const { resolve } = require('path')
-const pkg = require('../package')
 <%} else { -%>
 <% } -%>
 <% if (!esm) { -%>
