@@ -2,7 +2,6 @@
 <% if (ui === 'vuetify') { -%>
 import VuetifyLoaderPlugin from 'vuetify-loader/lib/plugin'
 <% } -%>
-import { description } from './package'
 <% } else if (server === 'adonis') { -%>
 const { resolve } = require('path')
 const pkg = require('../package')
