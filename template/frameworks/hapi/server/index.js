@@ -13,6 +13,8 @@ function start() {
     options: {}
   })
 
+  await server.start()
+
   consola.ready({
     message: `Server running at: ${server.info.uri}`,
     badge: true
