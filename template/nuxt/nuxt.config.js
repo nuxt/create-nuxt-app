@@ -7,7 +7,9 @@ import colors from 'vuetify/es5/util/colors'
 const { resolve } = require('path')
 <%} else { -%>
 <% } -%>
-
+<% if (!esm) { -%>
+<% if (ui === 'vuetify') { %>const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')<% } %>
+<% } -%>
 <% if (esm) { -%>
 export default {
 <% } else { -%>
@@ -23,7 +25,7 @@ module.exports = {
   */
   head: {
     <% if (ui === 'vuetify') { %>
-    titleTemplate: '%s - ' + pkg.name,
+    titleTemplate: '%s - ' + process.env.npm_package_name,
     <% } %>
     title: process.env.npm_package_name || '',
     meta: [
@@ -80,12 +82,14 @@ module.exports = {
     'nuxt-buefy',<% } %><% if (pwa === 'yes') { %>
     '@nuxtjs/pwa',<% } %><% if (ui === 'vuetify') { %>
     '@nuxtjs/vuetify',<% } %>
+  ],
   <% if (axios === 'yes') { %>
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+
   },<% } %>
 
   <% if (ui === 'vuetify') { %>
