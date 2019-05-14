@@ -5,9 +5,7 @@ import colors from 'vuetify/es5/util/colors'
 <% } -%>
 <% } else if (server === 'adonis') { -%>
 const { resolve } = require('path')
-const pkg = require('../package')
 <%} else { -%>
-const pkg = require('./package')
 <% } -%>
 
 <% if (esm) { -%>
@@ -27,11 +25,11 @@ module.exports = {
     <% if (ui === 'vuetify') { %>
     titleTemplate: '%s - ' + pkg.name,
     <% } %>
-    title: pkg.name,
+    title: process.env.npm_package_name || '',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
+      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }<% if (ui === 'vuetify') { %>,
@@ -82,12 +80,12 @@ module.exports = {
     'nuxt-buefy',<% } %><% if (pwa === 'yes') { %>
     '@nuxtjs/pwa',<% } %><% if (ui === 'vuetify') { %>
     '@nuxtjs/vuetify',<% } %>
-  ],<% if (axios === 'yes') { %>
+  <% if (axios === 'yes') { %>
   /*
   ** Axios module configuration
+  ** See https://axios.nuxtjs.org/options
   */
   axios: {
-    // See https://github.com/nuxt-community/axios-module#options
   },<% } %>
 
   <% if (ui === 'vuetify') { %>
