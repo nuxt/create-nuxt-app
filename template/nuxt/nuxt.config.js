@@ -1,5 +1,4 @@
 <% if (esm) { -%>
-import pkg from './package'
 <% if (ui === 'vuetify') { -%>
 import colors from 'vuetify/es5/util/colors'
 <% } -%>

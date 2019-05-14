@@ -1,10 +1,10 @@
 <template>
   <v-app dark>
     <h1 v-if="error.statusCode === 404">
-      {{ this.pageNotFound }}
+      {{ pageNotFound }}
     </h1>
     <h1 v-else>
-      {{ this.otherError }}
+      {{ otherError }}
     </h1>
     <NuxtLink to="/">
       Home page
@@ -21,10 +21,9 @@ export default {
       default: null
     }
   },
-  head () {
-    const title = this.error.statusCode === 404
-      ? this.pageNotFound
-      : this.otherError
+  head() {
+    const title =
+      this.error.statusCode === 404 ? this.pageNotFound : this.otherError
     return {
       title
     }
