@@ -24,6 +24,9 @@ module.exports = {
   ** Headers of the page
   */
   head: {
+    <% if (ui === 'vuetify') { %>
+    titleTemplate: '%s - ' + pkg.name,
+    <% } %>
     title: pkg.name,
     meta: [
       { charset: 'utf-8' },
@@ -90,6 +93,7 @@ module.exports = {
   <% if (ui === 'vuetify') { %>
     /*
     ** vuetify module configuration
+    ** https://github.com/nuxt-community/vuetify-module
     */
   vuetify: {
     theme: {
