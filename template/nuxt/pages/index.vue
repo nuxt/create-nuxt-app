@@ -21,7 +21,7 @@
         >GitHub</a>
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>
