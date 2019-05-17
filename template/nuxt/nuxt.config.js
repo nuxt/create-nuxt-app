@@ -106,14 +106,13 @@ module.exports = {
       stylus: {
         import: ['~assets/style/variables.styl']
       }
-    },<% } %><% if (ui === 'element-ui') { %>
-    transpile: [/^element-ui/],
-    <% if (ui === 'tailwind') { %>
+    },<% } %><% if (ui === 'tailwind') { %>
     postcss: {
       plugins: {
         tailwindcss: '~/tailwind.config.js'
       }
-    }
+    },<% } %><% if (ui === 'element-ui') { %>
+    transpile: [/^element-ui/],
     <% } %>
     /*
     ** You can extend webpack config here
