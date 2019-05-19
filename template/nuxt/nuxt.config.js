@@ -111,7 +111,7 @@ module.exports = {
     <% } %> <% if (ui === 'tailwind') { %>
     postcss: {
       plugins: [
-        require('tailwindcss')('./tailwind.config.js')
+        tailwindcss: './tailwind.config.js'
       ]
     }, <% } %>
     /*
