@@ -112,7 +112,7 @@ module.exports = {
     postcss: {
       plugins: {
         tailwindcss: './tailwind.config.js'
-      ]
+      }
     }, <% } %>
     /*
     ** You can extend webpack config here
