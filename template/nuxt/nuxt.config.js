@@ -6,9 +6,6 @@ import colors from 'vuetify/es5/util/colors'
 const { resolve } = require('path')
 <%} else { -%>
 <% } -%>
-<% if (!esm) { -%>
-<% if (ui === 'vuetify') { %>const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')<% } %>
-<% } -%>
 <% if (esm) { -%>
 export default {
 <% } else { -%>
