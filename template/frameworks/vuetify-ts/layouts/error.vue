@@ -24,9 +24,7 @@ export default class Error extends Vue {
   @Prop({ type: Object, default: null }) error: Object
   head() {
     const title =
-      this.error.statusCode === 404
-      ? pkg.name + ' | ' + this.pageNotFound
-      : pkg.name + ' | ' + this.otherError
+      this.error.statusCode === 404 ? this.pageNotFound : this.otherError
     return {
       title
     }
