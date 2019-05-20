@@ -72,6 +72,7 @@
     "eslint-plugin-prettier": "^3.0.1",
     "prettier": "^1.16.4"<% } %><% if (ui === 'tailwind') { %>,
     "autoprefixer": "^8.6.4",
+    "nuxt-purgecss": "^0.2.1",
     "tailwindcss": "^0.7.0"<% } else if (ui === 'vuetify') { %>,
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2"<% } %><% if (test !== 'none') { %>,

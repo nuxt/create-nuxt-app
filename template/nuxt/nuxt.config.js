@@ -79,7 +79,9 @@ module.exports = {
     '@nuxtjs/bulma',<% } %><% if (ui === 'buefy') { %>
     // Doc: https://buefy.github.io/#/documentation
     'nuxt-buefy',<% } %><% if (pwa === 'yes') { %>
-    '@nuxtjs/pwa',<% } %>
+    '@nuxtjs/pwa',<% } %><% if (ui === 'tailwind') { %>
+    // Doc: https://github.com/Developmint/nuxt-purgecss
+    'nuxt-purgecss',<% } %>
   ],
   <% if (axios === 'yes') { %>
   /*
@@ -89,6 +91,12 @@ module.exports = {
   axios: {
   },<% } %>
 
+  <% if (ui === 'tailwind') { %>
+  purgeCSS: {
+    // your settings here
+    // https://www.purgecss.com/
+  },
+  <% } %>
   /*
   ** Build configuration
   */
