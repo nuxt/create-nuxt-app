@@ -79,7 +79,8 @@ module.exports = {
     '@nuxtjs/bulma',<% } %><% if (ui === 'buefy') { %>
     // Doc: https://buefy.github.io/#/documentation
     'nuxt-buefy',<% } %><% if (pwa === 'yes') { %>
-    '@nuxtjs/pwa',<% } %>
+    '@nuxtjs/pwa',<% } %><% if (eslint === 'yes') { %>
+    '@nuxtjs/eslint-module',<% } %>
   ],
   <% if (axios === 'yes') { %>
   /*
@@ -112,16 +113,7 @@ module.exports = {
     /*
     ** You can extend webpack config here
     */
-    extend(config, ctx) {<% if (eslint === 'yes') { %>
-      // Run ESLint on save
-      if (ctx.isDev && ctx.isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
-      }<% } %>
+    extend(config, ctx) {
     }
   }
 }
