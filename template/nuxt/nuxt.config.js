@@ -118,7 +118,12 @@ module.exports = {
       }
     },<% } %><% if (ui === 'element-ui') { %>
     transpile: [/^element-ui/],
-    <% } %>
+<% } %><% if (ui === 'tailwind') { %>
+    postcss: {
+      plugins: {
+        tailwindcss: './tailwind.config.js'
+      }
+    }, <% } %>
     /*
     ** You can extend webpack config here
     */
