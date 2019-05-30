@@ -108,7 +108,7 @@ module.exports = {
       }
     },<% } %><% if (ui === 'element-ui') { %>
     transpile: [/^element-ui/],
-    <% } %> <% if (ui === 'tailwind') { %>
+<% } %><% if (ui === 'tailwind') { %>
     postcss: {
       plugins: {
         tailwindcss: './tailwind.config.js'
