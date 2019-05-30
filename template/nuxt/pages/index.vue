@@ -1,5 +1,5 @@
 <template>
-  <section class="container">
+  <div class="container">
     <div>
       <logo />
       <h1 class="title">
@@ -21,7 +21,7 @@
         >GitHub</a>
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>

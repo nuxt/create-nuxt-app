@@ -1,18 +1,11 @@
 <% if (esm) { -%>
 <% if (ui === 'vuetify') { -%>
-import VuetifyLoaderPlugin from 'vuetify-loader/lib/plugin'
+import colors from 'vuetify/es5/util/colors'
 <% } -%>
-import pkg from './package'
 <% } else if (server === 'adonis') { -%>
 const { resolve } = require('path')
-const pkg = require('../package')
 <%} else { -%>
-const pkg = require('./package')
 <% } -%>
-<% if (!esm) { -%>
-<% if (ui === 'vuetify') { %>const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')<% } %>
-<% } -%>
-
 <% if (esm) { -%>
 export default {
 <% } else { -%>
@@ -34,7 +27,7 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
+      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }<% if (ui === 'vuetify') { %>,
@@ -56,8 +49,7 @@ module.exports = {
   */
   css: [<% if (ui === 'element-ui') { %>
     'element-ui/lib/theme-chalk/index.css'<% } else if (ui === 'tailwind') { %>
-    '~/assets/css/tailwind.css'<% } else if (ui === 'vuetify') { %>
-    '~/assets/style/app.styl'<% } else if (ui === 'iview') { %>
+    '~/assets/css/tailwind.css'<% } else if (ui === 'iview') { %>
     'iview/dist/styles/iview.css'<% } else if (ui === 'ant-design-vue') { %>
     'ant-design-vue/dist/antd.css'<% } else if (ui === 'tachyons') { %>
     'tachyons/css/tachyons.css'<% } %>
@@ -67,8 +59,7 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [<% if (ui === 'element-ui') { %>
-    '@/plugins/element-ui'<% } else if (ui === 'vuetify') { %>
-    '@/plugins/vuetify'<% } else if (ui === 'iview') { %>
+    '@/plugins/element-ui'<% } else if (ui === 'iview') { %>
     '@/plugins/iview'<% } else if (ui === 'ant-design-vue') { %>
     '@/plugins/antd-ui'<% } %>
   ],
@@ -85,13 +76,34 @@ module.exports = {
     '@nuxtjs/bulma',<% } %><% if (ui === 'buefy') { %>
     // Doc: https://buefy.github.io/#/documentation
     'nuxt-buefy',<% } %><% if (pwa === 'yes') { %>
-    '@nuxtjs/pwa',<% } %>
-  ],<% if (axios === 'yes') { %>
+    '@nuxtjs/pwa',<% } %><% if (eslint === 'yes') { %>
+    '@nuxtjs/eslint-module',<% } %><% if (ui === 'vuetify') { %>
+    '@nuxtjs/vuetify',<% } %>
+  ],
+  <% if (axios === 'yes') { %>
   /*
   ** Axios module configuration
+  ** See https://axios.nuxtjs.org/options
   */
   axios: {
-    // See https://github.com/nuxt-community/axios-module#options
+
+  },<% } %>
+
+  <% if (ui === 'vuetify') { %>
+    /*
+    ** vuetify module configuration
+    ** https://github.com/nuxt-community/vuetify-module
+    */
+  vuetify: {
+    theme: {
+      primary: colors.blue.darken2,
+      accent: colors.grey.darken3,
+      secondary: colors.amber.darken3,
+      info: colors.teal.lighten1,
+      warning: colors.amber.base,
+      error: colors.deepOrange.accent4,
+      success: colors.green.accent3
+    }
   },<% } %>
 
   /*
@@ -104,33 +116,23 @@ module.exports = {
           customProperties: false
         }
       }
-    },<% } %><% if (ui === 'vuetify') { %>
-    transpile: ['vuetify/lib'],
-    plugins: [new VuetifyLoaderPlugin()],
-    loaders: {
-      stylus: {
-        import: ['~assets/style/variables.styl']
-      }
     },<% } %><% if (ui === 'element-ui') { %>
     transpile: [/^element-ui/],
-    <% } %>
+<% } %><% if (ui === 'tailwind') { %>
+    postcss: {
+      plugins: {
+        tailwindcss: './tailwind.config.js'
+      }
+    }, <% } %>
     /*
     ** You can extend webpack config here
     */
-    extend(config, ctx) {<% if (eslint === 'yes') { %>
-      // Run ESLint on save
-      if (ctx.isDev && ctx.isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
-      }<% } %>
-    }<% if (typescript === 'yes') { %>,
-    // typescript setting 
-    typescript: {
-      typeCheck: false // or ForkTsChecker options
+    extend(config, ctx) {}
+
+    <% if (typescript === 'yes') { %>,
+      // typescript setting 
+      typescript: {
+        typeCheck: false // or ForkTsChecker options
     }<% } %>
   }
 }
