@@ -13,7 +13,6 @@
 </template>
 
 <script lang="ts">
-import pkg from '../package'
 import { Vue, Component, Prop } from 'nuxt-property-decorator'
 
 @Component({})
