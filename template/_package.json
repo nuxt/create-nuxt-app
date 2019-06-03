@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "<%= description %>",
   "author": "<%= author %>",
-  "private": true, <% if (server === 'feathers') { %>
+  "private": true,<% if (server === 'feathers') { %>
   "directories": {
     "lib": "server",
     "config": "server/config",
