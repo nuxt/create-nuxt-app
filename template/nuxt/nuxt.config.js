@@ -124,12 +124,14 @@ module.exports = {
         tailwindcss: './tailwind.config.js'
       }
     }, <% } %>
+
+    <% if (prettier === 'no') { %>,
     /*
     ** You can extend webpack config here
     */
-    extend(config, ctx) {}
+    extend(config, ctx) {},<% } %>
 
-    <% if (typescript === 'yes') { %>,
+    <% if (typescript === 'yes') { %>
       // typescript setting 
       typescript: {
         typeCheck: false // or ForkTsChecker options

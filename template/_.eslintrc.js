@@ -8,22 +8,36 @@ module.exports = {
     use: true
   },<% } %>
   parserOptions: {
-    parser: 'babel-eslint'
+    <% if (typescript === 'yes' && prettier === 'yes') { %>
+    parser: '@typescript-eslint/parser',
+    sourceType: 'module',
+    project: './tsconfig.json',
+    ecmaFeatures: { "legacyDecorators": true }
+    <% } else { %>
+    parser: 'babel-eslint'<% } %>
   },
   extends: [
     '@nuxtjs',
     'plugin:nuxt/recommended'<% if (prettier === 'yes'){ %>,
     'plugin:prettier/recommended',
-    'prettier',
-    'prettier/vue'<% } %>
+    'prettier/vue'<% } else if (prettier === 'yes' && typescript === 'no'){ %>
+    'prettier',    
+     <% } else if (prettier === 'yes' && typescript === 'yes'){ %>
+    'prettier/@typescript-eslint'
+     <% } -%>
   ],<% if (prettier === 'yes'){ %>
   plugins: [
-    'prettier'
+    'prettier'<% if (typescript === 'yes') { %>,
+    '@typescript-eslint'
+    <% } %>
   ],<% } %>
   // add your custom rules here
   rules: {
 <% if (!esm){ -%>
     'nuxt/no-cjs-in-config': 'off'
-<% } -%>
+<% } -%><% if (typescript === 'yes') { %>
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': 'error'
+  <% } %>
   }
 }

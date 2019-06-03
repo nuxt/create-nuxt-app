@@ -86,6 +86,8 @@
     "require-extension-hooks": "^0.3.3",
     "require-extension-hooks-babel": "^0.1.1",
     "require-extension-hooks-vue": "^2.0.0"<% } %><% if (typescript === 'yes') { %>,
-    "@nuxt/typescript": "^2.6.3"<% } %>
+    "@nuxt/typescript": "^2.6.3"<% } %><% if (typescript === 'yes' && prettier === 'yes') { %>,
+    "@typescript-eslint/parser": "^1.9.0",
+    "@typescript-eslint/eslint-plugin": "^1.9.0"<% } %>
   }
 }
