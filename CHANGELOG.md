@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [2.7.0](https://github.com/nuxt/create-nuxt-app/compare/v2.6.0...v2.7.0) (2019-06-06)
+
+
+### Bug Fixes
+
+* **antd-ui:** register plugin only once ([#233](https://github.com/nuxt/create-nuxt-app/issues/233)) ([afe1c6c](https://github.com/nuxt/create-nuxt-app/commit/afe1c6c))
+* **element:** register element UI only once ([#232](https://github.com/nuxt/create-nuxt-app/issues/232)) ([7e533dd](https://github.com/nuxt/create-nuxt-app/commit/7e533dd))
+* **iview:** register plugin only once ([#234](https://github.com/nuxt/create-nuxt-app/issues/234)) ([7ab985d](https://github.com/nuxt/create-nuxt-app/commit/7ab985d))
+
+
+### Features
+
+* **hapi:** upgrade to hapi 18 ([#231](https://github.com/nuxt/create-nuxt-app/issues/231)) ([3112b75](https://github.com/nuxt/create-nuxt-app/commit/3112b75))
+* **vuetify:** use vuetify module ([#225](https://github.com/nuxt/create-nuxt-app/issues/225)) ([1c8d944](https://github.com/nuxt/create-nuxt-app/commit/1c8d944))
+* upgrade tailwindcss to v1 ([#237](https://github.com/nuxt/create-nuxt-app/issues/237)) ([b429533](https://github.com/nuxt/create-nuxt-app/commit/b429533))
+
+
+
 # [2.6.0](https://github.com/nuxt/create-nuxt-app/compare/v2.5.1...v2.6.0) (2019-03-13)
 
 
