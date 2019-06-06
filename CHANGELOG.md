@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.7.1](https://github.com/nuxt/create-nuxt-app/compare/v2.7.0...v2.7.1) (2019-06-06)
+
+
+### Bug Fixes
+
+* undefined colors vuetify errors in nuxt.config.js ([650fe6c](https://github.com/nuxt/create-nuxt-app/commit/650fe6c))
+
+
+
 # [2.7.0](https://github.com/nuxt/create-nuxt-app/compare/v2.6.0...v2.7.0) (2019-06-06)
 
 
