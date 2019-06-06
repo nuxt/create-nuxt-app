@@ -2,10 +2,15 @@
 <% if (ui === 'vuetify') { -%>
 import colors from 'vuetify/es5/util/colors'
 <% } -%>
-<% } else if (server === 'adonis') { -%>
+<% } else { -%>
+<% if (server === 'adonis') { -%>
 const { resolve } = require('path')
-<%} else { -%>
 <% } -%>
+<% if (ui === 'vuetify') { -%>
+const colors = require('vuetify/es5/util/colors').default
+<% } -%>
+<% } -%>
+
 <% if (esm) { -%>
 export default {
 <% } else { -%>
