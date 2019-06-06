@@ -71,7 +71,7 @@
     <%_ } else if (ui === 'element-ui') { _%>
     "element-ui": "^2.4.11",
     <%_ } else if (ui === 'ant-design-vue') { _%>
-    "ant-design-vue": "^1.1.10"
+    "ant-design-vue": "^1.1.10",
     <%_ } else if (ui === 'buefy') { _%>
     "nuxt-buefy": "^0.3.2",
     <%_ } else if (ui === 'iview') { _%>
