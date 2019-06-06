@@ -4,33 +4,52 @@
   "description": "<%= description %>",
   "author": "<%= author %>",
   "private": true,
-  "scripts": {<% if (server === 'adonis') { %>
+  "scripts": {
+    <%_ if (eslint === 'yes') { _%>
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "<%= pm %> run lint",
+    <%_ } _%>
+    <%_ if (test !== 'none') { _%>
+    "test": "<%= test %>",
+    <%_ } _%>
+    <%_ if (server === 'none') { _%>
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+    <%_ } else if (server === 'adonis') { _%>
     "serve:dev": "<%= pm %> run dev",
     "dev": "nodemon --watch app --watch bootstrap --watch config --watch .env -x node server.js",
     "build": "cross-env NODE_ENV=production node ./ace nuxtbuild",
-    "start": "cross-env NODE_ENV=production node server.js"<% } else { %>
-    "dev": "<% if (server === 'none') { %>nuxt<% } else { %>cross-env NODE_ENV=development nodemon server/index.js --watch server<% } %>",
+    "start": "cross-env NODE_ENV=production node server.js"
+    <%_ } else { _%>
+    "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
     "build": "nuxt build",
-    "start": "<% if (server === 'none') { %>nuxt start<% } else { %>cross-env NODE_ENV=production node server/index.js<% } %>",
-    "generate": "nuxt generate"<% } %><% if (eslint === 'yes') { %>,
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "precommit": "<%= pm %> run lint"<% } %><% if (test !== 'none') { %>,
-    "test": "<%= test %>"<% } %>
+    "start": "cross-env NODE_ENV=production node server/index.js",
+    "generate": "nuxt generate"
+    <%_ } _%>
   },
   "dependencies": {
-    "cross-env": "^5.2.0"<% if (edge) { %>,
-    "nuxt-edge": "latest"<% } else { %>,
-    "nuxt": "^2.0.0"<% } %><% if (server === 'express') { %>,
-    "express": "^4.16.4"<% } else if (server === 'koa') { %>,
-    "koa": "^2.6.2"<% } else if (server === 'hapi') { %>,
+    <%_ if (server !== 'none') { _%>
+    "cross-env": "^5.2.0",
+    <%_ } _%>
+    <%_ if (server === 'express') { _%>
+    "express": "^4.16.4",
+    <%_ } else if (server === 'koa') { _%>
+    "koa": "^2.6.2",
+    <%_ } else if (server === 'hapi') { _%>
     "@hapi/hapi": "^18.3.1",
-    "@nuxtjs/hapi": "^2.2.1"<% } else if (server === 'micro') { %>,
+    "@nuxtjs/hapi": "^2.2.1",
+    <%_ } else if (server === 'micro') { _%>
     "micro": "^9.3.3",
-    "micro-route": "^2.5.0"<% } else if (server === 'fastify') { %>,
-    "fastify": "^1.13.3"<% } else if (server === 'feathers') { %>,
+    "micro-route": "^2.5.0",
+    <%_ } else if (server === 'fastify') { _%>
+    "fastify": "^1.13.3",
+    <%_ } else if (server === 'feathers') { _%>
     "@feathersjs/feathers": "^3.3.1",
     "@feathersjs/express": "^1.3.1",
-    "@feathersjs/configuration": "^2.0.6"<% } else if (server === 'adonis') { %>,
+    "@feathersjs/configuration": "^2.0.6",
+    <%_ } else if (server === 'adonis') { _%>
     "@adonisjs/ace": "^4.0.7",
     "@adonisjs/auth": "^2.0.10",
     "@adonisjs/bodyparser": "^1.0.8",
@@ -40,21 +59,47 @@
     "@adonisjs/ignitor": "^1.0.14",
     "@adonisjs/lucid": "^4.0.22",
     "@adonisjs/session": "^1.0.19",
-    "@adonisjs/shield": "^1.0.4"<% } %><% if (ui === 'bootstrap') { %>,
+    "@adonisjs/shield": "^1.0.4",
+    <%_ } _%>
+    <%_ if (ui === 'bootstrap') { _%>
     "bootstrap-vue": "^2.0.0-rc.11",
-    "bootstrap": "^4.1.3"<% } else if (ui === 'vuetify') { %>,
-    "@nuxtjs/vuetify": "0.5.5"<% } else if (ui === 'bulma') { %>,
-    "@nuxtjs/bulma": "^1.2.1"<% } else if (ui === 'element-ui') { %>,
-    "element-ui": "^2.4.11"<% } else if (ui === 'ant-design-vue') { %>,
-    "ant-design-vue": "^1.1.10"<% } else if (ui === 'buefy') { %>,
-    "nuxt-buefy": "^0.3.2"<% } else if (ui === 'iview') { %>,
-    "iview": "3.1.5"<% } %><% if (axios === 'yes') { %>,
-    "@nuxtjs/axios": "^5.3.6"<% } %><% if (pwa === 'yes') { %>,
-    "@nuxtjs/pwa": "^2.6.0"<% } %><% if (ui === 'tachyons') { %>,
-    "tachyons": "^4.11.1"<% } %>
+    "bootstrap": "^4.1.3",
+    <%_ } else if (ui === 'vuetify') { _%>
+    "@nuxtjs/vuetify": "0.5.5",
+    <%_ } else if (ui === 'bulma') { _%>
+    "@nuxtjs/bulma": "^1.2.1",
+    <%_ } else if (ui === 'element-ui') { _%>
+    "element-ui": "^2.4.11",
+    <%_ } else if (ui === 'ant-design-vue') { _%>
+    "ant-design-vue": "^1.1.10"
+    <%_ } else if (ui === 'buefy') { _%>
+    "nuxt-buefy": "^0.3.2",
+    <%_ } else if (ui === 'iview') { _%>
+    "iview": "3.1.5",
+    <%_ } _%>
+    <%_ if (axios === 'yes') { _%>
+    "@nuxtjs/axios": "^5.3.6",
+    <%_ } _%>
+    <%_ if (pwa === 'yes') { _%>
+    "@nuxtjs/pwa": "^2.6.0",
+    <%_ } _%>
+    <%_ if (ui === 'tachyons') { _%>
+    "tachyons": "^4.11.1",
+    <%_ } _%>
+    <%_ if (edge) { _%>
+    "nuxt-edge": "latest"
+    <%_ } else { _%>
+    "nuxt": "^2.0.0"
+    <%_ } _%>
   },
   "devDependencies": {
-    "nodemon": "^1.18.9"<% if (eslint === 'yes') { %>,
+    <%_ if (ui === 'tailwind') { _%>
+    "tailwindcss": "^1.0.0",
+    <%_ } else if (ui === 'vuetify') { _%>
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
+    <%_ } _%>
+    <%_ if (eslint === 'yes') { _%>
     "@nuxtjs/eslint-config": "^0.0.1",
     "@nuxtjs/eslint-module": "^0.0.1",
     "babel-eslint": "^10.0.1",
@@ -66,22 +111,28 @@
     "eslint-plugin-nuxt": ">=0.4.2",
     "eslint-plugin-promise": ">=4.0.1",
     "eslint-plugin-standard": ">=4.0.0",
-    "eslint-plugin-vue": "^5.2.2"<% } %><% if (prettier === 'yes') { %>,
+    "eslint-plugin-vue": "^5.2.2",
+    <%_ } _%>
+    <%_ if (prettier === 'yes') { _%>
     "eslint-config-prettier": "^4.1.0",
     "eslint-plugin-prettier": "^3.0.1",
-    "prettier": "^1.16.4"<% } %><% if (ui === 'tailwind') { %>,
-    "tailwindcss": "^1.0.0"<% } else if (ui === 'vuetify') { %>,
-    "stylus": "^0.54.5",
-    "stylus-loader": "^3.0.2"<% } %><% if (test !== 'none') { %>,
-    "@vue/test-utils": "^1.0.0-beta.27"<% } %><% if (test === 'jest') { %>,
+    "prettier": "^1.16.4",
+    <%_ } _%>
+    <%_ if (test !== 'none') { _%>
+    "@vue/test-utils": "^1.0.0-beta.27",
+    <%_ } _%>
+    <%_ if (test === 'jest') { _%>
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^24.1.0",
     "jest": "^24.1.0",
-    "vue-jest": "^3.0.3"<% } %><% if (test === 'ava') { %>,
+    "vue-jest": "^3.0.3",
+    <%_ } else if (test === 'ava') { _%>
     "ava": "^1.0.1",
     "browser-env": "^3.2.5",
     "require-extension-hooks": "^0.3.3",
     "require-extension-hooks-babel": "^0.1.1",
-    "require-extension-hooks-vue": "^2.0.0"<% } %>
+    "require-extension-hooks-vue": "^2.0.0",
+    <%_ } _%>
+    "nodemon": "^1.18.9"
   }
 }

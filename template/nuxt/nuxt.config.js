@@ -1,33 +1,33 @@
-<% if (esm) { -%>
-<% if (ui === 'vuetify') { -%>
+<%_ if (esm) { _%>
+  <%_ if (ui === 'vuetify') { _%>
 import colors from 'vuetify/es5/util/colors'
-<% } -%>
-<% } else { -%>
-<% if (server === 'adonis') { -%>
+  <%_ } _%>
+<%_ } else { _%>
+  <%_ if (server === 'adonis') { _%>
 const { resolve } = require('path')
-<% } -%>
-<% if (ui === 'vuetify') { -%>
+  <%_ } _%>
+  <%_ if (ui === 'vuetify') { _%>
 const colors = require('vuetify/es5/util/colors').default
-<% } -%>
-<% } -%>
+  <%_ } _%>
+<%_ } _%>
 
-<% if (esm) { -%>
+<%_ if (esm) { _%>
 export default {
-<% } else { -%>
+<%_ } else { _%>
 module.exports = {
-<% } -%>
+<%_ } _%>
   mode: '<%= mode %>',
-<% if (server === 'adonis') { %>
+  <%_ if (server === 'adonis') { _%>
   dev: process.env.NODE_ENV === 'development',
   srcDir: resolve(__dirname, '..', 'resources'),
-<% } %>
+  <%_ } _%>
   /*
   ** Headers of the page
   */
   head: {
-    <% if (ui === 'vuetify') { %>
+    <%_ if (ui === 'vuetify') { _%>
     titleTemplate: '%s - ' + process.env.npm_package_name,
-    <% } %>
+    <%_ } _%>
     title: process.env.npm_package_name || '',
     meta: [
       { charset: 'utf-8' },
@@ -43,62 +43,78 @@ module.exports = {
       }<% } %>
     ]
   },
-
   /*
   ** Customize the progress-bar color
   */
   loading: { color: '#fff' },
-
   /*
   ** Global CSS
   */
-  css: [<% if (ui === 'element-ui') { %>
-    'element-ui/lib/theme-chalk/index.css'<% } else if (ui === 'tailwind') { %>
-    '~/assets/css/tailwind.css'<% } else if (ui === 'iview') { %>
-    'iview/dist/styles/iview.css'<% } else if (ui === 'ant-design-vue') { %>
-    'ant-design-vue/dist/antd.css'<% } else if (ui === 'tachyons') { %>
-    'tachyons/css/tachyons.css'<% } %>
+  css: [
+    <%_ if (ui === 'element-ui') { _%>
+    'element-ui/lib/theme-chalk/index.css'
+    <%_ } else if (ui === 'tailwind') { _%>
+    '~/assets/css/tailwind.css'
+    <%_ } else if (ui === 'iview') { _%>
+    'iview/dist/styles/iview.css'
+    <%_ } else if (ui === 'ant-design-vue') { _%>
+    'ant-design-vue/dist/antd.css'
+    <%_ } else if (ui === 'tachyons') { _%>
+    'tachyons/css/tachyons.css'
+    <%_ } _%>
   ],
-
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: [<% if (ui === 'element-ui') { %>
-    '@/plugins/element-ui'<% } else if (ui === 'iview') { %>
-    '@/plugins/iview'<% } else if (ui === 'ant-design-vue') { %>
-    '@/plugins/antd-ui'<% } %>
+  plugins: [
+    <%_ if (ui === 'element-ui') { _%>
+    '@/plugins/element-ui'
+    <%_ } else if (ui === 'iview') { _%>
+    '@/plugins/iview'
+    <%_ } else if (ui === 'ant-design-vue') { _%>
+    '@/plugins/antd-ui'
+    <%_ } _%>
   ],
-
   /*
   ** Nuxt.js modules
   */
-  modules: [<% if (axios === 'yes') { %>
-    // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',<% } %><% if (ui === 'bootstrap') { %>
+  modules: [
+    <%_ if (ui === 'bootstrap') { _%>
     // Doc: https://bootstrap-vue.js.org/docs/
-    'bootstrap-vue/nuxt',<% } %><% if (ui === 'bulma') { %>
+    'bootstrap-vue/nuxt',
+    <%_ } else if (ui === 'bulma') { _%>
     // Doc:https://github.com/nuxt-community/modules/tree/master/packages/bulma
-    '@nuxtjs/bulma',<% } %><% if (ui === 'buefy') { %>
+    '@nuxtjs/bulma',
+    <%_ } else if (ui === 'buefy') { _%>
     // Doc: https://buefy.github.io/#/documentation
-    'nuxt-buefy',<% } %><% if (pwa === 'yes') { %>
-    '@nuxtjs/pwa',<% } %><% if (eslint === 'yes') { %>
-    '@nuxtjs/eslint-module',<% } %><% if (ui === 'vuetify') { %>
-    '@nuxtjs/vuetify',<% } %>
+    'nuxt-buefy',
+    <%_ } else if (ui === 'vuetify') { _%>
+    '@nuxtjs/vuetify',
+    <%_ } _%>
+    <%_ if (axios === 'yes') { _%>
+    // Doc: https://axios.nuxtjs.org/usage
+    '@nuxtjs/axios',
+    <%_ } _%>
+    <%_ if (pwa === 'yes') { _%>
+    '@nuxtjs/pwa',
+    <%_ } _%>
+    <%_ if (eslint === 'yes') { _%>
+    '@nuxtjs/eslint-module',
+    <%_ } _%>
   ],
-  <% if (axios === 'yes') { %>
+  <%_ if (axios === 'yes') { _%>
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
-
-  },<% } %>
-
-  <% if (ui === 'vuetify') { %>
-    /*
-    ** vuetify module configuration
-    ** https://github.com/nuxt-community/vuetify-module
-    */
+  },
+  <%_ } _%>
+  <%_ if (ui === 'vuetify') { _%>
+  /*
+  ** vuetify module configuration
+  ** https://github.com/nuxt-community/vuetify-module
+  */
   vuetify: {
     theme: {
       primary: colors.blue.darken2,
@@ -109,26 +125,29 @@ module.exports = {
       error: colors.deepOrange.accent4,
       success: colors.green.accent3
     }
-  },<% } %>
-
+  },
+  <%_ } _%>
   /*
   ** Build configuration
   */
-  build: {<% if (ui === 'bulma') { %>
+  build: {
+    <%_ if (ui === 'bulma') { _%>
     postcss: {
       preset: {
         features: {
           customProperties: false
         }
       }
-    },<% } %><% if (ui === 'element-ui') { %>
+    },
+    <%_ } else if (ui === 'element-ui') { _%>
     transpile: [/^element-ui/],
-<% } %><% if (ui === 'tailwind') { %>
+    <%_ } else if (ui === 'tailwind') { _%>
     postcss: {
       plugins: {
         tailwindcss: './tailwind.config.js'
       }
-    }, <% } %>
+    },
+    <%_ } _%>
     /*
     ** You can extend webpack config here
     */
