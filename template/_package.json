@@ -20,7 +20,7 @@
   "dependencies": {
     "cross-env": "^5.2.0"<% if (edge) { %>,
     "nuxt-edge": "latest"<% } else { %>,
-    "nuxt": "^2.4.0"<% } %><% if (server === 'express') { %>,
+    "nuxt": "^2.0.0"<% } %><% if (server === 'express') { %>,
     "express": "^4.16.4"<% } else if (server === 'koa') { %>,
     "koa": "^2.6.2"<% } else if (server === 'hapi') { %>,
     "@hapi/hapi": "^18.3.1",
