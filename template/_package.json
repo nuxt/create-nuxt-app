@@ -5,7 +5,7 @@
   "author": "<%= author %>",
   "private": true,
   "scripts": {
-    <%_ if (eslint === 'yes') { _%>
+    <%_ if (eslint) { _%>
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "<%= pm %> run lint",
     <%_ } _%>
@@ -77,10 +77,10 @@
     <%_ } else if (ui === 'iview') { _%>
     "iview": "3.1.5",
     <%_ } _%>
-    <%_ if (axios === 'yes') { _%>
+    <%_ if (axios) { _%>
     "@nuxtjs/axios": "^5.3.6",
     <%_ } _%>
-    <%_ if (pwa === 'yes') { _%>
+    <%_ if (pwa) { _%>
     "@nuxtjs/pwa": "^2.6.0",
     <%_ } _%>
     <%_ if (ui === 'tachyons') { _%>
@@ -99,7 +99,7 @@
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
     <%_ } _%>
-    <%_ if (eslint === 'yes') { _%>
+    <%_ if (eslint) { _%>
     "@nuxtjs/eslint-config": "^0.0.1",
     "@nuxtjs/eslint-module": "^0.0.1",
     "babel-eslint": "^10.0.1",
@@ -113,7 +113,7 @@
     "eslint-plugin-standard": ">=4.0.0",
     "eslint-plugin-vue": "^5.2.2",
     <%_ } _%>
-    <%_ if (prettier === 'yes') { _%>
+    <%_ if (prettier) { _%>
     "eslint-config-prettier": "^4.1.0",
     "eslint-plugin-prettier": "^3.0.1",
     "prettier": "^1.16.4",

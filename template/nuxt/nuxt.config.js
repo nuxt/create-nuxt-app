@@ -93,18 +93,18 @@ module.exports = {
     <%_ } else if (ui === 'vuetify') { _%>
     '@nuxtjs/vuetify',
     <%_ } _%>
-    <%_ if (axios === 'yes') { _%>
+    <%_ if (axios) { _%>
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     <%_ } _%>
-    <%_ if (pwa === 'yes') { _%>
+    <%_ if (pwa) { _%>
     '@nuxtjs/pwa',
     <%_ } _%>
-    <%_ if (eslint === 'yes') { _%>
+    <%_ if (eslint) { _%>
     '@nuxtjs/eslint-module',
     <%_ } _%>
   ],
-  <%_ if (axios === 'yes') { _%>
+  <%_ if (axios) { _%>
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options

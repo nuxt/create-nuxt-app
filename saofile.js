@@ -115,16 +115,16 @@ module.exports = {
   templateData() {
     const edge = process.argv.includes('--edge')
     const pwa = this.answers.features.includes('pwa')
-    const linter = this.answers.features.includes('linter')
+    const eslint = this.answers.features.includes('linter')
     const prettier = this.answers.features.includes('prettier')
     const axios = this.answers.features.includes('axios')
     const esm = this.answers.server === 'none'
 
     return {
-      pwa: pwa ? 'yes' : 'no',
-      eslint: linter ? 'yes' : 'no',
-      prettier: prettier ? 'yes' : 'no',
-      axios: axios ? 'yes' : 'no',
+      pwa,
+      eslint,
+      prettier,
+      axios,
       esm,
       edge: edge && '-edge'
     }

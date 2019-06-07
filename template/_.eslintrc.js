@@ -13,23 +13,23 @@ module.exports = {
     parser: 'babel-eslint'
   },
   extends: [
-    '@nuxtjs',
-    <%_ if (prettier === 'yes'){ _%>
+    <%_ if (prettier) { _%>
     'prettier',
     'prettier/vue',
     'plugin:prettier/recommended',
     <%_ } _%>
+    '@nuxtjs',
     'plugin:nuxt/recommended'
   ],
-  <%_ if (prettier === 'yes'){ _%>
+  <%_ if (prettier) { _%>
   plugins: [
     'prettier'
   ],
   <%_ } _%>
   // add your custom rules here
   rules: {
-    <%_ if (!esm){ -_%>
+    <%_ if (!esm){ _%>
     'nuxt/no-cjs-in-config': 'off'
-    <%_ } -_%>
+    <%_ } _%>
   }
 }
