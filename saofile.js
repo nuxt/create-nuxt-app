@@ -107,9 +107,9 @@ module.exports = {
     {
       name: 'pm',
       message: 'Choose a package manager',
-      choices: ['npm', 'yarn'],
+      choices: ['yarn', 'npm'],
       type: 'list',
-      default: 'npm'
+      default: 'yarn'
     }
   ],
   templateData() {
