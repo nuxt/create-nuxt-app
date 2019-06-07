@@ -119,6 +119,7 @@ module.exports = {
     const prettier = this.answers.features.includes('prettier')
     const axios = this.answers.features.includes('axios')
     const esm = this.answers.server === 'none'
+    const pmRun = this.answers.pm === 'yarn' ? 'yarn' : 'npm run'
 
     return {
       pwa,
@@ -126,7 +127,8 @@ module.exports = {
       prettier,
       axios,
       esm,
-      edge: edge && '-edge'
+      edge: edge && '-edge',
+      pmRun
     }
   },
   actions() {

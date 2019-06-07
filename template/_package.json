@@ -7,7 +7,7 @@
   "scripts": {
     <%_ if (eslint) { _%>
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "precommit": "<%= pm %> run lint",
+    "precommit": "<%= pmRun %> lint",
     <%_ } _%>
     <%_ if (test !== 'none') { _%>
     "test": "<%= test %>",
@@ -18,7 +18,7 @@
     "start": "nuxt start",
     "generate": "nuxt generate"
     <%_ } else if (server === 'adonis') { _%>
-    "serve:dev": "<%= pm %> run dev",
+    "serve:dev": "<%= pmRun %> dev",
     "dev": "nodemon --watch app --watch bootstrap --watch config --watch .env -x node server.js",
     "build": "cross-env NODE_ENV=production node ./ace nuxtbuild",
     "start": "cross-env NODE_ENV=production node server.js"

@@ -6,17 +6,17 @@
 
 ``` bash
 # install dependencies
-$ <%= pm %> install
+$ <%= pmRun %> install
 
 # serve with hot reload at localhost:3000
-$ <%= pm %> run dev
+$ <%= pmRun %> dev
 
 # build for production and launch server
-$ <%= pm %> run build
-$ <%= pm %> start
+$ <%= pmRun %> build
+$ <%= pmRun %> start
 
 # generate static project
-$ <%= pm %> run generate
+$ <%= pmRun %> generate
 ```
 
 For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
