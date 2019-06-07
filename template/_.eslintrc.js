@@ -3,27 +3,33 @@ module.exports = {
   env: {
     browser: true,
     node: true
-  },<% if (server === 'adonis') { %>
+  },
+  <%_ if (server === 'adonis') { _%>
   globals: {
     use: true
-  },<% } %>
+  },
+  <%_ } _%>
   parserOptions: {
     parser: 'babel-eslint'
   },
   extends: [
     '@nuxtjs',
-    'plugin:nuxt/recommended'<% if (prettier === 'yes'){ %>,
-    'plugin:prettier/recommended',
+    <%_ if (prettier === 'yes'){ _%>
     'prettier',
-    'prettier/vue'<% } %>
-  ],<% if (prettier === 'yes'){ %>
+    'prettier/vue',
+    'plugin:prettier/recommended',
+    <%_ } _%>
+    'plugin:nuxt/recommended'
+  ],
+  <%_ if (prettier === 'yes'){ _%>
   plugins: [
     'prettier'
-  ],<% } %>
+  ],
+  <%_ } _%>
   // add your custom rules here
   rules: {
-<% if (!esm){ -%>
+    <%_ if (!esm){ -_%>
     'nuxt/no-cjs-in-config': 'off'
-<% } -%>
+    <%_ } -_%>
   }
 }

@@ -35,12 +35,14 @@ export default {
 </script>
 
 <style>
-<% if (ui === 'tailwind') { %>/* Sample `apply` at-rules with Tailwind CSS
+<%_ if (ui === 'tailwind') { _%>
+/* Sample `apply` at-rules with Tailwind CSS
 .container {
   @apply min-h-screen flex justify-center items-center text-center mx-auto;
 }
 */
-<% } %>.container {
+<%_ } _%>
+.container {
   margin: 0 auto;
   min-height: 100vh;
   display: flex;
