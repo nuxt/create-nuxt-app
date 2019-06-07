@@ -19,6 +19,7 @@
     "release": "standard-version"
   },
   "dependencies": {
+    "chalk": "^2.4.2",
     "cross-spawn": "^6.0.5",
     "glob": "^7.1.3",
     "lodash": "^4.17.11",

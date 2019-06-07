@@ -19,6 +19,38 @@ module.exports = {
       default: `My ${superb()} Nuxt.js project`
     },
     {
+      name: 'author',
+      type: 'string',
+      message: 'Author name',
+      default: '{gitUser.name}',
+      store: true
+    },
+    {
+      name: 'pm',
+      message: 'Choose a package manager',
+      choices: ['yarn', 'npm'],
+      type: 'list',
+      default: 'yarn'
+    },
+    {
+      name: 'ui',
+      message: 'Use a custom UI framework',
+      type: 'list',
+      choices: [
+        'none',
+        'bootstrap',
+        'vuetify',
+        'bulma',
+        'tailwind',
+        'element-ui',
+        'buefy',
+        'ant-design-vue',
+        'iview',
+        'tachyons'
+      ],
+      default: 'none'
+    },
+    {
       name: 'server',
       message: 'Use a custom server framework',
       type: 'list',
@@ -59,24 +91,6 @@ module.exports = {
       default: []
     },
     {
-      name: 'ui',
-      message: 'Use a custom UI framework',
-      type: 'list',
-      choices: [
-        'none',
-        'bootstrap',
-        'vuetify',
-        'bulma',
-        'tailwind',
-        'element-ui',
-        'buefy',
-        'ant-design-vue',
-        'iview',
-        'tachyons'
-      ],
-      default: 'none'
-    },
-    {
       name: 'test',
       message: 'Use a custom test framework',
       type: 'list',
@@ -96,20 +110,6 @@ module.exports = {
         { name: 'Single Page App', value: 'spa' }
       ],
       default: 'universal'
-    },
-    {
-      name: 'author',
-      type: 'string',
-      message: 'Author name',
-      default: '{gitUser.name}',
-      store: true
-    },
-    {
-      name: 'pm',
-      message: 'Choose a package manager',
-      choices: ['yarn', 'npm'],
-      type: 'list',
-      default: 'yarn'
     }
   ],
   templateData() {
@@ -212,13 +212,6 @@ module.exports = {
 
     await this.npmInstall({ npmClient: this.answers.pm })
 
-    const isNewFolder = this.outDir !== process.cwd()
-    const cd = () => {
-      if (isNewFolder) {
-        console.log(`\t${this.chalk.cyan('cd')} ${this.outFolder}`)
-      }
-    }
-
     if (this.answers.features.includes('linter')) {
       const options = ['run', 'lint', '--', '--fix']
       if (this.answers.pm === 'yarn') {
@@ -230,20 +223,23 @@ module.exports = {
       })
     }
 
-    console.log()
-    console.log(this.chalk.bold(`  To get started:\n`))
-    cd()
-    console.log(`\t${this.answers.pm} run dev\n`)
-    console.log(this.chalk.bold(`  To build & start for production:\n`))
-    cd()
-    console.log(`\t${this.answers.pm} run build`)
-    console.log(`\t${this.answers.pm} start`)
+    const chalk = this.chalk
+    const isNewFolder = this.outDir !== process.cwd()
+    const cdMsg = isNewFolder ? chalk`\t{cyan cd ${this.outFolder}}\n` : ''
+    const pmRun = this.answers.pm === 'yarn' ? 'yarn' : 'npm run'
+
+    console.log(chalk`\n🎉  {bold Successfully created project} {cyan ${this.answers.name}}\n`)
+
+    console.log(chalk`  {bold To get started:}\n`)
+    console.log(chalk`${cdMsg}\t{cyan ${pmRun} dev}\n`)
+
+    console.log(chalk`  {bold To build & start for production:}\n`)
+    console.log(chalk`${cdMsg}\t{cyan ${pmRun} build}`)
+    console.log(chalk`\t{cyan ${pmRun} start}\n`)
 
     if (this.answers.test !== 'none') {
-      console.log(this.chalk.bold(`\n  To test:\n`))
-      cd()
-      console.log(`\t${this.answers.pm} run test`)
+      console.log(chalk`  {bold To test:}\n`)
+      console.log(chalk`${cdMsg}\t{cyan ${pmRun} test}\n`)
     }
-    console.log()
   }
 }
