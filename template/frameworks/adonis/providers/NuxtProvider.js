@@ -1,5 +1,5 @@
 const { ServiceProvider } = require('@adonisjs/fold')
-const { Nuxt, Builder } = require('nuxt<% if (edge) { %>-edge<% } %>')
+const { Nuxt, Builder } = require('nuxt<%= edge %>')
 
 class NuxtProvider extends ServiceProvider {
   register() {

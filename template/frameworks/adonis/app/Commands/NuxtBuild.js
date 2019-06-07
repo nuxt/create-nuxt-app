@@ -1,7 +1,7 @@
 'use strict'
 
 const { Command } = use('@adonisjs/ace')
-const { Builder } = require('nuxt<% if (edge) { %>-edge<% } %>')
+const { Builder } = require('nuxt<%= edge %>')
 
 class NuxtBuild extends Command {
   /**

@@ -1,6 +1,6 @@
 const express = require('express')
 const consola = require('consola')
-const { Nuxt, Builder } = require('nuxt<% if (edge) { %>-edge<% } %>')
+const { Nuxt, Builder } = require('nuxt<%= edge %>')
 const app = express()
 
 // Import and Set Nuxt.js options

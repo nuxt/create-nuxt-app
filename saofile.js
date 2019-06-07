@@ -121,12 +121,12 @@ module.exports = {
     const esm = this.answers.server === 'none'
 
     return {
-      edge,
       pwa: pwa ? 'yes' : 'no',
       eslint: linter ? 'yes' : 'no',
       prettier: prettier ? 'yes' : 'no',
       axios: axios ? 'yes' : 'no',
-      esm
+      esm,
+      edge: edge && '-edge'
     }
   },
   actions() {

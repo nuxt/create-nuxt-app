@@ -1,4 +1,4 @@
-const { Nuxt, Builder } = require('nuxt<% if (edge) { %>-edge<% } %>')
+const { Nuxt, Builder } = require('nuxt<%= edge %>')
 const fastify = require('fastify')({
   logger: true
 })
