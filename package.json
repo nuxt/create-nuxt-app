@@ -13,7 +13,7 @@
     "type": "git"
   },
   "scripts": {
-    "lint": "eslint ./",
+    "lint": "eslint --ext .js,.mjs,.vue .",
     "test": "ava --verbose",
     "test:snapshot": "ava --verbose --update-snapshots",
     "release": "standard-version"

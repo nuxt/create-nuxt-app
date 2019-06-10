@@ -1,1 +1,2 @@
-template
+_*.js
+_.*.vue
