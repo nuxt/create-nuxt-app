@@ -28,7 +28,10 @@ module.exports = {
     {
       name: 'pm',
       message: 'Choose a package manager',
-      choices: ['yarn', 'npm'],
+      choices: [
+        { name: 'Yarn', value: 'yarn' },
+        { name: 'Npm', value: 'npm' }
+      ],
       type: 'list',
       default: 'yarn'
     },
@@ -37,16 +40,16 @@ module.exports = {
       message: 'Use a custom UI framework',
       type: 'list',
       choices: [
-        'none',
-        'bootstrap',
-        'vuetify',
-        'bulma',
-        'tailwind',
-        'element-ui',
-        'buefy',
-        'ant-design-vue',
-        'iview',
-        'tachyons'
+        { name: 'None', value: 'none' },
+        { name: 'Ant Design Vue', value: 'ant-design-vue' },
+        { name: 'Bootstrap Vue', value: 'bootstrap' },
+        { name: 'Buefy', value: 'buefy' },
+        { name: 'Bulma', value: 'bulma' },
+        { name: 'Element', value: 'element-ui' },
+        { name: 'iView', value: 'iview' },
+        { name: 'Tachyons', value: 'tachyons' },
+        { name: 'Tailwind CSS', value: 'tailwind' },
+        { name: 'Vuetify.js', value: 'vuetify' }
       ],
       default: 'none'
     },
@@ -55,14 +58,14 @@ module.exports = {
       message: 'Use a custom server framework',
       type: 'list',
       choices: [
-        'none',
-        'express',
-        'koa',
-        'adonis',
-        'hapi',
-        'feathers',
-        'micro',
-        'fastify'
+        { name: 'none', value: 'none' },
+        { name: 'AdonisJs', value: 'adonis' },
+        { name: 'Express', value: 'express' },
+        { name: 'Fastify', value: 'fastify' },
+        { name: 'Feathers', value: 'feathers' },
+        { name: 'hapi', value: 'hapi' },
+        { name: 'Koa', value: 'koa' },
+        { name: 'Micro', value: 'micro' }
       ],
       default: 'none'
     },
@@ -71,22 +74,10 @@ module.exports = {
       message: 'Choose features to install',
       type: 'checkbox',
       choices: [
-        {
-          name: 'Progressive Web App (PWA) Support',
-          value: 'pwa'
-        },
-        {
-          name: 'Linter / Formatter',
-          value: 'linter'
-        },
-        {
-          name: 'Prettier',
-          value: 'prettier'
-        },
-        {
-          name: 'Axios',
-          value: 'axios'
-        }
+        { name: 'Axios', value: 'axios' },
+        { name: 'ESLint', value: 'linter' },
+        { name: 'Prettier', value: 'prettier' },
+        { name: 'Progressive Web App (PWA) Support', value: 'pwa' },
       ],
       default: []
     },
@@ -95,9 +86,9 @@ module.exports = {
       message: 'Use a custom test framework',
       type: 'list',
       choices: [
-        'none',
-        'jest',
-        'ava'
+        { name: 'none', value: 'none' },
+        { name: 'Jest', value: 'jest' },
+        { name: 'AVA', value: 'ava' }
       ],
       default: 'none'
     },
@@ -106,7 +97,7 @@ module.exports = {
       message: 'Choose rendering mode',
       type: 'list',
       choices: [
-        { name: 'Universal', value: 'universal' },
+        { name: 'Universal (SSR)', value: 'universal' },
         { name: 'Single Page App', value: 'spa' }
       ],
       default: 'universal'
