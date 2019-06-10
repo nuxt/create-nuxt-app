@@ -196,8 +196,8 @@ module.exports = {
       type: 'add',
       files: '*',
       filters: {
-        '_.eslintrc.js': 'features.includes("linter")',
-        '.prettierrc': 'features.includes("prettier")'
+        '_.eslintrc.js': 'linter.includes("eslint")',
+        '.prettierrc': 'linter.includes("prettier")'
       }
     })
 
@@ -217,7 +217,7 @@ module.exports = {
 
     await this.npmInstall({ npmClient: this.answers.pm })
 
-    if (this.answers.features.includes('linter')) {
+    if (this.answers.linter.includes('eslint')) {
       const options = ['run', 'lint', '--', '--fix']
       if (this.answers.pm === 'yarn') {
         options.splice(2, 1)
