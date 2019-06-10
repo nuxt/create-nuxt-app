@@ -116,12 +116,12 @@ module.exports = {
     }
   ],
   templateData() {
-    const edge = process.argv.includes('--edge')
     const pwa = this.answers.features.includes('pwa')
     const eslint = this.answers.linter.includes('eslint')
     const prettier = this.answers.linter.includes('prettier')
     const axios = this.answers.features.includes('axios')
     const esm = this.answers.server === 'none'
+    const edge = process.argv.includes('--edge') ? '-edge' : ''
     const pmRun = this.answers.pm === 'yarn' ? 'yarn' : 'npm run'
 
     return {
@@ -130,7 +130,7 @@ module.exports = {
       prettier,
       axios,
       esm,
-      edge: edge && '-edge',
+      edge,
       pmRun
     }
   },
