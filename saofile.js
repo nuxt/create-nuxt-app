@@ -80,7 +80,7 @@ module.exports = {
         { name: 'Axios', value: 'axios' },
         { name: 'ESLint', value: 'linter' },
         { name: 'Prettier', value: 'prettier' },
-        { name: 'Progressive Web App (PWA) Support', value: 'pwa' },
+        { name: 'Progressive Web App (PWA) Support', value: 'pwa' }
       ],
       default: []
     },
