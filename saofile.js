@@ -5,39 +5,54 @@ const spawn = require('cross-spawn')
 const validate = require('validate-npm-package-name')
 
 const rootDir = __dirname
+const isManualConfig = answers => answers.preset === 'manual'
 
 module.exports = {
   prompts: [
     {
+      name: 'preset',
+      message: 'Please pick a preset:',
+      choices: [
+        { name: 'default (recommended)', value: 'default' },
+        { name: 'Manually select features', value: 'manual' }
+      ],
+      type: 'list',
+      default: 'default'
+    },
+    {
       name: 'name',
-      message: 'Project name',
-      default: '{outFolder}'
+      message: 'Project name:',
+      default: '{outFolder}',
+      when: isManualConfig
     },
     {
       name: 'description',
-      message: 'Project description',
-      default: `My ${superb()} Nuxt.js project`
+      message: 'Project description:',
+      default: `My ${superb()} Nuxt.js project`,
+      when: isManualConfig
     },
     {
       name: 'author',
       type: 'string',
-      message: 'Author name',
+      message: 'Author name:',
       default: '{gitUser.name}',
-      store: true
+      store: true,
+      when: isManualConfig
     },
     {
       name: 'pm',
-      message: 'Choose the package manager',
+      message: 'Choose the package manager:',
       choices: [
         { name: 'Yarn', value: 'yarn' },
         { name: 'Npm', value: 'npm' }
       ],
       type: 'list',
-      default: 'yarn'
+      default: 'yarn',
+      when: isManualConfig
     },
     {
       name: 'ui',
-      message: 'Choose UI framework',
+      message: 'Choose UI framework:',
       type: 'list',
       pageSize: 10,
       choices: [
@@ -52,11 +67,12 @@ module.exports = {
         { name: 'Tailwind CSS', value: 'tailwind' },
         { name: 'Vuetify.js', value: 'vuetify' }
       ],
-      default: 'none'
+      default: 'none',
+      when: isManualConfig
     },
     {
       name: 'server',
-      message: 'Choose custom server framework',
+      message: 'Choose custom server framework:',
       type: 'list',
       pageSize: 10,
       choices: [
@@ -69,44 +85,48 @@ module.exports = {
         { name: 'Koa', value: 'koa' },
         { name: 'Micro', value: 'micro' }
       ],
-      default: 'none'
+      default: 'none',
+      when: isManualConfig
     },
     {
       name: 'features',
-      message: 'Choose Nuxt.js modules',
+      message: 'Choose Nuxt.js modules:',
       type: 'checkbox',
       pageSize: 10,
       choices: [
         { name: 'Axios', value: 'axios' },
         { name: 'Progressive Web App (PWA) Support', value: 'pwa' }
       ],
-      default: []
+      default: [],
+      when: isManualConfig
     },
     {
       name: 'linter',
-      message: 'Choose linting tools',
+      message: 'Choose linting tools:',
       type: 'checkbox',
       pageSize: 10,
       choices: [
         { name: 'ESLint', value: 'eslint' },
         { name: 'Prettier', value: 'prettier' }
       ],
-      default: []
+      default: [],
+      when: isManualConfig
     },
     {
       name: 'test',
-      message: 'Choose test framework',
+      message: 'Choose test framework:',
       type: 'list',
       choices: [
         { name: 'None', value: 'none' },
         { name: 'Jest', value: 'jest' },
         { name: 'AVA', value: 'ava' }
       ],
-      default: 'none'
+      default: 'none',
+      when: isManualConfig
     },
     {
       name: 'mode',
-      message: 'Choose rendering mode',
+      message: 'Choose rendering mode:',
       type: 'list',
       choices: [
         { name: 'Universal (SSR)', value: 'universal' },
@@ -135,6 +155,12 @@ module.exports = {
     }
   },
   actions() {
+    if (!isManualConfig(this.answers)) {
+      Object.assign(
+        this.answers,
+        require(`./presets/${this.answers.preset}`)(this)
+      )
+    }
     const validation = validate(this.answers.name)
     validation.warnings && validation.warnings.forEach((warn) => {
       console.warn('Warning:', warn)
