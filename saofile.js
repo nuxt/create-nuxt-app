@@ -203,9 +203,7 @@ module.exports = {
       patterns: {
         gitignore: '.gitignore',
         '_package.json': 'package.json',
-        '_.eslintrc.js': '.eslintrc.js',
-        'nuxt/pages/_.index.vue': 'nuxt/pages/index.vue',
-        'frameworks/iview/pages/_.index.vue': 'frameworks/iview/pages/index.vue'
+        '_.eslintrc.js': '.eslintrc.js'
       }
     })
 

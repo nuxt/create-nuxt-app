@@ -1,2 +1,3 @@
 _*.js
-_.*.vue
+template/nuxt/pages/index.vue',
+template/frameworks/iview/pages/index.vue'
