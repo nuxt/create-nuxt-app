@@ -38,7 +38,7 @@ for (const prompt of saoConfig.prompts) {
   if (Array.isArray(prompt.choices)) {
     for (const choice of prompt.choices) {
       test(`verify ${prompt.name}: ${choice.name}`, async (t) => {
-        const answer = { [prompt.name]: prompt.type === 'list' ? choice.value : [choice.value] }
+        const answer = { [prompt.name]: prompt.type === 'checkbox' ? [choice.value] : choice.value }
         await verifyPkg(t, answer)
         await verifyNuxtConfig(t, answer)
       })
