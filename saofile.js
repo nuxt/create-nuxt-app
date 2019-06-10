@@ -39,6 +39,7 @@ module.exports = {
       name: 'ui',
       message: 'Use a custom UI framework',
       type: 'list',
+      pageSize: 10,
       choices: [
         { name: 'None', value: 'none' },
         { name: 'Ant Design Vue', value: 'ant-design-vue' },
@@ -57,6 +58,7 @@ module.exports = {
       name: 'server',
       message: 'Use a custom server framework',
       type: 'list',
+      pageSize: 10,
       choices: [
         { name: 'none', value: 'none' },
         { name: 'AdonisJs', value: 'adonis' },
@@ -73,6 +75,7 @@ module.exports = {
       name: 'features',
       message: 'Choose features to install',
       type: 'checkbox',
+      pageSize: 10,
       choices: [
         { name: 'Axios', value: 'axios' },
         { name: 'ESLint', value: 'linter' },
