@@ -27,7 +27,7 @@ module.exports = {
     },
     {
       name: 'pm',
-      message: 'Choose a package manager',
+      message: 'Choose the package manager',
       choices: [
         { name: 'Yarn', value: 'yarn' },
         { name: 'Npm', value: 'npm' }
@@ -37,7 +37,7 @@ module.exports = {
     },
     {
       name: 'ui',
-      message: 'Use a custom UI framework',
+      message: 'Choose UI framework',
       type: 'list',
       pageSize: 10,
       choices: [
@@ -56,11 +56,11 @@ module.exports = {
     },
     {
       name: 'server',
-      message: 'Use a custom server framework',
+      message: 'Choose custom server framework',
       type: 'list',
       pageSize: 10,
       choices: [
-        { name: 'none', value: 'none' },
+        { name: 'None', value: 'none' },
         { name: 'AdonisJs', value: 'adonis' },
         { name: 'Express', value: 'express' },
         { name: 'Fastify', value: 'fastify' },
@@ -73,23 +73,32 @@ module.exports = {
     },
     {
       name: 'features',
-      message: 'Choose features to install',
+      message: 'Choose Nuxt.js modules',
       type: 'checkbox',
       pageSize: 10,
       choices: [
         { name: 'Axios', value: 'axios' },
-        { name: 'ESLint', value: 'linter' },
-        { name: 'Prettier', value: 'prettier' },
         { name: 'Progressive Web App (PWA) Support', value: 'pwa' }
       ],
       default: []
     },
     {
+      name: 'linter',
+      message: 'Choose linting tools',
+      type: 'checkbox',
+      pageSize: 10,
+      choices: [
+        { name: 'ESLint', value: 'eslint' },
+        { name: 'Prettier', value: 'prettier' }
+      ],
+      default: []
+    },
+    {
       name: 'test',
-      message: 'Use a custom test framework',
+      message: 'Choose test framework',
       type: 'list',
       choices: [
-        { name: 'none', value: 'none' },
+        { name: 'None', value: 'none' },
         { name: 'Jest', value: 'jest' },
         { name: 'AVA', value: 'ava' }
       ],
@@ -109,8 +118,8 @@ module.exports = {
   templateData() {
     const edge = process.argv.includes('--edge')
     const pwa = this.answers.features.includes('pwa')
-    const eslint = this.answers.features.includes('linter')
-    const prettier = this.answers.features.includes('prettier')
+    const eslint = this.answers.linter.includes('eslint')
+    const prettier = this.answers.linter.includes('prettier')
     const axios = this.answers.features.includes('axios')
     const esm = this.answers.server === 'none'
     const pmRun = this.answers.pm === 'yarn' ? 'yarn' : 'npm run'
