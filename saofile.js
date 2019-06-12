@@ -153,7 +153,7 @@ module.exports = {
       }
     }]
 
-    if (this.answers.ui !== 'none') {
+    if (this.answers.ui !== 'none' || 'tailwind') {
       actions.push({
         type: 'add',
         files: '**',
