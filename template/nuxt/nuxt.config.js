@@ -77,6 +77,14 @@ module.exports = {
     '@/plugins/antd-ui'
     <%_ } _%>
   ],
+  <%_ if (eslint) { _%>
+  /*
+  ** Nuxt.js devModules
+  */
+  devModules: [
+    '@nuxtjs/eslint-module',
+  ],
+  <%_ } _%>
   /*
   ** Nuxt.js modules
   */
@@ -99,9 +107,6 @@ module.exports = {
     <%_ } _%>
     <%_ if (pwa) { _%>
     '@nuxtjs/pwa',
-    <%_ } _%>
-    <%_ if (eslint) { _%>
-    '@nuxtjs/eslint-module',
     <%_ } _%>
   ],
   <%_ if (axios) { _%>
