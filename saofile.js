@@ -1,4 +1,4 @@
-const { join } = require('path')
+const { join, relative } = require('path')
 const superb = require('superb')
 const glob = require('glob')
 const spawn = require('cross-spawn')
@@ -230,7 +230,8 @@ module.exports = {
 
     const chalk = this.chalk
     const isNewFolder = this.outDir !== process.cwd()
-    const cdMsg = isNewFolder ? chalk`\t{cyan cd ${this.outFolder}}\n` : ''
+    const relativeOutFolder = relative(process.cwd(), this.outDir)
+    const cdMsg = isNewFolder ? chalk`\t{cyan cd ${relativeOutFolder}}\n` : ''
     const pmRun = this.answers.pm === 'yarn' ? 'yarn' : 'npm run'
 
     console.log(chalk`\n🎉  {bold Successfully created project} {cyan ${this.answers.name}}\n`)
