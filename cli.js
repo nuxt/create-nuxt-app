@@ -11,6 +11,7 @@ const cli = cac('create-nuxt-app')
 
 cli
   .command('[out-dir]', 'Generate in a custom directory or current directory')
+  .option('--edge', 'To install `nuxt-edge` instead of `nuxt`')
   .action((outDir = '.') => {
     console.log(chalk`{cyan create-nuxt-app v${version}}`)
     console.log(chalk`✨  Generating Nuxt.js project in {cyan ${outDir}}`)
