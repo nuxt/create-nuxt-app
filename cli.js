@@ -15,7 +15,7 @@ cli
     console.log(chalk`{cyan create-nuxt-app v${version}}`)
     console.log(chalk`✨  Generating Nuxt.js project in {cyan ${outDir}}`)
 
-    // See https://sao.js.org/#/advanced/standalone-cli
+    // See https://saojs.org/api.html#standalone-cli
     sao({ generator, outDir, logLevel: 2 })
       .run()
       .catch((err) => {
