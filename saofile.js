@@ -60,7 +60,7 @@ module.exports = {
       type: 'list',
       pageSize: 10,
       choices: [
-        { name: 'None', value: 'none' },
+        { name: 'None (Recommended)', value: 'none' },
         { name: 'AdonisJs', value: 'adonis' },
         { name: 'Express', value: 'express' },
         { name: 'Fastify', value: 'fastify' },
