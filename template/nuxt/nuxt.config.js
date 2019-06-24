@@ -55,8 +55,6 @@ module.exports = {
   css: [
     <%_ if (ui === 'element-ui') { _%>
     'element-ui/lib/theme-chalk/index.css'
-    <%_ } else if (ui === 'tailwind') { _%>
-    '~/assets/css/tailwind.css'
     <%_ } else if (ui === 'iview') { _%>
     'iview/dist/styles/iview.css'
     <%_ } else if (ui === 'ant-design-vue') { _%>
@@ -104,6 +102,14 @@ module.exports = {
     '@nuxtjs/eslint-module',
     <%_ } _%>
   ],
+  <%_ if (ui === 'tailwind') { _%>
+  /*
+  ** Nuxt.js dev-modules
+  */
+  devModules: [
+    '@nuxtjs/tailwindcss'
+  ],
+  <%_ } _%>
   <%_ if (axios) { _%>
   /*
   ** Axios module configuration
@@ -143,12 +149,6 @@ module.exports = {
     },
     <%_ } else if (ui === 'element-ui') { _%>
     transpile: [/^element-ui/],
-    <%_ } else if (ui === 'tailwind') { _%>
-    postcss: {
-      plugins: {
-        tailwindcss: './tailwind.config.js'
-      }
-    },
     <%_ } _%>
     /*
     ** You can extend webpack config here
