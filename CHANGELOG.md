@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [2.8.0](https://github.com/nuxt/create-nuxt-app/compare/v2.7.1...v2.8.0) (2019-06-24)
+
+
+### Bug Fixes
+
+* iview UI package version match ([#265](https://github.com/nuxt/create-nuxt-app/issues/265)) ([e547353](https://github.com/nuxt/create-nuxt-app/commit/e547353))
+
+
+### Features
+
+* move linting tool to separete prompt ([a6a4ac9](https://github.com/nuxt/create-nuxt-app/commit/a6a4ac9))
+
+
+
 ## [2.7.1](https://github.com/nuxt/create-nuxt-app/compare/v2.7.0...v2.7.1) (2019-06-06)
 
 
