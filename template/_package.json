@@ -75,7 +75,7 @@
     <%_ } else if (ui === 'buefy') { _%>
     "nuxt-buefy": "^0.3.2",
     <%_ } else if (ui === 'iview') { _%>
-    "iview": "3.1.5",
+    "iview": "^3.1.5",
     <%_ } _%>
     <%_ if (axios) { _%>
     "@nuxtjs/axios": "^5.3.6",
