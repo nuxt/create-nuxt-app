@@ -89,7 +89,8 @@ module.exports = {
       pageSize: 10,
       choices: [
         { name: 'ESLint', value: 'eslint' },
-        { name: 'Prettier', value: 'prettier' }
+        { name: 'Prettier', value: 'prettier' },
+        { name: 'Lint staged files', value: 'lintStaged' }
       ],
       default: []
     },
@@ -119,6 +120,7 @@ module.exports = {
     const pwa = this.answers.features.includes('pwa')
     const eslint = this.answers.linter.includes('eslint')
     const prettier = this.answers.linter.includes('prettier')
+    const lintStaged = eslint && this.answers.linter.includes('lintStaged')
     const axios = this.answers.features.includes('axios')
     const esm = this.answers.server === 'none'
     const edge = process.argv.includes('--edge') ? '-edge' : ''
@@ -128,6 +130,7 @@ module.exports = {
       pwa,
       eslint,
       prettier,
+      lintStaged,
       axios,
       esm,
       edge,
