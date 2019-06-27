@@ -110,7 +110,7 @@
     <%_ } _%>
     <%_ if (eslint) { _%>
     "@nuxtjs/eslint-config": "^0.0.1",
-    "@nuxtjs/eslint-module": "^0.0.1",
+    "@nuxtjs/eslint-module": "^0.2.0",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.15.1",
     "eslint-config-standard": ">=12.0.0",
