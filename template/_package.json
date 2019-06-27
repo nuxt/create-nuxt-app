@@ -7,7 +7,6 @@
   "scripts": {
     <%_ if (eslint) { _%>
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "precommit": "<%= pmRun %> lint",
     <%_ } _%>
     <%_ if (test !== 'none') { _%>
     "test": "<%= test %>",
@@ -29,6 +28,16 @@
     "generate": "nuxt generate"
     <%_ } _%>
   },
+  <%_ if (lintStaged) { _%>
+  "lint-staged": {
+    "*.{js,vue}": "<%= pmRun %> lint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  <%_ } _%>
   "dependencies": {
     <%_ if (server !== 'none') { _%>
     "cross-env": "^5.2.0",
@@ -117,6 +126,10 @@
     "eslint-config-prettier": "^4.1.0",
     "eslint-plugin-prettier": "^3.0.1",
     "prettier": "^1.16.4",
+    <%_ } _%>
+    <%_ if (lintStaged) { _%>
+    "husky": "^2.6.0",
+    "lint-staged": "^8.2.1",
     <%_ } _%>
     <%_ if (test !== 'none') { _%>
     "@vue/test-utils": "^1.0.0-beta.27",
