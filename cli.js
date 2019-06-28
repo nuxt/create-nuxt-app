@@ -3,6 +3,7 @@ const path = require('path')
 const sao = require('sao')
 const cac = require('cac')
 const chalk = require('chalk')
+const envinfo = require('envinfo');
 const { version } = require('./package.json')
 
 const generator = path.resolve(__dirname, './')
@@ -12,7 +13,23 @@ const cli = cac('create-nuxt-app')
 cli
   .command('[out-dir] [options]', 'Generate in a custom directory or current directory')
   .option('--edge', 'To install `nuxt-edge` instead of `nuxt`')
-  .action((outDir = '.') => {
+  .option('--info', 'Print out debugging information relating to the local environment')
+  .action(async (outDir = '.') => {
+  	const hasInfoArg = process.argv.slice(2)[0] !== '--edge';
+  	if (hasInfoArg) {
+  		console.log(chalk.bold('\nEnvironment Info:'));
+    	const result = await envinfo
+      		.run({
+        		System: ['OS', 'CPU'],
+        		Binaries: ['Node', 'Yarn', 'npm'],
+        		Browsers: ['Chrome', 'Edge', 'Firefox', 'Safari'],
+        		npmGlobalPackages: ['nuxt', 'create-nuxt-app'],
+      	})
+      	console.log(result);
+      	process.exit(1);
+  	}
+
+  	console.log()
     console.log(chalk`{cyan create-nuxt-app v${version}}`)
     console.log(chalk`✨  Generating Nuxt.js project in {cyan ${outDir}}`)
 
