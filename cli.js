@@ -15,7 +15,7 @@ cli
   .option('--edge', 'To install `nuxt-edge` instead of `nuxt`')
   .option('--info', 'Print out debugging information relating to the local environment')
   .action(async (outDir = '.') => {
-    const hasInfoArg = process.argv.slice(2)[0] !== '--edge'
+    const hasInfoArg = process.argv.slice(2)[0] === '--info'
     if (hasInfoArg) {
       console.log(chalk.bold('\nEnvironment Info:'))
       const result = await envinfo
