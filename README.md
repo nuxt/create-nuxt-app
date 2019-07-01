@@ -63,9 +63,11 @@ yarn create nuxt-app <my-project>
     - [Jest](https://github.com/facebook/jest)
     - [AVA](https://github.com/avajs/ava)
 
-## Optional
+## CLI Options
 
-To install [nuxt-edge](https://www.npmjs.com/package/nuxt-edge) instead of [nuxt](https://www.npmjs.com/package/nuxt), add the command line flag `--edge`:
+### `--edge`
+
+To install [nuxt-edge](https://www.npmjs.com/package/nuxt-edge) instead of [nuxt](https://www.npmjs.com/package/nuxt), add the command line option `--edge`:
 
 ```bash
 npx create-nuxt-app <my-project> --edge
@@ -82,6 +84,22 @@ Or
 ```bash
 yarn create nuxt-app <my-project> --edge
 ```
+
+### `--info`
+
+Print out debugging information relating to the local environment and exit.
+
+### `--help`
+
+Alias: `-h`. Show the help information and exit, include: usage, command and all cli options.
+
+### `--verbose`
+
+Show debug logs
+
+### `--version`
+
+Alias: `-v`. Show version number and exit.
 
 ## Credits
 
