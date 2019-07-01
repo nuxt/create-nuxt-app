@@ -96,7 +96,7 @@ module.exports = {
     // Doc: https://bootstrap-vue.js.org/docs/
     'bootstrap-vue/nuxt',
     <%_ } else if (ui === 'bulma') { _%>
-    // Doc:https://github.com/nuxt-community/modules/tree/master/packages/bulma
+    // Doc: https://github.com/nuxt-community/modules/tree/master/packages/bulma
     '@nuxtjs/bulma',
     <%_ } else if (ui === 'buefy') { _%>
     // Doc: https://buefy.github.io/#/documentation
