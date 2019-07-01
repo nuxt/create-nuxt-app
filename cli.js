@@ -24,12 +24,11 @@ const showEnvInfo = async () => {
 }
 
 cli
-  .command('[out-dir] [options]', 'Generate in a custom directory or current directory')
+  .command('[out-dir]', 'Generate in a custom directory or current directory')
   .option('--edge', 'To install `nuxt-edge` instead of `nuxt`')
   .option('--info', 'Print out debugging information relating to the local environment')
-  .action((outDir = '.') => {
-    const hasInfoArg = process.argv.slice(2)[0] === '--info'
-    if (hasInfoArg) {
+  .action((outDir = '.', cliOptions) => {
+    if (cliOptions.info) {
       return showEnvInfo()
     }
     console.log()
@@ -37,7 +36,7 @@ cli
     console.log(chalk`✨  Generating Nuxt.js project in {cyan ${outDir}}`)
 
     // See https://saojs.org/api.html#standalone-cli
-    sao({ generator, outDir, logLevel: 2 })
+    sao({ generator, outDir, logLevel: 2, cliOptions })
       .run()
       .catch((err) => {
         console.trace(err)

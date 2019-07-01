@@ -123,7 +123,7 @@ module.exports = {
     const lintStaged = eslint && this.answers.linter.includes('lintStaged')
     const axios = this.answers.features.includes('axios')
     const esm = this.answers.server === 'none'
-    const edge = process.argv.includes('--edge') ? '-edge' : ''
+    const edge = this.sao.opts.cliOptions.edge ? '-edge' : ''
     const pmRun = this.answers.pm === 'yarn' ? 'yarn' : 'npm run'
 
     return {
