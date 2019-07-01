@@ -10,36 +10,40 @@ const generator = path.resolve(__dirname, './')
 
 const cli = cac('create-nuxt-app')
 
+const showEnvInfo = async () => {
+  console.log(chalk.bold('\nEnvironment Info:'))
+  const result = await envinfo
+    .run({
+      System: ['OS', 'CPU'],
+      Binaries: ['Node', 'Yarn', 'npm'],
+      Browsers: ['Chrome', 'Edge', 'Firefox', 'Safari'],
+      npmGlobalPackages: ['nuxt', 'create-nuxt-app']
+    })
+  console.log(result)
+  process.exit(1)
+}
+
 cli
   .command('[out-dir] [options]', 'Generate in a custom directory or current directory')
   .option('--edge', 'To install `nuxt-edge` instead of `nuxt`')
   .option('--info', 'Print out debugging information relating to the local environment')
-  .action(async (outDir = '.') => {
+  .action((outDir = '.') => {
     const hasInfoArg = process.argv.slice(2)[0] === '--info'
     if (hasInfoArg) {
-      console.log(chalk.bold('\nEnvironment Info:'))
-      const result = await envinfo
-        .run({
-          System: ['OS', 'CPU'],
-          Binaries: ['Node', 'Yarn', 'npm'],
-          Browsers: ['Chrome', 'Edge', 'Firefox', 'Safari'],
-          npmGlobalPackages: ['nuxt', 'create-nuxt-app']
+      showEnvInfo()
+    } else {
+      console.log()
+      console.log(chalk`{cyan create-nuxt-app v${version}}`)
+      console.log(chalk`✨  Generating Nuxt.js project in {cyan ${outDir}}`)
+
+      // See https://saojs.org/api.html#standalone-cli
+      sao({ generator, outDir, logLevel: 2 })
+        .run()
+        .catch((err) => {
+          console.trace(err)
+          process.exit(1)
         })
-      console.log(result)
-      process.exit(1)
     }
-
-    console.log()
-    console.log(chalk`{cyan create-nuxt-app v${version}}`)
-    console.log(chalk`✨  Generating Nuxt.js project in {cyan ${outDir}}`)
-
-    // See https://saojs.org/api.html#standalone-cli
-    sao({ generator, outDir, logLevel: 2 })
-      .run()
-      .catch((err) => {
-        console.trace(err)
-        process.exit(1)
-      })
   })
 
 cli.help()
