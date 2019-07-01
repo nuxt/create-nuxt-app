@@ -75,7 +75,6 @@ module.exports = {
     '@/plugins/antd-ui'
     <%_ } _%>
   ],
-  <%_ if (eslint || ui === 'tailwind') { _%>
   /*
   ** Nuxt.js dev-modules
   */
@@ -86,10 +85,9 @@ module.exports = {
     <%_ } _%>
     <%_ if (ui === 'tailwind') { _%>
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
     <%_ } _%>
   ],
-  <%_ } _%>
   /*
   ** Nuxt.js modules
   */
