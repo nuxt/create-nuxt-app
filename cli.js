@@ -30,21 +30,20 @@ cli
   .action((outDir = '.') => {
     const hasInfoArg = process.argv.slice(2)[0] === '--info'
     if (hasInfoArg) {
-      showEnvInfo()
-    } else {
-      console.log()
-      console.log(chalk`{cyan create-nuxt-app v${version}}`)
-      console.log(chalk`✨  Generating Nuxt.js project in {cyan ${outDir}}`)
-
-      // See https://saojs.org/api.html#standalone-cli
-      sao({ generator, outDir, logLevel: 2 })
-        .run()
-        .catch((err) => {
-          console.trace(err)
-          process.exit(1)
-        })
+      return showEnvInfo()
     }
-  })
+    console.log()
+    console.log(chalk`{cyan create-nuxt-app v${version}}`)
+    console.log(chalk`✨  Generating Nuxt.js project in {cyan ${outDir}}`)
+
+    // See https://saojs.org/api.html#standalone-cli
+    sao({ generator, outDir, logLevel: 2 })
+      .run()
+      .catch((err) => {
+        console.trace(err)
+        process.exit(1)
+      })
+ })
 
 cli.help()
 
