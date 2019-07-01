@@ -43,7 +43,7 @@ cli
         console.trace(err)
         process.exit(1)
       })
- })
+  })
 
 cli.help()
 
