@@ -67,6 +67,8 @@ yarn create nuxt-app <my-project>
 
 ### `--edge`
 
+Alias: `-e`.
+
 To install [nuxt-edge](https://www.npmjs.com/package/nuxt-edge) instead of [nuxt](https://www.npmjs.com/package/nuxt), add the command line option `--edge`:
 
 ```bash
@@ -87,7 +89,7 @@ yarn create nuxt-app <my-project> --edge
 
 ### `--info`
 
-Print out debugging information relating to the local environment and exit.
+Alias: `-i`. Print out debugging information relating to the local environment and exit.
 
 ### `--help`
 

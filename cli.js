@@ -25,8 +25,8 @@ const showEnvInfo = async () => {
 
 cli
   .command('[out-dir]', 'Generate in a custom directory or current directory')
-  .option('--edge', 'To install `nuxt-edge` instead of `nuxt`')
-  .option('--info', 'Print out debugging information relating to the local environment')
+  .option('-e, --edge', 'To install `nuxt-edge` instead of `nuxt`')
+  .option('-i, --info', 'Print out debugging information relating to the local environment')
   .option('--verbose', 'Show debug logs')
   .action((outDir = '.', cliOptions) => {
     if (cliOptions.info) {
