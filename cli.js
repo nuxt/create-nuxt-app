@@ -27,6 +27,7 @@ cli
   .command('[out-dir]', 'Generate in a custom directory or current directory')
   .option('--edge', 'To install `nuxt-edge` instead of `nuxt`')
   .option('--info', 'Print out debugging information relating to the local environment')
+  .option('--verbose', 'Show debug logs')
   .action((outDir = '.', cliOptions) => {
     if (cliOptions.info) {
       return showEnvInfo()
@@ -35,8 +36,10 @@ cli
     console.log(chalk`{cyan create-nuxt-app v${version}}`)
     console.log(chalk`✨  Generating Nuxt.js project in {cyan ${outDir}}`)
 
+    const { verbose } = cliOptions
+    const logLevel = verbose ? 4 : 2
     // See https://saojs.org/api.html#standalone-cli
-    sao({ generator, outDir, logLevel: 2, cliOptions })
+    sao({ generator, outDir, logLevel, cliOptions })
       .run()
       .catch((err) => {
         console.trace(err)
