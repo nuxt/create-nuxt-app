@@ -75,14 +75,19 @@ module.exports = {
     '@/plugins/antd-ui'
     <%_ } _%>
   ],
-  <%_ if (eslint) { _%>
   /*
-  ** Nuxt.js devModules
+  ** Nuxt.js dev-modules
   */
   devModules: [
+    <%_ if (eslint) { _%>
+    // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
+    <%_ } _%>
+    <%_ if (ui === 'tailwind') { _%>
+    // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
+    '@nuxtjs/tailwindcss'
+    <%_ } _%>
   ],
-  <%_ } _%>
   /*
   ** Nuxt.js modules
   */
@@ -107,14 +112,6 @@ module.exports = {
     '@nuxtjs/pwa',
     <%_ } _%>
   ],
-  <%_ if (ui === 'tailwind') { _%>
-  /*
-  ** Nuxt.js dev-modules
-  */
-  devModules: [
-    '@nuxtjs/tailwindcss'
-  ],
-  <%_ } _%>
   <%_ if (axios) { _%>
   /*
   ** Axios module configuration
