@@ -90,7 +90,8 @@ module.exports = {
       choices: [
         { name: 'ESLint', value: 'eslint' },
         { name: 'Prettier', value: 'prettier' },
-        { name: 'Lint staged files', value: 'lintStaged' }
+        { name: 'Lint staged files', value: 'lintStaged' },
+        { name: 'StyleLint', value: 'stylelint' }
       ],
       default: []
     },
@@ -121,6 +122,7 @@ module.exports = {
     const eslint = this.answers.linter.includes('eslint')
     const prettier = this.answers.linter.includes('prettier')
     const lintStaged = eslint && this.answers.linter.includes('lintStaged')
+    const stylelint = this.answers.linter.includes('stylelint')
     const axios = this.answers.features.includes('axios')
     const esm = this.answers.server === 'none'
     const pmRun = this.answers.pm === 'yarn' ? 'yarn' : 'npm run'
@@ -133,6 +135,7 @@ module.exports = {
       eslint,
       prettier,
       lintStaged,
+      stylelint,
       axios,
       esm,
       edge,
@@ -202,7 +205,8 @@ module.exports = {
       files: '*',
       filters: {
         '_.eslintrc.js': 'linter.includes("eslint")',
-        '.prettierrc': 'linter.includes("prettier")'
+        '.prettierrc': 'linter.includes("prettier")',
+        '_stylelint.config.js': 'linter.includes("stylelint")'
       }
     })
 
@@ -211,7 +215,8 @@ module.exports = {
       patterns: {
         gitignore: '.gitignore',
         '_package.json': 'package.json',
-        '_.eslintrc.js': '.eslintrc.js'
+        '_.eslintrc.js': '.eslintrc.js',
+        '_stylelint.config.js': 'stylelint.config.js'
       }
     })
 
