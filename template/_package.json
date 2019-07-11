@@ -140,10 +140,12 @@
     "jest": "^24.1.0",
     "vue-jest": "^3.0.3",
     <%_ } else if (test === 'ava') { _%>
-    "ava": "^1.0.1",
+    "@babel/preset-env": "^7.5.4",
+    "ava": "^2.2.0",
+    "babel-plugin-module-resolver": "^3.2.0",
     "browser-env": "^3.2.5",
     "require-extension-hooks": "^0.3.3",
-    "require-extension-hooks-babel": "^0.1.1",
+    "require-extension-hooks-babel": "^1.0.0",
     "require-extension-hooks-vue": "^2.0.0",
     <%_ } _%>
     "nodemon": "^1.18.9"
