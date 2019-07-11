@@ -1,5 +1,7 @@
 export default {
-  require: [
-    './test/helpers/setup.js'
-  ]
+  require: ['./test/_setup.js'],
+  sources: ['**/*.{js,vue}'],
+  files: ['test/specs/**/*'],
+  tap: true,
+  verbose: true
 }
