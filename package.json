@@ -26,7 +26,7 @@
     "glob": "^7.1.3",
     "lodash": "^4.17.11",
     "sao": "^1.6.1",
-    "superb": "^2.0.0",
+    "superb": "^4.0.0",
     "validate-npm-package-name": "^3.0.0"
   },
   "devDependencies": {
