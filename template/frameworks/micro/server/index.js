@@ -3,7 +3,7 @@ const consola = require('consola')
 const dispatch = require('micro-route/dispatch')
 const { Nuxt, Builder } = require('nuxt<%= edge %>')
 
-async function start() {
+async function start () {
   // Require nuxt config
   const config = require('../nuxt.config.js')
 

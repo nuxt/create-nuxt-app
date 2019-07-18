@@ -10,7 +10,7 @@ class NuxtBuild extends Command {
    *
    * @return {String}
    */
-  static get signature() {
+  static get signature () {
     return 'nuxtbuild'
   }
 
@@ -20,7 +20,7 @@ class NuxtBuild extends Command {
    *
    * @return {String}
    */
-  static get description() {
+  static get description () {
     return 'Build for production the nuxt.js application.'
   }
 
@@ -31,7 +31,7 @@ class NuxtBuild extends Command {
    * @param  {Object} args    [description]
    * @param  {Object} options [description]
    */
-  async handle(args, options) {
+  async handle (args, options) {
     const nuxt = use('Service/Nuxt')
     this.info('Building nuxt.js application...')
     await new Builder(nuxt).build()

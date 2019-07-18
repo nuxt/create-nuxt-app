@@ -7,7 +7,7 @@ const fastify = require('fastify')({
 const config = require('../nuxt.config.js')
 config.dev = process.env.NODE_ENV !== 'production'
 
-async function start() {
+async function start () {
   // Instantiate nuxt.js
   const nuxt = new Nuxt(config)
 

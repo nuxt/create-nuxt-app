@@ -116,7 +116,7 @@ module.exports = {
       default: 'universal'
     }
   ],
-  templateData() {
+  templateData () {
     const pwa = this.answers.features.includes('pwa')
     const eslint = this.answers.linter.includes('eslint')
     const prettier = this.answers.linter.includes('prettier')
@@ -139,7 +139,7 @@ module.exports = {
       pmRun
     }
   },
-  actions() {
+  actions () {
     const validation = validate(this.answers.name)
     validation.warnings && validation.warnings.forEach((warn) => {
       console.warn('Warning:', warn)
@@ -217,7 +217,7 @@ module.exports = {
 
     return actions
   },
-  async completed() {
+  async completed () {
     this.gitInit()
 
     await this.npmInstall({ npmClient: this.answers.pm })

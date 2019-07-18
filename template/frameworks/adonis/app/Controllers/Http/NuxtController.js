@@ -1,11 +1,11 @@
 'use strict'
 
 class NuxtController {
-  constructor() {
+  constructor () {
     this.nuxt = use('Service/Nuxt')
   }
 
-  async render({ request: { request: req }, response: { response: res } }) {
+  async render ({ request: { request: req }, response: { response: res } }) {
     await new Promise((resolve, reject) => {
       this.nuxt.render(req, res, (promise) => {
         promise.then(resolve).catch(reject)
