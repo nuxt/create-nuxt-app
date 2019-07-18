@@ -1,5 +1,5 @@
 const { join, relative } = require('path')
-const superb = require('superb')
+const { random } = require('superb')
 const glob = require('glob')
 const spawn = require('cross-spawn')
 const validate = require('validate-npm-package-name')
@@ -16,7 +16,7 @@ module.exports = {
     {
       name: 'description',
       message: 'Project description',
-      default: `My ${superb()} Nuxt.js project`
+      default: `My ${random()} Nuxt.js project`
     },
     {
       name: 'author',
