@@ -42,6 +42,7 @@ module.exports = {
       pageSize: 10,
       choices: [
         { name: 'None', value: 'none' },
+        { name: 'Framevuerk', value: 'framevuerk' },
         { name: 'Ant Design Vue', value: 'ant-design-vue' },
         { name: 'Bootstrap Vue', value: 'bootstrap' },
         { name: 'Buefy', value: 'buefy' },
