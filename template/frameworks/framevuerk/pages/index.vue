@@ -3,7 +3,9 @@
     <fvSidebar v-model="sidebar" class="sidebar">
       <div class="fv-text-center fv-padding">
         <fvAvatar name="Default User" src="https://randomuser.me/api/portraits/women/44.jpg" size="128px" />
-        <h2 class="fv-padding-sm"> Default User </h2>
+        <h2 class="fv-padding-sm">
+          Default User
+        </h2>
       </div>
       <fvList parent>
         <fvListItem class="selected">
@@ -32,7 +34,9 @@
           <FramevuerkLogo />
         </div>
         <div class="fv-grow">
-          <h2 class="fv-hidden-xs"> Framevuerk </h2>
+          <h2 class="fv-hidden-xs">
+            Framevuerk
+          </h2>
           <small class="fv-hidden-sm fv-hidden-xs"> Generated Nuxt + Framevuerk Template </small>
         </div>
         <fvButton class="fv-margin-end" @click.prevent="toggleDocsMenu">
@@ -83,13 +87,19 @@
                 <fvInput v-model="exmps.lastName" placeholder="Enter Last Name" />
               </fvFormElement>
               <fvFormElement class="fv-col-12" label="Gender" inline>
-                <fvCheck v-model="exmps.gender" content="m"> Men </fvCheck>
-                <fvCheck v-model="exmps.gender" content="f"> Women </fvCheck>
-                <fvCheck v-model="exmps.gender" :content="null"> Other </fvCheck>
+                <fvCheck v-model="exmps.gender" content="m">
+                  Men
+                </fvCheck>
+                <fvCheck v-model="exmps.gender" content="f">
+                  Women
+                </fvCheck>
+                <fvCheck v-model="exmps.gender" :content="null">
+                  Other
+                </fvCheck>
               </fvFormElement>
               <fvFormElement class="fv-col-12" label="Home to Work Distance">
                 <template slot="label" slot-scope="scope">
-                  {{scope.label}}
+                  {{ scope.label }}
                   <span class="fv-margin-start-sm fv-text-primary">
                     <span v-if="exmps.htw">~{{ exmps.htw }}km</span>
                   </span>
@@ -103,10 +113,17 @@
                 <fvDatepicker v-model="exmps.marriageDate" placeholder="Enter Date of Marriage" :disabled="!exmps.married" />
               </fvFormElement>
               <fvFormElement class="fv-col" label="Living Continent">
-                <fvSelect placeholder="Enter Living Continent" v-model="exmps.continent" :options="['Africa','Antarctica','Asia','Europe','North America','Australia/Oceania','South America']" text-key="" value-key="" disabled-key="" />
+                <fvSelect
+                  v-model="exmps.continent"
+                  placeholder="Enter Living Continent"
+                  :options="['Africa','Antarctica','Asia','Europe','North America','Australia/Oceania','South America']"
+                  text-key=""
+                  value-key=""
+                  disabled-key=""
+                />
               </fvFormElement>
               <fvFormElement class="fv-col-12" label="Biography">
-                <fvTextarea placeholder="Enter Your Biography" v-model="exmps.bio" auto-height />
+                <fvTextarea v-model="exmps.bio" placeholder="Enter Your Biography" auto-height />
               </fvFormElement>
             </fvForm>
           </div>
@@ -125,7 +142,7 @@ export default {
     Logo,
     FramevuerkLogo
   },
-  data(){
+  data () {
     return {
       sidebar: false,
       docsMenu: false,
@@ -143,10 +160,10 @@ export default {
     }
   },
   methods: {
-    toggleSidebar() {
+    toggleSidebar () {
       this.sidebar = !this.sidebar
     },
-    toggleDocsMenu() {
+    toggleDocsMenu () {
       setTimeout(() => {
         this.docsMenu = !this.docsMenu
       })
@@ -163,4 +180,4 @@ export default {
 .sidebar {
   min-width: 300px;
 }
-</style> 
+</style>
