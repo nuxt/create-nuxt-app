@@ -134,7 +134,6 @@
     <%_ } else if (test === 'ava') { _%>
     "@babel/preset-env": "^7.5.4",
     "ava": "^2.2.0",
-    "babel-plugin-module-resolver": "^3.2.0",
     "browser-env": "^3.2.5",
     "require-extension-hooks": "^0.3.3",
     "require-extension-hooks-babel": "^1.0.0",
