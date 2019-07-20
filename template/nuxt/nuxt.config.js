@@ -168,7 +168,6 @@ module.exports = {
     extend (config, ctx) {
     }
   },
-
   /*
   ** Nuxt server middlewares
   */
