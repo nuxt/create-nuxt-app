@@ -167,5 +167,14 @@ module.exports = {
     */
     extend (config, ctx) {
     }
-  }
+  },
+
+  /*
+  ** Nuxt server middlewares
+  */
+  serverMiddleware: [
+    <%_ if (server === 'express') { _%>
+    '~/server/index.js',
+    <%_ } _%>
+  ]
 }

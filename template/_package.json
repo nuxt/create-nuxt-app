@@ -25,6 +25,11 @@
     "dev": "nodemon --watch app --watch bootstrap --watch config --watch .env -x node server.js",
     "build": "cross-env NODE_ENV=production node ./ace nuxtbuild",
     "start": "cross-env NODE_ENV=production node server.js"
+    <%_ } else if (server === 'express') { _%>
+    "dev": "nodemon --watch server --exec \"nuxt dev\"",
+    "build": "nuxt build",
+    "start": "cross-env NODE_ENV=production nuxt start",
+    "generate": "nuxt generate"
     <%_ } else { _%>
     "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
     "build": "nuxt build",
