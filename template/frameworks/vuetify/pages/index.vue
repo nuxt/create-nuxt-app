@@ -9,7 +9,7 @@
       sm8
       md6
     >
-      <div class="text-xs-center">
+      <div class="text-center">
         <logo />
         <vuetify-logo />
       </div>
@@ -68,7 +68,6 @@
           <v-spacer />
           <v-btn
             color="primary"
-            flat
             nuxt
             to="/inspire"
           >
