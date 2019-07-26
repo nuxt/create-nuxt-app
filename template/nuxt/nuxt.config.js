@@ -36,7 +36,7 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-      <%_ if (ui === 'vuetify' || ui === 'framevuerk') { _%>,
+      <%_ if (['vuetify', 'framevuerk'].includes(ui)) { _%>,
       {
         rel: 'stylesheet',
         href:
