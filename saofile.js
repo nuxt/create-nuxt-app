@@ -42,12 +42,12 @@ module.exports = {
       pageSize: 10,
       choices: [
         { name: 'None', value: 'none' },
-        { name: 'Framevuerk', value: 'framevuerk' },
         { name: 'Ant Design Vue', value: 'ant-design-vue' },
         { name: 'Bootstrap Vue', value: 'bootstrap' },
         { name: 'Buefy', value: 'buefy' },
         { name: 'Bulma', value: 'bulma' },
         { name: 'Element', value: 'element-ui' },
+        { name: 'Framevuerk', value: 'framevuerk' },
         { name: 'iView', value: 'iview' },
         { name: 'Tachyons', value: 'tachyons' },
         { name: 'Tailwind CSS', value: 'tailwind' },
