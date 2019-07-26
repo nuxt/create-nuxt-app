@@ -36,13 +36,6 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-      <%_ if (ui === 'vuetify') { _%>,
-      {
-        rel: 'stylesheet',
-        href:
-          'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons'
-      }
-      <%_ } _%>
     ]
   },
   /*
@@ -86,6 +79,8 @@ module.exports = {
     <%_ if (ui === 'tailwind') { _%>
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss',
+    <%_ } else if (ui === 'vuetify') { _%>
+    '@nuxtjs/vuetify',
     <%_ } _%>
   ],
   /*
@@ -101,8 +96,6 @@ module.exports = {
     <%_ } else if (ui === 'buefy') { _%>
     // Doc: https://buefy.github.io/#/documentation
     'nuxt-buefy',
-    <%_ } else if (ui === 'vuetify') { _%>
-    '@nuxtjs/vuetify',
     <%_ } _%>
     <%_ if (axios) { _%>
     // Doc: https://axios.nuxtjs.org/usage
@@ -126,14 +119,20 @@ module.exports = {
   ** https://github.com/nuxt-community/vuetify-module
   */
   vuetify: {
+    customVariables: ['~/assets/variables.scss'],
     theme: {
-      primary: colors.blue.darken2,
-      accent: colors.grey.darken3,
-      secondary: colors.amber.darken3,
-      info: colors.teal.lighten1,
-      warning: colors.amber.base,
-      error: colors.deepOrange.accent4,
-      success: colors.green.accent3
+      dark: true,
+      themes: {
+        dark: {
+          primary: colors.blue.darken2,
+          accent: colors.grey.darken3,
+          secondary: colors.amber.darken3,
+          info: colors.teal.lighten1,
+          warning: colors.amber.base,
+          error: colors.deepOrange.accent4,
+          success: colors.green.accent3
+        }
+      }
     }
   },
   <%_ } _%>
