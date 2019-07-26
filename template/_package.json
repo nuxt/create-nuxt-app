@@ -98,7 +98,7 @@
     <%_ if (edge) { _%>
     "nuxt-edge": "latest"
     <%_ } else { _%>
-    "nuxt": "^2.0.0"
+    "nuxt": "^2.8.1"
     <%_ } _%>
   },
   "devDependencies": {
