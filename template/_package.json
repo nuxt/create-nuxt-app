@@ -73,8 +73,6 @@
     <%_ if (ui === 'bootstrap') { _%>
     "bootstrap-vue": "^2.0.0-rc.11",
     "bootstrap": "^4.1.3",
-    <%_ } else if (ui === 'vuetify') { _%>
-    "@nuxtjs/vuetify": "0.5.5",
     <%_ } else if (ui === 'bulma') { _%>
     "@nuxtjs/bulma": "^1.2.1",
     <%_ } else if (ui === 'element-ui') { _%>
@@ -105,8 +103,7 @@
     <%_ if (ui === 'tailwind') { _%>
     "@nuxtjs/tailwindcss": "^1.0.0",
     <%_ } else if (ui === 'vuetify') { _%>
-    "stylus": "^0.54.5",
-    "stylus-loader": "^3.0.2",
+    "@nuxtjs/vuetify": "^1.0.0",
     <%_ } _%>
     <%_ if (eslint) { _%>
     "@nuxtjs/eslint-config": "^1.0.1",
