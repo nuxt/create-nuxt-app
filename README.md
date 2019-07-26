@@ -33,36 +33,49 @@ yarn create nuxt-app <my-project>
 
 ## Features :tada:
 
+1. Choose the package manager
+    - Yarn
+    - Npm
+1. Choose your favorite UI framework:
+    - None (feel free to add one later)
+    - [Ant Design Vue](https://github.com/vueComponent/ant-design-vue)
+    - [Bootstrap](https://github.com/bootstrap-vue/bootstrap-vue)
+    - [Buefy](https://buefy.github.io)
+    - [Bulma](https://github.com/jgthms/bulma)
+    - [Element](https://github.com/ElemeFE/element)
+    - [iView](https://www.iviewui.com/)
+    - [Tachyons](https://github.com/tachyons-css/tachyons)
+    - [Tailwind CSS](https://github.com/tailwindcss/tailwindcss)
+    - [Vuetify](https://github.com/vuetifyjs/vuetify)
 1. Choose between integrated server-side frameworks:
     - None (Nuxt default server)
+    - [Adonis](https://github.com/adonisjs/adonis-framework)
     - [Express](https://github.com/expressjs/express)
-    - [Koa](https://github.com/koajs/koa)
-    - [Hapi](https://github.com/hapijs/hapi)
-    - [Feathers](https://github.com/feathersjs/feathers)
-    - [Micro](https://github.com/zeit/micro)
     - [Fastify](https://github.com/fastify/fastify)
-    - [Adonis](https://github.com/adonisjs/adonis-framework) (WIP)
-2. Check the features needed for your project:
+    - [Feathers](https://github.com/feathersjs/feathers)
+    - [Hapi](https://github.com/hapijs/hapi)
+    - [Koa](https://github.com/koajs/koa)
+    - [Micro](https://github.com/zeit/micro)
+1. Choose Nuxt.js modules:
+    - [Axios](https://github.com/nuxt-community/axios-module)
+    - [Progressive Web App (PWA) Support](https://github.com/nuxt-community/pwa-module)
+1. Choose linting tools:
+    - [ESLint](https://github.com/nuxt/eslint-config)
+    - [Prettier](https://github.com/prettier/prettier)
+    - [Lint staged files](https://github.com/okonet/lint-staged)
+1. Check the features needed for your project:
     - [PWA](https://pwa.nuxtjs.org/)
     - Linter / Formatter
     - [Prettier](https://prettier.io/)
     - [Axios](https://github.com/nuxt-community/axios-module)
-3. Choose your favorite UI framework:
-    - None (feel free to add one later)
-    - [Framevuerk](https://framevuerk.com)
-    - [Bootstrap](https://github.com/bootstrap-vue/bootstrap-vue)
-    - [Vuetify](https://github.com/vuetifyjs/vuetify)
-    - [Bulma](https://github.com/jgthms/bulma)
-    - [Tailwind](https://github.com/tailwindcss/tailwindcss)
-    - [Element UI](https://github.com/ElemeFE/element)
-    - [Ant Design Vue](https://github.com/vueComponent/ant-design-vue)
-    - [Buefy](https://buefy.github.io)
-    - [iView](https://www.iviewui.com/)
     - [Tachyons](https://tachyons.io)
-4. Choose your favorite test framework:
+1. Choose your favorite test framework:
     - None
     - [Jest](https://github.com/facebook/jest)
     - [AVA](https://github.com/avajs/ava)
+1. Choose rendering mode
+    - [Universal (SSR)](https://nuxtjs.org/guide/#server-rendered-universal-ssr-)
+    - [SPA](https://nuxtjs.org/guide/#single-page-applications-spa-)
 
 ## CLI Options
 
