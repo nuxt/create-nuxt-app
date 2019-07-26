@@ -47,6 +47,7 @@ module.exports = {
         { name: 'Buefy', value: 'buefy' },
         { name: 'Bulma', value: 'bulma' },
         { name: 'Element', value: 'element-ui' },
+        { name: 'Framevuerk', value: 'framevuerk' },
         { name: 'iView', value: 'iview' },
         { name: 'Tachyons', value: 'tachyons' },
         { name: 'Tailwind CSS', value: 'tailwind' },
