@@ -49,6 +49,7 @@ yarn create nuxt-app <my-project>
     - [Axios](https://github.com/nuxt-community/axios-module)
 3. Choose your favorite UI framework:
     - None (feel free to add one later)
+    - [Framevuerk](https://framevuerk.com)
     - [Bootstrap](https://github.com/bootstrap-vue/bootstrap-vue)
     - [Vuetify](https://github.com/vuetifyjs/vuetify)
     - [Bulma](https://github.com/jgthms/bulma)

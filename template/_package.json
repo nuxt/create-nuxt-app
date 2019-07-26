@@ -5,6 +5,10 @@
   "author": "<%= author %>",
   "private": true,
   "scripts": {
+    <%_ if (ui === 'framevuerk') { _%>
+    "build:framevuerk": "framevuerk-builder -c ./framevuerk-config.js",
+    "prepublish": "npm run build:framevuerk",
+    <%_ } _%>
     <%_ if (eslint) { _%>
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     <%_ } _%>
@@ -83,6 +87,8 @@
     "nuxt-buefy": "^0.3.2",
     <%_ } else if (ui === 'iview') { _%>
     "iview": "^3.1.5",
+    <%_ } else if (ui === 'framevuerk') { _%>
+    "framevuerk": "^2.2.5",
     <%_ } _%>
     <%_ if (axios) { _%>
     "@nuxtjs/axios": "^5.3.6",
@@ -104,6 +110,8 @@
     "@nuxtjs/tailwindcss": "^1.0.0",
     <%_ } else if (ui === 'vuetify') { _%>
     "@nuxtjs/vuetify": "^1.0.0",
+    <%_ } else if (ui === 'framevuerk') { _%>
+    "framevuerk-builder": "^2.0.2",
     <%_ } _%>
     <%_ if (eslint) { _%>
     "@nuxtjs/eslint-config": "^1.0.1",

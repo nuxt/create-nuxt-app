@@ -36,6 +36,13 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      <%_ if (ui === 'framevuerk') { _%>,
+      {
+        rel: 'stylesheet',
+        href:
+          'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons'
+      }
+      <%_ } _%>
     ]
   },
   /*
@@ -54,6 +61,8 @@ module.exports = {
     'ant-design-vue/dist/antd.css'
     <%_ } else if (ui === 'tachyons') { _%>
     'tachyons/css/tachyons.css'
+    <%_ } else if (ui === 'framevuerk') { _%>
+    'framevuerk/dist/framevuerk-nuxt.min.css'
     <%_ } _%>
   ],
   /*
@@ -66,6 +75,8 @@ module.exports = {
     '@/plugins/iview'
     <%_ } else if (ui === 'ant-design-vue') { _%>
     '@/plugins/antd-ui'
+    <%_ } else if (ui === 'framevuerk') { _%>
+    '@/plugins/framevuerk'
     <%_ } _%>
   ],
   /*
