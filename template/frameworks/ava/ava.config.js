@@ -1,5 +1,5 @@
 export default {
-  require: ['./test/_setup.js'],
+  require: ['./test/ava.setup.js'],
   sources: ['**/*.{js,vue}'],
   files: ['test/specs/**/*'],
   tap: true,
