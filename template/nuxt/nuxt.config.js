@@ -62,7 +62,7 @@ module.exports = {
     <%_ } else if (ui === 'tachyons') { _%>
     'tachyons/css/tachyons.css'
     <%_ } else if (ui === 'framevuerk') { _%>
-    'framevuerk/dist/framevuerk-nuxt.min.css'
+    'framevuerk/dist/framevuerk.min.css'
     <%_ } _%>
   ],
   /*

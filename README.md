@@ -43,6 +43,7 @@ yarn create nuxt-app <my-project>
     - [Buefy](https://buefy.github.io)
     - [Bulma](https://github.com/jgthms/bulma)
     - [Element](https://github.com/ElemeFE/element)
+    - [Framevuerk](https://github.com/framevuerk/framevuerk)
     - [iView](https://www.iviewui.com/)
     - [Tachyons](https://github.com/tachyons-css/tachyons)
     - [Tailwind CSS](https://github.com/tailwindcss/tailwindcss)
