@@ -39,7 +39,7 @@ module.exports = {
       name: 'ui',
       message: 'Choose UI framework',
       type: 'list',
-      pageSize: 10,
+      pageSize: 15,
       choices: [
         { name: 'None', value: 'none' },
         { name: 'Ant Design Vue', value: 'ant-design-vue' },
