@@ -15,7 +15,7 @@
     <%_ if (test !== 'none') { _%>
     "test": "<%= test %>",
     <%_ } _%>
-    <%_ if (server === 'none') { _%>
+    <%_ if (server === 'none' || server === 'express') { _%>
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
@@ -25,11 +25,6 @@
     "dev": "nodemon --watch app --watch bootstrap --watch config --watch .env -x node server.js",
     "build": "cross-env NODE_ENV=production node ./ace nuxtbuild",
     "start": "cross-env NODE_ENV=production node server.js"
-    <%_ } else if (server === 'express') { _%>
-    "dev": "nodemon --watch server --exec \"nuxt dev\"",
-    "build": "nuxt build",
-    "start": "cross-env NODE_ENV=production nuxt start",
-    "generate": "nuxt generate"
     <%_ } else { _%>
     "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
     "build": "nuxt build",
@@ -52,7 +47,7 @@
     "cross-env": "^5.2.0",
     <%_ } _%>
     <%_ if (server === 'express') { _%>
-    "express": "^4.16.4",
+    "express": "^4.17.1",
     <%_ } else if (server === 'koa') { _%>
     "koa": "^2.6.2",
     <%_ } else if (server === 'hapi') { _%>

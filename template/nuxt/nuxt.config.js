@@ -2,12 +2,22 @@
   <%_ if (ui === 'vuetify') { _%>
 import colors from 'vuetify/es5/util/colors'
   <%_ } _%>
+  <%_ if (server === 'express') { _%>
+// Need to explicitly import server middleware, otherwise hot reloading won't work
+// eslint-disable-next-line
+import serverimport from './server/index.js'
+  <%_ } _%>
 <%_ } else { _%>
   <%_ if (server === 'adonis') { _%>
 const { resolve } = require('path')
   <%_ } _%>
   <%_ if (ui === 'vuetify') { _%>
 const colors = require('vuetify/es5/util/colors').default
+  <%_ } _%>
+  <%_ if (server === 'express') { _%>
+// Need to explicitly import server middleware, otherwise hot reloading won't work
+// eslint-disable-next-line
+const serverimport = require('./server/index.js')
   <%_ } _%>
 <%_ } _%>
 
