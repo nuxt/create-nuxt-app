@@ -1,5 +1,5 @@
 const { join, relative } = require('path')
-const superb = require('superb')
+const { random } = require('superb')
 const glob = require('glob')
 const spawn = require('cross-spawn')
 const validate = require('validate-npm-package-name')
@@ -16,7 +16,7 @@ module.exports = {
     {
       name: 'description',
       message: 'Project description',
-      default: `My ${superb()} Nuxt.js project`
+      default: `My ${random()} Nuxt.js project`
     },
     {
       name: 'author',
@@ -39,7 +39,7 @@ module.exports = {
       name: 'ui',
       message: 'Choose UI framework',
       type: 'list',
-      pageSize: 10,
+      pageSize: 15,
       choices: [
         { name: 'None', value: 'none' },
         { name: 'Ant Design Vue', value: 'ant-design-vue' },
@@ -47,6 +47,7 @@ module.exports = {
         { name: 'Buefy', value: 'buefy' },
         { name: 'Bulma', value: 'bulma' },
         { name: 'Element', value: 'element-ui' },
+        { name: 'Framevuerk', value: 'framevuerk' },
         { name: 'iView', value: 'iview' },
         { name: 'Tachyons', value: 'tachyons' },
         { name: 'Tailwind CSS', value: 'tailwind' },
@@ -117,7 +118,7 @@ module.exports = {
       default: 'universal'
     }
   ],
-  templateData() {
+  templateData () {
     const pwa = this.answers.features.includes('pwa')
     const eslint = this.answers.linter.includes('eslint')
     const prettier = this.answers.linter.includes('prettier')
@@ -142,7 +143,7 @@ module.exports = {
       pmRun
     }
   },
-  actions() {
+  actions () {
     const validation = validate(this.answers.name)
     validation.warnings && validation.warnings.forEach((warn) => {
       console.warn('Warning:', warn)
@@ -222,7 +223,7 @@ module.exports = {
 
     return actions
   },
-  async completed() {
+  async completed () {
     this.gitInit()
 
     await this.npmInstall({ npmClient: this.answers.pm })

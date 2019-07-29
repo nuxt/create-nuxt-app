@@ -5,6 +5,10 @@
   "author": "<%= author %>",
   "private": true,
   "scripts": {
+    <%_ if (ui === 'framevuerk') { _%>
+    "build:framevuerk": "framevuerk-builder -c ./framevuerk-config.js",
+    "prepublish": "<%= pmRun %> build:framevuerk",
+    <%_ } _%>
     <%_ if (eslint) { _%>
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     <%_ } _%>
@@ -73,8 +77,6 @@
     <%_ if (ui === 'bootstrap') { _%>
     "bootstrap-vue": "^2.0.0-rc.11",
     "bootstrap": "^4.1.3",
-    <%_ } else if (ui === 'vuetify') { _%>
-    "@nuxtjs/vuetify": "0.5.5",
     <%_ } else if (ui === 'bulma') { _%>
     "@nuxtjs/bulma": "^1.2.1",
     <%_ } else if (ui === 'element-ui') { _%>
@@ -85,6 +87,8 @@
     "nuxt-buefy": "^0.3.2",
     <%_ } else if (ui === 'iview') { _%>
     "iview": "^3.1.5",
+    <%_ } else if (ui === 'framevuerk') { _%>
+    "framevuerk": "^2.2.5",
     <%_ } _%>
     <%_ if (axios) { _%>
     "@nuxtjs/axios": "^5.3.6",
@@ -105,22 +109,16 @@
     <%_ if (ui === 'tailwind') { _%>
     "@nuxtjs/tailwindcss": "^1.0.0",
     <%_ } else if (ui === 'vuetify') { _%>
-    "stylus": "^0.54.5",
-    "stylus-loader": "^3.0.2",
+    "@nuxtjs/vuetify": "^1.0.0",
+    <%_ } else if (ui === 'framevuerk') { _%>
+    "framevuerk-builder": "^2.0.2",
     <%_ } _%>
     <%_ if (eslint) { _%>
-    "@nuxtjs/eslint-config": "^0.0.1",
-    "@nuxtjs/eslint-module": "^0.0.1",
+    "@nuxtjs/eslint-config": "^1.0.1",
+    "@nuxtjs/eslint-module": "^1.0.0",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.15.1",
-    "eslint-config-standard": ">=12.0.0",
-    "eslint-plugin-import": ">=2.16.0",
-    "eslint-plugin-jest": ">=22.3.0",
-    "eslint-plugin-node": ">=8.0.1",
     "eslint-plugin-nuxt": ">=0.4.2",
-    "eslint-plugin-promise": ">=4.0.1",
-    "eslint-plugin-standard": ">=4.0.0",
-    "eslint-plugin-vue": "^5.2.2",
     <%_ } _%>
     <%_ if (prettier) { _%>
     "eslint-config-prettier": "^4.1.0",
@@ -139,15 +137,14 @@
     "@vue/test-utils": "^1.0.0-beta.27",
     <%_ } _%>
     <%_ if (test === 'jest') { _%>
-    "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^24.1.0",
     "jest": "^24.1.0",
     "vue-jest": "^3.0.3",
     <%_ } else if (test === 'ava') { _%>
-    "ava": "^1.0.1",
+    "ava": "^2.2.0",
     "browser-env": "^3.2.5",
     "require-extension-hooks": "^0.3.3",
-    "require-extension-hooks-babel": "^0.1.1",
+    "require-extension-hooks-babel": "^1.0.0",
     "require-extension-hooks-vue": "^2.0.0",
     <%_ } _%>
     "nodemon": "^1.18.9"
