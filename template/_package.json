@@ -5,6 +5,22 @@
   "author": "<%= author %>",
   "private": true,
   "scripts": {
+    <%_ if (server === 'none') { _%>
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    <%_ } else if (server === 'adonis') { _%>
+    "serve:dev": "<%= pmRun %> dev",
+    "dev": "nodemon --watch app --watch bootstrap --watch config --watch .env -x node server.js",
+    "build": "cross-env NODE_ENV=production node ./ace nuxtbuild",
+    "start": "cross-env NODE_ENV=production node server.js",
+    <%_ } else { _%>
+    "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
+    "build": "nuxt build",
+    "start": "cross-env NODE_ENV=production node server/index.js",
+    "generate": "nuxt generate",
+    <%_ } _%>
     <%_ if (ui === 'framevuerk') { _%>
     "build:framevuerk": "framevuerk-builder -c ./framevuerk-config.js",
     "prepublish": "<%= pmRun %> build:framevuerk",
@@ -15,22 +31,7 @@
     <%_ if (test !== 'none') { _%>
     "test": "<%= test %>",
     <%_ } _%>
-    <%_ if (server === 'none') { _%>
-    "dev": "nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start",
-    "generate": "nuxt generate"
-    <%_ } else if (server === 'adonis') { _%>
-    "serve:dev": "<%= pmRun %> dev",
-    "dev": "nodemon --watch app --watch bootstrap --watch config --watch .env -x node server.js",
-    "build": "cross-env NODE_ENV=production node ./ace nuxtbuild",
-    "start": "cross-env NODE_ENV=production node server.js"
-    <%_ } else { _%>
-    "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
-    "build": "nuxt build",
-    "start": "cross-env NODE_ENV=production node server/index.js",
-    "generate": "nuxt generate"
-    <%_ } _%>
+    "": ""
   },
   <%_ if (lintStaged) { _%>
   "lint-staged": {
@@ -43,6 +44,11 @@
   },
   <%_ } _%>
   "dependencies": {
+    <%_ if (edge) { _%>
+    "nuxt-edge": "latest",
+    <%_ } else { _%>
+    "nuxt": "^2.0.0",
+    <%_ } _%>
     <%_ if (server !== 'none') { _%>
     "cross-env": "^5.2.0",
     <%_ } _%>
@@ -99,13 +105,12 @@
     <%_ if (ui === 'tachyons') { _%>
     "tachyons": "^4.11.1",
     <%_ } _%>
-    <%_ if (edge) { _%>
-    "nuxt-edge": "latest"
-    <%_ } else { _%>
-    "nuxt": "^2.0.0"
-    <%_ } _%>
+    "": ""
   },
   "devDependencies": {
+    <%_ if (server !== 'none') { _%>
+    "nodemon": "^1.18.9",
+    <%_ } _%>
     <%_ if (ui === 'tailwind') { _%>
     "@nuxtjs/tailwindcss": "^1.0.0",
     <%_ } else if (ui === 'vuetify') { _%>
@@ -143,6 +148,7 @@
     "require-extension-hooks-babel": "^1.0.0",
     "require-extension-hooks-vue": "^2.0.0",
     <%_ } _%>
-    "nodemon": "^1.18.9"
+    "": ""
+
   }
 }
