@@ -140,7 +140,7 @@
     <%_ if (test === 'jest') { _%>
     "babel-jest": "^24.1.0",
     "jest": "^24.1.0",
-    "vue-jest": "^3.0.3",
+    "vue-jest": "^4.0.0-0",
     <%_ } else if (test === 'ava') { _%>
     "ava": "^2.2.0",
     "browser-env": "^3.2.5",
