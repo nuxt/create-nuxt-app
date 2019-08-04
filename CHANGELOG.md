@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.9.1](https://github.com/nuxt/create-nuxt-app/compare/v2.9.0...v2.9.1) (2019-08-04)
+
+
+### Bug Fixes
+
+* cannot find module babel-core ([#310](https://github.com/nuxt/create-nuxt-app/issues/310)) ([cf1dbde](https://github.com/nuxt/create-nuxt-app/commit/cf1dbde))
+* framevuerk error ([250c6e1](https://github.com/nuxt/create-nuxt-app/commit/250c6e1))
+* ignore vim swap files ([#263](https://github.com/nuxt/create-nuxt-app/issues/263)) ([2ff7b11](https://github.com/nuxt/create-nuxt-app/commit/2ff7b11))
+* remove unnecessary nodemon in devDependencies ([#309](https://github.com/nuxt/create-nuxt-app/issues/309)) ([cddccd6](https://github.com/nuxt/create-nuxt-app/commit/cddccd6))
+
+
+### Features
+
+* upgrade eslint-module ([#300](https://github.com/nuxt/create-nuxt-app/issues/300)) ([b61e88e](https://github.com/nuxt/create-nuxt-app/commit/b61e88e))
+
+
+
 # [2.9.0](https://github.com/nuxt/create-nuxt-app/compare/v2.8.0...v2.9.0) (2019-07-26)
 
 
