@@ -12,13 +12,13 @@
     <%_ if (eslint) { _%>
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     <%_ } _%>
-    <%_ if (test !== 'none') { _%>
-    "test": "<%= test %>",
-    <%_ } _%>
     <%_ if (test === 'ava') { _%>
     "test": "<%= test %>",
     "test:unit": "cross-env TEST=unit ava --config unit.config.js",
     "test:e2e": "cross-env TEST=e2e ava --config e2e-tests.config.js",
+    <%_ } _%>
+    <%_ else if (test !== 'none') { _%>
+    "test": "<%= test %>",
     <%_ } _%>
     <%_ if (server === 'none') { _%>
     "dev": "nuxt",
