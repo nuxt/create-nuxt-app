@@ -33,7 +33,7 @@
     "@nuxtjs/eslint-config": "^1.0.1",
     "ava": "^2.2.0",
     "eslint": "^6.1.0",
-    "standard-version": "^5.0.2"
+    "standard-version": "^7.0.0"
   },
   "authors": [
     "Egoist <0x142857@gmail.com>",
