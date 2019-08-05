@@ -39,7 +39,7 @@
   },
   <%_ if (lintStaged) { _%>
   "lint-staged": {
-    "*.{js,vue}": "<%= pmRun %> lint"
+    "*.{js,vue}": "eslint"
   },
   "husky": {
     "hooks": {
@@ -104,7 +104,7 @@
     "@nuxtjs/axios": "^5.3.6",
     <%_ } _%>
     <%_ if (pwa) { _%>
-    "@nuxtjs/pwa": "^2.6.0",
+    "@nuxtjs/pwa": "^3.0.0-0",
     <%_ } _%>
     <%_ if (ui === 'tachyons') { _%>
     "tachyons": "^4.11.1",
@@ -126,7 +126,7 @@
     "@nuxtjs/eslint-config": "^1.0.1",
     "@nuxtjs/eslint-module": "^1.0.0",
     "babel-eslint": "^10.0.1",
-    "eslint": "^5.15.1",
+    "eslint": "^6.1.0",
     "eslint-plugin-nuxt": ">=0.4.2",
     <%_ } _%>
     <%_ if (prettier) { _%>
