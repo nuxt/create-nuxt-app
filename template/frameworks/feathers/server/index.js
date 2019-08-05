@@ -6,10 +6,10 @@ const express = require('@feathersjs/express')
 
 process.env.NODE_CONFIG_DIR = path.join(__dirname, 'config/')
 
-async function start() {
+async function start () {
   const app = express(feathers())
 
-  const { Nuxt, Builder } = require('nuxt<% if (edge) { %>-edge<% } %>')
+  const { Nuxt, Builder } = require('nuxt<%= edge %>')
 
   // Setup nuxt.js
   const config = require('../nuxt.config.js')
@@ -39,4 +39,3 @@ async function start() {
 }
 
 start()
-

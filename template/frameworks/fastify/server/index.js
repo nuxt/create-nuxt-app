@@ -1,13 +1,13 @@
-const { Nuxt, Builder } = require('nuxt<% if (edge) { %>-edge<% } %>')
+const { Nuxt, Builder } = require('nuxt<%= edge %>')
 const fastify = require('fastify')({
   logger: true
 })
 
 // Import and Set Nuxt.js options
 const config = require('../nuxt.config.js')
-config.dev = !(process.env.NODE_ENV === 'production')
+config.dev = process.env.NODE_ENV !== 'production'
 
-async function start() {
+async function start () {
   // Instantiate nuxt.js
   const nuxt = new Nuxt(config)
 

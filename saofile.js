@@ -1,5 +1,5 @@
-const { join } = require('path')
-const superb = require('superb')
+const { join, relative } = require('path')
+const { random } = require('superb')
 const glob = require('glob')
 const spawn = require('cross-spawn')
 const validate = require('validate-npm-package-name')
@@ -16,86 +16,7 @@ module.exports = {
     {
       name: 'description',
       message: 'Project description',
-      default: `My ${superb()} Nuxt.js project`
-    },
-    {
-      name: 'server',
-      message: 'Use a custom server framework',
-      type: 'list',
-      choices: [
-        'none',
-        'express',
-        'koa',
-        'adonis',
-        'hapi',
-        'feathers',
-        'micro',
-        'fastify'
-      ],
-      default: 'none'
-    },
-    {
-      name: 'features',
-      message: 'Choose features to install',
-      type: 'checkbox',
-      choices: [
-        {
-          name: 'Progressive Web App (PWA) Support',
-          value: 'pwa'
-        },
-        {
-          name: 'Linter / Formatter',
-          value: 'linter'
-        },
-        {
-          name: 'Prettier',
-          value: 'prettier'
-        },
-        {
-          name: 'Axios',
-          value: 'axios'
-        }
-      ],
-      default: []
-    },
-    {
-      name: 'ui',
-      message: 'Use a custom UI framework',
-      type: 'list',
-      choices: [
-        'none',
-        'bootstrap',
-        'vuetify',
-        'bulma',
-        'tailwind',
-        'element-ui',
-        'buefy',
-        'ant-design-vue',
-        'iview',
-        'tachyons'
-      ],
-      default: 'none'
-    },
-    {
-      name: 'test',
-      message: 'Use a custom test framework',
-      type: 'list',
-      choices: [
-        'none',
-        'jest',
-        'ava'
-      ],
-      default: 'none'
-    },
-    {
-      name: 'mode',
-      message: 'Choose rendering mode',
-      type: 'list',
-      choices: [
-        { name: 'Universal', value: 'universal' },
-        { name: 'Single Page App', value: 'spa' }
-      ],
-      default: 'universal'
+      default: `My ${random()} Nuxt.js project`
     },
     {
       name: 'author',
@@ -106,30 +27,120 @@ module.exports = {
     },
     {
       name: 'pm',
-      message: 'Choose a package manager',
-      choices: ['npm', 'yarn'],
+      message: 'Choose the package manager',
+      choices: [
+        { name: 'Yarn', value: 'yarn' },
+        { name: 'Npm', value: 'npm' }
+      ],
       type: 'list',
-      default: 'npm'
+      default: 'yarn'
+    },
+    {
+      name: 'ui',
+      message: 'Choose UI framework',
+      type: 'list',
+      pageSize: 15,
+      choices: [
+        { name: 'None', value: 'none' },
+        { name: 'Ant Design Vue', value: 'ant-design-vue' },
+        { name: 'Bootstrap Vue', value: 'bootstrap' },
+        { name: 'Buefy', value: 'buefy' },
+        { name: 'Bulma', value: 'bulma' },
+        { name: 'Element', value: 'element-ui' },
+        { name: 'Framevuerk', value: 'framevuerk' },
+        { name: 'iView', value: 'iview' },
+        { name: 'Tachyons', value: 'tachyons' },
+        { name: 'Tailwind CSS', value: 'tailwind' },
+        { name: 'Vuetify.js', value: 'vuetify' }
+      ],
+      default: 'none'
+    },
+    {
+      name: 'server',
+      message: 'Choose custom server framework',
+      type: 'list',
+      pageSize: 10,
+      choices: [
+        { name: 'None (Recommended)', value: 'none' },
+        { name: 'AdonisJs', value: 'adonis' },
+        { name: 'Express', value: 'express' },
+        { name: 'Fastify', value: 'fastify' },
+        { name: 'Feathers', value: 'feathers' },
+        { name: 'hapi', value: 'hapi' },
+        { name: 'Koa', value: 'koa' },
+        { name: 'Micro', value: 'micro' }
+      ],
+      default: 'none'
+    },
+    {
+      name: 'features',
+      message: 'Choose Nuxt.js modules',
+      type: 'checkbox',
+      pageSize: 10,
+      choices: [
+        { name: 'Axios', value: 'axios' },
+        { name: 'Progressive Web App (PWA) Support', value: 'pwa' }
+      ],
+      default: []
+    },
+    {
+      name: 'linter',
+      message: 'Choose linting tools',
+      type: 'checkbox',
+      pageSize: 10,
+      choices: [
+        { name: 'ESLint', value: 'eslint' },
+        { name: 'Prettier', value: 'prettier' },
+        { name: 'Lint staged files', value: 'lintStaged' }
+      ],
+      default: []
+    },
+    {
+      name: 'test',
+      message: 'Choose test framework',
+      type: 'list',
+      choices: [
+        { name: 'None', value: 'none' },
+        { name: 'Jest', value: 'jest' },
+        { name: 'AVA', value: 'ava' }
+      ],
+      default: 'none'
+    },
+    {
+      name: 'mode',
+      message: 'Choose rendering mode',
+      type: 'list',
+      choices: [
+        { name: 'Universal (SSR)', value: 'universal' },
+        { name: 'Single Page App', value: 'spa' }
+      ],
+      default: 'universal'
     }
   ],
-  templateData() {
-    const edge = process.argv.includes('--edge')
+  templateData () {
     const pwa = this.answers.features.includes('pwa')
-    const linter = this.answers.features.includes('linter')
-    const prettier = this.answers.features.includes('prettier')
+    const eslint = this.answers.linter.includes('eslint')
+    const prettier = this.answers.linter.includes('prettier')
+    const lintStaged = eslint && this.answers.linter.includes('lintStaged')
     const axios = this.answers.features.includes('axios')
     const esm = this.answers.server === 'none'
+    const pmRun = this.answers.pm === 'yarn' ? 'yarn' : 'npm run'
+
+    const { cliOptions = {} } = this.sao.opts
+    const edge = cliOptions.edge ? '-edge' : ''
 
     return {
+      pwa,
+      eslint,
+      prettier,
+      lintStaged,
+      axios,
+      esm,
       edge,
-      pwa: pwa ? 'yes' : 'no',
-      eslint: linter ? 'yes' : 'no',
-      prettier: prettier ? 'yes' : 'no',
-      axios: axios ? 'yes' : 'no',
-      esm
+      pmRun
     }
   },
-  actions() {
+  actions () {
     const validation = validate(this.answers.name)
     validation.warnings && validation.warnings.forEach((warn) => {
       console.warn('Warning:', warn)
@@ -191,8 +202,8 @@ module.exports = {
       type: 'add',
       files: '*',
       filters: {
-        '_.eslintrc.js': 'features.includes("linter")',
-        '.prettierrc': 'features.includes("prettier")'
+        '_.eslintrc.js': 'linter.includes("eslint")',
+        '.prettierrc': 'linter.includes("prettier")'
       }
     })
 
@@ -205,21 +216,25 @@ module.exports = {
       }
     })
 
+    actions.push({
+      type: 'modify',
+      files: 'package.json',
+      handler (data) {
+        delete data.scripts['']
+        delete data.dependencies['']
+        delete data.devDependencies['']
+        return data
+      }
+    })
+
     return actions
   },
-  async completed() {
+  async completed () {
     this.gitInit()
 
     await this.npmInstall({ npmClient: this.answers.pm })
 
-    const isNewFolder = this.outDir !== process.cwd()
-    const cd = () => {
-      if (isNewFolder) {
-        console.log(`\t${this.chalk.cyan('cd')} ${this.outFolder}`)
-      }
-    }
-
-    if (this.answers.features.includes('linter')) {
+    if (this.answers.linter.includes('eslint')) {
       const options = ['run', 'lint', '--', '--fix']
       if (this.answers.pm === 'yarn') {
         options.splice(2, 1)
@@ -230,20 +245,24 @@ module.exports = {
       })
     }
 
-    console.log()
-    console.log(this.chalk.bold(`  To get started:\n`))
-    cd()
-    console.log(`\t${this.answers.pm} run dev\n`)
-    console.log(this.chalk.bold(`  To build & start for production:\n`))
-    cd()
-    console.log(`\t${this.answers.pm} run build`)
-    console.log(`\t${this.answers.pm} start`)
+    const chalk = this.chalk
+    const isNewFolder = this.outDir !== process.cwd()
+    const relativeOutFolder = relative(process.cwd(), this.outDir)
+    const cdMsg = isNewFolder ? chalk`\t{cyan cd ${relativeOutFolder}}\n` : ''
+    const pmRun = this.answers.pm === 'yarn' ? 'yarn' : 'npm run'
+
+    console.log(chalk`\n🎉  {bold Successfully created project} {cyan ${this.answers.name}}\n`)
+
+    console.log(chalk`  {bold To get started:}\n`)
+    console.log(chalk`${cdMsg}\t{cyan ${pmRun} dev}\n`)
+
+    console.log(chalk`  {bold To build & start for production:}\n`)
+    console.log(chalk`${cdMsg}\t{cyan ${pmRun} build}`)
+    console.log(chalk`\t{cyan ${pmRun} start}\n`)
 
     if (this.answers.test !== 'none') {
-      console.log(this.chalk.bold(`\n  To test:\n`))
-      cd()
-      console.log(`\t${this.answers.pm} run test`)
+      console.log(chalk`  {bold To test:}\n`)
+      console.log(chalk`${cdMsg}\t{cyan ${pmRun} test}\n`)
     }
-    console.log()
   }
 }

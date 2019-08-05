@@ -1,14 +1,14 @@
 const Koa = require('koa')
 const consola = require('consola')
-const { Nuxt, Builder } = require('nuxt<% if (edge) { %>-edge<% } %>')
+const { Nuxt, Builder } = require('nuxt<%= edge %>')
 
 const app = new Koa()
 
 // Import and Set Nuxt.js options
-let config = require('../nuxt.config.js')
-config.dev = !(app.env === 'production')
+const config = require('../nuxt.config.js')
+config.dev = app.env !== 'production'
 
-async function start() {
+async function start () {
   // Instantiate nuxt.js
   const nuxt = new Nuxt(config)
 
@@ -25,7 +25,7 @@ async function start() {
     await nuxt.ready()
   }
 
-  app.use(ctx => {
+  app.use((ctx) => {
     ctx.status = 200
     ctx.respond = false // Bypass Koa's built-in response handling
     ctx.req.ctx = ctx // This might be useful later on, e.g. in nuxtServerInit or with nuxt-stash
