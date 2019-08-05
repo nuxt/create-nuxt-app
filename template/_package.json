@@ -100,7 +100,7 @@
     "@nuxtjs/axios": "^5.3.6",
     <%_ } _%>
     <%_ if (pwa) { _%>
-    "@nuxtjs/pwa": "^2.6.0",
+    "@nuxtjs/pwa": "^3.0.0-0",
     <%_ } _%>
     <%_ if (ui === 'tachyons') { _%>
     "tachyons": "^4.11.1",
