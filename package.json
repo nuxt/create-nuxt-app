@@ -23,8 +23,8 @@
     "chalk": "^2.4.2",
     "cross-spawn": "^6.0.5",
     "envinfo": "^7.3.1",
-    "glob": "^7.1.3",
-    "lodash": "^4.17.11",
+    "glob": "^7.1.4",
+    "lodash": "^4.17.15",
     "sao": "^1.6.1",
     "superb": "^4.0.0",
     "validate-npm-package-name": "^3.0.0"
@@ -32,8 +32,8 @@
   "devDependencies": {
     "@nuxtjs/eslint-config": "^1.0.1",
     "ava": "^2.2.0",
-    "eslint": "^5.13.0",
-    "standard-version": "^5.0.1"
+    "eslint": "^5.16.0",
+    "standard-version": "^5.0.2"
   },
   "authors": [
     "Egoist <0x142857@gmail.com>",
