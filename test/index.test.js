@@ -18,7 +18,7 @@ const verifyPkg = async (t, answers) => {
   const stream = await sao.mock({ generator }, answers)
 
   const pkg = await stream.readFile('package.json')
-  t.snapshot(stream.fileList, 'Generated package.json')
+  t.snapshot(stream.fileList, 'Generated files')
   t.snapshot(getPkgFields(pkg), 'package.json')
 }
 
