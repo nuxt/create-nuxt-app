@@ -30,8 +30,8 @@
     <%_ } _%>
     <%_ if (test === 'ava') { _%>
     "test": "<%= test %>",
-    "test:unit": "cross-env TEST=unit ava --config unit.config.js",
-    "test:e2e": "cross-env TEST=e2e ava --config e2e-tests.config.js",
+    "test:unit": "cross-env TEST=unit ava --config ./tests/unit.config.js",
+    "test:e2e": "cross-env TEST=e2e ava --config ./tests/e2e.config.js",
     <%_ } else if (test !== 'none') { _%>
     "test": "<%= test %>",
     <%_ } _%>
