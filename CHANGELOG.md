@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.9.2](https://github.com/nuxt/create-nuxt-app/compare/v2.9.1...v2.9.2) (2019-08-05)
+
+
+### Bug Fixes
+
+* lint-staged should only check staged files ([b516d23](https://github.com/nuxt/create-nuxt-app/commit/b516d23))
+* updgrade @nuxtjs/pwa to v3 ([#216](https://github.com/nuxt/create-nuxt-app/issues/216)) ([de66e4e](https://github.com/nuxt/create-nuxt-app/commit/de66e4e))
+
+
+
 ## [2.9.1](https://github.com/nuxt/create-nuxt-app/compare/v2.9.0...v2.9.1) (2019-08-04)
 
 
