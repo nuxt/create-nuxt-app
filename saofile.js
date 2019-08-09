@@ -221,6 +221,17 @@ module.exports = {
       }
     })
 
+    actions.push({
+      type: 'modify',
+      files: 'package.json',
+      handler (data) {
+        delete data.scripts['']
+        delete data.dependencies['']
+        delete data.devDependencies['']
+        return data
+      }
+    })
+
     return actions
   },
   async completed () {
