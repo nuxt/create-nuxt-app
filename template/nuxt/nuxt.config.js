@@ -82,7 +82,7 @@ module.exports = {
   /*
   ** Nuxt.js dev-modules
   */
-  devModules: [
+  buildModules: [
     <%_ if (eslint) { _%>
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
