@@ -31,8 +31,8 @@
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^1.1.2",
-    "ava": "^2.2.0",
-    "eslint": "^6.1.0",
+    "ava": "^2.3.0",
+    "eslint": "^6.2.1",
     "standard-version": "^7.0.0"
   },
   "authors": [
