@@ -227,7 +227,7 @@ module.exports = {
         '_.eslintrc.js': 'linter.includes("eslint")',
         '.prettierrc': 'linter.includes("prettier")',
         'jsconfig.json': 'devTools.includes("jsconfig.json")',
-        'tsconfig.json': 'devTools.includes("tsconfig.json")',
+        'tsconfig.json': 'devTools.includes("tsconfig.json")'
       }
     })
 
