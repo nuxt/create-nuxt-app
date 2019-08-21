@@ -49,6 +49,9 @@
     <%_ } else { _%>
     "nuxt": "^2.0.0",
     <%_ } _%>
+    <%_ if (typescript) { _%>
+    "ts-node": "^8.3.0",
+    <%_ } _%>
     <%_ if (server !== 'none') { _%>
     "cross-env": "^5.2.0",
     <%_ } _%>
@@ -110,6 +113,11 @@
   "devDependencies": {
     <%_ if (server !== 'none') { _%>
     "nodemon": "^1.18.9",
+    <%_ } _%>
+    <%_ if (typescript) { _%>
+    "@nuxt/typescript-build": "^0.1.10",
+    "@types/node": "^10.14.16",
+    "@types/webpack-env": "^1.14.0",
     <%_ } _%>
     <%_ if (ui === 'tailwind') { _%>
     "@nuxtjs/tailwindcss": "^1.0.0",

@@ -26,6 +26,16 @@ module.exports = {
       store: true
     },
     {
+      name: 'language',
+      message: 'Choose programming language',
+      choices: [
+        { name: 'JavaScript', value: 'js' },
+        { name: 'TypeScript', value: 'ts' }
+      ],
+      type: 'list',
+      default: 'yarn'
+    },
+    {
       name: 'pm',
       message: 'Choose the package manager',
       choices: [
@@ -121,12 +131,14 @@ module.exports = {
       message: 'Choose development tools',
       type: 'checkbox',
       choices: [
-        { name: 'jsconfig.json (Recommended for VS Code)', value: 'jsconfig.json' }
+        { name: 'jsconfig.json (Recommended for VS Code)', value: 'jsconfig.json' },
+        { name: 'tsconfig.json (Recommended for VS Code and TypeScript)', value: 'tsconfig.json' }
       ],
       default: []
     }
   ],
   templateData () {
+    const typescript = this.answers.language.includes('ts')
     const pwa = this.answers.features.includes('pwa')
     const eslint = this.answers.linter.includes('eslint')
     const prettier = this.answers.linter.includes('prettier')
@@ -139,6 +151,7 @@ module.exports = {
     const edge = cliOptions.edge ? '-edge' : ''
 
     return {
+      typescript,
       pwa,
       eslint,
       prettier,
@@ -213,7 +226,8 @@ module.exports = {
       filters: {
         '_.eslintrc.js': 'linter.includes("eslint")',
         '.prettierrc': 'linter.includes("prettier")',
-        'jsconfig.json': 'devTools.includes("jsconfig.json")'
+        'jsconfig.json': 'devTools.includes("jsconfig.json")',
+        'tsconfig.json': 'devTools.includes("tsconfig.json")',
       }
     })
 
