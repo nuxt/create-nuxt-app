@@ -82,7 +82,8 @@ module.exports = {
   /*
   ** Nuxt.js dev-modules
   */
-  devModules: [
+
+  buildModules: [
     <%_ if (typescript) {_%>
     '@nuxt/typescript-build',
     <%_ } _%>

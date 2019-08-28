@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [2.10.0](https://github.com/nuxt/create-nuxt-app/compare/v2.9.2...v2.10.0) (2019-08-21)
+
+
+### Bug Fixes
+
+* comment vuetify/variables.scss with doc link ([#318](https://github.com/nuxt/create-nuxt-app/issues/318)) ([e4f1d64](https://github.com/nuxt/create-nuxt-app/commit/e4f1d64))
+* rename devModules to buildModules ([9d9c962](https://github.com/nuxt/create-nuxt-app/commit/9d9c962))
+
+
+### Features
+
+* add alias (@/~) support in ava tests ([#304](https://github.com/nuxt/create-nuxt-app/issues/304)) ([499e852](https://github.com/nuxt/create-nuxt-app/commit/499e852))
+* add jsconfig.json file for VS Code users ([#277](https://github.com/nuxt/create-nuxt-app/issues/277)) ([3fee8e1](https://github.com/nuxt/create-nuxt-app/commit/3fee8e1))
+
+
+
 ## [2.9.2](https://github.com/nuxt/create-nuxt-app/compare/v2.9.1...v2.9.2) (2019-08-05)
 
 
