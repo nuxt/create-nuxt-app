@@ -116,8 +116,6 @@
     <%_ } _%>
     <%_ if (typescript) { _%>
     "@nuxt/typescript-build": "^0.1.10",
-    "@types/node": "^10.14.16",
-    "@types/webpack-env": "^1.14.0",
     <%_ } _%>
     <%_ if (ui === 'tailwind') { _%>
     "@nuxtjs/tailwindcss": "^1.0.0",
