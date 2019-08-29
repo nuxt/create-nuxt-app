@@ -28,7 +28,11 @@
   </div>
 </template>
 
+<%_ if (typescript) { _%>
+<script lang="ts">
+<%_ } else { _%>
 <script>
+<%_ } _%>
 import Logo from '~/components/Logo.vue'
 
 export default {
