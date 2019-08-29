@@ -83,6 +83,16 @@ module.exports = {
       default: 'none'
     },
     {
+      name: 'runtime',
+      message: 'Choose the runtime for TypeScript',
+      type: 'list',
+      choices: [
+        { name: 'Default', value: 'none' },
+        { name: '@nuxt/typescript-runtime', value: 'ts-runtime' }
+      ],
+      when: answers => answers.language === 'ts' && answers.server === 'none'
+    },
+    {
       name: 'features',
       message: 'Choose Nuxt.js modules',
       type: 'checkbox',
@@ -139,6 +149,7 @@ module.exports = {
   ],
   templateData () {
     const typescript = this.answers.language.includes('ts')
+    const tsRuntime = this.answers.runtime.includes('ts-runtime')
     const pwa = this.answers.features.includes('pwa')
     const eslint = this.answers.linter.includes('eslint')
     const prettier = this.answers.linter.includes('prettier')
@@ -152,6 +163,7 @@ module.exports = {
 
     return {
       typescript,
+      tsRuntime,
       pwa,
       eslint,
       prettier,
