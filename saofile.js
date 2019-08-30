@@ -300,5 +300,9 @@ module.exports = {
       console.log(chalk`  {bold To test:}\n`)
       console.log(chalk`${cdMsg}\t{cyan ${pmRun} test}\n`)
     }
+
+    if (this.answers.language.includes('ts')) {
+      console.log(chalk`\n  {bold For TypeScript users.} \n\n  See : https://typescript.nuxtjs.org/cookbook/components/`)
+    }
   }
 }
