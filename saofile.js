@@ -33,7 +33,7 @@ module.exports = {
         { name: 'TypeScript', value: 'ts' }
       ],
       type: 'list',
-      default: 'yarn'
+      default: 'js'
     },
     {
       name: 'pm',
