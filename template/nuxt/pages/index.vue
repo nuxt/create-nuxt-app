@@ -28,11 +28,10 @@
   </div>
 </template>
 
-import Logo from '~/components/Logo.vue'
-
 <%_ if (typescript) { _%>
 <script lang="ts">
 import Vue from 'vue'
+import Logo from '~/components/Logo.vue'
 
 export default Vue.extend({
   components: {
@@ -41,6 +40,7 @@ export default Vue.extend({
 })
 <%_ } else { _%>
 <script>
+import Logo from '~/components/Logo.vue'
 export default {
   components: {
     Logo
