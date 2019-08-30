@@ -143,7 +143,8 @@ module.exports = {
       choices: [
         { name: 'jsconfig.json (Recommended for VS Code)', value: 'jsconfig.json' }
       ],
-      default: []
+      default: [],
+      when: answers => answers.language === 'js'
     }
   ],
   templateData () {
