@@ -158,6 +158,9 @@
     "babel-jest": "^24.1.0",
     "jest": "^24.1.0",
     "vue-jest": "^4.0.0-0",
+    <%_ if (typescript) { _%>
+    "ts-jest": "^24.0.2",
+    <%_ } _%>
     <%_ } else if (test === 'ava') { _%>
     "ava": "^2.2.0",
     "babel-plugin-module-resolver": "^3.2.0",
