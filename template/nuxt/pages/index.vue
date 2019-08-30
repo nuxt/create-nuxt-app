@@ -38,6 +38,7 @@ export default Vue.extend({
     Logo
   }
 })
+</script>
 <%_ } else { _%>
 <script>
 import Logo from '~/components/Logo.vue'
@@ -48,6 +49,7 @@ export default {
 }
 </script>
 <%_ } _%>
+
 <style>
 <%_ if (ui === 'tailwind') { _%>
 /* Sample `apply` at-rules with Tailwind CSS
