@@ -28,20 +28,26 @@
   </div>
 </template>
 
-<%_ if (typescript) { _%>
-<script lang="ts">
-<%_ } else { _%>
-<script>
-<%_ } _%>
 import Logo from '~/components/Logo.vue'
 
+<%_ if (typescript) { _%>
+<script lang="ts">
+import Vue from 'vue'
+
+export default Vue.extend({
+  components: {
+    Logo
+  }
+})
+<%_ } else { _%>
+<script>
 export default {
   components: {
     Logo
   }
 }
 </script>
-
+<%_ } _%>
 <style>
 <%_ if (ui === 'tailwind') { _%>
 /* Sample `apply` at-rules with Tailwind CSS
