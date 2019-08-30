@@ -141,8 +141,7 @@ module.exports = {
       message: 'Choose development tools',
       type: 'checkbox',
       choices: [
-        { name: 'jsconfig.json (Recommended for VS Code)', value: 'jsconfig.json' },
-        { name: 'tsconfig.json (Recommended for VS Code and TypeScript)', value: 'tsconfig.json' }
+        { name: 'jsconfig.json (Recommended for VS Code)', value: 'jsconfig.json' }
       ],
       default: []
     }
@@ -225,6 +224,7 @@ module.exports = {
           patterns: files
         })
       }
+
       actions.push({
         type: 'add',
         files: '**',
@@ -238,10 +238,19 @@ module.exports = {
       filters: {
         '_.eslintrc.js': 'linter.includes("eslint")',
         '.prettierrc': 'linter.includes("prettier")',
-        'jsconfig.json': 'devTools.includes("jsconfig.json")',
-        'tsconfig.json': 'devTools.includes("tsconfig.json")'
+        'jsconfig.json': 'devTools.includes("jsconfig.json")'
       }
     })
+
+    if (this.answers.language.includes('ts')) {
+      actions.push({
+        type: 'add',
+        files: '*',
+        filters: {
+          'tsconfig.json': 'devTools.includes("tsconfig.json")'
+        }
+      })
+    }
 
     actions.push({
       type: 'move',
