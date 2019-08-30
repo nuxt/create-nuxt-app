@@ -9,11 +9,17 @@ module.exports = {
     use: true
   },
   <%_ } _%>
+  <%_ if (!typescript) { _%>
   parserOptions: {
     parser: 'babel-eslint'
   },
+  <%_ } _%>
   extends: [
+    <%_ if (typescript) { _%>
+    '@nuxtjs/eslint-config-typescript',
+    <%_ } else {_%>
     '@nuxtjs',
+    <%_ } _%>
     <%_ if (prettier) { _%>
     'prettier',
     'prettier/vue',

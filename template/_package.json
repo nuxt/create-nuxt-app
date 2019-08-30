@@ -132,8 +132,12 @@
     "framevuerk-builder": "^2.0.2",
     <%_ } _%>
     <%_ if (eslint) { _%>
+      <%_ if (typescript) { _%>
+    "@nuxtjs/eslint-config-typescript": "^0.1.2",
+      <%_ } else { _%>
     "@nuxtjs/eslint-config": "^1.0.1",
     "@nuxtjs/eslint-module": "^1.0.0",
+    <%_ } _%>
     "babel-eslint": "^10.0.1",
     "eslint": "^6.1.0",
     "eslint-plugin-nuxt": ">=0.4.2",
