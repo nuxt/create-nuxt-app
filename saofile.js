@@ -239,19 +239,10 @@ module.exports = {
       filters: {
         '_.eslintrc.js': 'linter.includes("eslint")',
         '.prettierrc': 'linter.includes("prettier")',
-        'jsconfig.json': 'devTools.includes("jsconfig.json")'
+        'jsconfig.json': 'language.includes("js") && devTools.includes("jsconfig.json")',
+        'tsconfig.json': 'language.includes("ts")'
       }
     })
-
-    if (this.answers.language.includes('ts')) {
-      actions.push({
-        type: 'add',
-        files: '*',
-        filters: {
-          'tsconfig.json': 'devTools.includes("tsconfig.json")'
-        }
-      })
-    }
 
     actions.push({
       type: 'move',
