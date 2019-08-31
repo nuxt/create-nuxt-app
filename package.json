@@ -1,6 +1,6 @@
 {
   "name": "create-nuxt-app",
-  "version": "2.9.2",
+  "version": "2.10.1",
   "description": "Create a Nuxt.js App in seconds.",
   "bin": "cli.js",
   "files": [
@@ -30,9 +30,9 @@
     "validate-npm-package-name": "^3.0.0"
   },
   "devDependencies": {
-    "@nuxtjs/eslint-config": "^1.0.1",
-    "ava": "^2.2.0",
-    "eslint": "^6.1.0",
+    "@nuxtjs/eslint-config": "^1.1.2",
+    "ava": "^2.3.0",
+    "eslint": "^6.2.1",
     "standard-version": "^7.0.0"
   },
   "authors": [
