@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      <%_ if (server === 'adonis') { _%>
+      "~/*": ["./resources/*"],
+      "@/*": ["./resources/*"],
+      <%_ } else { _%>
+      "~/*": ["./*"],
+      "@/*": ["./*"],
+      <%_ } _%>
+      "~~/*": ["./*"],
+      "@@/*": ["./*"]
+    }
+  },
+  "exclude": ["node_modules", ".nuxt", "dist"]
+}

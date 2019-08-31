@@ -115,6 +115,15 @@ module.exports = {
         { name: 'Single Page App', value: 'spa' }
       ],
       default: 'universal'
+    },
+    {
+      name: 'devTools',
+      message: 'Choose development tools',
+      type: 'checkbox',
+      choices: [
+        { name: 'jsconfig.json (Recommended for VS Code)', value: 'jsconfig.json' }
+      ],
+      default: []
     }
   ],
   templateData () {
@@ -203,7 +212,8 @@ module.exports = {
       files: '*',
       filters: {
         '_.eslintrc.js': 'linter.includes("eslint")',
-        '.prettierrc': 'linter.includes("prettier")'
+        '.prettierrc': 'linter.includes("prettier")',
+        'jsconfig.json': 'devTools.includes("jsconfig.json")'
       }
     })
 
