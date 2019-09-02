@@ -149,10 +149,7 @@ module.exports = {
   ],
   templateData () {
     const typescript = this.answers.language.includes('ts')
-    let tsRuntime = false
-    if (this.answers.runtime && this.answers.runtime.includes('ts-runtime')) {
-      tsRuntime = true
-    }
+    const tsRuntime = this.answers.runtime && this.answers.runtime.includes('ts-runtime')
     const pwa = this.answers.features.includes('pwa')
     const eslint = this.answers.linter.includes('eslint')
     const prettier = this.answers.linter.includes('prettier')
