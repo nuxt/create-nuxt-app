@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.11.1](https://github.com/nuxt/create-nuxt-app/compare/v2.11.0...v2.11.1) (2019-09-30)
+
+
+### Bug Fixes
+
+* add prompts.js into npm package ([#352](https://github.com/nuxt/create-nuxt-app/issues/352)) ([fef1a2e](https://github.com/nuxt/create-nuxt-app/commit/fef1a2e))
+
 ## [2.11.0](https://github.com/nuxt/create-nuxt-app/compare/v2.10.1...v2.11.0) (2019-09-30)
 
 
