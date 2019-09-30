@@ -5,6 +5,7 @@
   "bin": "cli.js",
   "files": [
     "cli.js",
+    "prompts.js",
     "saofile.js",
     "template/"
   ],
