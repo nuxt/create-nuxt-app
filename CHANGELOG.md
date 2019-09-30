@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.11.0](https://github.com/nuxt/create-nuxt-app/compare/v2.10.1...v2.11.0) (2019-09-30)
+
+
+### Bug Fixes
+
+* **tests:** update babel config for ava ([#342](https://github.com/nuxt/create-nuxt-app/issues/342)) ([a257561](https://github.com/nuxt/create-nuxt-app/commit/a257561))
+* update snapshots ([10ad76f](https://github.com/nuxt/create-nuxt-app/commit/10ad76f))
+
+
+### Features
+
+* Add e2e testing support using Ava ([#303](https://github.com/nuxt/create-nuxt-app/issues/303)) ([4d8fe95](https://github.com/nuxt/create-nuxt-app/commit/4d8fe95))
+* add support for semantic-pull-requests ([#322](https://github.com/nuxt/create-nuxt-app/issues/322)) ([5af63c0](https://github.com/nuxt/create-nuxt-app/commit/5af63c0))
+* answers option ([#347](https://github.com/nuxt/create-nuxt-app/issues/347)) ([75db75e](https://github.com/nuxt/create-nuxt-app/commit/75db75e))
+* bump `bootstrap-vue` to v2.0.0 stable ([#334](https://github.com/nuxt/create-nuxt-app/issues/334)) ([38af656](https://github.com/nuxt/create-nuxt-app/commit/38af656))
+
 ### [2.10.1](https://github.com/nuxt/create-nuxt-app/compare/v2.10.0...v2.10.1) (2019-08-31)
 
 
