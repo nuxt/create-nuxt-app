@@ -62,7 +62,7 @@ module.exports = {
     <%_ } else if (ui === 'tachyons') { _%>
     'tachyons/css/tachyons.css'
     <%_ } else if (ui === 'framevuerk') { _%>
-    'framevuerk/dist/framevuerk.min.css'
+    'framevuerk/dist/framevuerk-nuxt.min.css'
     <%_ } _%>
   ],
   /*
@@ -103,7 +103,7 @@ module.exports = {
   */
   modules: [
     <%_ if (ui === 'bootstrap') { _%>
-    // Doc: https://bootstrap-vue.js.org/docs/
+    // Doc: https://bootstrap-vue.js.org
     'bootstrap-vue/nuxt',
     <%_ } else if (ui === 'bulma') { _%>
     // Doc: https://github.com/nuxt-community/modules/tree/master/packages/bulma
