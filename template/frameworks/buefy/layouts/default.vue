@@ -52,8 +52,7 @@
   </div>
 </template>
 
-<script>
-export default {
+<%- generateComponent('', `{
   data () {
     return {
       items: [
@@ -70,5 +69,4 @@ export default {
       ]
     }
   }
-}
-</script>
+}`) %>

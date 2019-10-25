@@ -28,28 +28,13 @@
   </div>
 </template>
 
-<%_ if (typescript) { _%>
-<script lang="ts">
-import Vue from 'vue'
-import Logo from '~/components/Logo.vue'
-
-export default Vue.extend({
-  components: {
-    Logo
-  }
-})
-</script>
-<%_ } else { _%>
-<script>
-import Logo from '~/components/Logo.vue'
-
-export default {
-  components: {
-    Logo
-  }
-}
-</script>
-<%_ } _%>
+<%- generateComponent(
+  `import Logo from '~/components/Logo.vue'`, `{
+    components: {
+      Logo
+    }
+  }`
+)%>
 
 <style>
 <%_ if (ui === 'tailwind') { _%>

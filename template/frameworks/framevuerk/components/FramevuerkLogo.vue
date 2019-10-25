@@ -26,8 +26,7 @@
   </div>
 </template>
 
-<script>
-export default {
+<%- generateComponent('',`{}
   data () {
     return {
       isReady: false
@@ -38,8 +37,7 @@ export default {
       this.isReady = true
     }, 1000)
   }
-}
-</script>
+}`) %>
 
 <style scoped>
 .logo {

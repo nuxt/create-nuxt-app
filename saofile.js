@@ -7,9 +7,10 @@ const rootDir = __dirname
 
 module.exports = {
   prompts: require('./prompts'),
-  templateData () {
+  templateData() {
     const typescript = this.answers.language.includes('ts')
-    const tsRuntime = this.answers.runtime && this.answers.runtime.includes('ts-runtime')
+    const tsRuntime =
+      this.answers.runtime && this.answers.runtime.includes('ts-runtime')
     const pwa = this.answers.features.includes('pwa')
     const eslint = this.answers.linter.includes('eslint')
     const prettier = this.answers.linter.includes('prettier')
@@ -21,7 +22,18 @@ module.exports = {
     const { cliOptions = {} } = this.sao.opts
     const edge = cliOptions.edge ? '-edge' : ''
 
+    const ifTrue = (condition, content, elseContent) => condition ? content : elseContent || ''
+    const generateComponent = (imports, componentOptions) => {
+      return `
+<script ${ifTrue(typescript, `lang="ts"`)}>
+${ifTrue(typescript, `import Vue from 'vue'`)}
+${ifTrue(!!imports, imports)}
+export default ${ifTrue(typescript, 'Vue.extend(' + componentOptions + ')', componentOptions)}
+</script>`
+    }
+
     return {
+      generateComponent,
       typescript,
       tsRuntime,
       pwa,
@@ -34,24 +46,28 @@ module.exports = {
       pmRun
     }
   },
-  actions () {
+  actions() {
     const validation = validate(this.answers.name)
-    validation.warnings && validation.warnings.forEach((warn) => {
-      console.warn('Warning:', warn)
-    })
-    validation.errors && validation.errors.forEach((err) => {
-      console.error('Error:', err)
-    })
+    validation.warnings &&
+      validation.warnings.forEach((warn) => {
+        console.warn('Warning:', warn)
+      })
+    validation.errors &&
+      validation.errors.forEach((err) => {
+        console.error('Error:', err)
+      })
     validation.errors && validation.errors.length && process.exit(1)
 
-    const actions = [{
-      type: 'add',
-      files: '**',
-      templateDir: 'template/nuxt',
-      filters: {
-        'static/icon.png': 'features.includes("pwa")'
+    const actions = [
+      {
+        type: 'add',
+        files: '**',
+        templateDir: 'template/nuxt',
+        filters: {
+          'static/icon.png': 'features.includes("pwa")'
+        }
       }
-    }]
+    ]
 
     if (this.answers.ui !== 'none') {
       actions.push({
@@ -99,7 +115,8 @@ module.exports = {
       filters: {
         '_.eslintrc.js': 'linter.includes("eslint")',
         '.prettierrc': 'linter.includes("prettier")',
-        'jsconfig.json': 'language.includes("js") && devTools.includes("jsconfig.json")',
+        'jsconfig.json':
+          'language.includes("js") && devTools.includes("jsconfig.json")',
         'tsconfig.json': 'language.includes("ts")'
       }
     })
@@ -116,7 +133,7 @@ module.exports = {
     actions.push({
       type: 'modify',
       files: 'package.json',
-      handler (data) {
+      handler(data) {
         delete data.scripts['']
         delete data.dependencies['']
         delete data.devDependencies['']
@@ -126,7 +143,7 @@ module.exports = {
 
     return actions
   },
-  async completed () {
+  async completed() {
     this.gitInit()
 
     await this.npmInstall({ npmClient: this.answers.pm })
@@ -148,7 +165,9 @@ module.exports = {
     const cdMsg = isNewFolder ? chalk`\t{cyan cd ${relativeOutFolder}}\n` : ''
     const pmRun = this.answers.pm === 'yarn' ? 'yarn' : 'npm run'
 
-    console.log(chalk`\n🎉  {bold Successfully created project} {cyan ${this.answers.name}}\n`)
+    console.log(
+      chalk`\n🎉  {bold Successfully created project} {cyan ${this.answers.name}}\n`
+    )
 
     console.log(chalk`  {bold To get started:}\n`)
     console.log(chalk`${cdMsg}\t{cyan ${pmRun} dev}\n`)
@@ -163,7 +182,9 @@ module.exports = {
     }
 
     if (this.answers.language.includes('ts')) {
-      console.log(chalk`\n  {bold For TypeScript users.} \n\n  See : https://typescript.nuxtjs.org/cookbook/components/`)
+      console.log(
+        chalk`\n  {bold For TypeScript users.} \n\n  See : https://typescript.nuxtjs.org/cookbook/components/`
+      )
     }
   }
 }

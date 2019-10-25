@@ -88,8 +88,8 @@
   </v-app>
 </template>
 
-<script>
-export default {
+<%- generateComponent(
+`import Logo from '~/components/Logo.vue'`,`{
   data () {
     return {
       clipped: false,
@@ -113,5 +113,4 @@ export default {
       title: 'Vuetify.js'
     }
   }
-}
-</script>
+}`) %>

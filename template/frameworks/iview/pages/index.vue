@@ -23,14 +23,12 @@
   </div>
 </template>
 
-<script>
-import Logo from '~/components/Logo.vue'
-export default {
+<%- generateComponent(
+`import Logo from '~/components/Logo.vue'`,`{
   components: {
     Logo
   }
-}
-</script>
+}`) %>
 
 <style>
 .container {

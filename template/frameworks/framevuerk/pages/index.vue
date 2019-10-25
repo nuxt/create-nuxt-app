@@ -133,11 +133,10 @@
   </fvMain>
 </template>
 
-<script>
-import Logo from '~/components/Logo.vue'
-import FramevuerkLogo from '~/components/FramevuerkLogo.vue'
 
-export default {
+<%- generateComponent(
+  `import Logo from '~/components/Logo.vue'
+import FramevuerkLogo from '~/components/FramevuerkLogo.vue'`, `{
   components: {
     Logo,
     FramevuerkLogo
@@ -169,9 +168,7 @@ export default {
       })
     }
   }
-}
-</script>
-
+}`) %>
 <style scoped>
 .content {
   margin: 0 auto;

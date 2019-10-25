@@ -12,8 +12,8 @@
   </v-app>
 </template>
 
-<script>
-export default {
+<%- generateComponent(
+`import Logo from '~/components/Logo.vue'`,`{
   layout: 'empty',
   props: {
     error: {
@@ -34,8 +34,7 @@ export default {
       otherError: 'An error occurred'
     }
   }
-}
-</script>
+}`) %>
 
 <style scoped>
 h1 {
