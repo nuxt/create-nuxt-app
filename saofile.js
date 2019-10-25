@@ -70,7 +70,9 @@ export default ${ifTrue(typescript, 'Vue.extend(' + componentOptions + ')', comp
         files: '**',
         templateDir: 'template/nuxt',
         filters: {
-          'static/icon.png': 'features.includes("pwa")'
+          'static/icon.png': 'features.includes("pwa")',
+          'nuxt.config.ts': 'runtime && runtime.includes("ts-runtime")',
+          'nuxt.config.js': '!runtime || !runtime.includes("ts-runtime")'
         }
       }
     ]
