@@ -64,7 +64,9 @@ export default ${ifTrue(typescript, 'Vue.extend(' + componentOptions + ')', comp
         files: '**',
         templateDir: 'template/nuxt',
         filters: {
-          'static/icon.png': 'features.includes("pwa")'
+          'static/icon.png': 'features.includes("pwa")',
+          'nuxt.config.ts': 'runtime && runtime.includes("ts-runtime")',
+          'nuxt.config.js': '!runtime || !runtime.includes("ts-runtime")'
         }
       }
     ]
@@ -115,8 +117,7 @@ export default ${ifTrue(typescript, 'Vue.extend(' + componentOptions + ')', comp
       filters: {
         '_.eslintrc.js': 'linter.includes("eslint")',
         '.prettierrc': 'linter.includes("prettier")',
-        'jsconfig.json':
-          'language.includes("js") && devTools.includes("jsconfig.json")',
+        'jsconfig.json': 'language.includes("js") && devTools.includes("jsconfig.json")',
         'tsconfig.json': 'language.includes("ts")'
       }
     })
