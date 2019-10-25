@@ -40,14 +40,11 @@
   </section>
 </template>
 
-<script>
-import Card from '~/components/Card'
-
-export default {
+<%- generateComponent(
+  `import Card from '~/components/Card'`, `{
   name: 'HomePage',
 
   components: {
     Card
   }
-}
-</script>
+}`) %>

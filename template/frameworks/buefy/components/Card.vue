@@ -26,8 +26,7 @@
   </div>
 </template>
 
-<script>
-export default {
+<%- generateComponent('', `{
   props: {
     title: {
       type: String,
@@ -38,5 +37,4 @@ export default {
       required: true
     }
   }
-}
-</script>
+}`) %>

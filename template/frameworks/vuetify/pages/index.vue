@@ -79,14 +79,11 @@
   </v-layout>
 </template>
 
-<script>
-import Logo from '~/components/Logo.vue'
-import VuetifyLogo from '~/components/VuetifyLogo.vue'
-
-export default {
+<%- generateComponent(
+  `import Logo from '~/components/Logo.vue'
+import VuetifyLogo from '~/components/VuetifyLogo.vue'`,`{
   components: {
     Logo,
     VuetifyLogo
   }
-}
-</script>
+}`) %>
