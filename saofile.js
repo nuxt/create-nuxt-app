@@ -13,6 +13,7 @@ module.exports = {
     const prettier = this.answers.linter.includes('prettier')
     const lintStaged = eslint && this.answers.linter.includes('lintStaged')
     const axios = this.answers.features.includes('axios')
+    const dotenv = this.answers.features.includes('dotenv')
     const esm = this.answers.server === 'none'
     const pmRun = this.answers.pm === 'yarn' ? 'yarn' : 'npm run'
 
@@ -27,7 +28,8 @@ module.exports = {
       axios,
       esm,
       edge,
-      pmRun
+      pmRun,
+      dotenv
     }
   },
   actions () {
@@ -94,7 +96,8 @@ module.exports = {
       filters: {
         '_.eslintrc.js': 'linter.includes("eslint")',
         '.prettierrc': 'linter.includes("prettier")',
-        'jsconfig.json': 'devTools.includes("jsconfig.json")'
+        'jsconfig.json': 'devTools.includes("jsconfig.json")',
+        '.env': 'features.includes("dotenv")'
       }
     })
 

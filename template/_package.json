@@ -106,6 +106,9 @@
     <%_ if (pwa) { _%>
     "@nuxtjs/pwa": "^3.0.0-0",
     <%_ } _%>
+    <%_ if (dotenv) { _%>
+    "@nuxtjs/dotenv": "^1.4.0",
+    <%_ } _%>
     <%_ if (ui === 'tachyons') { _%>
     "tachyons": "^4.11.1",
     <%_ } _%>
