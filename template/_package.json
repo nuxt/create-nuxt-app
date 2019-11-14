@@ -47,7 +47,7 @@
   <%_ if (lintStaged) { _%>
   "lint-staged": {
     <%_ if (eslint) { _%>
-    "*.{js,vue}": "<%= pmRun %> lint"<%= stylelint ? "," : "" %>
+    "*.{js,vue<%= typescript ? ",ts" : "" %>}": "<%= pmRun %> lint"<%= stylelint ? "," : "" %>
     <%_ } _%>
     <%_ if (stylelint) { _%>
     "*.{css,vue}": "stylelint"
