@@ -46,7 +46,11 @@
   },
   <%_ if (lintStaged) { _%>
   "lint-staged": {
-    "*.{js,vue}": "eslint"
+    <%_ if (typescript) { _%>
+    "*.{ts,js,vue}": "eslint"
+    <%_ } else { _%>
+    "*.{js,vue}": "eslint"          
+    <%_ } _%>
   },
   "husky": {
     "hooks": {
