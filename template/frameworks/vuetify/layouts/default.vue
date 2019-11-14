@@ -88,8 +88,7 @@
   </v-app>
 </template>
 
-<%- generateComponent(
-`import Logo from '~/components/Logo.vue'`,`{
+<%- generateComponent(``,`{
   data () {
     return {
       clipped: false,
