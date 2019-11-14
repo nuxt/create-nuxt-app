@@ -12,8 +12,7 @@
   </v-app>
 </template>
 
-<%- generateComponent(
-`import Logo from '~/components/Logo.vue'`,`{
+<%- generateComponent(``,`{
   layout: 'empty',
   props: {
     error: {
