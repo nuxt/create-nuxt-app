@@ -77,6 +77,8 @@ yarn create nuxt-app <my-project>
 1. Choose rendering mode
     - [Universal (SSR)](https://nuxtjs.org/guide/#server-rendered-universal-ssr-)
     - [SPA](https://nuxtjs.org/guide/#single-page-applications-spa-)
+1. Choose development tools
+    - [jsconfig.json](https://code.visualstudio.com/docs/languages/jsconfig)
 
 ## CLI Options
 
