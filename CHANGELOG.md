@@ -1,6 +1,52 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [2.11.1](https://github.com/nuxt/create-nuxt-app/compare/v2.11.0...v2.11.1) (2019-09-30)
+
+
+### Bug Fixes
+
+* add prompts.js into npm package ([#352](https://github.com/nuxt/create-nuxt-app/issues/352)) ([fef1a2e](https://github.com/nuxt/create-nuxt-app/commit/fef1a2e))
+
+## [2.11.0](https://github.com/nuxt/create-nuxt-app/compare/v2.10.1...v2.11.0) (2019-09-30)
+
+
+### Bug Fixes
+
+* **tests:** update babel config for ava ([#342](https://github.com/nuxt/create-nuxt-app/issues/342)) ([a257561](https://github.com/nuxt/create-nuxt-app/commit/a257561))
+* update snapshots ([10ad76f](https://github.com/nuxt/create-nuxt-app/commit/10ad76f))
+
+
+### Features
+
+* Add e2e testing support using Ava ([#303](https://github.com/nuxt/create-nuxt-app/issues/303)) ([4d8fe95](https://github.com/nuxt/create-nuxt-app/commit/4d8fe95))
+* add support for semantic-pull-requests ([#322](https://github.com/nuxt/create-nuxt-app/issues/322)) ([5af63c0](https://github.com/nuxt/create-nuxt-app/commit/5af63c0))
+* answers option ([#347](https://github.com/nuxt/create-nuxt-app/issues/347)) ([75db75e](https://github.com/nuxt/create-nuxt-app/commit/75db75e))
+* bump `bootstrap-vue` to v2.0.0 stable ([#334](https://github.com/nuxt/create-nuxt-app/issues/334)) ([38af656](https://github.com/nuxt/create-nuxt-app/commit/38af656))
+
+### [2.10.1](https://github.com/nuxt/create-nuxt-app/compare/v2.10.0...v2.10.1) (2019-08-31)
+
+
+### Bug Fixes
+
+* use framevuerk-nuxt.min.css in framevuerk ([1b5713b](https://github.com/nuxt/create-nuxt-app/commit/1b5713b))
+
+# [2.10.0](https://github.com/nuxt/create-nuxt-app/compare/v2.9.2...v2.10.0) (2019-08-21)
+
+
+### Bug Fixes
+
+* comment vuetify/variables.scss with doc link ([#318](https://github.com/nuxt/create-nuxt-app/issues/318)) ([e4f1d64](https://github.com/nuxt/create-nuxt-app/commit/e4f1d64))
+* rename devModules to buildModules ([9d9c962](https://github.com/nuxt/create-nuxt-app/commit/9d9c962))
+
+
+### Features
+
+* add alias (@/~) support in ava tests ([#304](https://github.com/nuxt/create-nuxt-app/issues/304)) ([499e852](https://github.com/nuxt/create-nuxt-app/commit/499e852))
+* add jsconfig.json file for VS Code users ([#277](https://github.com/nuxt/create-nuxt-app/issues/277)) ([3fee8e1](https://github.com/nuxt/create-nuxt-app/commit/3fee8e1))
+
+
 
 ## [2.9.2](https://github.com/nuxt/create-nuxt-app/compare/v2.9.1...v2.9.2) (2019-08-05)
 
