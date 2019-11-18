@@ -87,6 +87,10 @@ module.exports = {
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
     <%_ } _%>
+    <%_ if (stylelint) { _%>
+    // Doc: https://github.com/nuxt-community/stylelint-module
+    '@nuxtjs/stylelint-module',
+    <%_ } _%>
     <%_ if (ui === 'tailwind') { _%>
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss',

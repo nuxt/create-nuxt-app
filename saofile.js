@@ -12,6 +12,7 @@ module.exports = {
     const eslint = this.answers.linter.includes('eslint')
     const prettier = this.answers.linter.includes('prettier')
     const lintStaged = eslint && this.answers.linter.includes('lintStaged')
+    const stylelint = this.answers.linter.includes('stylelint')
     const axios = this.answers.features.includes('axios')
     const dotenv = this.answers.features.includes('dotenv')
     const esm = this.answers.server === 'none'
@@ -25,6 +26,7 @@ module.exports = {
       eslint,
       prettier,
       lintStaged,
+      stylelint,
       axios,
       esm,
       edge,
@@ -97,7 +99,8 @@ module.exports = {
         '_.eslintrc.js': 'linter.includes("eslint")',
         '.prettierrc': 'linter.includes("prettier")',
         'jsconfig.json': 'devTools.includes("jsconfig.json")',
-        '.env': 'features.includes("dotenv")'
+        '.env': 'features.includes("dotenv")',
+        '_stylelint.config.js': 'linter.includes("stylelint")'
       }
     })
 
@@ -106,7 +109,8 @@ module.exports = {
       patterns: {
         gitignore: '.gitignore',
         '_package.json': 'package.json',
-        '_.eslintrc.js': '.eslintrc.js'
+        '_.eslintrc.js': '.eslintrc.js',
+        '_stylelint.config.js': 'stylelint.config.js'
       }
     })
 

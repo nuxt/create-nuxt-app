@@ -85,7 +85,8 @@ module.exports = [
     choices: [
       { name: 'ESLint', value: 'eslint' },
       { name: 'Prettier', value: 'prettier' },
-      { name: 'Lint staged files', value: 'lintStaged' }
+      { name: 'Lint staged files', value: 'lintStaged' },
+      { name: 'StyleLint', value: 'stylelint' }
     ],
     default: []
   },

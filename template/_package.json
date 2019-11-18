@@ -141,6 +141,10 @@
     "husky": "^2.6.0",
     "lint-staged": "^8.2.1",
     <%_ } _%>
+    <%_ if (stylelint) { _%>
+    "@nuxtjs/stylelint-module": "^3.1.0",
+    "stylelint": "^10.1.0",
+    <%_ } _%>
     <%_ if (test !== 'none') { _%>
     "@vue/test-utils": "^1.0.0-beta.27",
     <%_ } _%>

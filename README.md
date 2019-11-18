@@ -64,6 +64,7 @@ yarn create nuxt-app <my-project>
     - [ESLint](https://github.com/nuxt/eslint-config)
     - [Prettier](https://github.com/prettier/prettier)
     - [Lint staged files](https://github.com/okonet/lint-staged)
+    - [StyleLint](https://github.com/stylelint/stylelint)
 1. Check the features needed for your project:
     - [PWA](https://pwa.nuxtjs.org/)
     - Linter / Formatter
