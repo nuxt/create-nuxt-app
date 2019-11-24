@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.12.0](https://github.com/nuxt/create-nuxt-app/compare/v2.11.1...v2.12.0) (2019-11-24)
+
+
+### Features
+
+* add dotenv module ([#358](https://github.com/nuxt/create-nuxt-app/issues/358)) ([40dd947](https://github.com/nuxt/create-nuxt-app/commit/40dd947dc2342dd3358adf92c4a912a4cf293a48))
+* add stylelint module ([#278](https://github.com/nuxt/create-nuxt-app/issues/278)) ([18740f8](https://github.com/nuxt/create-nuxt-app/commit/18740f86eb2afd3226d277b42000e6ab21e94deb))
+* update logo component with the new nuxt logo ([#363](https://github.com/nuxt/create-nuxt-app/issues/363)) ([b5a4417](https://github.com/nuxt/create-nuxt-app/commit/b5a4417bcc56aa7e7fec571b3baf4161db63f634))
+
 ### [2.11.1](https://github.com/nuxt/create-nuxt-app/compare/v2.11.0...v2.11.1) (2019-09-30)
 
 
