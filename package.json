@@ -23,7 +23,7 @@
     "cac": "^6.5.3",
     "chalk": "^2.4.2",
     "cross-spawn": "^7.0.1",
-    "envinfo": "^7.4.0",
+    "envinfo": "^7.5.0",
     "glob": "^7.1.6",
     "lodash": "^4.17.15",
     "sao": "^1.7.0",
@@ -33,8 +33,8 @@
   "devDependencies": {
     "@nuxtjs/eslint-config": "^1.1.2",
     "ava": "^2.4.0",
-    "eslint": "^6.6.0",
-    "standard-version": "^7.0.0"
+    "eslint": "^6.7.0",
+    "standard-version": "^7.0.1"
   },
   "authors": [
     "Egoist <0x142857@gmail.com>",
