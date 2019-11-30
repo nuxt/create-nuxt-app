@@ -33,7 +33,7 @@
   "devDependencies": {
     "@nuxtjs/eslint-config": "^1.1.2",
     "ava": "^2.4.0",
-    "eslint": "^6.7.0",
+    "eslint": "^6.7.2",
     "standard-version": "^7.0.1"
   },
   "authors": [
