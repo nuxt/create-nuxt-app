@@ -1,28 +1,33 @@
 <template>
-  <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        <%= name %>
-      </h1>
-      <h2 class="subtitle">
-        <%= description %>
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
+  <div>
+    <div class="sliding-background-wrapper">
+      <div class="sliding-background"></div>
+    </div>
+    <div class="container">
+      <div>
+        <logo />
+        <h1 class="title">
+          <%= name %>
+        </h1>
+        <h2 class="subtitle">
+          <%= description %>
+        </h2>
+        <div class="links">
+          <a
+            href="https://nuxtjs.org/"
+            target="_blank"
+            class="button--green"
+          >
+            Documentation
+          </a>
+          <a
+            href="https://github.com/nuxt/nuxt.js"
+            target="_blank"
+            class="button--grey"
+          >
+            GitHub
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -42,7 +47,7 @@ export default {
 <%_ if (ui === 'tailwind') { _%>
 /* Sample `apply` at-rules with Tailwind CSS
 .container {
-  @apply min-h-screen flex justify-center items-center text-center mx-auto;
+  @apply min-h-screen flex justify-center items-center text-center mx-auto relative;
 }
 */
 <%_ } _%>
@@ -53,6 +58,7 @@ export default {
   justify-content: center;
   align-items: center;
   text-align: center;
+  position: relative;
 }
 
 .title {
@@ -75,5 +81,29 @@ export default {
 
 .links {
   padding-top: 15px;
+}
+
+.sliding-background-wrapper {
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+}
+
+.sliding-background {
+  background: url('/nuxt-bg.png') repeat;
+  width: calc(100vw + 1800px);
+  height: calc(100vh + 1500px);
+  animation: slide 40s linear infinite;
+}
+
+@keyframes slide {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-1800px, -1500px, 0);
+  }
 }
 </style>
