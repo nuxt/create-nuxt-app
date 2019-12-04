@@ -129,7 +129,7 @@
     "nodemon": "^1.18.9",
     <%_ } _%>
     <%_ if (typescript) { _%>
-    "@nuxt/typescript-build": "^0.3.2",
+    "@nuxt/typescript-build": "^0.3.10",
     <%_ } _%>
     <%_ if (ui === 'tailwind') { _%>
     "@nuxtjs/tailwindcss": "^1.0.0",
