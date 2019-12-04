@@ -170,7 +170,7 @@
     "jest": "^24.1.0",
     "vue-jest": "^4.0.0-0",
     <%_ if (typescript) { _%>
-    "ts-jest": "^24.1.0",
+    "ts-jest": "^24.2.0",
     <%_ } _%>
     <%_ } else if (test === 'ava') { _%>
     "ava": "^2.2.0",
