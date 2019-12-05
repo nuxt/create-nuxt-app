@@ -17,12 +17,11 @@ async function start () {
     port = process.env.PORT || 3000
   } = nuxt.options.server
 
+  await nuxt.ready()
   // Build in development
   if (config.dev) {
     const builder = new Builder(nuxt)
     await builder.build()
-  } else {
-    await nuxt.ready()
   }
 
   app.use((ctx) => {
