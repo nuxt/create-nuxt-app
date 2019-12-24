@@ -6,7 +6,7 @@
 
 ``` bash
 # install dependencies
-$ <%= pmRun %> install
+$ <%= pm %> install
 
 # serve with hot reload at localhost:3000
 $ <%= pmRun %> dev
