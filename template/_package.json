@@ -119,7 +119,7 @@
     "nodemon": "^1.18.9",
     <%_ } _%>
     <%_ if (ui === 'tailwind') { _%>
-    "@nuxtjs/tailwindcss": "^1.0.0",
+    "@nuxtjs/tailwindcss": "^1.2.0",
     <%_ } else if (ui === 'vuetify') { _%>
     "@nuxtjs/vuetify": "^1.0.0",
     <%_ } else if (ui === 'framevuerk') { _%>
