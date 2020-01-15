@@ -31,7 +31,7 @@
     "validate-npm-package-name": "^3.0.0"
   },
   "devDependencies": {
-    "@nuxtjs/eslint-config": "^1.1.2",
+    "@nuxtjs/eslint-config": "^2.0.0",
     "ava": "^2.4.0",
     "eslint": "^6.7.2",
     "standard-version": "^7.0.1"
