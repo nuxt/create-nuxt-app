@@ -17,11 +17,10 @@ async function start () {
   config.dev = process.env.NODE_ENV !== 'production'
 
   const nuxt = new Nuxt(config)
+  await nuxt.ready()
   if (config.dev) {
     const builder = new Builder(nuxt)
     await builder.build()
-  } else {
-    await nuxt.ready()
   }
 
   const configuration = require('@feathersjs/configuration')

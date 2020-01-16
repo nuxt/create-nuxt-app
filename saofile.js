@@ -16,6 +16,7 @@ module.exports = {
     const axios = this.answers.features.includes('axios')
     const dotenv = this.answers.features.includes('dotenv')
     const esm = this.answers.server === 'none'
+    const pm = this.answers.pm === 'yarn' ? 'yarn' : 'npm'
     const pmRun = this.answers.pm === 'yarn' ? 'yarn' : 'npm run'
 
     const { cliOptions = {} } = this.sao.opts
@@ -30,6 +31,7 @@ module.exports = {
       axios,
       esm,
       edge,
+      pm,
       pmRun,
       dotenv
     }
