@@ -10,11 +10,10 @@ async function start () {
   // Create a new nuxt instance
   const nuxt = new Nuxt(config)
 
+  await nuxt.ready()
   // Enable live build & reloading on dev
   if (nuxt.options.dev) {
     await new Builder(nuxt).build()
-  } else {
-    await nuxt.ready()
   }
 
   const server = micro(async (req, res) => {
