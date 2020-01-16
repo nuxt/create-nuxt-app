@@ -76,7 +76,7 @@ module.exports = {
         const files = {}
         for (const action of actions) {
           const options = { cwd: join(rootDir, action.templateDir), dot: true }
-          for (const file of glob.sync(`*`, options)) {
+          for (const file of glob.sync('*', options)) {
             files[file] = `resources/${file}`
           }
         }

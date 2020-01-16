@@ -1,6 +1,6 @@
 module.exports = {
   'config-name': 'nuxt',
-  'direction': 'ltr', // or rtl
+  direction: 'ltr', // or rtl
   'primary-color': '#41b883',
   'secondary-color': '#35495e',
   'danger-color': '#BF2B2B',
@@ -10,7 +10,7 @@ module.exports = {
   'header-bg-color': '#292929',
   'sidebar-bg-color': '#313131',
   'footer-bg-color': '#16212D',
-  'padding': '0.8em',
+  padding: '0.8em',
   'transition-speed': '0.3s',
   'border-radius': '0',
   'shadow-size': '0'
