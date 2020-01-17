@@ -14,6 +14,9 @@ const getPkgFields = (pkg) => {
   return pkg
 }
 
+const normalizeNewlines =
+  string => string.replace(/\r\n/g, '\n')
+
 const verifyFileList = async (t, answers = {}) => {
   const stream = await sao.mock({ generator }, answers)
   t.snapshot(stream.fileList, 'Generated files')
@@ -29,7 +32,7 @@ const verifyNuxtConfig = async (t, answers = {}) => {
   const stream = await sao.mock({ generator }, answers)
   const configFile = answers.server === 'adonis' ? 'config/nuxt.js' : 'nuxt.config.js'
   const config = await stream.readFile(configFile)
-  t.snapshot(config, `Generated ${configFile}`)
+  t.snapshot(normalizeNewlines(config), `Generated ${configFile}`)
 }
 
 test('verify default answers', async (t) => {
