@@ -1,6 +1,9 @@
-import baseConfig from './ava.config.js'
-
 export default {
-  ...baseConfig,
+  require: ['./test/ava.setup.js'],
+  ignoredByWatcher: ['!**/*.{js,vue}'],
+  babel: true,
+  tap: true,
+  verbose: true,
+  color: true,
   files: ['test/specs/**/*']
 }
