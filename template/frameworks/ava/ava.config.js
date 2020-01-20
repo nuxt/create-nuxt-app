@@ -1,6 +1,6 @@
 export default {
   require: ['./test/ava.setup.js'],
-  sources: ['**/*.{js,vue}'],
+  ignoredByWatcher: ['!**/*.{js,vue}'],
   babel: {
     testOptions: {
       plugins: [
