@@ -67,7 +67,7 @@
     "nuxt": "^2.0.0",
     <%_ } _%>
     <%_ if (tsRuntime) { _%>
-    "@nuxt/typescript-runtime": "^0.2.10",
+    "@nuxt/typescript-runtime": "^0.3.8",
     <%_ } _%>
     <%_ if (server !== 'none') { _%>
     "cross-env": "^5.2.0",
