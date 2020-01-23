@@ -83,7 +83,7 @@
       :fixed="fixed"
       app
     >
-      <span>&copy; 2020</span>
+      <span>&copy; {{ copyrightYear }}</span>
     </v-footer>
   </v-app>
 </template>
@@ -111,6 +111,7 @@ export default {
       right: true,
       rightDrawer: false,
       title: 'Vuetify.js'
+      copyrightYear: new Date().getFullYear()
     }
   }
 }
