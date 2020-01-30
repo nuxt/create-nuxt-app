@@ -30,7 +30,7 @@
     <%_ } _%>
     <%_ if (test === 'ava') { _%>
     "test": "<%= test %>",
-    "test:unit": "cross-env TEST=unit nyc ava ./test/specs/**/*",
+    "test:unit": "cross-env TEST=unit ava ./test/specs/**/*",
     "test:e2e": "cross-env TEST=e2e ava ./test/e2e/**/*",
     <%_ } else if (test !== 'none') { _%>
     "test": "<%= test %>",
