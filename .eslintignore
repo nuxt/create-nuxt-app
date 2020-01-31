@@ -1,3 +1,4 @@
 _*.js
 template/nuxt/pages/index.vue
 template/frameworks/iview/pages/index.vue
+template/frameworks/jest/jest.config.js
