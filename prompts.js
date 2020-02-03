@@ -116,7 +116,8 @@ module.exports = [
     message: 'Choose development tools',
     type: 'checkbox',
     choices: [
-      { name: 'jsconfig.json (Recommended for VS Code)', value: 'jsconfig.json' }
+      { name: 'jsconfig.json (Recommended for VS Code)', value: 'jsconfig.json' },
+      { name: 'Semantic Pull Requests', value: 'semantic-pull-requests' }
     ],
     default: []
   }

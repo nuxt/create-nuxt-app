@@ -80,6 +80,7 @@ yarn create nuxt-app <my-project>
     - [SPA](https://nuxtjs.org/guide/#single-page-applications-spa-)
 1. Choose development tools
     - [jsconfig.json](https://code.visualstudio.com/docs/languages/jsconfig)
+    - [Semantic PR](https://probot.github.io/apps/semantic-pull-requests/)
 
 ## CLI Options
 
