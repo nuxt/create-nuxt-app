@@ -37,8 +37,8 @@
     <%_ } _%>
     <%_ if (test === 'ava') { _%>
     "test": "<%= test %>",
-    "test:unit": "cross-env TEST=unit ava --config unit.config.js",
-    "test:e2e": "cross-env TEST=e2e ava --config e2e.config.js",
+    "test:unit": "cross-env TEST=unit ava ./test/specs/**/*",
+    "test:e2e": "cross-env TEST=e2e ava ./test/e2e/**/*",
     <%_ } else if (test !== 'none') { _%>
     "test": "<%= test %>",
     <%_ } _%>
@@ -179,7 +179,8 @@
     "ts-jest": "^24.3.0",
     <%_ } _%>
     <%_ } else if (test === 'ava') { _%>
-    "ava": "^2.2.0",
+    "ava": "^3.0.0",
+    "@ava/babel": "^1.0.0",
     "babel-plugin-module-resolver": "^3.2.0",
     "browser-env": "^3.2.5",
     "require-extension-hooks": "^0.3.3",
