@@ -2,7 +2,7 @@
   <div class="container">
     <div>
       <header class="content-logos">
-        <logo/>
+        <logo />
         <span class="plus">+</span>
         <VuesaxLogo />
       </header>
