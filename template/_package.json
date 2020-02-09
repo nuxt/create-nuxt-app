@@ -142,7 +142,7 @@
     <%_ if (prettier) { _%>
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-prettier": "^3.1.2",
-  "prettier": "^1.19.1",
+    "prettier": "^1.19.1",
     <%_ } _%>
     <%_ if (lintStaged) { _%>
     "husky": "^4.0.0",
@@ -169,6 +169,5 @@
     "require-extension-hooks-vue": "^2.0.0",
     <%_ } _%>
     "": ""
-
   }
 }
