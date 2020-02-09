@@ -40,12 +40,11 @@
   <%_ if (lintStaged) { _%>
   "lint-staged": {
     <%_ if (eslint) { _%>
-    "*.{js,vue}": "eslint",
+    "*.{js,vue}": "<%= pmRun %> lint"<%= stylelint ? "," : "" %>
     <%_ } _%>
     <%_ if (stylelint) { _%>
-    "*.{css,vue}": "stylelint",
+    "*.{css,vue}": "stylelint"
     <%_ } _%>
-    "": ""
   },
   "husky": {
     "hooks": {
@@ -146,8 +145,8 @@
   "prettier": "^1.19.1",
     <%_ } _%>
     <%_ if (lintStaged) { _%>
-    "husky": "^2.6.0",
-    "lint-staged": "^8.2.1",
+    "husky": "^4.0.0",
+    "lint-staged": "^10.0.0",
     <%_ } _%>
     <%_ if (stylelint) { _%>
     "@nuxtjs/stylelint-module": "^3.1.0",
