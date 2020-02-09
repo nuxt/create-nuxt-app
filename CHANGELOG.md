@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.13.0](https://github.com/nuxt/create-nuxt-app/compare/v2.12.0...v2.13.0) (2020-02-09)
+
+
+### Features
+
+* **ava:** add support for ava v3 ([#414](https://github.com/nuxt/create-nuxt-app/issues/414)) ([0e14a6f](https://github.com/nuxt/create-nuxt-app/commit/0e14a6fb94e0cd40dcb06ba3dd4116b95f60b851))
+* add semantic pull request support ([#405](https://github.com/nuxt/create-nuxt-app/issues/405)) ([35728ee](https://github.com/nuxt/create-nuxt-app/commit/35728ee328265239d4818cf3ff9c21b3e04b83b4))
+* add stylelint to lint-staged ([33051e4](https://github.com/nuxt/create-nuxt-app/commit/33051e461e5c5c4984d87f0734cf2e22e09fda4d))
+* add Vuesax framework ui ([#424](https://github.com/nuxt/create-nuxt-app/issues/424)) ([952dc47](https://github.com/nuxt/create-nuxt-app/commit/952dc4786428e00a675167f42a527cba56e28be0))
+
+
+### Bug Fixes
+
+* **template:** Stylelint config ([#387](https://github.com/nuxt/create-nuxt-app/issues/387)) ([28abd48](https://github.com/nuxt/create-nuxt-app/commit/28abd48e46dc5ca77ce880d4779428c8b2c9a01e))
+* nuxt.ready is not called in dev mode ([441bb5b](https://github.com/nuxt/create-nuxt-app/commit/441bb5bd8b1cc6566202c59fb4e2f8dcb37290da))
+* stylelint config rules is object ([6a6415e](https://github.com/nuxt/create-nuxt-app/commit/6a6415ebc0f94404d442134bf762a7728417fca5))
+* **templates:** Vuetify copyright year ([#415](https://github.com/nuxt/create-nuxt-app/issues/415)) ([1f6d68f](https://github.com/nuxt/create-nuxt-app/commit/1f6d68fe045127acfdff326c8009dc681b57a01c))
+
 ## [2.12.0](https://github.com/nuxt/create-nuxt-app/compare/v2.11.1...v2.12.0) (2019-11-24)
 
 
