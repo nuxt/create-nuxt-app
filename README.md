@@ -47,6 +47,7 @@ yarn create nuxt-app <my-project>
     - [iView](https://www.iviewui.com/)
     - [Tachyons](https://github.com/tachyons-css/tachyons)
     - [Tailwind CSS](https://github.com/tailwindcss/tailwindcss)
+    - [Vuesax](https://github.com/lusaxweb/vuesax)
     - [Vuetify](https://github.com/vuetifyjs/vuetify)
 1. Choose between integrated server-side frameworks:
     - None (Nuxt default server)
