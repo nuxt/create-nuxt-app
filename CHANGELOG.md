@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.14.0](https://github.com/nuxt/create-nuxt-app/compare/v2.13.0...v2.14.0) (2020-02-09)
+
+
+### Features
+
+* **eslint:** upgrade @nuxtjs/eslint-config to v2 ([85b368b](https://github.com/nuxt/create-nuxt-app/commit/85b368b6cfbe768f8de4cbe3d4820bf5a787f68b))
+
+
+### Bug Fixes
+
+* upgrade lint-staged packages ([e10fe52](https://github.com/nuxt/create-nuxt-app/commit/e10fe520c79a98467c4de976e1d46ea106099f19))
+* upgrade prettier packages ([79075b0](https://github.com/nuxt/create-nuxt-app/commit/79075b0fd304c0a5dd5d9e5ce3a09bf193e6f986))
+
 ## [2.13.0](https://github.com/nuxt/create-nuxt-app/compare/v2.12.0...v2.13.0) (2020-02-09)
 
 
