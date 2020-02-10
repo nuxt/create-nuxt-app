@@ -1,7 +1,6 @@
 module.exports = () => {
   return {
-    files: ['./test/**/*.spec.js'],
-    require: ['./test/ava.setup.js'],
+    require: ['./test/helpers/ava.setup.js'],
     ignoredByWatcher: ['!**/*.{js,vue}'],
     babel: true,
     tap: true,
