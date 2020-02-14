@@ -1,0 +1,5 @@
+System.config({
+  paths: {
+    '@/*': './*'
+  }
+})

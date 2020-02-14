@@ -118,6 +118,7 @@ module.exports = [
     type: 'checkbox',
     choices: [
       { name: 'jsconfig.json (Recommended for VS Code)', value: 'jsconfig.json' },
+      { name: 'config.js (Recommended for WebStorm/PhpStorm when using "@/.." namespaces)', value: 'config.js' },
       { name: 'Semantic Pull Requests', value: 'semantic-pull-requests' }
     ],
     default: []
