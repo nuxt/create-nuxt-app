@@ -152,6 +152,9 @@
     "@nuxtjs/stylelint-module": "^3.1.0",
     "stylelint": "^10.1.0",
     <%_ } _%>
+    <%_ if (purgecss) { _%>
+    "nuxt-purgecss": "^0.2.1",
+    <%_ } _%>
     <%_ if (test !== 'none') { _%>
     "@vue/test-utils": "^1.0.0-beta.27",
     <%_ } _%>

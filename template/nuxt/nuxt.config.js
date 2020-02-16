@@ -127,6 +127,9 @@ module.exports = {
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
     <%_ } _%>
+    <%_ if (purgecss) { _%>
+    'nuxt-purgecss',
+    <%_ } _%>
   ],
   <%_ if (axios) { _%>
   /*
@@ -157,6 +160,24 @@ module.exports = {
         }
       }
     }
+  },
+  <%_ } _%>
+  <%_ if (purgecss) { _%>
+  /*
+  ** PurgeCSS module configuration
+  ** https://github.com/Developmint/nuxt-purgecss
+  */
+  purgeCSS: {
+    mode: 'postcss',
+    paths: [
+      'components/**/*.vue',
+      'layouts/**/*.vue',
+      'pages/**/*.vue',
+      'plugins/**/*.js',
+    ],
+    whitelistPatterns: [
+      // Some modules are invisible to PurgeCSS. Add missing classes here.
+    ]
   },
   <%_ } _%>
   /*
