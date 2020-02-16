@@ -174,9 +174,7 @@ module.exports = {
       'layouts/**/*.vue',
       'pages/**/*.vue',
       'plugins/**/*.js',
-      <%_ if (vuetify) { _%>
       './node_modules/vuetify/src/**/*.ts'
-      <%_ } _%>
     ],
     whitelistPatterns: [
       // Some modules are invisible to PurgeCSS. Add missing classes here.
