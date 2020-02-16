@@ -101,6 +101,9 @@ module.exports = {
     <%_ } else if (ui === 'vuetify') { _%>
     '@nuxtjs/vuetify',
     <%_ } _%>
+    <%_ if (imagemin) { _%>
+    '@nuxtjs/imagemin',
+    <%_ } _%>
   ],
   /*
   ** Nuxt.js modules
@@ -156,6 +159,22 @@ module.exports = {
           success: colors.green.accent3
         }
       }
+    }
+  },
+  <%_ } _%>
+  <%_ if (imagemin) { _%>
+  /*
+  ** Imagemin module configuration
+  ** https://github.com/nuxt-community/imagemin-module
+  */
+  imagemin: {
+    imageminOptions: {
+      plugins: [
+        ['gifsicle', { interlaced: true }],
+        ['jpegtran', { progressive: true }],
+        ['optipng', { optimizationLevel: 5 }],
+        ['svgo', { plugins: [{ removeViewBox: false }] }]
+      ]
     }
   },
   <%_ } _%>

@@ -168,6 +168,9 @@
     "require-extension-hooks-babel": "^1.0.0",
     "require-extension-hooks-vue": "^2.0.0",
     <%_ } _%>
+    <%_ if (imagemin) { _%>
+    "@nuxtjs/imagemin": "^0.1.0",
+    <%_ } _%>
     "": ""
   }
 }
