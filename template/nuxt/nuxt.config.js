@@ -127,6 +127,10 @@ module.exports = {
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
     <%_ } _%>
+    <%_ if (styleResources) { _%>
+    // Doc: https://github.com/nuxt-community/style-resources-module
+    '@nuxtjs/style-resources',
+    <%_ } _%>
   ],
   <%_ if (axios) { _%>
   /*
@@ -173,6 +177,17 @@ module.exports = {
     },
     <%_ } else if (ui === 'element-ui') { _%>
     transpile: [/^element-ui/],
+    <%_ } _%>
+    <%_ if (styleResources) { _%>
+    /*
+    ** Style Resources module configuration
+    ** https://github.com/nuxt-community/style-resources-module
+    */
+    styleResources: {
+      <%_ if (ui === 'vuetify') { _%>
+      scss: ['~/assets/variables.scss']
+      <%_ } _%>
+    },
     <%_ } _%>
     /*
     ** You can extend webpack config here

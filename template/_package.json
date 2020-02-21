@@ -119,6 +119,9 @@
     <%_ if (ui === 'tachyons') { _%>
     "tachyons": "^4.11.1",
     <%_ } _%>
+    <%_ if (styleResources) { _%>
+    "@nuxtjs/style-resources": "^1.0.0",
+    <%_ } _%>
     "": ""
   },
   "devDependencies": {
