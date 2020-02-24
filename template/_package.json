@@ -106,18 +106,17 @@
     "framevuerk": "^2.2.5",
     <%_ } else if (ui === 'vuesax') { _%>
     "vuesax": "^4.0.1-alpha.8",
+    <%_ } else if (ui === 'tachyons') { _%>
+    "tachyons": "^4.11.1",
     <%_ } _%>
     <%_ if (axios) { _%>
     "@nuxtjs/axios": "^5.3.6",
     <%_ } _%>
-    <%_ if (pwa) { _%>
-    "@nuxtjs/pwa": "^3.0.0-0",
-    <%_ } _%>
     <%_ if (dotenv) { _%>
     "@nuxtjs/dotenv": "^1.4.0",
     <%_ } _%>
-    <%_ if (ui === 'tachyons') { _%>
-    "tachyons": "^4.11.1",
+    <%_ if (pwa) { _%>
+    "@nuxtjs/pwa": "^3.0.0-0",
     <%_ } _%>
     <%_ if (styleResources) { _%>
     "@nuxtjs/style-resources": "^1.0.0",

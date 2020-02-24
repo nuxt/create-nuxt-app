@@ -120,12 +120,12 @@ module.exports = {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     <%_ } _%>
-    <%_ if (pwa) { _%>
-    '@nuxtjs/pwa',
-    <%_ } _%>
     <%_ if (dotenv) { _%>
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
+    <%_ } _%>
+    <%_ if (pwa) { _%>
+    '@nuxtjs/pwa',
     <%_ } _%>
     <%_ if (styleResources) { _%>
     // Doc: https://github.com/nuxt-community/style-resources-module
@@ -138,6 +138,17 @@ module.exports = {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+  },
+  <%_ } _%>
+  <%_ if (styleResources) { _%>
+  /*
+  ** Style Resources module configuration
+  ** https://github.com/nuxt-community/style-resources-module
+  */
+  styleResources: {
+    <%_ if (ui === 'vuetify') { _%>
+    scss: ['~/assets/variables.scss']
+    <%_ } _%>
   },
   <%_ } _%>
   <%_ if (ui === 'vuetify') { _%>
@@ -177,17 +188,6 @@ module.exports = {
     },
     <%_ } else if (ui === 'element-ui') { _%>
     transpile: [/^element-ui/],
-    <%_ } _%>
-    <%_ if (styleResources) { _%>
-    /*
-    ** Style Resources module configuration
-    ** https://github.com/nuxt-community/style-resources-module
-    */
-    styleResources: {
-      <%_ if (ui === 'vuetify') { _%>
-      scss: ['~/assets/variables.scss']
-      <%_ } _%>
-    },
     <%_ } _%>
     /*
     ** You can extend webpack config here
