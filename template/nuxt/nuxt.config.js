@@ -180,12 +180,7 @@ module.exports = {
     /*
     ** You can extend webpack config here
     */
-    <%_ if (eslint) { _%>
-    extend (/* config, ctx */) {
-    }
-    <%_ } else { _%>
     extend (config, ctx) {
     }
-    <%_ }_%>
   }
 }
