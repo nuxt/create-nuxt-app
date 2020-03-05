@@ -47,12 +47,11 @@
   <%_ if (lintStaged) { _%>
   "lint-staged": {
     <%_ if (eslint) { _%>
-    "*.{js,vue}": "eslint",
+    "*.{js,vue}": "<%= pmRun %> lint"<%= stylelint ? "," : "" %>
     <%_ } _%>
     <%_ if (stylelint) { _%>
-    "*.{css,vue}": "stylelint",
+    "*.{css,vue}": "stylelint"
     <%_ } _%>
-    "": ""
   },
   "husky": {
     "hooks": {
@@ -115,6 +114,8 @@
     "iview": "^3.1.5",
     <%_ } else if (ui === 'framevuerk') { _%>
     "framevuerk": "^2.2.5",
+    <%_ } else if (ui === 'vuesax') { _%>
+    "vuesax": "^4.0.1-alpha.8",
     <%_ } _%>
     <%_ if (axios) { _%>
     "@nuxtjs/axios": "^5.3.6",
@@ -148,7 +149,7 @@
       <%_ if (typescript) { _%>
     "@nuxtjs/eslint-config-typescript": "^1.0.0",
       <%_ } else { _%>
-    "@nuxtjs/eslint-config": "^1.0.1",
+    "@nuxtjs/eslint-config": "^2.0.0",
     <%_ } _%>
     "@nuxtjs/eslint-module": "^1.0.0",
     "babel-eslint": "^10.0.1",
@@ -156,13 +157,13 @@
     "eslint-plugin-nuxt": ">=0.4.2",
     <%_ } _%>
     <%_ if (prettier) { _%>
-    "eslint-config-prettier": "^4.1.0",
-    "eslint-plugin-prettier": "^3.0.1",
-    "prettier": "^1.16.4",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "prettier": "^1.19.1",
     <%_ } _%>
     <%_ if (lintStaged) { _%>
-    "husky": "^2.6.0",
-    "lint-staged": "^8.2.1",
+    "husky": "^4.0.0",
+    "lint-staged": "^10.0.0",
     <%_ } _%>
     <%_ if (stylelint) { _%>
     "@nuxtjs/stylelint-module": "^3.1.0",
@@ -188,6 +189,5 @@
     "require-extension-hooks-vue": "^2.0.0",
     <%_ } _%>
     "": ""
-
   }
 }

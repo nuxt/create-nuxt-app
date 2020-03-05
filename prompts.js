@@ -54,6 +54,7 @@ module.exports = [
       { name: 'iView', value: 'iview' },
       { name: 'Tachyons', value: 'tachyons' },
       { name: 'Tailwind CSS', value: 'tailwind' },
+      { name: 'Vuesax', value: 'vuesax' },
       { name: 'Vuetify.js', value: 'vuetify' }
     ],
     default: 'none'

@@ -104,8 +104,8 @@ module.exports = {
       files: '*',
       filters: {
         '_.eslintrc.js': 'linter.includes("eslint")',
-        '.prettierrc': 'linter.includes("prettier")',
-        'jsconfig.json': 'devTools.includes("jsconfig.json")' && devTools.includes("jsconfig.json")',
+        '_.prettierrc': 'linter.includes("prettier")',
+        '_jsconfig.json': 'devTools.includes("jsconfig.json")',
         'tsconfig.json': 'language.includes("ts")',
         'semantic.yml': 'devTools.includes("semantic-pull-requests")',
         '.env': 'features.includes("dotenv")',
@@ -118,7 +118,9 @@ module.exports = {
       patterns: {
         gitignore: '.gitignore',
         '_package.json': 'package.json',
+        '_.prettierrc': '.prettierrc',
         '_.eslintrc.js': '.eslintrc.js',
+        '_jsconfig.json': 'jsconfig.json',
         '_stylelint.config.js': 'stylelint.config.js',
         'semantic.yml': '.github/semantic.yml'
       }
