@@ -66,7 +66,7 @@
     "nuxt": "^2.0.0",
     <%_ } _%>
     <%_ if (tsRuntime) { _%>
-    "@nuxt/typescript-runtime": "^0.3.8",
+    "@nuxt/typescript-runtime": "^0.4.0",
     <%_ } _%>
     <%_ if (server !== 'none') { _%>
     "cross-env": "^5.2.0",
@@ -136,7 +136,7 @@
     "nodemon": "^1.18.9",
     <%_ } _%>
     <%_ if (typescript) { _%>
-    "@nuxt/typescript-build": "^0.5.6",
+    "@nuxt/typescript-build": "^0.6.0",
     <%_ } _%>
     <%_ if (ui === 'tailwind') { _%>
     "@nuxtjs/tailwindcss": "^1.0.0",
@@ -177,7 +177,7 @@
     "jest": "^24.1.0",
     "vue-jest": "^4.0.0-0",
     <%_ if (typescript) { _%>
-    "ts-jest": "^24.3.0",
+    "ts-jest": "^25.0.0",
     <%_ } _%>
     <%_ } else if (test === 'ava') { _%>
     "ava": "^3.0.0",
