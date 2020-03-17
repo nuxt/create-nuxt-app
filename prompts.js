@@ -19,6 +19,16 @@ module.exports = [
     store: true
   },
   {
+    name: 'language',
+    message: 'Choose programming language',
+    choices: [
+      { name: 'JavaScript', value: 'js' },
+      { name: 'TypeScript', value: 'ts' }
+    ],
+    type: 'list',
+    default: 'js'
+  },
+  {
     name: 'pm',
     message: 'Choose the package manager',
     choices: [
@@ -65,6 +75,16 @@ module.exports = [
       { name: 'Micro', value: 'micro' }
     ],
     default: 'none'
+  },
+  {
+    name: 'runtime',
+    message: 'Choose the runtime for TypeScript',
+    type: 'list',
+    choices: [
+      { name: 'Default', value: 'none' },
+      { name: '@nuxt/typescript-runtime', value: 'ts-runtime' }
+    ],
+    when: answers => answers.language === 'ts' && answers.server === 'none'
   },
   {
     name: 'features',

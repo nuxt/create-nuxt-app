@@ -28,6 +28,18 @@
   </div>
 </template>
 
+<%_ if (typescript) { _%>
+<script lang="ts">
+import Vue from 'vue'
+import Logo from '~/components/Logo.vue'
+
+export default Vue.extend({
+  components: {
+    Logo
+  }
+})
+</script>
+<%_ } else { _%>
 <script>
 import Logo from '~/components/Logo.vue'
 
@@ -37,6 +49,7 @@ export default {
   }
 }
 </script>
+<%_ } _%>
 
 <style>
 <%_ if (ui === 'tailwind') { _%>

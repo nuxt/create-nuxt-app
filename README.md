@@ -36,6 +36,9 @@ yarn create nuxt-app <my-project>
 1. Choose the package manager
     - Yarn
     - Npm
+1. Choose programming language
+    - JavaScript
+    - TypeScript
 1. Choose your favorite UI framework:
     - None (feel free to add one later)
     - [Ant Design Vue](https://github.com/vueComponent/ant-design-vue)
@@ -58,6 +61,9 @@ yarn create nuxt-app <my-project>
     - [Hapi](https://github.com/hapijs/hapi)
     - [Koa](https://github.com/koajs/koa)
     - [Micro](https://github.com/zeit/micro)
+1. Choose the runtime for TypeScript (if you choose TypeScript)
+    - Default
+    - [@nuxt/typescript-runtime](https://github.com/nuxt/typescript)
 1. Choose Nuxt.js modules:
     - [Axios](https://github.com/nuxt-community/axios-module)
     - [Progressive Web App (PWA) Support](https://github.com/nuxt-community/pwa-module)

@@ -87,7 +87,10 @@ module.exports = {
   ** Nuxt.js dev-modules
   */
   buildModules: [
-    <%_ if (eslint) { _%>
+    <%_ if (typescript) {_%>
+    '@nuxt/typescript-build',
+    <%_ } _%>
+    <%_ if (eslint && !typescript) { _%>
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
     <%_ } _%>

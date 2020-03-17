@@ -6,10 +6,17 @@
   "private": true,
   "scripts": {
     <%_ if (server === 'none') { _%>
+      <%_ if (tsRuntime) { _%>
+    "dev": "nuxt-ts",
+    "build": "nuxt-ts build",
+    "generate": "nuxt-ts generate",
+    "start": "nuxt-ts start",
+      <%_ } else { _%>
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
+      <%_ } _%>
     <%_ } else if (server === 'adonis') { _%>
     "serve:dev": "<%= pmRun %> dev",
     "dev": "nodemon --watch app --watch bootstrap --watch config --watch .env -x node server.js",
@@ -57,6 +64,9 @@
     "nuxt-edge": "latest",
     <%_ } else { _%>
     "nuxt": "^2.0.0",
+    <%_ } _%>
+    <%_ if (tsRuntime) { _%>
+    "@nuxt/typescript-runtime": "^0.4.0",
     <%_ } _%>
     <%_ if (server !== 'none') { _%>
     "cross-env": "^5.2.0",
@@ -125,6 +135,9 @@
     <%_ if (server !== 'none') { _%>
     "nodemon": "^1.18.9",
     <%_ } _%>
+    <%_ if (typescript) { _%>
+    "@nuxt/typescript-build": "^0.6.0",
+    <%_ } _%>
     <%_ if (ui === 'tailwind') { _%>
     "@nuxtjs/tailwindcss": "^1.0.0",
     <%_ } else if (ui === 'vuetify') { _%>
@@ -133,7 +146,11 @@
     "framevuerk-builder": "^2.0.2",
     <%_ } _%>
     <%_ if (eslint) { _%>
+      <%_ if (typescript) { _%>
+    "@nuxtjs/eslint-config-typescript": "^1.0.0",
+      <%_ } else { _%>
     "@nuxtjs/eslint-config": "^2.0.0",
+    <%_ } _%>
     "@nuxtjs/eslint-module": "^1.0.0",
     "babel-eslint": "^10.0.1",
     "eslint": "^6.1.0",
@@ -159,6 +176,9 @@
     "babel-jest": "^24.1.0",
     "jest": "^24.1.0",
     "vue-jest": "^4.0.0-0",
+    <%_ if (typescript) { _%>
+    "ts-jest": "^25.0.0",
+    <%_ } _%>
     <%_ } else if (test === 'ava') { _%>
     "ava": "^3.0.0",
     "@ava/babel": "^1.0.0",
