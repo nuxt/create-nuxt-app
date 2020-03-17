@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.15.0](https://github.com/nuxt/create-nuxt-app/compare/v2.14.0...v2.15.0) (2020-03-17)
+
+
+### Bug Fixes
+
+* **ava:** no tests found in test/ava.setup.js ([#426](https://github.com/nuxt/create-nuxt-app/issues/426)) ([c1afad4](https://github.com/nuxt/create-nuxt-app/commit/c1afad4))
+
+
+### Features
+
+* add typescript support using typescript-build ([#328](https://github.com/nuxt/create-nuxt-app/issues/328)) ([e4b9cd8](https://github.com/nuxt/create-nuxt-app/commit/e4b9cd8))
+
 ## [2.14.0](https://github.com/nuxt/create-nuxt-app/compare/v2.13.0...v2.14.0) (2020-02-09)
 
 
