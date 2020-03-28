@@ -140,6 +140,8 @@ module.exports = [
       { name: 'jsconfig.json (Recommended for VS Code)', value: 'jsconfig.json' },
       { name: 'Semantic Pull Requests', value: 'semantic-pull-requests' }
     ],
-    default: []
+    default: [],
+    when: answers => answers.language === 'js'
+
   }
 ]
