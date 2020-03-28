@@ -86,6 +86,7 @@ module.exports = {
   /*
   ** Nuxt.js dev-modules
   */
+
   buildModules: [
     <%_ if (typescript) {_%>
     '@nuxt/typescript-build',
@@ -180,7 +181,8 @@ module.exports = {
     /*
     ** You can extend webpack config here
     */
-    extend (config, ctx) {
+    extend (_config, _ctx) {
+      // Feel free to remove the _ after there's a reference to the parameters
     }
   }
 }
