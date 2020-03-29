@@ -182,7 +182,6 @@ module.exports = {
     ** You can extend webpack config here
     */
     extend (_config, _ctx) {
-      // Feel free to remove the _ after there's a reference to the parameters
     }
   }
 }

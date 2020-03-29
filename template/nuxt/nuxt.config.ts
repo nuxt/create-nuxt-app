@@ -4,6 +4,9 @@ import { Configuration } from '@nuxt/types'
 <%_ if (ui === 'vuetify') { _%>
 import colors from 'vuetify/es5/util/colors'
 <%_ } _%>
+<%_ if (server === 'adonis') { _%>
+  import { resolve } from 'path'
+<%_ } _%>
 
 const config: Configuration = {
   mode: '<%= mode %>',
@@ -52,7 +55,9 @@ const config: Configuration = {
     <%_ } else if (ui === 'tachyons') { _%>
     'tachyons/css/tachyons.css'
     <%_ } else if (ui === 'framevuerk') { _%>
-    'framevuerk/dist/framevuerk-nuxt.min.css'
+      'framevuerk/dist/framevuerk-nuxt.min.css'
+    <%_ } else if (ui === 'vuesax') { _%>
+    'vuesax/dist/vuesax.css'
     <%_ } _%>
   ],
   /*
@@ -67,6 +72,8 @@ const config: Configuration = {
     '@/plugins/antd-ui'
     <%_ } else if (ui === 'framevuerk') { _%>
     '@/plugins/framevuerk'
+    <%_ } else if (ui === 'vuesax') { _%>
+    '@/plugins/vuesax'
     <%_ } _%>
   ],
   /*
@@ -80,6 +87,10 @@ const config: Configuration = {
     <%_ if (eslint) { _%>
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
+    <%_ } _%>
+    <%_ if (stylelint) { _%>
+    // Doc: https://github.com/nuxt-community/stylelint-module
+    '@nuxtjs/stylelint-module',
     <%_ } _%>
     <%_ if (ui === 'tailwind') { _%>
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
@@ -108,6 +119,10 @@ const config: Configuration = {
     <%_ } _%>
     <%_ if (pwa) { _%>
     '@nuxtjs/pwa',
+    <%_ } _%>
+    <%_ if (dotenv) { _%>
+    // Doc: https://github.com/nuxt-community/dotenv-module
+    '@nuxtjs/dotenv',
     <%_ } _%>
   ],
   <%_ if (axios) { _%>
@@ -159,13 +174,8 @@ const config: Configuration = {
     /*
     ** You can extend webpack config here
     */
-    <%_ if (eslint) { _%>
-    extend (/* config, ctx */) {
+    extend (_config, _ctx) {
     }
-    <%_ } else { _%>
-    extend (config, ctx) {
-    }
-    <%_ }_%>
   }
 }
 
