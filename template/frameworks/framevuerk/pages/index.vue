@@ -133,7 +133,6 @@
   </fvMain>
 </template>
 
-
 <%- generateComponent(
   `import Logo from '~/components/Logo.vue'
 import FramevuerkLogo from '~/components/FramevuerkLogo.vue'`, `{

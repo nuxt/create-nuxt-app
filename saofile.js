@@ -7,7 +7,7 @@ const rootDir = __dirname
 
 module.exports = {
   prompts: require('./prompts'),
-  templateData() {
+  templateData () {
     const typescript = this.answers.language.includes('ts')
     const tsRuntime =
       this.answers.runtime && this.answers.runtime.includes('ts-runtime')
@@ -28,8 +28,8 @@ module.exports = {
     const ifTrue = (condition, content, elseContent) => condition ? content : elseContent || ''
     const generateComponent = (imports, componentOptions) => {
       return `
-<script ${ifTrue(typescript, `lang="ts"`)}>
-${ifTrue(typescript, `import Vue from 'vue'`)}
+<script ${ifTrue(typescript, 'lang="ts"')}>
+${ifTrue(typescript, 'import Vue from \'vue\'')}
 ${ifTrue(!!imports, imports)}
 export default ${ifTrue(typescript, 'Vue.extend(' + componentOptions + ')', componentOptions)}
 </script>`
@@ -52,7 +52,7 @@ export default ${ifTrue(typescript, 'Vue.extend(' + componentOptions + ')', comp
       dotenv
     }
   },
-  actions() {
+  actions () {
     const validation = validate(this.answers.name)
     validation.warnings &&
       validation.warnings.forEach((warn) => {
@@ -148,7 +148,7 @@ export default ${ifTrue(typescript, 'Vue.extend(' + componentOptions + ')', comp
     actions.push({
       type: 'modify',
       files: 'package.json',
-      handler(data) {
+      handler (data) {
         delete data.scripts['']
         delete data.dependencies['']
         delete data.devDependencies['']
@@ -158,7 +158,7 @@ export default ${ifTrue(typescript, 'Vue.extend(' + componentOptions + ')', comp
 
     return actions
   },
-  async completed() {
+  async completed () {
     this.gitInit()
 
     await this.npmInstall({ npmClient: this.answers.pm })
