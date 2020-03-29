@@ -25,7 +25,9 @@
     },
     "types": [
       "@types/node",
-      "@nuxt/types"
+      "@nuxt/types"<%_ if (ui === 'vuetify') { _%>,
+        "vuetify"
+        <%_ } _%>
     ]
   },
   "exclude": [

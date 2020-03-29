@@ -26,7 +26,7 @@
   </div>
 </template>
 
-<%- generateComponent('',`{}
+<%- generateComponent('',`{
   data () {
     return {
       isReady: false
