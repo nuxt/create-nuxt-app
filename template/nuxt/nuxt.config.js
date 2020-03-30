@@ -130,6 +130,10 @@ module.exports = {
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
     <%_ } _%>
+    <%_ if (svg) { _%>
+    // Doc: https://github.com/nuxt-community/svg-module
+    '@nuxtjs/svg',
+    <%_ } _%>
   ],
   <%_ if (axios) { _%>
   /*

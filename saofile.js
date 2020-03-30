@@ -17,6 +17,7 @@ module.exports = {
     const stylelint = this.answers.linter.includes('stylelint')
     const axios = this.answers.features.includes('axios')
     const dotenv = this.answers.features.includes('dotenv')
+    const svg = this.answers.features.includes('svg')
     const esm = this.answers.server === 'none'
     const pm = this.answers.pm === 'yarn' ? 'yarn' : 'npm'
     const pmRun = this.answers.pm === 'yarn' ? 'yarn' : 'npm run'
@@ -37,7 +38,8 @@ module.exports = {
       edge,
       pm,
       pmRun,
-      dotenv
+      dotenv,
+      svg
     }
   },
   actions () {

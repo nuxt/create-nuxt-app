@@ -126,6 +126,9 @@
     <%_ if (dotenv) { _%>
     "@nuxtjs/dotenv": "^1.4.0",
     <%_ } _%>
+    <%_ if (svg) { _%>
+    "@nuxtjs/svg": "^0.1.6",
+    <%_ } _%>
     <%_ if (ui === 'tachyons') { _%>
     "tachyons": "^4.11.1",
     <%_ } _%>
