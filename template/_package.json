@@ -139,7 +139,7 @@
     "@nuxt/typescript-build": "^0.6.0",
     <%_ } _%>
     <%_ if (ui === 'tailwind') { _%>
-    "@nuxtjs/tailwindcss": "^1.0.0",
+    "@nuxtjs/tailwindcss": "^1.4.0",
     <%_ } else if (ui === 'vuetify') { _%>
     "@nuxtjs/vuetify": "^1.0.0",
     <%_ } else if (ui === 'framevuerk') { _%>
