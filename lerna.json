@@ -2,7 +2,6 @@
   "version": "2.15.0",
   "npmClient": "yarn",
   "useWorkspaces": true,
-  "exact": true,
   "packages": [
     "packages/*"
   ],
@@ -10,8 +9,8 @@
     "publish": {
       "npmClient": "npm"
     },
-    "init": {
-      "exact": true
+    "version": {
+      "conventionalCommits": true
     }
   },
   "changelog": {
