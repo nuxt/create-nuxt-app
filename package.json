@@ -20,9 +20,9 @@
     "release": "standard-version"
   },
   "dependencies": {
-    "cac": "^6.5.7",
+    "cac": "^6.5.8",
     "chalk": "^2.4.2",
-    "cross-spawn": "^7.0.1",
+    "cross-spawn": "^7.0.2",
     "envinfo": "^7.5.0",
     "glob": "^7.1.6",
     "lodash": "^4.17.15",
@@ -33,7 +33,7 @@
   "devDependencies": {
     "@nuxtjs/eslint-config": "^2.0.2",
     "@ava/babel": "^1.0.1",
-    "ava": "^3.5.0",
+    "ava": "^3.5.2",
     "eslint": "^6.8.0",
     "standard-version": "^7.1.0"
   },
