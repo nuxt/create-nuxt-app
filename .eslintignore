@@ -1,4 +1,5 @@
 _*.js
-template/nuxt/pages/index.vue
-template/frameworks/iview/pages/index.vue
-template/frameworks/jest/jest.config.js
+node_modules
+packages/cna-template/template/nuxt/pages/index.vue
+packages/cna-template/template/frameworks/iview/pages/index.vue
+packages/cna-template/template/frameworks/jest/jest.config.js
