@@ -6,6 +6,7 @@
     "use": true
   },
   "rules": {
-    "no-console": "off"
+    "no-console": "off",
+    "vue/no-parsing-error": "off"
   }
 }
