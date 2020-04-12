@@ -1,8 +1,6 @@
 {
   "name": "<%= name %>",
   "version": "1.0.0",
-  "description": "<%= description %>",
-  "author": "<%= author %>",
   "private": true,
   "scripts": {
     <%_ if (server === 'none') { _%>

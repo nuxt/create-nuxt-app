@@ -8,9 +8,7 @@ const generator = path.join(__dirname, '../lib')
 const getPkgFields = (pkg) => {
   pkg = JSON.parse(pkg)
   delete pkg.name
-  delete pkg.author
   delete pkg.version
-  delete pkg.description
   return pkg
 }
 
