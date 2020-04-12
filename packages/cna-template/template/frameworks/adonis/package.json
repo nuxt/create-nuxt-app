@@ -1,0 +1,24 @@
+{
+  "scripts": {
+    "serve:dev": "<%= pmRun %> dev",
+    "dev": "nodemon --watch app --watch bootstrap --watch config --watch .env -x node server.js",
+    "build": "cross-env NODE_ENV=production node ./ace nuxtbuild",
+    "start": "cross-env NODE_ENV=production node server.js"
+  },
+  "dependencies": {
+    "cross-env": "^5.2.0",
+    "@adonisjs/ace": "^4.0.7",
+    "@adonisjs/auth": "^2.0.10",
+    "@adonisjs/bodyparser": "^1.0.8",
+    "@adonisjs/cors": "^1.0.2",
+    "@adonisjs/fold": "^4.0.5",
+    "@adonisjs/framework": "^4.0.27",
+    "@adonisjs/ignitor": "^1.0.14",
+    "@adonisjs/lucid": "^4.0.22",
+    "@adonisjs/session": "^1.0.19",
+    "@adonisjs/shield": "^1.0.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  }
+}

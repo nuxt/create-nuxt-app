@@ -1,0 +1,18 @@
+{
+  "scripts": {
+    "test": "ava",
+    "test:unit": "cross-env TEST=unit ava ./test/specs/**/*",
+    "test:e2e": "cross-env TEST=e2e ava ./test/e2e/**/*"
+  },
+  "devDependencies": {
+    "@vue/test-utils": "^1.0.0-beta.27",
+    "ava": "^3.0.0",
+    "@ava/babel": "^1.0.0",
+    "babel-plugin-module-resolver": "^3.2.0",
+    "browser-env": "^3.2.5",
+    "cross-env": "^5.2.0",
+    "require-extension-hooks": "^0.3.3",
+    "require-extension-hooks-babel": "^1.0.0",
+    "require-extension-hooks-vue": "^2.0.0"
+  }
+}

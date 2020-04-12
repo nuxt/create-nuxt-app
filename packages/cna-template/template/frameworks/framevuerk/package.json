@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "build:framevuerk": "framevuerk-builder -c ./framevuerk-config.js",
+    "prepublish": "<%= pmRun %> build:framevuerk"
+  },
+  "dependencies": {
+    "framevuerk": "^2.2.5"
+  },
+  "devDependencies": {
+    "framevuerk-builder": "^2.0.2"
+  }
+}
