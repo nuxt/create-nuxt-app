@@ -83,7 +83,7 @@ yarn create nuxt-app <my-project>
     - [Jest](https://github.com/facebook/jest)
     - [AVA](https://github.com/avajs/ava)
 1. Choose rendering mode
-    - [Universal (SSR)](https://nuxtjs.org/guide/#server-rendered-universal-ssr-)
+    - [Universal (SSR / Static)](https://nuxtjs.org/guide/#server-rendered-universal-ssr-)
     - [SPA](https://nuxtjs.org/guide/#single-page-applications-spa-)
 1. Choose development tools
     - [jsconfig.json](https://code.visualstudio.com/docs/languages/jsconfig)
