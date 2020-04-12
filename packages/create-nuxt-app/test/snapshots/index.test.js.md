@@ -1,4 +1,4 @@
-# Snapshot report for `test/index.test.js`
+# Snapshot report for `packages/create-nuxt-app/test/index.test.js`
 
 The actual snapshot is saved in `index.test.js.snap`.
 
