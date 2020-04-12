@@ -127,7 +127,7 @@ module.exports = [
     message: 'Choose rendering mode',
     type: 'list',
     choices: [
-      { name: 'Universal (SSR)', value: 'universal' },
+      { name: 'Universal (SSR / Static)', value: 'universal' },
       { name: 'Single Page App', value: 'spa' }
     ],
     default: 'universal'
