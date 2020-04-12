@@ -8,7 +8,7 @@
   ],
   "dependencies": {
     "cac": "^6.5.8",
-    "chalk": "^2.4.2",
+    "chalk": "^4.0.0",
     "cna-template": "^2.15.0",
     "cross-spawn": "^7.0.2",
     "envinfo": "^7.5.0",
