@@ -4,7 +4,7 @@ const sao = require('sao')
 const cac = require('cac')
 const chalk = require('chalk')
 const envinfo = require('envinfo')
-const { version } = require('./package.json')
+const { version } = require('../package.json')
 
 const generator = path.resolve(__dirname, './')
 

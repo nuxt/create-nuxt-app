@@ -1,0 +1,27 @@
+{
+  "name": "create-nuxt-app",
+  "version": "2.15.0",
+  "description": "Create a Nuxt.js App in seconds.",
+  "bin": "lib/cli.js",
+  "files": [
+    "lib"
+  ],
+  "dependencies": {
+    "cac": "^6.5.8",
+    "chalk": "^2.4.2",
+    "cna-template": "^2.15.0",
+    "cross-spawn": "^7.0.2",
+    "envinfo": "^7.5.0",
+    "glob": "^7.1.6",
+    "lodash": "^4.17.15",
+    "sao": "^1.7.0",
+    "superb": "^4.0.0",
+    "validate-npm-package-name": "^3.0.0"
+  },
+  "authors": [
+    "Egoist <0x142857@gmail.com>",
+    "Nuxt team <team@nuxtjs.org>",
+    "Clark Du <clark.duxin@gmail.com>"
+  ],
+  "license": "MIT"
+}
