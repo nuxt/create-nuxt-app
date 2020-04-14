@@ -1,9 +1,9 @@
 import path from 'path'
 import test from 'ava'
 import sao from 'sao'
-import saoConfig from '../saofile'
+import saoConfig from '../lib/saofile'
 
-const generator = path.join(__dirname, '..')
+const generator = path.join(__dirname, '../lib')
 
 const getPkgFields = (pkg) => {
   pkg = JSON.parse(pkg)

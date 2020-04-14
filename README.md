@@ -2,7 +2,7 @@
 
 [![NPM version](https://img.shields.io/npm/v/create-nuxt-app.svg?style=flat)](https://npmjs.com/package/create-nuxt-app)
 [![NPM downloads](https://img.shields.io/npm/dm/create-nuxt-app.svg?style=flat)](https://npmjs.com/package/create-nuxt-app)
-[![CircleCI](https://img.shields.io/circleci/project/github/nuxt/create-nuxt-app/master.svg?style=flat)](https://circleci.com/gh/nuxt/create-nuxt-app/master)
+[![GitHub Action](https://github.com/nuxt/create-nuxt-app/workflows/ci/badge.svg?branch=master)](https://github.com/nuxt/create-nuxt-app/actions?query=branch%3Amaster++)
 
 > Create a [Nuxt.js](https://github.com/nuxt/nuxt.js) project in seconds
 
@@ -83,7 +83,7 @@ yarn create nuxt-app <my-project>
     - [Jest](https://github.com/facebook/jest)
     - [AVA](https://github.com/avajs/ava)
 1. Choose rendering mode
-    - [Universal (SSR)](https://nuxtjs.org/guide/#server-rendered-universal-ssr-)
+    - [Universal (SSR / Static)](https://nuxtjs.org/guide/#server-rendered-universal-ssr-)
     - [SPA](https://nuxtjs.org/guide/#single-page-applications-spa-)
 1. Choose development tools
     - [jsconfig.json](https://code.visualstudio.com/docs/languages/jsconfig)

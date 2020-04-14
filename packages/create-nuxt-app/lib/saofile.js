@@ -1,9 +1,11 @@
-const { join, relative } = require('path')
+const { dirname, join, relative } = require('path')
 const glob = require('glob')
 const spawn = require('cross-spawn')
 const validate = require('validate-npm-package-name')
 
-const rootDir = __dirname
+const cnaTemplateDir = join(dirname(require.resolve('cna-template/package.json')))
+const templateDir = join(cnaTemplateDir, 'template')
+const frameworksDir = join(templateDir, 'frameworks')
 
 module.exports = {
   prompts: require('./prompts'),
@@ -67,7 +69,7 @@ export default ${ifTrue(typescript, 'Vue.extend(' + componentOptions + ')', comp
       {
         type: 'add',
         files: '**',
-        templateDir: 'template/nuxt',
+        templateDir: join(templateDir, 'nuxt'),
         filters: {
           'static/icon.png': 'features.includes("pwa")',
           'nuxt.config.ts': 'runtime && runtime.includes("ts-runtime")',
@@ -80,7 +82,7 @@ export default ${ifTrue(typescript, 'Vue.extend(' + componentOptions + ')', comp
       actions.push({
         type: 'add',
         files: '**',
-        templateDir: `template/frameworks/${this.answers.ui}`
+        templateDir: join(frameworksDir, this.answers.ui)
       })
     }
 
@@ -88,7 +90,7 @@ export default ${ifTrue(typescript, 'Vue.extend(' + componentOptions + ')', comp
       actions.push({
         type: 'add',
         files: '**',
-        templateDir: `template/frameworks/${this.answers.test}`
+        templateDir: join(frameworksDir, this.answers.test)
       })
     }
 
@@ -96,7 +98,7 @@ export default ${ifTrue(typescript, 'Vue.extend(' + componentOptions + ')', comp
       if (this.answers.server === 'adonis') {
         const files = {}
         for (const action of actions) {
-          const options = { cwd: join(rootDir, action.templateDir), dot: true }
+          const options = { cwd: action.templateDir, dot: true }
           for (const file of glob.sync('*', options)) {
             files[file] = `resources/${file}`
           }
@@ -112,7 +114,7 @@ export default ${ifTrue(typescript, 'Vue.extend(' + componentOptions + ')', comp
       actions.push({
         type: 'add',
         files: '**',
-        templateDir: `template/frameworks/${this.answers.server}`
+        templateDir: join(frameworksDir, this.answers.server)
       })
     }
 
@@ -128,7 +130,8 @@ export default ${ifTrue(typescript, 'Vue.extend(' + componentOptions + ')', comp
         'semantic.yml': 'devTools.includes("semantic-pull-requests")',
         '.env': 'features.includes("dotenv")',
         '_stylelint.config.js': 'linter.includes("stylelint")'
-      }
+      },
+      templateDir
     })
 
     actions.push({
