@@ -26,7 +26,7 @@
     "types": [
       "@types/node",
       "@nuxt/types"<%_ if (ui === 'vuetify') { _%>,
-        "vuetify"
+        "@nuxtjs/vuetify"
         <%_ } _%>
     ]
   },

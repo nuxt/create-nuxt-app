@@ -9,8 +9,7 @@ module.exports = {
   prompts: require('./prompts'),
   templateData () {
     const typescript = this.answers.language.includes('ts')
-    const tsRuntime =
-      this.answers.runtime && this.answers.runtime.includes('ts-runtime')
+    const tsRuntime = this.answers.runtime && this.answers.runtime.includes('ts-runtime')
     const pwa = this.answers.features.includes('pwa')
     const eslint = this.answers.linter.includes('eslint')
     const prettier = this.answers.linter.includes('prettier')
@@ -30,7 +29,7 @@ module.exports = {
       return `
 <script ${ifTrue(typescript, 'lang="ts"')}>
 ${ifTrue(typescript, 'import Vue from \'vue\'')}
-${ifTrue(!!imports, imports)}
+${ifTrue(!!imports, imports, '\r\n')}
 export default ${ifTrue(typescript, 'Vue.extend(' + componentOptions + ')', componentOptions)}
 </script>`
     }
