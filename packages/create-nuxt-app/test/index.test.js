@@ -30,14 +30,7 @@ const verifyPkg = async (t, answers = {}) => {
 
 const verifyNuxtConfig = async (t, answers = {}, typescript) => {
   const stream = await sao.mock({ generator }, answers)
-  let configFile
-  if (answers.server === 'adonis') {
-    configFile = 'config/nuxt.js'
-  } else if (typescript) {
-    configFile = 'nuxt.config.ts'
-  } else {
-    configFile = 'nuxt.config.js'
-  }
+  const configFile = answers.server === 'adonis' ? 'config/nuxt.js' : `nuxt.config.${typescript ? 'ts' : 'js'}`
   const config = await stream.readFile(configFile)
   t.snapshot(normalizeNewlines(config), `Generated ${configFile}`)
 }
