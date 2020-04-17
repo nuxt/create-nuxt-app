@@ -1,7 +1,5 @@
 # <%= name %>
 
-> <%= description %>
-
 ## Build Setup
 
 ```bash

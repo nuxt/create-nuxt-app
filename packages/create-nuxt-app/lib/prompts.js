@@ -1,22 +1,8 @@
-const { random } = require('superb')
-
 module.exports = [
   {
     name: 'name',
     message: 'Project name',
     default: '{outFolder}'
-  },
-  {
-    name: 'description',
-    message: 'Project description',
-    default: `My ${random()} Nuxt.js project`
-  },
-  {
-    name: 'author',
-    type: 'string',
-    message: 'Author name',
-    default: '{gitUser.name}',
-    store: true
   },
   {
     name: 'language',

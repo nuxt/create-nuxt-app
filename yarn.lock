@@ -7241,13 +7241,6 @@ strong-log-transformer@^2.0.0:
     minimist "^1.2.0"
     through "^2.3.4"
 
-superb@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/superb/-/superb-4.0.0.tgz#1d1ec7b29559e39bdf5d3f45f24dd3974762b903"
-  integrity sha512-4Kie62y4kBxNGXXWJAVR63sdQlswBZq2G/x1d37pRQbjqfhIH1WPhirZFHZUpI76uCDrFnxej0F3NtEy1/H+OQ==
-  dependencies:
-    unique-random-array "^2.0.0"
-
 supertap@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/supertap/-/supertap-1.0.0.tgz#bd9751c7fafd68c68cf8222a29892206a119fa9e"
@@ -7588,18 +7581,6 @@ unique-filename@^1.1.1:
   integrity sha512-Vmp0jIp2ln35UTXuryvjzkjGdRyf9b2lTXuSYUiPmzRcl3FDtYqAwOnTJkAngD9SWhnoJzDbTKwaOrZ+STtxNQ==
   dependencies:
     unique-slug "^2.0.0"
-
-unique-random-array@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/unique-random-array/-/unique-random-array-2.0.0.tgz#9e639b1a9dc141e97350a6fc6f17da4b0717b1ad"
-  integrity sha512-xR87O95fZ7hljw84J8r1YDXrvffPLWN513BNOP4Bv0KcgG5dyEUrHwsvP7mVAOKg4Y80uqRbpUk0GKr8il70qg==
-  dependencies:
-    unique-random "^2.1.0"
-
-unique-random@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/unique-random/-/unique-random-2.1.0.tgz#7a8413da5176d028567168b57125ac5c0cec5c25"
-  integrity sha512-iQ1ZgWac3b8YxGThecQFRQiqgk6xFERRwHZIWeVVsqlbmgCRl0PY13R4mUkodNgctmg5b5odG1nyW/IbOxQTqg==
 
 unique-slug@^2.0.0:
   version "2.0.2"
