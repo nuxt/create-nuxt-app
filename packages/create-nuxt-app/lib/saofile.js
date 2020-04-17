@@ -141,7 +141,7 @@ module.exports = {
       }
     })
 
-    // For compiling pacakge.json
+    // For compiling package.json
     actions.push({
       type: 'add',
       files: 'package.json',
