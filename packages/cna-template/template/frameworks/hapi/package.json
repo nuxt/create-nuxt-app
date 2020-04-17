@@ -6,11 +6,11 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "cross-env": "^5.2.0",
+    "cross-env": "^5.2.1",
     "@hapi/hapi": "^18.3.1",
-    "@nuxtjs/hapi": "^2.2.1"
+    "@nuxtjs/hapi": "^2.3.0"
   },
   "devDependencies": {
-    "nodemon": "^1.18.9"
+    "nodemon": "^1.19.4"
   }
 }

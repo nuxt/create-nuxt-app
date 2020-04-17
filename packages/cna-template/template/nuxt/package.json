@@ -16,26 +16,26 @@
     }
   },
   "dependencies": {
-    "@nuxt/typescript-runtime": "^0.4.0",
-    "@nuxtjs/axios": "^5.3.6",
-    "@nuxtjs/pwa": "^3.0.0-0",
-    "@nuxtjs/dotenv": "^1.4.0",
-    "nuxt": "^2.0.0"
+    "@nuxt/typescript-runtime": "^0.4.5",
+    "@nuxtjs/axios": "^5.9.7",
+    "@nuxtjs/pwa": "^3.0.0-beta.20",
+    "@nuxtjs/dotenv": "^1.4.1",
+    "nuxt": "^2.12.2"
   },
   "devDependencies": {
-    "@nuxt/typescript-build": "^0.6.0",
-    "@nuxtjs/eslint-config-typescript": "^1.0.0",
-    "@nuxtjs/eslint-config": "^2.0.0",
-    "@nuxtjs/eslint-module": "^1.0.0",
-    "babel-eslint": "^10.0.1",
-    "eslint": "^6.1.0",
-    "eslint-plugin-nuxt": ">=0.4.2",
-    "eslint-config-prettier": "^6.10.0",
-    "eslint-plugin-prettier": "^3.1.2",
+    "@nuxt/typescript-build": "^0.6.5",
+    "@nuxtjs/eslint-config-typescript": "^1.0.2",
+    "@nuxtjs/eslint-config": "^2.0.2",
+    "@nuxtjs/eslint-module": "^1.1.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-nuxt": ">=0.5.2",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-prettier": "^3.1.3",
     "prettier": "^1.19.1",
-    "husky": "^4.0.0",
-    "lint-staged": "^10.0.0",
-    "@nuxtjs/stylelint-module": "^3.1.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.1.4",
+    "@nuxtjs/stylelint-module": "^3.2.2",
     "stylelint": "^10.1.0"
   }
 }

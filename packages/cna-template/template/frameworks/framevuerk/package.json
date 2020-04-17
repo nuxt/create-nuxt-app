@@ -4,9 +4,9 @@
     "prepublish": "<%= pmRun %> build:framevuerk"
   },
   "dependencies": {
-    "framevuerk": "^2.2.5"
+    "framevuerk": "^2.4.0"
   },
   "devDependencies": {
-    "framevuerk-builder": "^2.0.2"
+    "framevuerk-builder": "^2.0.6"
   }
 }
