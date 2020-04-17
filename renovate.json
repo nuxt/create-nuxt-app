@@ -4,5 +4,39 @@
   ],
   "lockFileMaintenance": {
     "enabled": true
-  }
+  },
+  "packageRules": [
+    {
+      "packagePatterns": ["nuxt"],
+      "groupName": "nuxt packages"
+    },
+    {
+      "packagePatterns": ["adonisjs"],
+      "groupName": "adonisjs packages"
+    },
+    {
+      "packagePatterns": ["ant-design"],
+      "groupName": "ant design packages"
+    },
+    {
+      "packagePatterns": ["ava"],
+      "groupName": "ava packages"
+    },
+    {
+      "packagePatterns": ["bootstrap"],
+      "groupName": "bootstrap packages"
+    },
+    {
+      "packagePatterns": ["element-ui"],
+      "groupName": "element-ui packages"
+    },
+    {
+      "packagePatterns": ["feathersjs"],
+      "groupName": "feathersjs packages"
+    },
+    {
+      "packagePatterns": ["jest"],
+      "groupName": "jest packages"
+    }
+  ]
 }
