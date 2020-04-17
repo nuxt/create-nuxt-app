@@ -6,11 +6,11 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "cross-env": "^5.2.0",
-    "micro": "^9.3.3",
+    "cross-env": "^5.2.1",
+    "micro": "^9.3.4",
     "micro-route": "^2.5.0"
   },
   "devDependencies": {
-    "nodemon": "^1.18.9"
+    "nodemon": "^1.19.4"
   }
 }
