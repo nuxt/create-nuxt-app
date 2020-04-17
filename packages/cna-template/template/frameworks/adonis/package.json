@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "cross-env": "^5.2.0",
-    "@adonisjs/ace": "^4.0.7",
+    "@adonisjs/ace": "^5.0.8",
     "@adonisjs/auth": "^2.0.10",
     "@adonisjs/bodyparser": "^1.0.8",
     "@adonisjs/cors": "^1.0.2",
