@@ -6,7 +6,7 @@
   },
   "devDependencies": {
     "@vue/test-utils": "^1.0.0-beta.33",
-    "ava": "^3.7.0",
+    "ava": "^3.7.1",
     "@ava/babel": "^1.0.1",
     "babel-plugin-module-resolver": "^4.0.0",
     "browser-env": "^3.3.0",
