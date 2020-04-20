@@ -6,7 +6,7 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "cross-env": "^5.2.1",
+    "cross-env": "^7.0.2",
     "@hapi/hapi": "^18.3.1",
     "@nuxtjs/hapi": "^2.3.0"
   },
