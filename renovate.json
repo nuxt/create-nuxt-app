@@ -37,6 +37,10 @@
     {
       "packagePatterns": ["jest"],
       "groupName": "jest packages"
+    },
+    {
+      "packagePatterns": ["ava", "require-extension-hooks"],
+      "groupName": "ava packages"
     }
   ]
 }
