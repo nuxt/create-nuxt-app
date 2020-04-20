@@ -11,6 +11,6 @@
     "micro-route": "^2.5.0"
   },
   "devDependencies": {
-    "nodemon": "^1.19.4"
+    "nodemon": "^2.0.3"
   }
 }
