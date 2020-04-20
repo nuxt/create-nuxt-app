@@ -6,7 +6,7 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "cross-env": "^5.2.1",
+    "cross-env": "^7.0.2",
     "micro": "^9.3.4",
     "micro-route": "^2.5.0"
   },
