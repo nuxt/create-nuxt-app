@@ -19,6 +19,6 @@
     "@adonisjs/shield": "^1.0.8"
   },
   "devDependencies": {
-    "nodemon": "^1.19.4"
+    "nodemon": "^2.0.3"
   }
 }
