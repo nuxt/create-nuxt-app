@@ -1,18 +1,19 @@
 {
   "scripts": {
-    "test": "ava",
+    "test": "<%= pmRun %> test:unit && <%= pmRun %> test:e2e",
     "test:unit": "cross-env TEST=unit ava ./test/specs/**/*",
     "test:e2e": "cross-env TEST=e2e ava ./test/e2e/**/*"
   },
   "devDependencies": {
+    "@ava/babel": "^1.0.1",
     "@vue/test-utils": "^1.0.0-beta.33",
     "ava": "^3.7.1",
-    "@ava/babel": "^1.0.1",
     "babel-plugin-module-resolver": "^4.0.0",
-    "browser-env": "^3.3.0",
     "cross-env": "^5.2.1",
+    "jsdom": "^16.2.2",
+    "jsdom-global": "^3.0.2",
     "require-extension-hooks": "^0.3.3",
     "require-extension-hooks-babel": "^1.0.0",
-    "require-extension-hooks-vue": "^2.0.0"
+    "require-extension-hooks-vue": "^3.0.0"
   }
 }
