@@ -22,5 +22,8 @@
     "Nuxt team <team@nuxtjs.org>",
     "Clark Du <clark.duxin@gmail.com>"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "engines": {
+    "node": ">=10.20.0"
+  }
 }
