@@ -160,7 +160,10 @@ module.exports = {
 
     await this.npmInstall({ npmClient: this.answers.pm })
 
-    if (this.answers.linter.includes('eslint')) {
+    if (
+      this.answers.linter.includes('eslint') ||
+      this.answers.linter.includes('stylelint')
+    ) {
       const options = ['run', 'lint', '--', '--fix']
       if (this.answers.pm === 'yarn') {
         options.splice(2, 1)

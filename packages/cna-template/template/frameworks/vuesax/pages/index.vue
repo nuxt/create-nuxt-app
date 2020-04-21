@@ -84,15 +84,23 @@ export default {
 }
 
 .title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family:
+    'Quicksand',
+    'Source Sans Pro',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial,
+    sans-serif;
   display: block;
   font-weight: 300;
   font-size: 55px;
   color: #35495e;
   letter-spacing: 1px;
   text-transform: capitalize;
-  margin: 25px 0px
+  margin: 25px 0;
 }
 
 .subtitle {
@@ -106,12 +114,12 @@ export default {
 
 .subtitle a {
   font-weight: 500;
-  color: inherit
+  color: inherit;
 }
 
 .links {
   padding-top: 15px;
-  margin-bottom: 20px
+  margin-bottom: 20px;
 }
 
 .content-logos {
@@ -120,14 +128,24 @@ export default {
   justify-content: center;
   min-width: 500px;
 }
+
 .plus {
   font-size: 2.5rem;
   margin: 15px;
-  color: #35495e
+  color: #35495e;
 }
+
 .h3 {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family:
+    'Quicksand',
+    'Source Sans Pro',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Arial,
+    sans-serif;
   font-weight: 400;
   margin: 10px;
 }

@@ -4,7 +4,8 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
+    "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "lint:style": "stylelint **/*.{vue,css} --ignore-path .gitignore"
   },
   "lint-staged": {
     "*.{js,vue}": "eslint",
@@ -36,6 +37,7 @@
     "husky": "^4.2.5",
     "lint-staged": "^10.1.7",
     "@nuxtjs/stylelint-module": "^3.2.2",
-    "stylelint": "^13.3.3"
+    "stylelint": "^13.3.3",
+    "stylelint-config-standard": "^20.0.0"
   }
 }

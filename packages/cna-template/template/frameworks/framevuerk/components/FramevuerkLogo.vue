@@ -48,26 +48,31 @@ export default {
   vertical-align: middle;
   width: 43px;
 }
+
 .logo svg {
-    width: 100%;
-    height: auto;
-    max-height: 12em;
-    margin: 0 auto;
+  width: 100%;
+  height: auto;
+  max-height: 12em;
+  margin: 0 auto;
 }
+
 .logo svg polygon {
   transform: translateY(-100%);
   transition-duration: 2s;
 }
+
 .logo svg path {
   fill: transparent;
   transition-delay: 0.6s;
   transition-duration: 1s;
 }
+
 .logo.ready svg polygon {
   transform: translateY(0);
   fill: #fff;
 }
-.logo.ready svg  path {
+
+.logo.ready svg path {
   stroke: transparent;
   stroke-width: 0;
   fill: #fff;
