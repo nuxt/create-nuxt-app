@@ -1,7 +1,4 @@
 {
   "semi": false,
-  <%_ if (eslint) { _%>
-  "arrowParens": "always",
-  <%_ } _%>
   "singleQuote": true
 }
