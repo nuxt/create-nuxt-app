@@ -36,6 +36,6 @@
     "husky": "^4.2.5",
     "lint-staged": "^10.1.7",
     "@nuxtjs/stylelint-module": "^3.2.2",
-    "stylelint": "^10.1.0"
+    "stylelint": "^13.3.3"
   }
 }
