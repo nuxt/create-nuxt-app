@@ -164,6 +164,7 @@ module.exports = {
   <%_ } _%>
   /*
   ** Build configuration
+  ** See https://nuxtjs.org/api/configuration-build/
   */
   build: {
     <%_ if (ui === 'bulma') { _%>
@@ -177,10 +178,5 @@ module.exports = {
     <%_ } else if (ui === 'element-ui') { _%>
     transpile: [/^element-ui/],
     <%_ } _%>
-    /*
-    ** You can extend webpack config here
-    */
-    extend (config, ctx) { // eslint-disable-line
-    }
   }
 }
