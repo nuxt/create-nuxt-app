@@ -2,6 +2,7 @@ const { dirname, join, relative } = require('path')
 const glob = require('glob')
 const spawn = require('cross-spawn')
 const validate = require('validate-npm-package-name')
+const pkg = require('./package')
 
 const cnaTemplateDir = join(dirname(require.resolve('cna-template/package.json')))
 const templateDir = join(cnaTemplateDir, 'template')
@@ -103,6 +104,8 @@ export default ${ifTrue(typescript, 'Vue.extend(' + componentOptions + ')', comp
             files[file] = `resources/${file}`
           }
         }
+        delete files['package.js']
+        delete files['package.json']
         files['nuxt.config.js'] = 'config/nuxt.js'
 
         actions.push({
@@ -147,15 +150,25 @@ export default ${ifTrue(typescript, 'Vue.extend(' + componentOptions + ')', comp
       }
     })
 
+    const generator = this
     actions.push({
       type: 'modify',
       files: 'package.json',
       handler (data) {
-        delete data.scripts['']
-        delete data.dependencies['']
-        delete data.devDependencies['']
-        return data
+        return { ...data, ...pkg.load(generator) }
       }
+    })
+
+    // For compiling package.json
+    actions.push({
+      type: 'add',
+      files: 'package.json',
+      templateDir: this.outDir
+    })
+
+    actions.push({
+      type: 'remove',
+      files: 'package.js'
     })
 
     return actions

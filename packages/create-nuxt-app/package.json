@@ -15,7 +15,6 @@
     "glob": "^7.1.6",
     "lodash": "^4.17.15",
     "sao": "^1.7.0",
-    "superb": "^4.0.0",
     "validate-npm-package-name": "^3.0.0"
   },
   "authors": [
@@ -23,5 +22,8 @@
     "Nuxt team <team@nuxtjs.org>",
     "Clark Du <clark.duxin@gmail.com>"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "engines": {
+    "node": ">=10.20.0"
+  }
 }
