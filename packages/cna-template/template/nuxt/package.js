@@ -37,7 +37,7 @@ module.exports = {
       delete pkg.devDependencies['lint-staged']
     }
     if (!stylelint) {
-      lintStaged && delete pkg['lint-staged']['*.{css,vue']
+      lintStaged && delete pkg['lint-staged']['*.{css,vue}']
       delete lintScripts.stylelint
       delete pkg.scripts['lint:style']
       delete pkg.devDependencies['@nuxtjs/stylelint-module']
