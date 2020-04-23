@@ -59,10 +59,20 @@ module.exports = {
 
     if (!typescript) {
       delete pkg.devDependencies['@nuxt/typescript-build']
+
+      for (const key of Object.keys(scripts)) {
+        scripts[key] = scripts[key].replace(/(,?.ts)|(.ts,?)/, '')
+      }
+
+      delete pkg['lint-staged']['*.{js,ts,vue}']
+    } else {
+      delete pkg['lint-staged']['*.{js,vue}']
     }
+
     if (!typescript || !eslint) {
       delete pkg.devDependencies['@nuxtjs/eslint-config-typescript']
     }
+
     if (tsRuntime) {
       for (const key of Object.keys(scripts)) {
         scripts[key] = scripts[key].replace(/^nuxt /, 'nuxt-ts ')
