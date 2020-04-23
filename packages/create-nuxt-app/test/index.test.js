@@ -50,7 +50,6 @@ for (const prompt of saoConfig.prompts) {
         await verifyPkg(t, answer)
         await verifyNuxtConfig(t, answer, false)
 
-
         // runtime has a "when" filter on it, make sure we setup answers correctly to satisfy it and run tests again
         if (prompt.name === 'runtime' && choice.name.includes('typescript')) {
           answer.language = 'ts'
