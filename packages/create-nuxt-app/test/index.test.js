@@ -46,8 +46,10 @@ test('verify default answers', async (t) => {
 for (const prompt of saoConfig.prompts) {
   if (Array.isArray(prompt.choices)) {
     if (prompt.type === 'checkbox') {
-      test(`verify ${prompt.name}: all choices`, async (t) => {
-        const answers = { [prompt.name]: prompt.choices.map(choice => choice.value) }
+      const choioceNames = prompt.choices.map(choice => choice.name)
+      const choioceValues = prompt.choices.map(choice => choice.value)
+      test(`verify ${prompt.name}: ${choioceNames.join(', ')}`, async (t) => {
+        const answers = { [prompt.name]: choioceValues }
         await verifyAnswers(t, answers)
       })
     }
