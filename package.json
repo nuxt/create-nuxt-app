@@ -8,7 +8,9 @@
     "type": "git"
   },
   "scripts": {
-    "lint": "eslint --ext .js,.mjs,.vue .",
+    "lint": "yarn lint:js && yarn lint:style",
+    "lint:js": "eslint --ext .js,.mjs,.vue .",
+    "lint:style": "stylelint **/*.{vue,css}",
     "test": "ava --verbose",
     "test:snapshot": "ava --verbose --update-snapshots"
   },
@@ -17,7 +19,9 @@
     "@nuxtjs/eslint-config": "^2.0.2",
     "ava": "^3.7.1",
     "eslint": "^6.8.0",
-    "lerna": "^3.20.2"
+    "lerna": "^3.20.2",
+    "stylelint": "^13.3.3",
+    "stylelint-config-standard": "^20.0.0"
   },
   "name": "create-nuxt-app"
 }

@@ -33,20 +33,30 @@ const verifyNuxtConfig = async (t, answers = {}) => {
   t.snapshot(normalizeNewlines(config), `Generated ${configFile}`)
 }
 
+const verifyAnswers = async (t, answers = {}) => {
+  await verifyFileList(t, answers)
+  await verifyPkg(t, answers)
+  await verifyNuxtConfig(t, answers)
+}
+
 test('verify default answers', async (t) => {
-  await verifyFileList(t)
-  await verifyPkg(t)
-  await verifyNuxtConfig(t)
+  await verifyAnswers(t)
 })
 
 for (const prompt of saoConfig.prompts) {
   if (Array.isArray(prompt.choices)) {
+    if (prompt.type === 'checkbox') {
+      const choioceNames = prompt.choices.map(choice => choice.name)
+      const choioceValues = prompt.choices.map(choice => choice.value)
+      test(`verify ${prompt.name}: ${choioceNames.join(', ')}`, async (t) => {
+        const answers = { [prompt.name]: choioceValues }
+        await verifyAnswers(t, answers)
+      })
+    }
     for (const choice of prompt.choices) {
       test(`verify ${prompt.name}: ${choice.name}`, async (t) => {
-        const answer = { [prompt.name]: prompt.type === 'checkbox' ? [choice.value] : choice.value }
-        await verifyFileList(t, answer)
-        await verifyPkg(t, answer)
-        await verifyNuxtConfig(t, answer)
+        const answers = { [prompt.name]: prompt.type === 'checkbox' ? [choice.value] : choice.value }
+        await verifyAnswers(t, answers)
       })
     }
   }

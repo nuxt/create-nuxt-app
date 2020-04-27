@@ -161,7 +161,18 @@ module.exports = {
     await this.npmInstall({ npmClient: this.answers.pm })
 
     if (this.answers.linter.includes('eslint')) {
-      const options = ['run', 'lint', '--', '--fix']
+      const options = ['run', 'lint:js', '--', '--fix']
+      if (this.answers.pm === 'yarn') {
+        options.splice(2, 1)
+      }
+      spawn.sync(this.answers.pm, options, {
+        cwd: this.outDir,
+        stdio: 'inherit'
+      })
+    }
+
+    if (this.answers.linter.includes('stylelint')) {
+      const options = ['run', 'lint:style', '--', '--fix']
       if (this.answers.pm === 'yarn') {
         options.splice(2, 1)
       }

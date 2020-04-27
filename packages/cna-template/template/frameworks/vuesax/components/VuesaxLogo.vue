@@ -8,8 +8,9 @@
   width: 100%;
   max-width: 170px;
 }
+
 .vuesax-logo svg {
   width: 100%;
-  fill: #35495e
+  fill: #35495e;
 }
 </style>

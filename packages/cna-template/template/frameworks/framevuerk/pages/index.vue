@@ -177,6 +177,7 @@ export default {
   margin: 0 auto;
   max-width: 768px;
 }
+
 .sidebar {
   min-width: 300px;
 }
