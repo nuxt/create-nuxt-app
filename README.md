@@ -67,6 +67,7 @@ yarn create nuxt-app <my-project>
 1. Choose Nuxt.js modules:
     - [Axios](https://github.com/nuxt-community/axios-module)
     - [Progressive Web App (PWA) Support](https://github.com/nuxt-community/pwa-module)
+    - [DotEnv](https://github.com/nuxt-community/dotenv-module)
 1. Choose linting tools:
     - [ESLint](https://github.com/nuxt/eslint-config)
     - [Prettier](https://github.com/prettier/prettier)
