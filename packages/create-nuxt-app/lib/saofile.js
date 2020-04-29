@@ -1,5 +1,4 @@
 const { dirname, join, relative } = require('path')
-const glob = require('glob')
 const spawn = require('cross-spawn')
 const validate = require('validate-npm-package-name')
 const pkg = require('./package')
