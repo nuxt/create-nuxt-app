@@ -3,9 +3,6 @@
 import colors from 'vuetify/es5/util/colors'
   <%_ } _%>
 <%_ } else { _%>
-  <%_ if (server === 'adonis') { _%>
-const { resolve } = require('path')
-  <%_ } _%>
   <%_ if (ui === 'vuetify') { _%>
 const colors = require('vuetify/es5/util/colors').default
   <%_ } _%>
@@ -17,10 +14,6 @@ export default {
 module.exports = {
 <%_ } _%>
   mode: '<%= mode %>',
-  <%_ if (server === 'adonis') { _%>
-  dev: process.env.NODE_ENV === 'development',
-  srcDir: resolve(__dirname, '..', 'resources'),
-  <%_ } _%>
   /*
   ** Headers of the page
   */

@@ -52,15 +52,6 @@ yarn create nuxt-app <my-project>
     - [Tailwind CSS](https://github.com/tailwindcss/tailwindcss)
     - [Vuesax](https://github.com/lusaxweb/vuesax)
     - [Vuetify](https://github.com/vuetifyjs/vuetify)
-1. Choose between integrated server-side frameworks:
-    - None (Nuxt default server)
-    - [Adonis](https://github.com/adonisjs/adonis-framework)
-    - [Express](https://github.com/expressjs/express)
-    - [Fastify](https://github.com/fastify/fastify)
-    - [Feathers](https://github.com/feathersjs/feathers)
-    - [Hapi](https://github.com/hapijs/hapi)
-    - [Koa](https://github.com/koajs/koa)
-    - [Micro](https://github.com/zeit/micro)
 1. Choose the runtime for TypeScript (if you choose TypeScript)
     - Default
     - [@nuxt/typescript-runtime](https://github.com/nuxt/typescript)

@@ -20,7 +20,6 @@ module.exports = {
     const stylelint = this.answers.linter.includes('stylelint')
     const axios = this.answers.features.includes('axios')
     const dotenv = this.answers.features.includes('dotenv')
-    const esm = this.answers.server === 'none'
     const pm = this.answers.pm === 'yarn' ? 'yarn' : 'npm'
     const pmRun = this.answers.pm === 'yarn' ? 'yarn' : 'npm run'
 
@@ -36,7 +35,7 @@ module.exports = {
       lintStaged,
       stylelint,
       axios,
-      esm,
+      esm: true,
       edge,
       pm,
       pmRun,
@@ -75,32 +74,6 @@ module.exports = {
         type: 'add',
         files: '**',
         templateDir: join(frameworksDir, this.answers.test)
-      })
-    }
-
-    if (this.answers.server !== 'none') {
-      if (this.answers.server === 'adonis') {
-        const files = {}
-        for (const action of actions) {
-          const options = { cwd: action.templateDir, dot: true }
-          for (const file of glob.sync('*', options)) {
-            files[file] = `resources/${file}`
-          }
-        }
-        delete files['package.js']
-        delete files['package.json']
-        files['nuxt.config.js'] = 'config/nuxt.js'
-
-        actions.push({
-          type: 'move',
-          patterns: files
-        })
-      }
-
-      actions.push({
-        type: 'add',
-        files: '**',
-        templateDir: join(frameworksDir, this.answers.server)
       })
     }
 
