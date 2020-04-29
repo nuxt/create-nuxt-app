@@ -7,9 +7,9 @@
   },
   "dependencies": {
     "cross-env": "^7.0.2",
-    "@feathersjs/feathers": "^3.3.1",
-    "@feathersjs/express": "^1.3.1",
-    "@feathersjs/configuration": "^2.0.6"
+    "@feathersjs/feathers": "^4.5.3",
+    "@feathersjs/express": "^4.5.4",
+    "@feathersjs/configuration": "^4.5.3"
   },
   "devDependencies": {
     "nodemon": "^2.0.3"
