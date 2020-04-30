@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "cross-env": "^7.0.2",
-    "fastify": "^2.13.1"
+    "fastify": "^2.14.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.3"
