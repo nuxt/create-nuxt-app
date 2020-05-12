@@ -46,23 +46,6 @@ module.exports = [
     default: 'none'
   },
   {
-    name: 'server',
-    message: 'Choose custom server framework',
-    type: 'list',
-    pageSize: 10,
-    choices: [
-      { name: 'None (Recommended)', value: 'none' },
-      { name: 'AdonisJs', value: 'adonis' },
-      { name: 'Express', value: 'express' },
-      { name: 'Fastify', value: 'fastify' },
-      { name: 'Feathers', value: 'feathers' },
-      { name: 'hapi', value: 'hapi' },
-      { name: 'Koa', value: 'koa' },
-      { name: 'Micro', value: 'micro' }
-    ],
-    default: 'none'
-  },
-  {
     name: 'runtime',
     message: 'Choose the runtime for TypeScript',
     type: 'list',
@@ -70,7 +53,7 @@ module.exports = [
       { name: 'Default', value: 'none' },
       { name: '@nuxt/typescript-runtime', value: 'ts-runtime' }
     ],
-    when: answers => answers.language === 'ts' && answers.server === 'none'
+    when: answers => answers.language === 'ts'
   },
   {
     name: 'features',

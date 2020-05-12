@@ -4,11 +4,6 @@ module.exports = {
     browser: true,
     node: true
   },
-  <%_ if (server === 'adonis') { _%>
-  globals: {
-    use: true
-  },
-  <%_ } _%>
   <%_ if (!typescript) { _%>
   parserOptions: {
     parser: 'babel-eslint'

@@ -28,7 +28,7 @@ const verifyPkg = async (t, answers = {}) => {
 
 const verifyNuxtConfig = async (t, answers = {}) => {
   const stream = await sao.mock({ generator }, answers)
-  const configFile = answers.server === 'adonis' ? 'config/nuxt.js' : 'nuxt.config.js'
+  const configFile = 'nuxt.config.js'
   const config = await stream.readFile(configFile)
   t.snapshot(normalizeNewlines(config), `Generated ${configFile}`)
 }

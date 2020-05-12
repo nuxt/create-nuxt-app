@@ -12,7 +12,6 @@
     "cna-template": "^2.15.0",
     "cross-spawn": "^7.0.2",
     "envinfo": "^7.5.1",
-    "glob": "^7.1.6",
     "lodash": "^4.17.15",
     "sao": "^1.7.0",
     "validate-npm-package-name": "^3.0.0"
