@@ -27,7 +27,7 @@
     "@nuxt/typescript-build": "^0.6.6",
     "@nuxtjs/eslint-config-typescript": "^1.0.2",
     "@nuxtjs/eslint-config": "^2.0.2",
-    "@nuxtjs/eslint-module": "^1.2.0",
+    "@nuxtjs/eslint-module": "^2.0.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.8.0",
     "eslint-plugin-nuxt": ">=0.5.2",
