@@ -48,10 +48,10 @@
                 <label class="fv-text-light"> <i class="material-icons">list</i> Documents </label>
               </div>
               <div class="fv-padding">
-                <a class="fv-link fv-block fv-margin-bottom" target="_blank" href="https://www.framevuerk.com/"><i class="material-icons">link</i> Framevuerk Docs</a>
-                <a class="fv-link fv-block fv-margin-bottom" target="_blank" href="https://github.com/framevuerk/framevuerk"><i class="material-icons">link</i> Framevuerk on Github</a>
-                <a class="fv-link fv-block fv-margin-bottom" target="_blank" href="https://nuxtjs.org/"><i class="material-icons">link</i> Nuxt Docs</a>
-                <a class="fv-link fv-block" target="_blank" href="https://github.com/nuxt/nuxt.js"><i class="material-icons">link</i> Nuxt on GitHub</a>
+                <a class="fv-link fv-block fv-margin-bottom" target="_blank" rel="noopener noreferrer" href="https://www.framevuerk.com/"><i class="material-icons">link</i> Framevuerk Docs</a>
+                <a class="fv-link fv-block fv-margin-bottom" target="_blank" rel="noopener noreferrer" href="https://github.com/framevuerk/framevuerk"><i class="material-icons">link</i> Framevuerk on Github</a>
+                <a class="fv-link fv-block fv-margin-bottom" target="_blank" rel="noopener noreferrer" href="https://nuxtjs.org/"><i class="material-icons">link</i> Nuxt Docs</a>
+                <a class="fv-link fv-block" target="_blank" rel="noopener noreferrer" href="https://github.com/nuxt/nuxt.js"><i class="material-icons">link</i> Nuxt on GitHub</a>
               </div>
             </div>
           </fvMenu>

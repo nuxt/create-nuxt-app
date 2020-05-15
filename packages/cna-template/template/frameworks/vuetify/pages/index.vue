@@ -23,6 +23,7 @@
             For more information on Vuetify, check out the <a
               href="https://vuetifyjs.com"
               target="_blank"
+              rel="noopener noreferrer"
             >
               documentation
             </a>.
@@ -31,6 +32,7 @@
             If you have questions, please join the official <a
               href="https://chat.vuetifyjs.com/"
               target="_blank"
+              rel="noopener noreferrer"
               title="chat"
             >
               discord
@@ -40,6 +42,7 @@
             Find a bug? Report it on the github <a
               href="https://github.com/vuetifyjs/vuetify/issues"
               target="_blank"
+              rel="noopener noreferrer"
               title="contribute"
             >
               issue board
@@ -53,6 +56,7 @@
           <a
             href="https://nuxtjs.org/"
             target="_blank"
+            rel="noopener noreferrer"
           >
             Nuxt Documentation
           </a>
@@ -60,6 +64,7 @@
           <a
             href="https://github.com/nuxt/nuxt.js"
             target="_blank"
+            rel="noopener noreferrer"
           >
             Nuxt GitHub
           </a>
