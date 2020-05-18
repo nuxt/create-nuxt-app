@@ -2,11 +2,14 @@
 <%_ } _%>
 
 export default {
-  // https://nuxtjs.org/api/configuration-mode
+  /*
+  ** Nuxt rendering mode
+  ** See https://nuxtjs.org/api/configuration-mode
+  */
   mode: '<%= mode %>',
   /*
   ** Headers of the page
-  ** https://nuxtjs.org/api/configuration-head
+  ** See https://nuxtjs.org/api/configuration-head
   */
   head: {
     <%_ if (ui === 'vuetify') { _%>
@@ -144,7 +147,7 @@ export default {
   <%_ } _%>
   /*
   ** Build configuration
-  ** https://nuxtjs.org/api/configuration-build
+  ** See https://nuxtjs.org/api/configuration-build/
   */
   build: {
     <%_ if (ui === 'bulma') { _%>
