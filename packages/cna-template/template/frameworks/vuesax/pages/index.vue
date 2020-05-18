@@ -19,6 +19,7 @@
         <a
           href="https://vuesax.com/"
           target="_blank"
+          rel="noopener noreferrer"
           class="button--green"
         >
           Documentation
@@ -26,6 +27,7 @@
         <a
           href="https://discordapp.com/invite/9dsKtvB"
           target="_blank"
+          rel="noopener noreferrer"
           class="button--grey"
         >
           Discord
@@ -33,6 +35,7 @@
         <a
           href="https://github.com/lusaxweb/vuesax"
           target="_blank"
+          rel="noopener noreferrer"
           class="button--grey"
         >
           GitHub
@@ -45,6 +48,7 @@
         <a
           href="https://nuxtjs.org/"
           target="_blank"
+          rel="noopener noreferrer"
           class="button--green"
         >
           Documentation
@@ -52,6 +56,7 @@
         <a
           href="https://github.com/nuxt/nuxt.js"
           target="_blank"
+          rel="noopener noreferrer"
           class="button--grey"
         >
           GitHub
