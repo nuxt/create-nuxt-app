@@ -43,10 +43,12 @@ module.exports = {
       delete pkg.devDependencies['@nuxtjs/stylelint-module']
       delete pkg.devDependencies.stylelint
       delete pkg.devDependencies['stylelint-config-standard']
+      delete pkg.devDependencies['stylelint-config-prettier']
     }
     if (!prettier) {
       delete pkg.devDependencies['eslint-config-prettier']
       delete pkg.devDependencies['eslint-plugin-prettier']
+      delete pkg.devDependencies['stylelint-config-prettier']
       delete pkg.devDependencies.prettier
     }
 
