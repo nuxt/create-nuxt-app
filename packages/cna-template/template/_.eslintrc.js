@@ -28,9 +28,5 @@ module.exports = {
   ],
   <%_ } _%>
   // add your custom rules here
-  rules: {
-    <%_ if (!esm){ _%>
-    'nuxt/no-cjs-in-config': 'off'
-    <%_ } _%>
-  }
+  rules: {}
 }
