@@ -3,11 +3,11 @@
     "test": "jest"
   },
   "devDependencies": {
-    "@vue/test-utils": "^1.0.0-beta.33",
+    "@vue/test-utils": "^1.0.3",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^25.5.1",
-    "jest": "^25.5.2",
-    "ts-jest": "^25.4.0",
+    "jest": "^25.5.4",
+    "ts-jest": "^25.5.1",
     "vue-jest": "^3.0.4"
   }
 }
