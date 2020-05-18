@@ -103,6 +103,16 @@ module.exports = [
     default: 'universal'
   },
   {
+    name: 'target',
+    message: 'Choose target',
+    type: 'list',
+    choices: [
+      { name: 'Server (Node.js hosting)', value: 'server' },
+      { name: 'Static (Static/JAMStack hosting)', value: 'static' }
+    ],
+    default: 'server'
+  },
+  {
     name: 'devTools',
     message: 'Choose development tools',
     type: 'checkbox',

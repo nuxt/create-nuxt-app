@@ -78,6 +78,9 @@ yarn create nuxt-app <my-project>
 1. Choose rendering mode
     - [Universal (SSR / Static)](https://nuxtjs.org/guide/#server-rendered-universal-ssr-)
     - [SPA](https://nuxtjs.org/guide/#single-page-applications-spa-)
+1. Choose target
+    - [Server (Node.js hosting)](https://nuxtjs.org/api/configuration-target)
+    - [Static (Static/JAMStack hosting)](https://nuxtjs.org/api/configuration-target)
 1. Choose development tools
     - [jsconfig.json](https://code.visualstudio.com/docs/languages/jsconfig)
     - [Semantic PR](https://probot.github.io/apps/semantic-pull-requests/)
