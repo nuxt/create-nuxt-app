@@ -20,13 +20,19 @@ module.exports = {
     'prettier/vue',
     'plugin:prettier/recommended',
     <%_ } _%>
+    <%_ if (test === 'webdriverio') { _%>
+    'plugin:wdio/recommended',
+    <%_ } _%>
     'plugin:nuxt/recommended'
   ],
-  <%_ if (prettier) { _%>
   plugins: [
-    'prettier'
+    <%_ if (prettier) {_%>
+    'prettier',
+    <%_ } _%>
+    <%_ if (test === 'webdriverio') { _%>
+    'wdio'
+    <%_ } _%>
   ],
-  <%_ } _%>
   // add your custom rules here
   rules: {}
 }

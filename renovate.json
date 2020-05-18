@@ -41,6 +41,10 @@
     {
       "packagePatterns": ["ava", "require-extension-hooks"],
       "groupName": "ava packages"
+    },
+    {
+      "packagePatterns": ["wdio", "webdriver"],
+      "groupName": "webdriverio packages"
     }
   ]
 }

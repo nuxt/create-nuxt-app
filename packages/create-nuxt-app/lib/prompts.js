@@ -87,7 +87,8 @@ module.exports = [
     choices: [
       { name: 'None', value: 'none' },
       { name: 'Jest', value: 'jest' },
-      { name: 'AVA', value: 'ava' }
+      { name: 'AVA', value: 'ava' },
+      { name: 'WebdriverIO', value: 'webdriverio' }
     ],
     default: 'none'
   },
