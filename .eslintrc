@@ -3,7 +3,8 @@
     "@nuxtjs"
   ],
   "globals": {
-    "use": true
+    "use": true,
+    "browser": true
   },
   "rules": {
     "no-console": "off"

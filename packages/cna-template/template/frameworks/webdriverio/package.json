@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "test:e2e": "wdio wdio.conf.js"
+  },
+  "devDependencies": {
+    "@wdio/cli": "^6.1.5",
+    "@wdio/local-runner": "^6.1.6",
+    "@wdio/mocha-framework": "^6.1.6",
+    "@wdio/spec-reporter": "^6.1.5",
+    "@wdio/sync": "^6.1.5",
+    "eslint-plugin-wdio": "^6.0.12",
+    "webdriverio": "^6.1.5"
+  }
+}

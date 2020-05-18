@@ -52,21 +52,13 @@ yarn create nuxt-app <my-project>
     - [Tailwind CSS](https://github.com/tailwindcss/tailwindcss)
     - [Vuesax](https://github.com/lusaxweb/vuesax)
     - [Vuetify](https://github.com/vuetifyjs/vuetify)
-1. Choose between integrated server-side frameworks:
-    - None (Nuxt default server)
-    - [Adonis](https://github.com/adonisjs/adonis-framework)
-    - [Express](https://github.com/expressjs/express)
-    - [Fastify](https://github.com/fastify/fastify)
-    - [Feathers](https://github.com/feathersjs/feathers)
-    - [Hapi](https://github.com/hapijs/hapi)
-    - [Koa](https://github.com/koajs/koa)
-    - [Micro](https://github.com/zeit/micro)
 1. Choose the runtime for TypeScript (if you choose TypeScript)
     - Default
     - [@nuxt/typescript-runtime](https://github.com/nuxt/typescript)
 1. Choose Nuxt.js modules:
     - [Axios](https://github.com/nuxt-community/axios-module)
     - [Progressive Web App (PWA) Support](https://github.com/nuxt-community/pwa-module)
+    - [DotEnv](https://github.com/nuxt-community/dotenv-module)
 1. Choose linting tools:
     - [ESLint](https://github.com/nuxt/eslint-config)
     - [Prettier](https://github.com/prettier/prettier)
@@ -82,6 +74,7 @@ yarn create nuxt-app <my-project>
     - None
     - [Jest](https://github.com/facebook/jest)
     - [AVA](https://github.com/avajs/ava)
+    - [WebdriverIO](https://webdriver.io)
 1. Choose rendering mode
     - [Universal (SSR / Static)](https://nuxtjs.org/guide/#server-rendered-universal-ssr-)
     - [SPA](https://nuxtjs.org/guide/#single-page-applications-spa-)

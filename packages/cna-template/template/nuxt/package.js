@@ -16,9 +16,14 @@ module.exports = {
     const lintStaged = eslint && linter.includes('lintStaged')
     const stylelint = linter.includes('stylelint')
     const prettier = linter.includes('prettier')
+    const lintScripts = {
+      eslint: '<%= pmRun %> lint:js',
+      stylelint: '<%= pmRun %> lint:style'
+    }
 
     if (!eslint) {
-      delete pkg.scripts.lint
+      delete lintScripts.eslint
+      delete pkg.scripts['lint:js']
       delete pkg.devDependencies['@nuxtjs/eslint-config']
       delete pkg.devDependencies['@nuxtjs/eslint-module']
       delete pkg.devDependencies['babel-eslint']
@@ -32,14 +37,22 @@ module.exports = {
       delete pkg.devDependencies['lint-staged']
     }
     if (!stylelint) {
-      lintStaged && delete pkg['lint-staged']['*.{css,vue']
+      lintStaged && delete pkg['lint-staged']['*.{css,vue}']
+      delete lintScripts.stylelint
+      delete pkg.scripts['lint:style']
       delete pkg.devDependencies['@nuxtjs/stylelint-module']
       delete pkg.devDependencies.stylelint
+      delete pkg.devDependencies['stylelint-config-standard']
     }
     if (!prettier) {
       delete pkg.devDependencies['eslint-config-prettier']
       delete pkg.devDependencies['eslint-plugin-prettier']
       delete pkg.devDependencies.prettier
+    }
+
+    const lintScript = Object.values(lintScripts).join(' && ')
+    if (lintScript) {
+      pkg.scripts.lint = lintScript
     }
 
     // Modules

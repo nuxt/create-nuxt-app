@@ -1,28 +1,15 @@
-<%_ if (esm) { _%>
-  <%_ if (ui === 'vuetify') { _%>
-import colors from 'vuetify/es5/util/colors'
-  <%_ } _%>
-<%_ } else { _%>
-  <%_ if (server === 'adonis') { _%>
-const { resolve } = require('path')
-  <%_ } _%>
-  <%_ if (ui === 'vuetify') { _%>
-const colors = require('vuetify/es5/util/colors').default
-  <%_ } _%>
+<%_ if (ui === 'vuetify') { _%>import colors from 'vuetify/es5/util/colors'
 <%_ } _%>
 
-<%_ if (esm) { _%>
 export default {
-<%_ } else { _%>
-module.exports = {
-<%_ } _%>
+  /*
+  ** Nuxt rendering mode
+  ** See https://nuxtjs.org/api/configuration-mode
+  */
   mode: '<%= mode %>',
-  <%_ if (server === 'adonis') { _%>
-  dev: process.env.NODE_ENV === 'development',
-  srcDir: resolve(__dirname, '..', 'resources'),
-  <%_ } _%>
   /*
   ** Headers of the page
+  ** See https://nuxtjs.org/api/configuration-head
   */
   head: {
     <%_ if (ui === 'vuetify') { _%>
@@ -46,10 +33,6 @@ module.exports = {
     ]
   },
   /*
-  ** Customize the progress-bar color
-  */
-  loading: { color: '#fff' },
-  /*
   ** Global CSS
   */
   css: [
@@ -69,6 +52,7 @@ module.exports = {
   ],
   /*
   ** Plugins to load before mounting the App
+  ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
     <%_ if (ui === 'element-ui') { _%>
@@ -136,8 +120,7 @@ module.exports = {
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
-  axios: {
-  },
+  axios: {},
   <%_ } _%>
   <%_ if (ui === 'vuetify') { _%>
   /*

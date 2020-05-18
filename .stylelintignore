@@ -1,0 +1,3 @@
+node_modules
+packages/cna-template/template/nuxt/pages/index.vue
+packages/cna-template/template/frameworks/iview/pages/index.vue
