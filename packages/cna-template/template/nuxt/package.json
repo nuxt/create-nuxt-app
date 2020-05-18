@@ -38,6 +38,7 @@
     "lint-staged": "^10.2.4",
     "@nuxtjs/stylelint-module": "^4.0.0",
     "stylelint": "^13.4.0",
-    "stylelint-config-standard": "^20.0.0"
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-config-prettier": "^8.0.1"
   }
 }
