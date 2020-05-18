@@ -1,6 +1,6 @@
 {
   "name": "create-nuxt-app",
-  "version": "2.15.0",
+  "version": "2.16.0",
   "description": "Create a Nuxt.js App in seconds.",
   "bin": "lib/cli.js",
   "files": [
@@ -9,7 +9,7 @@
   "dependencies": {
     "cac": "^6.5.8",
     "chalk": "^4.0.0",
-    "cna-template": "^2.15.0",
+    "cna-template": "^2.16.0",
     "cross-spawn": "^7.0.2",
     "envinfo": "^7.5.1",
     "lodash": "^4.17.15",
