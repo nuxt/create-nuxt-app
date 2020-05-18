@@ -34,7 +34,6 @@ module.exports = {
       lintStaged,
       stylelint,
       axios,
-      esm: true,
       edge,
       pm,
       pmRun,

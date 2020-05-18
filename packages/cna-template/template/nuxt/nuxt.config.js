@@ -1,21 +1,12 @@
-<%_ if (esm) { _%>
-  <%_ if (ui === 'vuetify') { _%>
-import colors from 'vuetify/es5/util/colors'
-  <%_ } _%>
-<%_ } else { _%>
-  <%_ if (ui === 'vuetify') { _%>
-const colors = require('vuetify/es5/util/colors').default
-  <%_ } _%>
+<%_ if (ui === 'vuetify') { _%>import colors from 'vuetify/es5/util/colors'
 <%_ } _%>
 
-<%_ if (esm) { _%>
 export default {
-<%_ } else { _%>
-module.exports = {
-<%_ } _%>
+  // https://nuxtjs.org/api/configuration-mode
   mode: '<%= mode %>',
   /*
   ** Headers of the page
+  ** https://nuxtjs.org/api/configuration-head
   */
   head: {
     <%_ if (ui === 'vuetify') { _%>
@@ -39,10 +30,6 @@ module.exports = {
     ]
   },
   /*
-  ** Customize the progress-bar color
-  */
-  loading: { color: '#fff' },
-  /*
   ** Global CSS
   */
   css: [
@@ -62,6 +49,7 @@ module.exports = {
   ],
   /*
   ** Plugins to load before mounting the App
+  ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
     <%_ if (ui === 'element-ui') { _%>
@@ -129,8 +117,7 @@ module.exports = {
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
-  axios: {
-  },
+  axios: {},
   <%_ } _%>
   <%_ if (ui === 'vuetify') { _%>
   /*
@@ -157,6 +144,7 @@ module.exports = {
   <%_ } _%>
   /*
   ** Build configuration
+  ** https://nuxtjs.org/api/configuration-build
   */
   build: {
     <%_ if (ui === 'bulma') { _%>
@@ -170,10 +158,5 @@ module.exports = {
     <%_ } else if (ui === 'element-ui') { _%>
     transpile: [/^element-ui/],
     <%_ } _%>
-    /*
-    ** You can extend webpack config here
-    */
-    extend (config, ctx) {
-    }
   }
 }
