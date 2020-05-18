@@ -7,13 +7,13 @@
     "lib"
   ],
   "dependencies": {
-    "cac": "^6.5.8",
+    "cac": "^6.5.9",
     "chalk": "^4.0.0",
     "cna-template": "^2.16.0",
     "cross-spawn": "^7.0.2",
     "envinfo": "^7.5.1",
     "lodash": "^4.17.15",
-    "sao": "^1.7.0",
+    "sao": "^1.7.1",
     "validate-npm-package-name": "^3.0.0"
   },
   "authors": [
