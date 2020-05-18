@@ -4,5 +4,5 @@ import Logo from '@/components/Logo.vue'
 
 test('is a Vue instance', (t) => {
   const wrapper = mount(Logo)
-  t.is(wrapper.isVueInstance(), true)
+  t.is(wrapper.vm, true)
 })
