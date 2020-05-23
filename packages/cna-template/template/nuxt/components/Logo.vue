@@ -17,6 +17,15 @@
     </g>
   </svg>
 </template>
+
+<%_ if (typescript) { _%>
+<script lang="ts">
+import Vue from 'vue'
+
+export default Vue.extend({})
+</script>
+
+<%_ } _%>
 <style>
 .NuxtLogo {
   animation: 1s appear;
