@@ -9,7 +9,7 @@ const frameworksDir = join(templateDir, 'frameworks')
 
 module.exports = {
   prompts: require('./prompts'),
-  templateData () {
+  templateData() {
     const typescript = this.answers.language.includes('ts')
     const tsRuntime = this.answers.runtime && this.answers.runtime.includes('ts-runtime')
     const pwa = this.answers.features.includes('pwa')
@@ -40,7 +40,7 @@ module.exports = {
       dotenv
     }
   },
-  actions () {
+  actions() {
     const validation = validate(this.answers.name)
     validation.warnings && validation.warnings.forEach((warn) => {
       console.warn('Warning:', warn)
@@ -107,7 +107,7 @@ module.exports = {
     actions.push({
       type: 'modify',
       files: 'package.json',
-      handler (data) {
+      handler(data) {
         return { ...data, ...pkg.load(generator) }
       }
     })
@@ -126,7 +126,7 @@ module.exports = {
 
     return actions
   },
-  async completed () {
+  async completed() {
     this.gitInit()
 
     await this.npmInstall({ npmClient: this.answers.pm })
@@ -158,6 +158,7 @@ module.exports = {
     const relativeOutFolder = relative(process.cwd(), this.outDir)
     const cdMsg = isNewFolder ? chalk`\t{cyan cd ${relativeOutFolder}}\n` : ''
     const pmRun = this.answers.pm === 'yarn' ? 'yarn' : 'npm run'
+    const isE2ETestFramework = this.answers.test === 'cypress' || this.answers.test === 'webdriverio'
 
     console.log(chalk`\n🎉  {bold Successfully created project} {cyan ${this.answers.name}}\n`)
 
@@ -169,8 +170,10 @@ module.exports = {
     console.log(chalk`\t{cyan ${pmRun} start}\n`)
 
     if (this.answers.test !== 'none') {
+      const testCmd = isE2ETestFramework ? 'test:e2e' : 'test'
+
       console.log(chalk`  {bold To test:}\n`)
-      console.log(chalk`${cdMsg}\t{cyan ${pmRun} test}\n`)
+      console.log(chalk`${cdMsg}\t{cyan ${pmRun} ${testCmd}}\n`)
     }
 
     if (this.answers.language.includes('ts')) {
