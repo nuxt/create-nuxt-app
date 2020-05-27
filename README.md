@@ -72,6 +72,7 @@ yarn create nuxt-app <my-project>
     - [Tachyons](https://tachyons.io)
 1. Choose your favorite test framework:
     - None
+    - [Cypress](https://github.com/cypress-io/cypress)
     - [Jest](https://github.com/facebook/jest)
     - [AVA](https://github.com/avajs/ava)
     - [WebdriverIO](https://webdriver.io)

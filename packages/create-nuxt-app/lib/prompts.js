@@ -86,6 +86,7 @@ module.exports = [
     type: 'list',
     choices: [
       { name: 'None', value: 'none' },
+      { name: 'Cypress', value: 'cypress' },
       { name: 'Jest', value: 'jest' },
       { name: 'AVA', value: 'ava' },
       { name: 'WebdriverIO', value: 'webdriverio' }
