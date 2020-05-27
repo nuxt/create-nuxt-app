@@ -1,9 +1,9 @@
 {
   "scripts": {
-    "test:e2e": "cypress run",
-    "dev:test:e2e": "cypress open"
+    "test:e2e": "cypress open",
+    "test:e2e:headless": "cypress run"
   },
   "devDependencies": {
-    "cypress": "4.6.0"
+    "cypress": "4.7.0"
   }
 }
