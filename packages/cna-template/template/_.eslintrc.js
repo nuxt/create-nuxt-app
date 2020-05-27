@@ -2,7 +2,10 @@ module.exports = {
   root: true,
   env: {
     browser: true,
-    node: true
+    node: true,
+    <%_ if (test === 'cypress') { _%>
+    "cypress/globals": true,
+    <%_ } _%>
   },
   <%_ if (!typescript) { _%>
   parserOptions: {
@@ -23,16 +26,25 @@ module.exports = {
     <%_ if (test === 'webdriverio') { _%>
     'plugin:wdio/recommended',
     <%_ } _%>
+    <%_ if (test === 'cypress') { _%>
+    'plugin:cypress/recommended',
+    <%_ } _%>
     'plugin:nuxt/recommended'
   ],
   plugins: [
     <%_ if (prettier) {_%>
     'prettier',
     <%_ } _%>
+    <%_ if (test === 'cypress') { _%>
+    'cypress',
+    <%_ } _%>
     <%_ if (test === 'webdriverio') { _%>
     'wdio'
     <%_ } _%>
   ],
   // add your custom rules here
-  rules: {}
+  rules: {},
+  <%_ if (test === 'cypress') { _%>
+  ignorePatterns: ['test/e2e/specs/**/*.js'],
+  <%_ } _%>
 }

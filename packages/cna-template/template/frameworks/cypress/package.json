@@ -4,6 +4,7 @@
     "test:e2e:headless": "cypress run"
   },
   "devDependencies": {
-    "cypress": "4.7.0"
+    "cypress": "4.7.0",
+    "eslint-plugin-cypress": "2.10.3"
   }
 }
