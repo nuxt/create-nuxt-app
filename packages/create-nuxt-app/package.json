@@ -7,10 +7,10 @@
     "lib"
   ],
   "dependencies": {
-    "cac": "^6.5.9",
+    "cac": "^6.5.10",
     "chalk": "^4.0.0",
     "cna-template": "^2.16.0",
-    "cross-spawn": "^7.0.2",
+    "cross-spawn": "^7.0.3",
     "envinfo": "^7.5.1",
     "lodash": "^4.17.15",
     "sao": "^1.7.1",
