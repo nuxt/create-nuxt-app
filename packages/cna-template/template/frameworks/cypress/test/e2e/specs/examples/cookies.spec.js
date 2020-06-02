@@ -27,7 +27,6 @@ context('Cookies', () => {
 
     // cy.getCookies() yields an array of cookies
     cy.getCookies().should('have.length', 1).should((cookies) => {
-
       // each cookie has these properties
       expect(cookies[0]).to.have.property('name', 'token')
       expect(cookies[0]).to.have.property('value', '123ABC')

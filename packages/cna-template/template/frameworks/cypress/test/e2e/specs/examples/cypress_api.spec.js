@@ -9,7 +9,7 @@ context('Cypress.Commands', () => {
 
   it('.add() - create a custom command', () => {
     Cypress.Commands.add('console', {
-      prevSubject: true,
+      prevSubject: true
     }, (subject, method) => {
       // the previous subject is automatically received
       // and the commands arguments are shifted
@@ -33,7 +33,6 @@ context('Cypress.Commands', () => {
     })
   })
 })
-
 
 context('Cypress.Cookies', () => {
   beforeEach(() => {
@@ -67,11 +66,10 @@ context('Cypress.Cookies', () => {
     // now any cookie with the name 'session_id' will
     // not be cleared before each new test runs
     Cypress.Cookies.defaults({
-      whitelist: 'session_id',
+      whitelist: 'session_id'
     })
   })
 })
-
 
 context('Cypress.Server', () => {
   beforeEach(() => {
@@ -85,7 +83,7 @@ context('Cypress.Server', () => {
   it('.defaults() - change default config of server', () => {
     Cypress.Server.defaults({
       delay: 0,
-      force404: false,
+      force404: false
     })
   })
 })
@@ -108,7 +106,7 @@ context('Cypress.config()', () => {
 
   it('Get and set configuration options', () => {
     // https://on.cypress.io/config
-    let myConfig = Cypress.config()
+    const myConfig = Cypress.config()
 
     expect(myConfig).to.have.property('animationDistanceThreshold', 5)
     expect(myConfig).to.have.property('baseUrl', null)
@@ -138,8 +136,8 @@ context('Cypress.dom', () => {
 
   // https://on.cypress.io/dom
   it('.isHidden() - determine if a DOM element is hidden', () => {
-    let hiddenP = Cypress.$('.dom-p p.hidden').get(0)
-    let visibleP = Cypress.$('.dom-p p.visible').get(0)
+    const hiddenP = Cypress.$('.dom-p p.hidden').get(0)
+    const visibleP = Cypress.$('.dom-p p.visible').get(0)
 
     // our first paragraph has css class 'hidden'
     expect(Cypress.dom.isHidden(hiddenP)).to.be.true
@@ -160,7 +158,7 @@ context('Cypress.env()', () => {
     // set multiple environment variables
     Cypress.env({
       host: 'veronica.dev.local',
-      api_server: 'http://localhost:8888/v1/',
+      api_server: 'http://localhost:8888/v1/'
     })
 
     // get environment variable
@@ -185,7 +183,6 @@ context('Cypress.log', () => {
     // https://on.cypress.io/cypress-log
   })
 })
-
 
 context('Cypress.platform', () => {
   beforeEach(() => {

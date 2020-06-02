@@ -9,7 +9,7 @@ const frameworksDir = join(templateDir, 'frameworks')
 
 module.exports = {
   prompts: require('./prompts'),
-  templateData() {
+  templateData () {
     const typescript = this.answers.language.includes('ts')
     const tsRuntime = this.answers.runtime && this.answers.runtime.includes('ts-runtime')
     const pwa = this.answers.features.includes('pwa')
@@ -40,7 +40,7 @@ module.exports = {
       dotenv
     }
   },
-  actions() {
+  actions () {
     const validation = validate(this.answers.name)
     validation.warnings && validation.warnings.forEach((warn) => {
       console.warn('Warning:', warn)
@@ -107,7 +107,7 @@ module.exports = {
     actions.push({
       type: 'modify',
       files: 'package.json',
-      handler(data) {
+      handler (data) {
         return { ...data, ...pkg.load(generator) }
       }
     })
@@ -126,7 +126,7 @@ module.exports = {
 
     return actions
   },
-  async completed() {
+  async completed () {
     this.gitInit()
 
     await this.npmInstall({ npmClient: this.answers.pm })

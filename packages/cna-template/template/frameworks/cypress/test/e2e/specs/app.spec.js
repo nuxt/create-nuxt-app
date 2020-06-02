@@ -1,5 +1,5 @@
-describe("Example Tests", function () {
-  it("load application", function () {
-    cy.visit("/")
+describe('Example Tests', function () {
+  it('load application', function () {
+    cy.visit('/')
   })
 })

@@ -78,7 +78,7 @@ context('Misc', () => {
         disableTimersAndAnimations: true,
         screenshotOnRunFailure: true,
         beforeScreenshot () { },
-        afterScreenshot () { },
+        afterScreenshot () { }
       })
     })
   })

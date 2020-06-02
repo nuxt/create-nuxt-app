@@ -1,0 +1,14 @@
+{
+  "extends": [
+    "plugin:cypress/recommended"
+  ],
+  "env": {
+    "browser": true,
+    "node": true,
+    "cypress/globals": true
+  },
+  "rules": {
+    "no-unused-expressions": "off",
+    "cypress/no-unnecessary-waiting": "off"
+  }
+}
