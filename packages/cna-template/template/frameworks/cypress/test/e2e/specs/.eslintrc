@@ -8,6 +8,7 @@
     "cypress/globals": true
   },
   "rules": {
+    "no-console": "off",
     "no-unused-expressions": "off",
     "cypress/no-unnecessary-waiting": "off"
   }
