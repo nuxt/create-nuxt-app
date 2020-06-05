@@ -114,6 +114,10 @@ export default {
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
     <%_ } _%>
+    <%_ if (content) { _%>
+    // Doc: https://github.com/nuxt/content
+    '@nuxt/content',
+    <%_ } _%>
   ],
   <%_ if (axios) { _%>
   /*
@@ -121,6 +125,13 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {},
+  <%_ } _%>
+  <%_ if (content) { _%>
+  /*
+  ** Content module configuration
+  ** See https://content.nuxtjs.org/configuration
+  */
+  content: {},
   <%_ } _%>
   <%_ if (ui === 'vuetify') { _%>
   /*
