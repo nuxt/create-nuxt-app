@@ -20,7 +20,6 @@
     "@nuxt/typescript-runtime": "^0.4.9",
     "@nuxtjs/axios": "^5.11.0",
     "@nuxtjs/pwa": "^3.0.0-beta.20",
-    "@nuxtjs/dotenv": "^1.4.1",
     "nuxt": "^2.12.2"
   },
   "devDependencies": {

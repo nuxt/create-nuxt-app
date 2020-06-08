@@ -64,9 +64,6 @@ module.exports = {
     if (!features.includes('pwa')) {
       delete pkg.dependencies['@nuxtjs/pwa']
     }
-    if (!features.includes('dotenv')) {
-      delete pkg.dependencies['@nuxtjs/dotenv']
-    }
 
     // TS
     const typescript = language.includes('ts')
