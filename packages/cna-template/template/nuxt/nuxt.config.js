@@ -110,10 +110,6 @@ export default {
     <%_ if (pwa) { _%>
     '@nuxtjs/pwa',
     <%_ } _%>
-    <%_ if (dotenv) { _%>
-    // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv',
-    <%_ } _%>
   ],
   <%_ if (axios) { _%>
   /*
