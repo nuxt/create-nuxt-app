@@ -62,8 +62,7 @@ module.exports = [
     pageSize: 10,
     choices: [
       { name: 'Axios', value: 'axios' },
-      { name: 'Progressive Web App (PWA) Support', value: 'pwa' },
-      { name: 'DotEnv', value: 'dotenv' }
+      { name: 'Progressive Web App (PWA) Support', value: 'pwa' }
     ],
     default: []
   },
