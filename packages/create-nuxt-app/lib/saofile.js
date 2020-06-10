@@ -18,7 +18,6 @@ module.exports = {
     const lintStaged = eslint && this.answers.linter.includes('lintStaged')
     const stylelint = this.answers.linter.includes('stylelint')
     const axios = this.answers.features.includes('axios')
-    const dotenv = this.answers.features.includes('dotenv')
     const content = this.answers.features.includes('content')
     const pm = this.answers.pm === 'yarn' ? 'yarn' : 'npm'
     const pmRun = this.answers.pm === 'yarn' ? 'yarn' : 'npm run'
@@ -38,7 +37,6 @@ module.exports = {
       edge,
       pm,
       pmRun,
-      dotenv,
       content
     }
   },
@@ -87,7 +85,6 @@ module.exports = {
         '_jsconfig.json': 'devTools.includes("jsconfig.json")',
         'tsconfig.json': 'language.includes("ts")',
         'semantic.yml': 'devTools.includes("semantic-pull-requests")',
-        '.env': 'features.includes("dotenv")',
         '_stylelint.config.js': 'linter.includes("stylelint")'
       },
       templateDir
