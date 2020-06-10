@@ -57,7 +57,8 @@ module.exports = {
       files: '**',
       templateDir: join(templateDir, 'nuxt'),
       filters: {
-        'static/icon.png': 'features.includes("pwa")'
+        'static/icon.png': 'features.includes("pwa")',
+        'content/hello.md': 'features.includes("content")'
       }
     }]
 
