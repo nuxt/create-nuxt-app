@@ -7,7 +7,7 @@
   "devDependencies": {
     "@ava/babel": "^1.0.1",
     "@vue/test-utils": "^1.0.3",
-    "ava": "^3.8.2",
+    "ava": "^3.9.0",
     "babel-plugin-module-resolver": "^4.0.0",
     "cross-env": "^7.0.2",
     "jsdom": "^16.2.2",
