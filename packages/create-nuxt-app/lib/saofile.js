@@ -18,6 +18,7 @@ module.exports = {
     const lintStaged = eslint && this.answers.linter.includes('lintStaged')
     const stylelint = this.answers.linter.includes('stylelint')
     const axios = this.answers.features.includes('axios')
+    const content = this.answers.features.includes('content')
     const pm = this.answers.pm === 'yarn' ? 'yarn' : 'npm'
     const pmRun = this.answers.pm === 'yarn' ? 'yarn' : 'npm run'
 
@@ -35,7 +36,8 @@ module.exports = {
       axios,
       edge,
       pm,
-      pmRun
+      pmRun,
+      content
     }
   },
   actions () {
@@ -53,7 +55,8 @@ module.exports = {
       files: '**',
       templateDir: join(templateDir, 'nuxt'),
       filters: {
-        'static/icon.png': 'features.includes("pwa")'
+        'static/icon.png': 'features.includes("pwa")',
+        'content/hello.md': 'features.includes("content")'
       }
     }]
 
