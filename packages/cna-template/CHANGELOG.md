@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0](https://github.com/nuxt/create-nuxt-app/compare/v2.16.0...v3.0.0) (2020-06-18)
+
+
+### Bug Fixes
+
+* **ava:** expect vm truthy as vue instance assertion ([46594db](https://github.com/nuxt/create-nuxt-app/commit/46594dbb35eefe4684adb3eb1a3f6b647d7c9850))
+* **jest:** downgrate vue-jest to v3 ([8a75b51](https://github.com/nuxt/create-nuxt-app/commit/8a75b51986ff7aa5dd4fb4135b5991b723594f89))
+* **prettier:** add stylelint-config-prettier ([50aa285](https://github.com/nuxt/create-nuxt-app/commit/50aa2851f80fc177add7185d485758dceca29d7d))
+
+
+### Features
+
+* **template:** remove dotenv module ([#544](https://github.com/nuxt/create-nuxt-app/issues/544)) ([ba93891](https://github.com/nuxt/create-nuxt-app/commit/ba938913bab21a96f29678c91897a6294003f32d))
+* add content module ([#540](https://github.com/nuxt/create-nuxt-app/issues/540)) ([9aba2f6](https://github.com/nuxt/create-nuxt-app/commit/9aba2f692e716e7e0e027cca447fa2c260df2a40))
+
+
+
+
+
 # [2.16.0](https://github.com/nuxt-community/create-nuxt-app/compare/v2.15.0...v2.16.0) (2020-05-18)
 
 
