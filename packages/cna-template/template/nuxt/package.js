@@ -9,7 +9,7 @@ module.exports = {
     }
 
     const { scripts } = pkg
-    const { features, language = [], linter = [], runtime = [] } = generator.answers
+    const { features, language = [], linter = [] } = generator.answers
 
     // Linter
     const eslint = linter.includes('eslint')
