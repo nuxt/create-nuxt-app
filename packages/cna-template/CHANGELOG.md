@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.1.0](https://github.com/nuxt-community/create-nuxt-app/compare/v3.0.0...v3.1.0) (2020-06-22)
+
+
+### Features
+
+* prepare for Nuxt 2.13 ([#529](https://github.com/nuxt-community/create-nuxt-app/issues/529)) ([47aa7c1](https://github.com/nuxt-community/create-nuxt-app/commit/47aa7c1eaf743118bb0b0d8fca78ed58bfe30b05)), closes [#509](https://github.com/nuxt-community/create-nuxt-app/issues/509) [#513](https://github.com/nuxt-community/create-nuxt-app/issues/513) [#544](https://github.com/nuxt-community/create-nuxt-app/issues/544) [#547](https://github.com/nuxt-community/create-nuxt-app/issues/547) [#540](https://github.com/nuxt-community/create-nuxt-app/issues/540) [#541](https://github.com/nuxt-community/create-nuxt-app/issues/541)
+
+
+
+
+
 # [3.0.0](https://github.com/nuxt/create-nuxt-app/compare/v2.16.0...v3.0.0) (2020-06-18)
 
 
