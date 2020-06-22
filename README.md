@@ -1,15 +1,12 @@
+![create-nuxt-app](https://user-images.githubusercontent.com/904724/85284101-daf3fc00-b48e-11ea-93e2-8a9df49153c1.png)
+
 # Create Nuxt App
 
 [![NPM version](https://img.shields.io/npm/v/create-nuxt-app.svg?style=flat)](https://npmjs.com/package/create-nuxt-app)
 [![NPM downloads](https://img.shields.io/npm/dm/create-nuxt-app.svg?style=flat)](https://npmjs.com/package/create-nuxt-app)
 [![GitHub Action](https://github.com/nuxt/create-nuxt-app/workflows/ci/badge.svg?branch=master)](https://github.com/nuxt/create-nuxt-app/actions?query=branch%3Amaster++)
 
-> Create a [Nuxt.js](https://github.com/nuxt/nuxt.js) project in seconds
-
-<details><summary>Preview</summary>
-
-![preview](https://ooo.0o0.ooo/2017/08/05/5984b16ed9749.gif)
-</details>
+> Create a [Nuxt.js](https://nuxtjs.org) project in seconds
 
 ## Usage
 
