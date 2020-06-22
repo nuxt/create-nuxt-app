@@ -33,13 +33,13 @@ yarn create nuxt-app <my-project>
 
 ## Features :tada:
 
-1. Choose the package manager
+1. Package manager
     - Yarn
     - Npm
-1. Choose programming language
+1. Programming language
     - JavaScript
     - TypeScript
-1. Choose your favorite UI framework:
+1. UI framework:
     - None (feel free to add one later)
     - [Ant Design Vue](https://github.com/vueComponent/ant-design-vue)
     - [Bootstrap](https://github.com/bootstrap-vue/bootstrap-vue)
@@ -52,32 +52,27 @@ yarn create nuxt-app <my-project>
     - [Tailwind CSS](https://github.com/tailwindcss/tailwindcss)
     - [Vuesax](https://github.com/lusaxweb/vuesax)
     - [Vuetify](https://github.com/vuetifyjs/vuetify)
-1. Choose the runtime for TypeScript (if you choose TypeScript)
-    - Default
-    - [@nuxt/typescript-runtime](https://github.com/nuxt/typescript)
-1. Choose Nuxt.js modules:
+1. Nuxt.js modules:
     - [Axios](https://github.com/nuxt-community/axios-module)
-    - [Progressive Web App (PWA) Support](https://github.com/nuxt-community/pwa-module)
-1. Choose linting tools:
+    - [Progressive Web App (PWA)](https://github.com/nuxt-community/pwa-module)
+    - [Content](https://github.com/nuxt/content)
+1. Linting tools:
     - [ESLint](https://github.com/nuxt/eslint-config)
     - [Prettier](https://github.com/prettier/prettier)
     - [Lint staged files](https://github.com/okonet/lint-staged)
     - [StyleLint](https://github.com/stylelint/stylelint)
-1. Check the features needed for your project:
-    - [PWA](https://pwa.nuxtjs.org/)
-    - Linter / Formatter
-    - [Prettier](https://prettier.io/)
-    - [Axios](https://github.com/nuxt-community/axios-module)
-    - [Tachyons](https://tachyons.io)
-1. Choose your favorite test framework:
+1. Testing framework:
     - None
     - [Jest](https://github.com/facebook/jest)
     - [AVA](https://github.com/avajs/ava)
     - [WebdriverIO](https://webdriver.io)
-1. Choose rendering mode
+1. Rendering mode
     - [Universal (SSR / Static)](https://nuxtjs.org/guide/#server-rendered-universal-ssr-)
     - [SPA](https://nuxtjs.org/guide/#single-page-applications-spa-)
-1. Choose development tools
+1. Deployment target
+    - [Server (Node.js hosting)](https://nuxtjs.org/api/configuration-target)
+    - [Static (Static/JAMStack hosting)](https://nuxtjs.org/api/configuration-target)
+1. Development tools
     - [jsconfig.json](https://code.visualstudio.com/docs/languages/jsconfig)
     - [Semantic PR](https://probot.github.io/apps/semantic-pull-requests/)
 

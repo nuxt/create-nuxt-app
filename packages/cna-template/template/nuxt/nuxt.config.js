@@ -8,6 +8,11 @@ export default {
   */
   mode: '<%= mode %>',
   /*
+  ** Nuxt target
+  ** See https://nuxtjs.org/api/configuration-target
+  */
+  target: '<%= target %>',
+  /*
   ** Headers of the page
   ** See https://nuxtjs.org/api/configuration-head
   */
@@ -67,6 +72,11 @@ export default {
     '@/plugins/vuesax'
     <%_ } _%>
   ],
+  /*
+  ** Auto import components
+  ** See https://nuxtjs.org/api/configuration-components
+  */
+  components: true,
   /*
   ** Nuxt.js dev-modules
   */

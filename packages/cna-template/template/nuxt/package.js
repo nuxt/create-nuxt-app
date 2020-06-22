@@ -9,7 +9,7 @@ module.exports = {
     }
 
     const { scripts } = pkg
-    const { features, language = [], linter = [], runtime = [] } = generator.answers
+    const { features, language = [], linter = [] } = generator.answers
 
     // Linter
     const eslint = linter.includes('eslint')
@@ -70,20 +70,18 @@ module.exports = {
 
     // TS
     const typescript = language.includes('ts')
-    const tsRuntime = runtime.includes('ts-runtime')
 
     if (!typescript) {
       delete pkg.devDependencies['@nuxt/typescript-build']
+      delete pkg.dependencies['@nuxt/typescript-runtime']
     }
     if (!typescript || !eslint) {
       delete pkg.devDependencies['@nuxtjs/eslint-config-typescript']
     }
-    if (tsRuntime) {
+    if (typescript) {
       for (const key of Object.keys(scripts)) {
         scripts[key] = scripts[key].replace(/^nuxt /, 'nuxt-ts ')
       }
-    } else {
-      delete pkg.dependencies['@nuxt/typescript-runtime']
     }
     return pkg
   }

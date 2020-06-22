@@ -1,12 +1,12 @@
 module.exports = [
   {
     name: 'name',
-    message: 'Project name',
+    message: 'Project name:',
     default: '{outFolder}'
   },
   {
     name: 'language',
-    message: 'Choose programming language',
+    message: 'Programming language:',
     choices: [
       { name: 'JavaScript', value: 'js' },
       { name: 'TypeScript', value: 'ts' }
@@ -16,7 +16,7 @@ module.exports = [
   },
   {
     name: 'pm',
-    message: 'Choose the package manager',
+    message: 'Package manager:',
     choices: [
       { name: 'Yarn', value: 'yarn' },
       { name: 'Npm', value: 'npm' }
@@ -26,7 +26,7 @@ module.exports = [
   },
   {
     name: 'ui',
-    message: 'Choose UI framework',
+    message: 'UI framework:',
     type: 'list',
     pageSize: 15,
     choices: [
@@ -46,30 +46,20 @@ module.exports = [
     default: 'none'
   },
   {
-    name: 'runtime',
-    message: 'Choose the runtime for TypeScript',
-    type: 'list',
-    choices: [
-      { name: 'Default', value: 'none' },
-      { name: '@nuxt/typescript-runtime', value: 'ts-runtime' }
-    ],
-    when: answers => answers.language === 'ts'
-  },
-  {
     name: 'features',
-    message: 'Choose Nuxt.js modules',
+    message: 'Nuxt.js modules:',
     type: 'checkbox',
     pageSize: 10,
     choices: [
       { name: 'Axios', value: 'axios' },
-      { name: 'Progressive Web App (PWA) Support', value: 'pwa' },
+      { name: 'Progressive Web App (PWA)', value: 'pwa' },
       { name: 'Content', value: 'content' }
     ],
     default: []
   },
   {
     name: 'linter',
-    message: 'Choose linting tools',
+    message: 'Linting tools:',
     type: 'checkbox',
     pageSize: 10,
     choices: [
@@ -82,7 +72,7 @@ module.exports = [
   },
   {
     name: 'test',
-    message: 'Choose test framework',
+    message: 'Testing framework:',
     type: 'list',
     choices: [
       { name: 'None', value: 'none' },
@@ -94,17 +84,27 @@ module.exports = [
   },
   {
     name: 'mode',
-    message: 'Choose rendering mode',
+    message: 'Rendering mode:',
     type: 'list',
     choices: [
-      { name: 'Universal (SSR / Static)', value: 'universal' },
+      { name: 'Universal (SSR / SSG)', value: 'universal' },
       { name: 'Single Page App', value: 'spa' }
     ],
     default: 'universal'
   },
   {
+    name: 'target',
+    message: 'Deployment target:',
+    type: 'list',
+    choices: [
+      { name: 'Server (Node.js hosting)', value: 'server' },
+      { name: 'Static (Static/JAMStack hosting)', value: 'static' }
+    ],
+    default: 'server'
+  },
+  {
     name: 'devTools',
-    message: 'Choose development tools',
+    message: 'Development tools:',
     type: 'checkbox',
     choices: [
       { name: 'jsconfig.json (Recommended for VS Code)', value: 'jsconfig.json' },

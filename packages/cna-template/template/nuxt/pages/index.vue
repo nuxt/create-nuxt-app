@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div>
-      <logo />
+      <Logo />
       <h1 class="title">
         <%= name %>
       </h1>
@@ -30,23 +30,12 @@
 <%_ if (typescript) { _%>
 <script lang="ts">
 import Vue from 'vue'
-import Logo from '~/components/Logo.vue'
 
-export default Vue.extend({
-  components: {
-    Logo
-  }
-})
+export default Vue.extend({})
 </script>
 <%_ } else { _%>
 <script>
-import Logo from '~/components/Logo.vue'
-
-export default {
-  components: {
-    Logo
-  }
-}
+export default {}
 </script>
 <%_ } _%>
 
