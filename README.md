@@ -40,7 +40,7 @@ yarn create nuxt-app <my-project>
     - None (feel free to add one later)
     - [Ant Design Vue](https://github.com/vueComponent/ant-design-vue)
     - [Bootstrap](https://github.com/bootstrap-vue/bootstrap-vue)
-    - [Buefy](https://buefy.github.io)
+    - [Buefy](https://buefy.org)
     - [Bulma](https://github.com/jgthms/bulma)
     - [Element](https://github.com/ElemeFE/element)
     - [Framevuerk](https://github.com/framevuerk/framevuerk)
