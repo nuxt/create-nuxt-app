@@ -14,7 +14,10 @@ $ <%= pmRun %> build
 $ <%= pmRun %> start
 
 # generate static project
-$ <%= pmRun %> generate
+$ <%= pmRun %> export
+
+# serve production ready static site 
+$ <%= pmRun %> serve
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
