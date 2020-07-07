@@ -81,7 +81,7 @@ module.exports = {
     }
     if (typescript) {
       for (const key of Object.keys(scripts)) {
-        scripts[key] = scripts[key].replace(/^nuxt /, 'nuxt-ts ')
+        scripts[key] = scripts[key].replace(/^nuxt( |$)/, 'nuxt-ts$1')
       }
     }
     return pkg
