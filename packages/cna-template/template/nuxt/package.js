@@ -72,6 +72,7 @@ module.exports = {
     const typescript = language.includes('ts')
 
     if (!typescript) {
+      delete pkg.devDependencies['@nuxt/types']
       delete pkg.devDependencies['@nuxt/typescript-build']
       delete pkg.dependencies['@nuxt/typescript-runtime']
     }
