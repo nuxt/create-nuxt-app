@@ -8,23 +8,26 @@
       flex-dir="column"
       justify-content="center"
     >
-      <CHeading textAlign="center" mb="4">⚡️ Hello chakra-ui/vue</CHeading>
+      <CHeading text-align="center" mb="4">
+        ⚡️ Hello chakra-ui/vue
+      </CHeading>
       <CFlex justify="center" direction="column" align="center">
         <CBox mb="3">
           <CIconButton
             mr="3"
             :icon="colorMode === 'light' ? 'moon' : 'sun'"
-            @click="toggleColorMode"
             :aria-label="`Switch to ${
               colorMode === 'light' ? 'dark' : 'light'
             } mode`"
+            @click="toggleColorMode"
           />
           <CButton
-          left-icon="info"
-          variant-color="blue"
-          @click="showToast"
-          >Show Toast</CButton
+            left-icon="info"
+            variant-color="blue"
+            @click="showToast"
           >
+            Show Toast
+          </CButton>
         </CBox>
         <CAvatarGroup>
           <CAvatar
@@ -57,21 +60,25 @@
           variant-color="red"
           mt="3"
           @click="showModal = true"
-          >Delete Account</CButton
         >
+          Delete Account
+        </CButton>
         <CModal :is-open="showModal">
           <CModalOverlay />
           <CModalContent>
             <CModalHeader>Are you sure?</CModalHeader>
             <CModalBody>Deleting user cannot be undone</CModalBody>
             <CModalFooter>
-              <CButton @click="showModal = false">Cancel</CButton>
+              <CButton @click="showModal = false">
+                Cancel
+              </CButton>
               <CButton
                 margin-left="3"
                 variant-color="red"
                 @click="showModal = false"
-                >Delete User</CButton
               >
+                Delete User
+              </CButton>
             </CModalFooter>
             <CModalCloseButton @click="showModal = false" />
           </CModalContent>
