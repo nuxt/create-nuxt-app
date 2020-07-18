@@ -19,8 +19,11 @@
               colorMode === 'light' ? 'dark' : 'light'
             } mode`"
           />
-          <CButton left-icon="info" variant-color="blue" @click="showToast"
-            >Show Toast</CButton
+          <CButton
+          left-icon="info"
+          variant-color="blue"
+          @click="showToast"
+          >Show Toast</CButton
           >
         </CBox>
         <CAvatarGroup>
@@ -94,8 +97,7 @@ import {
   CModalCloseButton,
   CIconButton,
   CFlex,
-  CHeading,
-  CLink
+  CHeading
 } from '@chakra-ui/vue'
 
 export default {
@@ -116,8 +118,7 @@ export default {
     CModalCloseButton,
     CIconButton,
     CFlex,
-    CHeading,
-    CLink,
+    CHeading
   },
   data () {
     return {
