@@ -42,6 +42,7 @@ yarn create nuxt-app <my-project>
     - [Bootstrap](https://github.com/bootstrap-vue/bootstrap-vue)
     - [Buefy](https://buefy.org)
     - [Bulma](https://github.com/jgthms/bulma)
+    - [Chakra UI](https://github.com/chakra-ui/chakra-ui-vue)
     - [Element](https://github.com/ElemeFE/element)
     - [Framevuerk](https://github.com/framevuerk/framevuerk)
     - [iView](https://www.iviewui.com/)
