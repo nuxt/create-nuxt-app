@@ -70,9 +70,7 @@ export default {
     '@/plugins/framevuerk'
     <%_ } else if (ui === 'vuesax') { _%>
     '@/plugins/vuesax'
-    <%_ } else if (ui === 'chakra-ui') { _%>
-      '@/plugins/chakra-ui'
-      <%_ } _%>
+    <%_ } _%>
   ],
   /*
   ** Auto import components
@@ -115,7 +113,9 @@ export default {
     // Doc: https://buefy.github.io/#/documentation
     'nuxt-buefy',
     <%_ } else if (ui === 'chakra-ui') { _%>
+      // Doc: https://github.com/chakra-ui/chakra-ui-vue/tree/develop/packages/nuxt-chakra
       // Doc: https://github.com/nuxt-community/emotion-module#readme
+      '@chakra-ui/nuxt',
       '@nuxtjs/emotion',
       <%_ } _%>
     <%_ if (axios) { _%>
