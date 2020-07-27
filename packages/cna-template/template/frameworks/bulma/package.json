@@ -1,5 +1,5 @@
 {
   "dependencies": {
-    "@nuxtjs/bulma": "^1.2.7"
+    "@nuxtjs/bulma": "^1.3.0"
   }
 }
