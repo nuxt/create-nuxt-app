@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.2.0](https://github.com/nuxt/create-nuxt-app/compare/v3.1.0...v3.2.0) (2020-07-27)
+
+
+### Bug Fixes
+
+* **template:** fix package.json dev script for typescript ([#568](https://github.com/nuxt/create-nuxt-app/issues/568)) ([1f64e5a](https://github.com/nuxt/create-nuxt-app/commit/1f64e5afbb973422a34c7a64252cea9a3411664c))
+* **vuetify:** v-content is deprecated ([f547654](https://github.com/nuxt/create-nuxt-app/commit/f547654c4b478a2c59aa1ed49867da9251202a9a))
+
+
+### Features
+
+* **template:** update typescript ([#567](https://github.com/nuxt/create-nuxt-app/issues/567)) ([251c50d](https://github.com/nuxt/create-nuxt-app/commit/251c50d7589dd2568252ebedefebda9779eca33f))
+* add chakra-ui-vue ([#573](https://github.com/nuxt/create-nuxt-app/issues/573)) ([c9ede63](https://github.com/nuxt/create-nuxt-app/commit/c9ede63abdad60462fd3280fbd211a857e8fe1e8))
+
+
+
+
+
 # [3.1.0](https://github.com/nuxt-community/create-nuxt-app/compare/v3.0.0...v3.1.0) (2020-06-22)
 
 
