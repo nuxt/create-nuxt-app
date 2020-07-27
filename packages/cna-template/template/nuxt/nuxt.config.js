@@ -113,11 +113,11 @@ export default {
     // Doc: https://buefy.github.io/#/documentation
     'nuxt-buefy',
     <%_ } else if (ui === 'chakra-ui') { _%>
-      // Doc: https://github.com/chakra-ui/chakra-ui-vue/tree/develop/packages/nuxt-chakra
-      // Doc: https://github.com/nuxt-community/emotion-module#readme
-      '@chakra-ui/nuxt',
-      '@nuxtjs/emotion',
-      <%_ } _%>
+    // Doc: https://github.com/chakra-ui/chakra-ui-vue/tree/develop/packages/nuxt-chakra
+    // Doc: https://github.com/nuxt-community/emotion-module#readme
+    '@chakra-ui/nuxt',
+    '@nuxtjs/emotion',
+    <%_ } _%>
     <%_ if (axios) { _%>
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
