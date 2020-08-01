@@ -116,10 +116,11 @@ module.exports = [
   {
     name: 'devOps',
     message: 'DevOps tools:',
-    type: 'checkbox',
+    type: 'list',
     choices: [
+      { name: 'None', value: 'none' },
       { name: 'Dockerize project', value: 'docker' }
     ],
-    default: []
+    default: 'none'
   }
 ]
