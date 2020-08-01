@@ -112,5 +112,14 @@ module.exports = [
       { name: 'Semantic Pull Requests', value: 'semantic-pull-requests' }
     ],
     default: []
+  },
+  {
+    name: 'devOps',
+    message: 'DevOps tools:',
+    type: 'checkbox',
+    choices: [
+      { name: 'Dockerize project', value: 'docker' }
+    ],
+    default: []
   }
 ]
