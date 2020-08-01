@@ -81,6 +81,8 @@ module.exports = {
         '_.eslintrc.js': 'linter.includes("eslint")',
         '_.prettierrc': 'linter.includes("prettier")',
         '_jsconfig.json': 'devTools.includes("jsconfig.json")',
+        _Dockerfile: 'devOps.includes("docker")',
+        '_docker-compose.yml': 'devOps.includes("docker")',
         'tsconfig.json': 'language.includes("ts")',
         'semantic.yml': 'devTools.includes("semantic-pull-requests")',
         '_stylelint.config.js': 'linter.includes("stylelint")'
@@ -96,6 +98,8 @@ module.exports = {
         '_.prettierrc': '.prettierrc',
         '_.eslintrc.js': '.eslintrc.js',
         '_jsconfig.json': 'jsconfig.json',
+        _Dockerfile: 'Dockerfile',
+        '_docker-compose.yml': 'docker-compose.yml',
         '_stylelint.config.js': 'stylelint.config.js',
         'semantic.yml': '.github/semantic.yml'
       }
