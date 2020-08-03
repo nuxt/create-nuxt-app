@@ -119,7 +119,7 @@ module.exports = [
     type: 'list',
     choices: [
       { name: 'None', value: 'none' },
-      { name: 'Dockerize project', value: 'docker' }
+      { name: 'Docker', value: 'docker' }
     ],
     default: 'none'
   }
