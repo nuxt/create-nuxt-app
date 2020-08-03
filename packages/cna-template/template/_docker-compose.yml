@@ -6,8 +6,3 @@ services:
     image: <%= name %>/<%= name %>
     container_name: <%= name %>
     restart: always
-    volumes:
-      - /app/node_modules
-
-volumes:
-  <%= name %>-web-volume:
