@@ -16,6 +16,7 @@ module.exports = {
     const prettier = this.answers.linter.includes('prettier')
     const lintStaged = eslint && this.answers.linter.includes('lintStaged')
     const stylelint = this.answers.linter.includes('stylelint')
+    const commitlint = this.answers.linter.includes('commitlint')
     const axios = this.answers.features.includes('axios')
     const content = this.answers.features.includes('content')
     const pm = this.answers.pm === 'yarn' ? 'yarn' : 'npm'
@@ -31,6 +32,7 @@ module.exports = {
       prettier,
       lintStaged,
       stylelint,
+      commitlint,
       axios,
       edge,
       pm,
@@ -83,7 +85,8 @@ module.exports = {
         '_jsconfig.json': 'devTools.includes("jsconfig.json")',
         'tsconfig.json': 'language.includes("ts")',
         'semantic.yml': 'devTools.includes("semantic-pull-requests")',
-        '_stylelint.config.js': 'linter.includes("stylelint")'
+        '_stylelint.config.js': 'linter.includes("stylelint")',
+        '_commitlint.config.js': 'linter.includes("commitlint")'
       },
       templateDir
     })
@@ -97,6 +100,7 @@ module.exports = {
         '_.eslintrc.js': '.eslintrc.js',
         '_jsconfig.json': 'jsconfig.json',
         '_stylelint.config.js': 'stylelint.config.js',
+        '_commitlint.config.js': 'commitlint.config.js',
         'semantic.yml': '.github/semantic.yml'
       }
     })
