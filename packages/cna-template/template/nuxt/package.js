@@ -53,7 +53,7 @@ module.exports = {
       delete pkg.devDependencies.prettier
     }
     if (!commitlint) {
-      lintStaged && delete pkg['husky']['hooks']['commit-msg']
+      lintStaged && delete pkg.husky.hooks['commit-msg']
       delete pkg.devDependencies['@commitlint/config-conventional']
       delete pkg.devDependencies['@commitlint/cli']
     }
