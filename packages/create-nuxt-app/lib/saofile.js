@@ -125,9 +125,7 @@ module.exports = {
     return actions
   },
   async completed () {
-    if (this.answers.vcs === 'git') {
-      this.gitInit()
-    }
+    this.gitInit()
 
     await this.npmInstall({ npmClient: this.answers.pm })
 

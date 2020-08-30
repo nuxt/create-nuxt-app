@@ -112,15 +112,5 @@ module.exports = [
       { name: 'Semantic Pull Requests', value: 'semantic-pull-requests' }
     ],
     default: []
-  },
-  {
-    name: 'vcs',
-    message: 'Version control system:',
-    type: 'list',
-    choices: [
-      { name: 'None', value: 'none' },
-      { name: 'Git', value: 'git' }
-    ],
-    default: 'none'
   }
 ]
