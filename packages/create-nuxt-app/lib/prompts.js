@@ -118,9 +118,9 @@ module.exports = [
     message: 'Version control system:',
     type: 'list',
     choices: [
-      { name: 'None', value: 'none' },
-      { name: 'Git', value: 'git' }
+      { name: 'Git', value: 'git' },
+      { name: 'None', value: 'none' }
     ],
-    default: 'none'
+    default: 'git'
   }
 ]
