@@ -110,9 +110,18 @@ module.exports = [
     type: 'checkbox',
     choices: [
       { name: 'jsconfig.json (Recommended for VS Code if you\'re not using typescript)', value: 'jsconfig.json' },
-      { name: 'Semantic Pull Requests', value: 'semantic-pull-requests' }
+      { name: 'Semantic Pull Requests', value: 'semantic-pull-requests' },
+      { name: 'Dependabot (For auto-updating dependencies, GitHub only)', value: 'dependabot' }
     ],
     default: []
+  },
+  {
+    when: answers => answers.devTools.includes('dependabot'),
+    name: 'gitUsername',
+    message: 'What is your GitHub username?',
+    default: '{gitUser.name}',
+    filter: val => val.toLowerCase(),
+    store: true
   },
   {
     name: 'vcs',
