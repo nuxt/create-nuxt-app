@@ -7,6 +7,6 @@
     "framevuerk": "^2.4.2"
   },
   "devDependencies": {
-    "framevuerk-builder": "^2.0.7"
+    "framevuerk-builder": "^2.0.8"
   }
 }
