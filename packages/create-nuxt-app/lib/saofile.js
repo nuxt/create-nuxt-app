@@ -86,7 +86,8 @@ module.exports = {
         'tsconfig.json': 'language.includes("ts")',
         'semantic.yml': 'devTools.includes("semantic-pull-requests")',
         '_stylelint.config.js': 'linter.includes("stylelint")',
-        '_commitlint.config.js': 'linter.includes("commitlint")'
+        '_commitlint.config.js': 'linter.includes("commitlint")',
+        'dependabot.yml': 'devTools.includes("dependabot")'
       },
       templateDir
     })
@@ -101,7 +102,8 @@ module.exports = {
         '_jsconfig.json': 'jsconfig.json',
         '_stylelint.config.js': 'stylelint.config.js',
         '_commitlint.config.js': 'commitlint.config.js',
-        'semantic.yml': '.github/semantic.yml'
+        'semantic.yml': '.github/semantic.yml',
+        'dependabot.yml': '.github/dependabot.yml'
       }
     })
 
