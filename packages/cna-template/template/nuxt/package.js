@@ -16,6 +16,7 @@ module.exports = {
     const lintStaged = eslint && linter.includes('lintStaged')
     const stylelint = linter.includes('stylelint')
     const prettier = linter.includes('prettier')
+    const commitlint = linter.includes('commitlint')
     const lintScripts = {
       eslint: '<%= pmRun %> lint:js',
       stylelint: '<%= pmRun %> lint:style'
@@ -50,6 +51,11 @@ module.exports = {
       delete pkg.devDependencies['eslint-plugin-prettier']
       delete pkg.devDependencies['stylelint-config-prettier']
       delete pkg.devDependencies.prettier
+    }
+    if (!commitlint) {
+      lintStaged && delete pkg.husky.hooks['commit-msg']
+      delete pkg.devDependencies['@commitlint/config-conventional']
+      delete pkg.devDependencies['@commitlint/cli']
     }
 
     const lintScript = Object.values(lintScripts).join(' && ')

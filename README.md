@@ -59,6 +59,7 @@ yarn create nuxt-app <my-project>
     - [Prettier](https://github.com/prettier/prettier)
     - [Lint staged files](https://github.com/okonet/lint-staged)
     - [StyleLint](https://github.com/stylelint/stylelint)
+    - [Commitlint](https://github.com/conventional-changelog/commitlint)
 1. Testing framework:
     - None
     - [Jest](https://github.com/facebook/jest)
