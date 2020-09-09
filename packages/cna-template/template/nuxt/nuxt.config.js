@@ -1,30 +1,25 @@
 <%_ if (ui === 'vuetify') { _%>import colors from 'vuetify/es5/util/colors'
-<%_ } _%>
 
-export default {
-  /*
-  ** Nuxt rendering mode
-  ** See https://nuxtjs.org/api/configuration-mode
-  */
-  mode: '<%= mode %>',
-  /*
-  ** Nuxt target
-  ** See https://nuxtjs.org/api/configuration-target
-  */
+<%_ } _%>export default {
+  <%_ if (mode === 'spa') { _%>
+  // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
+  ssr: false,
+
+  <%_ } _%><%_ if (target === 'static') { _%>
+  // Target (https://go.nuxtjs.dev/config-target)
   target: '<%= target %>',
-  /*
-  ** Headers of the page
-  ** See https://nuxtjs.org/api/configuration-head
-  */
+
+  <%_ } _%>
+  // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     <%_ if (ui === 'vuetify') { _%>
-    titleTemplate: '%s - ' + process.env.npm_package_name,
+    titleTemplate: '%s - <%= name %>',
     <%_ } _%>
-    title: process.env.npm_package_name || '',
+    title: '<%= name %>',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+      { hid: 'description', name: 'description', content: '' }
     ],
     link: [
       <%_ if (ui === 'framevuerk') { _%>
@@ -37,9 +32,8 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
-  /*
-  ** Global CSS
-  */
+
+  // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
     <%_ if (ui === 'element-ui') { _%>
     'element-ui/lib/theme-chalk/index.css'
@@ -55,10 +49,8 @@ export default {
     'vuesax/dist/vuesax.css'
     <%_ } _%>
   ],
-  /*
-  ** Plugins to load before mounting the App
-  ** https://nuxtjs.org/guide/plugins
-  */
+
+  // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
     <%_ if (ui === 'element-ui') { _%>
     '@/plugins/element-ui'
@@ -72,83 +64,76 @@ export default {
     '@/plugins/vuesax'
     <%_ } _%>
   ],
-  /*
-  ** Auto import components
-  ** See https://nuxtjs.org/api/configuration-components
-  */
+
+  // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
-  /*
-  ** Nuxt.js dev-modules
-  */
+
+  // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
-    <%_ if (typescript) {_%>
+    <%_ if (typescript) { _%>
+    // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
     <%_ } _%>
     <%_ if (eslint && !typescript) { _%>
-    // Doc: https://github.com/nuxt-community/eslint-module
+    // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
     <%_ } _%>
     <%_ if (stylelint) { _%>
-    // Doc: https://github.com/nuxt-community/stylelint-module
+    // https://go.nuxtjs.dev/stylelint
     '@nuxtjs/stylelint-module',
     <%_ } _%>
     <%_ if (ui === 'tailwind') { _%>
-    // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
+    // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
     <%_ } else if (ui === 'vuetify') { _%>
+    // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
     <%_ } _%>
   ],
-  /*
-  ** Nuxt.js modules
-  */
+
+  // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
     <%_ if (ui === 'bootstrap') { _%>
-    // Doc: https://bootstrap-vue.js.org
+    // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
     <%_ } else if (ui === 'bulma') { _%>
-    // Doc: https://github.com/nuxt-community/modules/tree/master/packages/bulma
+    // https://go.nuxtjs.dev/bootstrap
     '@nuxtjs/bulma',
     <%_ } else if (ui === 'buefy') { _%>
-    // Doc: https://buefy.github.io/#/documentation
+    // https://go.nuxtjs.dev/buefy
     'nuxt-buefy',
     <%_ } else if (ui === 'chakra-ui') { _%>
-    // Doc: https://github.com/chakra-ui/chakra-ui-vue/tree/develop/packages/nuxt-chakra
-    // Doc: https://github.com/nuxt-community/emotion-module#readme
+    // https://go.nuxtjs.dev/chakra
     '@chakra-ui/nuxt',
+    // https://go.nuxtjs.dev/emotion
     '@nuxtjs/emotion',
     <%_ } _%>
     <%_ if (axios) { _%>
-    // Doc: https://axios.nuxtjs.org/usage
+    // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     <%_ } _%>
     <%_ if (pwa) { _%>
+    // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
     <%_ } _%>
     <%_ if (content) { _%>
-    // Doc: https://github.com/nuxt/content
+    // https://go.nuxtjs.dev/content
     '@nuxt/content',
     <%_ } _%>
   ],
   <%_ if (axios) { _%>
-  /*
-  ** Axios module configuration
-  ** See https://axios.nuxtjs.org/options
-  */
+
+  // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {},
   <%_ } _%>
   <%_ if (content) { _%>
-  /*
-  ** Content module configuration
-  ** See https://content.nuxtjs.org/configuration
-  */
+
+  // Content module configuration (https://go.nuxtjs.dev/content-config)
   content: {},
   <%_ } _%>
   <%_ if (ui === 'vuetify') { _%>
-  /*
-  ** vuetify module configuration
-  ** https://github.com/nuxt-community/vuetify-module
-  */
+
+  // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
@@ -167,10 +152,8 @@ export default {
     }
   },
   <%_ } _%>
-  /*
-  ** Build configuration
-  ** See https://nuxtjs.org/api/configuration-build/
-  */
+
+  // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
     <%_ if (ui === 'bulma') { _%>
     postcss: {
