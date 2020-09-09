@@ -3,7 +3,7 @@
 <%_ } _%>export default {
   <%_ if (mode === 'spa') { _%>
   // Disable server-side rendering (https://go.nuxtjs.dev/config-mode)
-  server: false,
+  ssr: false,
 
   <%_ } _%><%_ if (target === 'static') { _%>
   // Target (https://go.nuxtjs.dev/config-target)
