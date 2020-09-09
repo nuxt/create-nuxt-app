@@ -1,5 +1,5 @@
 {
   "dependencies": {
-    "nuxt-buefy": "^0.3.31"
+    "nuxt-buefy": "^0.4.3"
   }
 }
