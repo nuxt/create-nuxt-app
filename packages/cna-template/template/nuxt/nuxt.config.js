@@ -13,13 +13,13 @@
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     <%_ if (ui === 'vuetify') { _%>
-    titleTemplate: '%s - ' + process.env.npm_package_name,
+    titleTemplate: '%s - <%= name %>',
     <%_ } _%>
-    title: process.env.npm_package_name || '',
+    title: '<%= name %>',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+      { hid: 'description', name: 'description', content: '' }
     ],
     link: [
       <%_ if (ui === 'framevuerk') { _%>
