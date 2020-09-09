@@ -8,6 +8,15 @@
   "ignoreDeps": [
     "vue-jest"
   ],
+  "postUpgradeTasks": {
+      "commands": [
+        "ava --verbose --update-snapshots"
+      ],
+      "fileFilters": [
+        "**/*.snap",
+        "**/*.md"
+      ]
+  },
   "packageRules": [
     {
       "packagePatterns": ["nuxt"],
