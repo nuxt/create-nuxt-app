@@ -3,12 +3,12 @@
     "test:e2e": "wdio wdio.conf.js"
   },
   "devDependencies": {
-    "@wdio/cli": "^6.4.6",
-    "@wdio/local-runner": "^6.4.6",
-    "@wdio/mocha-framework": "^6.4.0",
-    "@wdio/spec-reporter": "^6.4.0",
-    "@wdio/sync": "^6.4.6",
+    "@wdio/cli": "^6.4.7",
+    "@wdio/local-runner": "^6.4.7",
+    "@wdio/mocha-framework": "^6.4.7",
+    "@wdio/spec-reporter": "^6.4.7",
+    "@wdio/sync": "^6.4.7",
     "eslint-plugin-wdio": "^6.0.12",
-    "webdriverio": "^6.4.6"
+    "webdriverio": "^6.4.7"
   }
 }
