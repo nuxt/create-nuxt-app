@@ -1,4 +1,4 @@
-name: Update snapshots
+name: snapshots
 
 on:
   push:
@@ -28,5 +28,5 @@ jobs:
 
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: test: update snapshots
-          file_pattern: *.snap *.md
+          commit_message: "test: update snapshots"
+          file_pattern: "*.snap *.md"
