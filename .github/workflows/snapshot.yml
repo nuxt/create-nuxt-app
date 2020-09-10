@@ -1,0 +1,32 @@
+name: Update snapshots
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: checkout
+        uses: actions/checkout@2
+
+      - name: cache node_modules
+        uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: deps-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
+
+      - name: test with update-snapshots
+        run: yarn ava --verbose --update-snapshots
+
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: test: update snapshots
+          file_pattern: *.snap *.md
