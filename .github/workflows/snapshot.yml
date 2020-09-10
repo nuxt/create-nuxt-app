@@ -15,7 +15,9 @@ jobs:
           node-version: ${{ matrix.node }}
 
       - name: checkout
-        uses: actions/checkout@master
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
 
       - name: cache node_modules
         uses: actions/cache@v1
