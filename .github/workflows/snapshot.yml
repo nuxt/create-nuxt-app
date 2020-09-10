@@ -10,16 +10,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/setup-node@v1
+      - name: Setup node
+        uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node }}
 
-      - name: checkout
+      - name: Checkout
         uses: actions/checkout@v2
-        with:
-          ref: ${{ github.head_ref }}
 
-      - name: cache node_modules
+      - name: Cache node_modules
         uses: actions/cache@v1
         with:
           path: node_modules
@@ -29,10 +28,13 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: yarn --frozen-lockfile --non-interactive
 
-      - name: test with update-snapshots
+      - name: Test with update-snapshots
         run: AVA_FORCE_CI="not-ci" yarn ava --verbose --update-snapshots
 
-      - uses: stefanzweifel/git-auto-commit-action@v4
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: "test: update snapshots"
           file_pattern: "*.snap *.md"
+        env:
+          INPUT_BRANCH: "master
