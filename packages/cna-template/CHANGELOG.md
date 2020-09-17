@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.3.0](https://github.com/nuxt/create-nuxt-app/compare/v3.2.0...v3.3.0) (2020-09-17)
+
+
+### Bug Fixes
+
+* **template:** bump typescript packages versions ([#599](https://github.com/nuxt/create-nuxt-app/issues/599)) ([b00e836](https://github.com/nuxt/create-nuxt-app/commit/b00e836b43cd8f0d7cb459be59c227efc3503cd3))
+* eslint issue with ava ([#595](https://github.com/nuxt/create-nuxt-app/issues/595)) ([f77d6bd](https://github.com/nuxt/create-nuxt-app/commit/f77d6bd4d361644fc4d4006ecff87f5d7cc93a56))
+* updated layout to be in par with vuetify 2.x ([#597](https://github.com/nuxt/create-nuxt-app/issues/597)) ([4d404ff](https://github.com/nuxt/create-nuxt-app/commit/4d404ff6bb1f9e0c0017a2e83b52ab8f68bf4051))
+
+
+### Features
+
+* add commitlint as linting tools option ([#592](https://github.com/nuxt/create-nuxt-app/issues/592)) ([33817a8](https://github.com/nuxt/create-nuxt-app/commit/33817a8bfcc4162e32030de4232defd1f99b0c33))
+* add support for dependabot ([#604](https://github.com/nuxt/create-nuxt-app/issues/604)) ([80e04e9](https://github.com/nuxt/create-nuxt-app/commit/80e04e9644ea26b2b7243d3cdb5ee968bb57c511))
+* use `core-js@3` by default ([#594](https://github.com/nuxt/create-nuxt-app/issues/594)) ([146a312](https://github.com/nuxt/create-nuxt-app/commit/146a3122a20dd235608a1f513ec3e83ecae1aa40))
+
+
+
+
+
 # [3.2.0](https://github.com/nuxt/create-nuxt-app/compare/v3.1.0...v3.2.0) (2020-07-27)
 
 
