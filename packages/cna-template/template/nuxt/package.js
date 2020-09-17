@@ -81,6 +81,7 @@ module.exports = {
       delete pkg.devDependencies['@nuxt/types']
       delete pkg.devDependencies['@nuxt/typescript-build']
       delete pkg.dependencies['@nuxt/typescript-runtime']
+      delete pkg.devDependencies['ts-loader']
     }
     if (!typescript || !eslint) {
       delete pkg.devDependencies['@nuxtjs/eslint-config-typescript']

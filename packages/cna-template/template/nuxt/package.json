@@ -44,6 +44,7 @@
     "prettier": "^2.1.1",
     "stylelint": "^13.7.0",
     "stylelint-config-prettier": "^8.0.2",
-    "stylelint-config-standard": "^20.0.0"
+    "stylelint-config-standard": "^20.0.0",
+    "ts-loader": "^8.0.3"
   }
 }
