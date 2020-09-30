@@ -75,6 +75,8 @@ yarn create nuxt-app <my-project>
     - [jsconfig.json](https://code.visualstudio.com/docs/languages/jsconfig)
     - [Semantic PR](https://probot.github.io/apps/semantic-pull-requests/)
     - [Dependabot (for GitHub only)](https://dependabot.com/)
+1. Continous Integration
+    - [GitHub Actions](https://github.com/features/actions)
 
 ## CLI Options
 
