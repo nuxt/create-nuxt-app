@@ -75,7 +75,12 @@ module.exports = {
         templateDir: join(frameworksDir, this.answers.test)
       })
     }
-    if (this.answers.ci !== 'none' || (this.answers.test !== 'none' && this.answers.linter.filter(val => val).length)) {
+
+    const eslint = this.answers.linter.includes('eslint')
+    const prettier = this.answers.linter.includes('prettier')
+    const lintStaged = eslint && this.answers.linter.includes('lintStaged')
+    const stylelint = this.answers.linter.includes('stylelint')
+    if (this.answers.ci !== 'none' && (this.answers.test !== 'none' || eslint || prettier || lintStaged || stylelint)) {
       actions.push({
         type: 'add',
         files: '**',

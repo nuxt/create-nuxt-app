@@ -51,11 +51,11 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
       <%_ } _%>
-      
+
       - name: Install dependencies 👨🏻‍💻
         run: <%= pm === 'yarn' ? 'yarn' : 'npm' %> ci
 
-      <%_ if (linter.filter(val => val).length) { _%>
+      <%_ if (linter.includes('eslint') || linter.includes('prettier') || linter.includes('lintStaged') || linter.includes('stylelint')) { _%>
       - name: Run linter 👀
         run: <%= pm === 'yarn' ? 'yarn' : 'npm run' %> lint
       <%_ } _%>
