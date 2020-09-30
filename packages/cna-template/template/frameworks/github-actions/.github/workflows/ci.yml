@@ -55,7 +55,7 @@ jobs:
       - name: Install dependencies 👨🏻‍💻
         run: <%= pm === 'yarn' ? 'yarn' : 'npm' %> ci
 
-      <%_ if (Array.isArray(linter) && linter.length) { _%>
+      <%_ if (linter.filter(val => val).length) { _%>
       - name: Run linter 👀
         run: <%= pm === 'yarn' ? 'yarn' : 'npm run' %> lint
       <%_ } _%>
