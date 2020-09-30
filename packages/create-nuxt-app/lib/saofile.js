@@ -75,6 +75,13 @@ module.exports = {
         templateDir: join(frameworksDir, this.answers.test)
       })
     }
+    if (this.answers.ci !== 'none' || (this.answers.test !== 'none' && this.answers.linter.filter(val => val).length)) {
+      actions.push({
+        type: 'add',
+        files: '**',
+        templateDir: join(frameworksDir, this.answers.ci)
+      })
+    }
 
     actions.push({
       type: 'add',
