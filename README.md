@@ -19,7 +19,7 @@ npx create-nuxt-app <my-project>
 Or starting with npm v6.1 you can do:
 
 ```bash
-npm init nuxt-app <my-project>
+npm init nuxt-app@latest <my-project>
 ```
 
 Or with [yarn](https://yarnpkg.com/en/):
