@@ -28,7 +28,7 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
 
-      <%_ if (pmRun === 'yarn') { _%>
+      <%_ if (pm === 'yarn') { _%>
       - name: Get yarn cache directory path 🛠
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn cache dir)"
@@ -42,7 +42,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
       <%_ } _%>
-      <%_ if (pmRun === 'npm') { _%>
+      <%_ if (pm === 'npm') { _%>
       - name: Cache node_modules 📦
         uses: actions/cache@v2
         with:
@@ -53,14 +53,14 @@ jobs:
       <%_ } _%>
 
       - name: Install dependencies 👨🏻‍💻
-        run: <%= pmRun === 'yarn' ? 'yarn' : 'npm' %> ci
+        run: <%= pmRun  %> ci
 
       <%_ if (linter.includes('eslint') || linter.includes('prettier') || linter.includes('lintStaged') || linter.includes('stylelint')) { _%>
       - name: Run linter 👀
-        run: <%= pmRun === 'yarn' ? 'yarn' : 'npm run' %> lint
+        run: <%= pmRun  %> lint
       <%_ } _%>
 
       <%_ if (test !== 'none') { _%>
       - name: Run tests 🧪
-        run: <%= pmRun === 'yarn' ? 'yarn' : 'npm run' %> test
+        run: <%= pmRun  %>  test
       <%_ } _%>
