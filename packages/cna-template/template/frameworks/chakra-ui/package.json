@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@chakra-ui/nuxt": "^0.0.10",
+    "@chakra-ui/nuxt": "^0.1.0",
     "@nuxtjs/emotion": "^0.0.1"
   }
 }
