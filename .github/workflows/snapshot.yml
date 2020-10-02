@@ -5,12 +5,9 @@ on: [pull_request, pull_request_target]
 jobs:
   snapshots:
     runs-on: ubuntu-latest
+    if: ${{ contains(github.actor, 'renovate') }}
 
     steps:
-      - name: Dump GitHub context
-        env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: echo "$GITHUB_CONTEXT"
       - name: Setup node
         uses: actions/setup-node@v1
         with:
