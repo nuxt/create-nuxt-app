@@ -5,6 +5,7 @@ on: [pull_request, pull_request_target]
 jobs:
   snapshots:
     runs-on: ubuntu-latest
+    if: ${{ github.actor == 'renovate' }}
 
     steps:
       - name: Setup node
@@ -22,7 +23,7 @@ jobs:
         with:
           path: node_modules
           key: deps-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
-          
+
       - name: Install dependencies
         if: steps.cache.outputs.cache-hit != 'true'
         run: yarn --frozen-lockfile --non-interactive
