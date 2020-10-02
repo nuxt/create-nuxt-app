@@ -116,7 +116,7 @@ module.exports = [
     default: []
   },
   {
-    when: ({ test, linter }) => (test !== 'none' || (linter.includes('eslint') || linter.includes('prettier') || linter.includes('lintStaged') || linter.includes('stylelint'))),
+    when: ({ test, linter }) => (test !== 'none' || linter.length > 0),
     name: 'ci',
     message: 'Continuous Integration:',
     type: 'list',

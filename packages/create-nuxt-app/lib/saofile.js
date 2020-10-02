@@ -76,11 +76,7 @@ module.exports = {
       })
     }
 
-    const eslint = this.answers.linter.includes('eslint')
-    const prettier = this.answers.linter.includes('prettier')
-    const lintStaged = eslint && this.answers.linter.includes('lintStaged')
-    const stylelint = this.answers.linter.includes('stylelint')
-    if (this.answers.ci !== 'none' && (this.answers.test !== 'none' || eslint || prettier || lintStaged || stylelint)) {
+    if (this.answers.ci && this.answers.ci !== 'none') {
       actions.push({
         type: 'add',
         files: '**',
