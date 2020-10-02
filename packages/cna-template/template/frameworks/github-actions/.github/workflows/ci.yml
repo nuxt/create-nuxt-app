@@ -53,7 +53,7 @@ jobs:
       <%_ } _%>
 
       - name: Install dependencies 👨🏻‍💻
-        run: <%= pmRun  %> ci
+        run: <%= pmRun === 'yarn' ? 'yarn' : 'npm ci' %>
 
       <%_ if (linter.includes('eslint') || linter.includes('prettier') || linter.includes('lintStaged') || linter.includes('stylelint')) { _%>
       - name: Run linter 👀
