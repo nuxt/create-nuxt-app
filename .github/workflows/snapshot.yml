@@ -35,4 +35,4 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v4.4.1
         with:
           commit_message: "test: update snapshots"
-          file_pattern: "*.snap *.md"
+          file_pattern: "**\/*.snap **\/*.md"
