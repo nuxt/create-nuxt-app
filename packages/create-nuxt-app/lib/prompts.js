@@ -116,7 +116,7 @@ module.exports = [
     default: []
   },
   {
-    when: ({ test, linter }) => (test !== 'none' || linter.length > 0),
+    when: ({ test, linter }) => test !== 'none' || linter.length > 0,
     name: 'ci',
     message: 'Continuous Integration:',
     type: 'list',
