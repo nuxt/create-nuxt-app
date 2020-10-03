@@ -118,7 +118,7 @@ module.exports = [
   {
     when: ({ test, linter }) => test !== 'none' || linter.length > 0,
     name: 'ci',
-    message: 'Continuous Integration:',
+    message: 'Continuous integration:',
     type: 'list',
     choices: [
       { name: 'None', value: 'none' },
