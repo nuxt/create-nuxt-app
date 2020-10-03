@@ -62,5 +62,5 @@ jobs:
 
       <%_ if (test !== 'none') { _%>
       - name: Run tests 🧪
-        run: <%= pmRun  %>  test
+        run: <%= pmRun  %> test
       <%_ } _%>
