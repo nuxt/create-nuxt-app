@@ -76,6 +76,14 @@ module.exports = {
       })
     }
 
+    if (this.answers.ci && this.answers.ci !== 'none') {
+      actions.push({
+        type: 'add',
+        files: '**',
+        templateDir: join(frameworksDir, this.answers.ci)
+      })
+    }
+
     actions.push({
       type: 'add',
       files: '*',
