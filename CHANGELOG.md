@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.4.0](https://github.com/nuxt/create-nuxt-app/compare/v3.3.0...v3.4.0) (2020-10-06)
+
+
+### Bug Fixes
+
+* **vuetify:** updated layout to be on par with vuetify 2.x ([#619](https://github.com/nuxt/create-nuxt-app/issues/619)) ([4ceb4c1](https://github.com/nuxt/create-nuxt-app/commit/4ceb4c176d9a829d67485e1a099001f7b743ea60))
+
+
+### Features
+
+* add GitHub Action out-of-the-box ([#621](https://github.com/nuxt/create-nuxt-app/issues/621)) ([ad67d2f](https://github.com/nuxt/create-nuxt-app/commit/ad67d2f4dbd01a08be7d01056e626d26c03e0951))
+
+
+
+
+
 # [3.3.0](https://github.com/nuxt/create-nuxt-app/compare/v3.2.0...v3.3.0) (2020-09-17)
 
 
