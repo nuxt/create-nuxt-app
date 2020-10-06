@@ -116,7 +116,18 @@ module.exports = [
     default: []
   },
   {
-    when: answers => answers.devTools.includes('dependabot'),
+    when: ({ test, linter }) => test !== 'none' || linter.length > 0,
+    name: 'ci',
+    message: 'Continuous integration:',
+    type: 'list',
+    choices: [
+      { name: 'None', value: 'none' },
+      { name: 'GitHub Actions (GitHub only)', value: 'github-actions' }
+    ],
+    default: 'none'
+  },
+  {
+    when: ({ devTools, ci }) => devTools.includes('dependabot') || ci !== 'none',
     name: 'gitUsername',
     message: 'What is your GitHub username?',
     default: '{gitUser.name}',

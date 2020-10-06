@@ -19,7 +19,7 @@ npx create-nuxt-app <my-project>
 Or starting with npm v6.1 you can do:
 
 ```bash
-npm init nuxt-app <my-project>
+npm init nuxt-app@latest <my-project>
 ```
 
 Or with [yarn](https://yarnpkg.com/en/):
@@ -75,6 +75,8 @@ yarn create nuxt-app <my-project>
     - [jsconfig.json](https://code.visualstudio.com/docs/languages/jsconfig)
     - [Semantic PR](https://probot.github.io/apps/semantic-pull-requests/)
     - [Dependabot (for GitHub only)](https://dependabot.com/)
+1. Continous Integration
+    - [GitHub Actions](https://github.com/features/actions)
 
 ## CLI Options
 
