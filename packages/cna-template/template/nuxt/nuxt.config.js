@@ -128,7 +128,7 @@
   <%_ } _%>
   <%_ if (content) { _%>
 
-  // Content module configuration (https://go.nuxtjs.dev/content-config)
+  // Content module configuration (https://go.nuxtjs.dev/config-content)
   content: {},
   <%_ } _%>
   <%_ if (ui === 'vuetify') { _%>
