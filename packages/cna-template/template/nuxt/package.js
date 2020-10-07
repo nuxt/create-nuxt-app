@@ -85,6 +85,9 @@ module.exports = {
     if (!typescript || !eslint) {
       delete pkg.devDependencies['@nuxtjs/eslint-config-typescript']
     }
+    if (typescript && eslint) {
+      delete pkg.devDependencies['@nuxtjs/eslint-config']
+    }
     if (typescript) {
       for (const key of Object.keys(scripts)) {
         scripts[key] = scripts[key].replace(/^nuxt( |$)/, 'nuxt-ts$1')
