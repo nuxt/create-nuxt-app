@@ -51,9 +51,9 @@ yarn create nuxt-app <my-project>
     - [Vuesax](https://github.com/lusaxweb/vuesax)
     - [Vuetify](https://github.com/vuetifyjs/vuetify)
 1. Nuxt.js modules:
-    - [Axios](https://github.com/nuxt-community/axios-module)
+    - [Axios - Promise based HTTP client](https://github.com/nuxt-community/axios-module)
     - [Progressive Web App (PWA)](https://github.com/nuxt-community/pwa-module)
-    - [Content](https://github.com/nuxt/content)
+    - [Content - Git-based headless CMS](https://github.com/nuxt/content)
 1. Linting tools:
     - [ESLint](https://github.com/nuxt/eslint-config)
     - [Prettier](https://github.com/prettier/prettier)

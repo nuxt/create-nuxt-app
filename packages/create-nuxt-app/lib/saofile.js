@@ -56,7 +56,8 @@ module.exports = {
       templateDir: join(templateDir, 'nuxt'),
       filters: {
         'static/icon.png': 'features.includes("pwa")',
-        'content/hello.md': 'features.includes("content")'
+        'content/hello.md': 'features.includes("content")',
+        'pages/content.vue': 'features.includes("content")'
       }
     }]
 

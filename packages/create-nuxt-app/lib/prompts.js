@@ -52,9 +52,9 @@ module.exports = [
     type: 'checkbox',
     pageSize: 10,
     choices: [
-      { name: 'Axios', value: 'axios' },
+      { name: 'Axios - Promise based HTTP client', value: 'axios' },
       { name: 'Progressive Web App (PWA)', value: 'pwa' },
-      { name: 'Content', value: 'content' }
+      { name: 'Content - Git-based headless CMS', value: 'content' }
     ],
     default: []
   },
