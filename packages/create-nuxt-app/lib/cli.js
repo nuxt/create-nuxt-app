@@ -26,22 +26,24 @@ const showEnvInfo = async () => {
 
 const prepareAnswers = (answers) => {
   // when there is no --answers provided just skip this part and ask for them via CLI
-  if (!answers) return;
+  if (!answers) {
+    return
+  }
 
-  const answersFromParams = JSON.parse(answers);
-  const prompts = require("./prompts");
+  const answersFromParams = JSON.parse(answers)
+  const prompts = require('./prompts')
 
   // get default answers from prompt, use cliDefault value if provided
-  const defaultAnswers = {};
+  const defaultAnswers = {}
   prompts.forEach((prompt) => {
-    defaultAnswers[prompt.name] = prompt.cliDefault || prompt.default;
-  });
+    defaultAnswers[prompt.name] = prompt.cliDefault || prompt.default
+  })
 
   return {
     ...defaultAnswers,
-    ...answersFromParams,
-  };
-};
+    ...answersFromParams
+  }
+}
 
 cli
   .command('[out-dir]', 'Generate in a custom directory or current directory')
