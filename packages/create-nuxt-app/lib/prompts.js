@@ -2,7 +2,8 @@ module.exports = [
   {
     name: 'name',
     message: 'Project name:',
-    default: '{outFolder}'
+    default: '{outFolder}',
+    cliDefault: 'my-nuxt-project'
   },
   {
     name: 'language',

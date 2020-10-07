@@ -24,6 +24,25 @@ const showEnvInfo = async () => {
   process.exit(1)
 }
 
+const prepareAnswers = (answers) => {
+  // when there is no --answers provided just skip this part and ask for them via CLI
+  if (!answers) return;
+
+  const answersFromParams = JSON.parse(answers);
+  const prompts = require("./prompts");
+
+  // get default answers from prompt, use cliDefault value if provided
+  const defaultAnswers = {};
+  prompts.forEach((prompt) => {
+    defaultAnswers[prompt.name] = prompt.cliDefault || prompt.default;
+  });
+
+  return {
+    ...defaultAnswers,
+    ...answersFromParams,
+  };
+};
+
 cli
   .command('[out-dir]', 'Generate in a custom directory or current directory')
   .option('-e, --edge', 'To install `nuxt-edge` instead of `nuxt`')
@@ -43,9 +62,11 @@ cli
     console.log(chalk`✨  Generating Nuxt.js project in {cyan ${outDir}}`)
 
     const { verbose, answers } = cliOptions
+    const cliAnswers = prepareAnswers(answers)
+
     const logLevel = verbose ? 4 : 2
     // See https://saojs.org/api.html#standalone-cli
-    sao({ generator, outDir, logLevel, answers, cliOptions })
+    sao({ generator, outDir, logLevel, answers: cliAnswers, cliOptions })
       .run()
       .catch((err) => {
         console.trace(err)
