@@ -54,6 +54,7 @@ yarn create nuxt-app <my-project>
     - [Axios - Promise based HTTP client](https://github.com/nuxt-community/axios-module)
     - [Progressive Web App (PWA)](https://github.com/nuxt-community/pwa-module)
     - [Content - Git-based headless CMS](https://github.com/nuxt/content)
+    - [Cloudinary - Image and Video Optimization](https://github.com/nuxt-community/cloudinary-module)
 1. Linting tools:
     - [ESLint](https://github.com/nuxt/eslint-config)
     - [Prettier](https://github.com/prettier/prettier)

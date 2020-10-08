@@ -54,9 +54,17 @@ module.exports = [
     choices: [
       { name: 'Axios - Promise based HTTP client', value: 'axios' },
       { name: 'Progressive Web App (PWA)', value: 'pwa' },
-      { name: 'Content - Git-based headless CMS', value: 'content' }
+      { name: 'Content - Git-based headless CMS', value: 'content' },
+      { name: 'Cloudinary - Optimize image and videos', value: 'cloudinary' }
     ],
     default: []
+  },
+  {
+    name: 'cldCloudname',
+    message: 'Enter your Cloudinary cloud name:',
+    type: 'input',
+    when: response => response.features.includes('cloudinary'),
+    validate: input => !!input
   },
   {
     name: 'linter',

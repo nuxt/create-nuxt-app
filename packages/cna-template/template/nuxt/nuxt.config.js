@@ -115,6 +115,9 @@
     <%_ if (pwa) { _%>
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    <%_ if (cloudinary) { _%>
+    // https://cloudinary.nuxtjs.org
+    '@nuxtjs/cloudinary',
     <%_ } _%>
     <%_ if (content) { _%>
     // https://go.nuxtjs.dev/content
@@ -125,6 +128,13 @@
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {},
+  <%_ } _%>
+  <%_ if (cloudinary) { _%>
+
+  // Cloudinary module configuration (https://cloudinary.nuxtjs.org/options)
+  cloudinary: {
+    cloudName: '<%_ cloudinary.cloudName_%>'
+  },
   <%_ } _%>
   <%_ if (content) { _%>
 
