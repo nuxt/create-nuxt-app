@@ -39,6 +39,7 @@ yarn create nuxt-app <my-project>
 1. UI framework:
     - None (feel free to add one later)
     - [Ant Design Vue](https://github.com/vueComponent/ant-design-vue)
+    - [BalmUI](https://material.balmjs.com/)
     - [Bootstrap](https://github.com/bootstrap-vue/bootstrap-vue)
     - [Buefy](https://buefy.org)
     - [Bulma](https://github.com/jgthms/bulma)

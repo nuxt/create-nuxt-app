@@ -32,6 +32,7 @@ module.exports = [
     choices: [
       { name: 'None', value: 'none' },
       { name: 'Ant Design Vue', value: 'ant-design-vue' },
+      { name: 'BalmUI', value: 'balm-ui' },
       { name: 'Bootstrap Vue', value: 'bootstrap' },
       { name: 'Buefy', value: 'buefy' },
       { name: 'Bulma', value: 'bulma' },
