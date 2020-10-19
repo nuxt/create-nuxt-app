@@ -42,7 +42,8 @@ module.exports = [
       { name: 'Tachyons', value: 'tachyons' },
       { name: 'Tailwind CSS', value: 'tailwind' },
       { name: 'Vuesax', value: 'vuesax' },
-      { name: 'Vuetify.js', value: 'vuetify' }
+      { name: 'Vuetify.js', value: 'vuetify' },
+      { name: 'Oruga', value: 'oruga' }
     ],
     default: 'none'
   },

@@ -102,6 +102,9 @@
     <%_ } else if (ui === 'buefy') { _%>
     // https://go.nuxtjs.dev/buefy
     'nuxt-buefy',
+    <%_ } else if (ui === 'oruga') { _%>
+      // Doc: https://oruga.io/documentation/#nuxt
+      '@oruga-ui/oruga/nuxt',
     <%_ } else if (ui === 'chakra-ui') { _%>
     // https://go.nuxtjs.dev/chakra
     '@chakra-ui/nuxt',
