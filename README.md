@@ -65,6 +65,7 @@ yarn create nuxt-app <my-project>
     - [Jest](https://github.com/facebook/jest)
     - [AVA](https://github.com/avajs/ava)
     - [WebdriverIO](https://webdriver.io)
+    - [Nightwatch](https://nightwatchjs.org)
 1. Rendering mode
     - [Universal (SSR / Static)](https://nuxtjs.org/guide/#server-rendered-universal-ssr-)
     - [SPA](https://nuxtjs.org/guide/#single-page-applications-spa-)
