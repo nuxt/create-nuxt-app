@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "test:e2e": "nightwatch"
+  },
+  "devDependencies": {
+    "nightwatch": "^1.3.6",
+    "chromedriver": "^86.0.0"
+  }
+}

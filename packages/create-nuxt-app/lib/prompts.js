@@ -81,7 +81,8 @@ module.exports = [
       { name: 'None', value: 'none' },
       { name: 'Jest', value: 'jest' },
       { name: 'AVA', value: 'ava' },
-      { name: 'WebdriverIO', value: 'webdriverio' }
+      { name: 'WebdriverIO', value: 'webdriverio' },
+      { name: 'Nightwatch', value: 'nightwatch' }
     ],
     default: 'none'
   },
