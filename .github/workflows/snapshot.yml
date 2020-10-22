@@ -32,7 +32,7 @@ jobs:
         run: AVA_FORCE_CI="not-ci" yarn ava --verbose --update-snapshots
 
       - name: Commit changes
-        uses: stefanzweifel/git-auto-commit-action@v4.4.1
+        uses: stefanzweifel/git-auto-commit-action@v4.7.1
         with:
           commit_message: "test: update snapshots"
           file_pattern: "**/*.snap **/*.md"
