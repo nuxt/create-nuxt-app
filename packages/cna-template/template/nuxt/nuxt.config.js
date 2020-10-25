@@ -97,7 +97,7 @@
     // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
     <%_ } else if (ui === 'bulma') { _%>
-    // https://go.nuxtjs.dev/bootstrap
+    // https://bulma.io
     '@nuxtjs/bulma',
     <%_ } else if (ui === 'buefy') { _%>
     // https://go.nuxtjs.dev/buefy
