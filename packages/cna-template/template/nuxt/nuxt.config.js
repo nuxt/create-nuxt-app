@@ -16,6 +16,11 @@
     titleTemplate: '%s - <%= name %>',
     <%_ } _%>
     title: '<%= name %>',
+    <%_ if (!pwa) { _%>
+    htmlAttrs, {
+      lang: 'en'
+    },
+    <%_ } _%>
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -128,6 +133,15 @@
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {},
+  <%_ } _%>
+  <%_ if (pwa) { _%>
+
+  // PWA module configuration (https://go.nuxtjs.dev/pwa)
+  pwa: {
+    manifest: {
+      lang: 'en'
+    }
+  },
   <%_ } _%>
   <%_ if (content) { _%>
 
