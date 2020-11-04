@@ -57,6 +57,14 @@
     {
       "packagePatterns": ["wdio", "webdriver"],
       "groupName": "webdriverio packages"
+    },
+    {
+      "packagePatterns": ["oruga"],
+      "groupName": "oruga packages"
+    },
+    {
+      "packagePatterns": ["nightwatch", "chromedriver"],
+      "groupName": "nightwatch packages"
     }
   ]
 }

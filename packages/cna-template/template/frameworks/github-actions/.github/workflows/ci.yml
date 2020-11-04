@@ -1,0 +1,66 @@
+name: ci
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+    branches:
+      - main
+      - master
+
+jobs:
+  ci:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node: [14]
+
+    steps:
+      - name: Checkout 🛎
+        uses: actions/checkout@master
+
+      - name: Setup node env 🏗
+        uses: actions/setup-node@v2.1.2
+        with:
+          node-version: ${{ matrix.node }}
+
+      <%_ if (pm === 'yarn') { _%>
+      - name: Get yarn cache directory path 🛠
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - name: Cache node_modules 📦
+        uses: actions/cache@v2
+        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      <%_ } _%>
+      <%_ if (pm === 'npm') { _%>
+      - name: Cache node_modules 📦
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      <%_ } _%>
+
+      - name: Install dependencies 👨🏻‍💻
+        run: <%= pmRun === 'yarn' ? 'yarn' : 'npm ci' %>
+
+      <%_ if (linter.length > 0) { _%>
+      - name: Run linter 👀
+        run: <%= pmRun  %> lint
+      <%_ } _%>
+
+      <%_ if (test !== 'none') { _%>
+      - name: Run tests 🧪
+        run: <%= pmRun  %> test
+      <%_ } _%>

@@ -43,7 +43,8 @@ module.exports = [
       { name: 'Tachyons', value: 'tachyons' },
       { name: 'Tailwind CSS', value: 'tailwind' },
       { name: 'Vuesax', value: 'vuesax' },
-      { name: 'Vuetify.js', value: 'vuetify' }
+      { name: 'Vuetify.js', value: 'vuetify' },
+      { name: 'Oruga', value: 'oruga' }
     ],
     default: 'none'
   },
@@ -53,9 +54,9 @@ module.exports = [
     type: 'checkbox',
     pageSize: 10,
     choices: [
-      { name: 'Axios', value: 'axios' },
+      { name: 'Axios - Promise based HTTP client', value: 'axios' },
       { name: 'Progressive Web App (PWA)', value: 'pwa' },
-      { name: 'Content', value: 'content' }
+      { name: 'Content - Git-based headless CMS', value: 'content' }
     ],
     default: []
   },
@@ -81,7 +82,8 @@ module.exports = [
       { name: 'None', value: 'none' },
       { name: 'Jest', value: 'jest' },
       { name: 'AVA', value: 'ava' },
-      { name: 'WebdriverIO', value: 'webdriverio' }
+      { name: 'WebdriverIO', value: 'webdriverio' },
+      { name: 'Nightwatch', value: 'nightwatch' }
     ],
     default: 'none'
   },
@@ -117,7 +119,18 @@ module.exports = [
     default: []
   },
   {
-    when: answers => answers.devTools.includes('dependabot'),
+    when: ({ test, linter }) => test !== 'none' || linter.length > 0,
+    name: 'ci',
+    message: 'Continuous integration:',
+    type: 'list',
+    choices: [
+      { name: 'None', value: 'none' },
+      { name: 'GitHub Actions (GitHub only)', value: 'github-actions' }
+    ],
+    default: 'none'
+  },
+  {
+    when: ({ devTools, ci }) => devTools.includes('dependabot') || ci !== 'none',
     name: 'gitUsername',
     message: 'What is your GitHub username?',
     default: '{gitUser.name}',

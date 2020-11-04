@@ -101,11 +101,14 @@
     // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
     <%_ } else if (ui === 'bulma') { _%>
-    // https://go.nuxtjs.dev/bootstrap
+    // https://bulma.io
     '@nuxtjs/bulma',
     <%_ } else if (ui === 'buefy') { _%>
     // https://go.nuxtjs.dev/buefy
     'nuxt-buefy',
+    <%_ } else if (ui === 'oruga') { _%>
+      // Doc: https://oruga.io/documentation/#nuxt
+      '@oruga-ui/oruga/nuxt',
     <%_ } else if (ui === 'chakra-ui') { _%>
     // https://go.nuxtjs.dev/chakra
     '@chakra-ui/nuxt',
@@ -132,7 +135,7 @@
   <%_ } _%>
   <%_ if (content) { _%>
 
-  // Content module configuration (https://go.nuxtjs.dev/content-config)
+  // Content module configuration (https://go.nuxtjs.dev/config-content)
   content: {},
   <%_ } _%>
   <%_ if (ui === 'vuetify') { _%>

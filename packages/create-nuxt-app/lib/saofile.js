@@ -56,7 +56,8 @@ module.exports = {
       templateDir: join(templateDir, 'nuxt'),
       filters: {
         'static/icon.png': 'features.includes("pwa")',
-        'content/hello.md': 'features.includes("content")'
+        'content/hello.md': 'features.includes("content")',
+        'pages/content.vue': 'features.includes("content")'
       }
     }]
 
@@ -73,6 +74,14 @@ module.exports = {
         type: 'add',
         files: '**',
         templateDir: join(frameworksDir, this.answers.test)
+      })
+    }
+
+    if (this.answers.ci && this.answers.ci !== 'none') {
+      actions.push({
+        type: 'add',
+        files: '**',
+        templateDir: join(frameworksDir, this.answers.ci)
       })
     }
 

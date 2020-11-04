@@ -19,7 +19,7 @@ npx create-nuxt-app <my-project>
 Or starting with npm v6.1 you can do:
 
 ```bash
-npm init nuxt-app <my-project>
+npm init nuxt-app@latest <my-project>
 ```
 
 Or with [yarn](https://yarnpkg.com/en/):
@@ -52,9 +52,9 @@ yarn create nuxt-app <my-project>
     - [Vuesax](https://github.com/lusaxweb/vuesax)
     - [Vuetify](https://github.com/vuetifyjs/vuetify)
 1. Nuxt.js modules:
-    - [Axios](https://github.com/nuxt-community/axios-module)
+    - [Axios - Promise based HTTP client](https://github.com/nuxt-community/axios-module)
     - [Progressive Web App (PWA)](https://github.com/nuxt-community/pwa-module)
-    - [Content](https://github.com/nuxt/content)
+    - [Content - Git-based headless CMS](https://github.com/nuxt/content)
 1. Linting tools:
     - [ESLint](https://github.com/nuxt/eslint-config)
     - [Prettier](https://github.com/prettier/prettier)
@@ -66,6 +66,7 @@ yarn create nuxt-app <my-project>
     - [Jest](https://github.com/facebook/jest)
     - [AVA](https://github.com/avajs/ava)
     - [WebdriverIO](https://webdriver.io)
+    - [Nightwatch](https://nightwatchjs.org)
 1. Rendering mode
     - [Universal (SSR / Static)](https://nuxtjs.org/guide/#server-rendered-universal-ssr-)
     - [SPA](https://nuxtjs.org/guide/#single-page-applications-spa-)
@@ -76,6 +77,8 @@ yarn create nuxt-app <my-project>
     - [jsconfig.json](https://code.visualstudio.com/docs/languages/jsconfig)
     - [Semantic PR](https://probot.github.io/apps/semantic-pull-requests/)
     - [Dependabot (for GitHub only)](https://dependabot.com/)
+1. Continous Integration
+    - [GitHub Actions](https://github.com/features/actions)
 
 ## CLI Options
 
