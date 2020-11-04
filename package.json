@@ -20,7 +20,7 @@
     "@commitlint/config-conventional": "^11.0.0",
     "@nuxtjs/eslint-config": "^4.0.0",
     "ava": "^3.13.0",
-    "eslint": "^7.11.0",
+    "eslint": "^7.12.1",
     "husky": "^4.3.0",
     "lerna": "^3.22.1",
     "stylelint": "^13.7.2",
