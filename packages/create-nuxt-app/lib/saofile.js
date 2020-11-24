@@ -125,6 +125,27 @@ module.exports = {
       }
     })
 
+    if (this.answers.language.includes('ts')) {
+      // Add types for any additional selected package
+      const hasJest = this.answers.test.includes('jest')
+      const hasAxios = this.answers.features.includes('axios')
+      actions.push({
+        type: 'modify',
+        files: 'tsconfig.json',
+        handler (data) {
+          const { compilerOptions } = data
+          const { types } = compilerOptions
+          if (hasJest) {
+            types.push('@types/jest')
+          }
+          if (hasAxios) {
+            types.push('@nuxtjs/axios')
+          }
+          return { ...data, compilerOptions: { ...compilerOptions, types } }
+        }
+      })
+    }
+
     // For compiling package.json
     actions.push({
       type: 'add',
