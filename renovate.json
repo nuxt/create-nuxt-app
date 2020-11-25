@@ -1,21 +1,12 @@
 {
-  "extends": [
-    "@nuxtjs"
-  ],
+  "extends": ["@nuxtjs"],
   "lockFileMaintenance": {
     "enabled": true
   },
-  "ignoreDeps": [
-    "vue-jest"
-  ],
+  "ignoreDeps": ["vue-jest"],
   "postUpgradeTasks": {
-      "commands": [
-        "ava --verbose --update-snapshots"
-      ],
-      "fileFilters": [
-        "**/*.snap",
-        "**/*.md"
-      ]
+    "commands": ["ava --verbose --update-snapshots"],
+    "fileFilters": ["**/*.snap", "**/*.md"]
   },
   "packageRules": [
     {
@@ -33,6 +24,10 @@
     {
       "packagePatterns": ["ava"],
       "groupName": "ava packages"
+    },
+    {
+      "packagePatterns": ["balm-ui"],
+      "groupName": "balm-ui packages"
     },
     {
       "packagePatterns": ["bootstrap"],

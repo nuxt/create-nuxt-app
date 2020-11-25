@@ -46,6 +46,8 @@
     'iview/dist/styles/iview.css'
     <%_ } else if (ui === 'ant-design-vue') { _%>
     'ant-design-vue/dist/antd.css'
+    <%_ } else if (ui === 'balm-ui') { _%>
+    'balm-ui/dist/balm-ui.css'
     <%_ } else if (ui === 'tachyons') { _%>
     'tachyons/css/tachyons.css'
     <%_ } else if (ui === 'framevuerk') { _%>
@@ -63,6 +65,8 @@
     '@/plugins/iview'
     <%_ } else if (ui === 'ant-design-vue') { _%>
     '@/plugins/antd-ui'
+    <%_ } else if (ui === 'balm-ui') { _%>
+    '@/plugins/balm-ui'
     <%_ } else if (ui === 'framevuerk') { _%>
     '@/plugins/framevuerk'
     <%_ } else if (ui === 'vuesax') { _%>
