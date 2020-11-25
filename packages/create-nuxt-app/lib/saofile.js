@@ -117,18 +117,22 @@ module.exports = {
     })
 
     const generator = this
+    const hasTypeScript = this.answers.language.includes('ts')
+    const hasJest = this.answers.test.includes('jest')
+    const hasAxios = this.answers.features.includes('axios')
     actions.push({
       type: 'modify',
       files: 'package.json',
       handler (data) {
-        return { ...data, ...pkg.load(generator) }
+        const result = { ...data, ...pkg.load(generator) }
+        if (hasTypeScript && hasJest) {
+          result.devDependencies['@types/jest'] = '^26.0.15'
+        }
+        return result
       }
     })
 
-    if (this.answers.language.includes('ts')) {
-      // Add types for any additional selected package
-      const hasJest = this.answers.test.includes('jest')
-      const hasAxios = this.answers.features.includes('axios')
+    if (hasTypeScript) {
       actions.push({
         type: 'modify',
         files: 'tsconfig.json',
