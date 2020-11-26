@@ -4,6 +4,12 @@
   </div>
 </template>
 
+<script>
+export default {
+  name: 'Default'
+}
+</script>
+
 <style>
 html {
   font-family:
