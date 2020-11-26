@@ -6,7 +6,7 @@
   ssr: false,
 
   <%_ } _%><%_ if (target === 'static') { _%>
-  // Target (https://go.nuxtjs.dev/config-target)
+  // Target: https://go.nuxtjs.dev/config-target
   target: '<%= target %>',
 
   <%_ } _%>
