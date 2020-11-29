@@ -20,10 +20,10 @@
     "@commitlint/config-conventional": "^11.0.0",
     "@nuxtjs/eslint-config": "^5.0.0",
     "ava": "^3.13.0",
-    "eslint": "^7.12.1",
+    "eslint": "^7.14.0",
     "husky": "^4.3.0",
     "lerna": "^3.22.1",
-    "stylelint": "^13.7.2",
+    "stylelint": "^13.8.0",
     "stylelint-config-standard": "^20.0.0"
   },
   "name": "create-nuxt-app"
