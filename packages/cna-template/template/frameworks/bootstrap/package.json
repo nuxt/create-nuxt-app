@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "bootstrap-vue": "^2.18.1",
+    "bootstrap-vue": "^2.19.0",
     "bootstrap": "^4.5.3"
   }
 }
