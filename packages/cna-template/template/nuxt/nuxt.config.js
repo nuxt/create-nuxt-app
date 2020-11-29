@@ -2,15 +2,15 @@
 
 <%_ } _%>export default {
   <%_ if (mode === 'spa') { _%>
-  // Disable server-side rendering (https://go.nuxtjs.dev/ssr-mode)
+  // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
 
   <%_ } _%><%_ if (target === 'static') { _%>
-  // Target (https://go.nuxtjs.dev/config-target)
+  // Target: https://go.nuxtjs.dev/config-target
   target: '<%= target %>',
 
   <%_ } _%>
-  // Global page headers (https://go.nuxtjs.dev/config-head)
+  // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     <%_ if (ui === 'vuetify') { _%>
     titleTemplate: '%s - <%= name %>',
@@ -38,7 +38,7 @@
     ]
   },
 
-  // Global CSS (https://go.nuxtjs.dev/config-css)
+  // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     <%_ if (ui === 'element-ui') { _%>
     'element-ui/lib/theme-chalk/index.css'
@@ -57,7 +57,7 @@
     <%_ } _%>
   ],
 
-  // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
+  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     <%_ if (ui === 'element-ui') { _%>
     '@/plugins/element-ui'
@@ -74,10 +74,10 @@
     <%_ } _%>
   ],
 
-  // Auto import components (https://go.nuxtjs.dev/config-components)
+  // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
-  // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
+  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     <%_ if (typescript) { _%>
     // https://go.nuxtjs.dev/typescript
@@ -100,7 +100,7 @@
     <%_ } _%>
   ],
 
-  // Modules (https://go.nuxtjs.dev/config-modules)
+  // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     <%_ if (ui === 'bootstrap') { _%>
     // https://go.nuxtjs.dev/bootstrap
@@ -135,12 +135,12 @@
   ],
   <%_ if (axios) { _%>
 
-  // Axios module configuration (https://go.nuxtjs.dev/config-axios)
+  // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
   <%_ } _%>
   <%_ if (pwa) { _%>
 
-  // PWA module configuration (https://go.nuxtjs.dev/pwa)
+  // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     manifest: {
       lang: 'en'
@@ -149,12 +149,12 @@
   <%_ } _%>
   <%_ if (content) { _%>
 
-  // Content module configuration (https://go.nuxtjs.dev/config-content)
+  // Content module configuration: https://go.nuxtjs.dev/config-content
   content: {},
   <%_ } _%>
   <%_ if (ui === 'vuetify') { _%>
 
-  // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
+  // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
@@ -174,7 +174,7 @@
   },
   <%_ } _%>
 
-  // Build Configuration (https://go.nuxtjs.dev/config-build)
+  // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     <%_ if (ui === 'bulma') { _%>
     postcss: {
