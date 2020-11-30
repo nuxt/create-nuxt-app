@@ -12,7 +12,7 @@ test.before(async () => {
   nuxt = new Nuxt({
     ...config,
     dev: false,
-    rootDir: resolve(__dirname, '../../'),
+    rootDir: resolve(__dirname, '../../')
   })
   await new Builder(nuxt).build()
   await nuxt.server.listen(4000, 'localhost')
