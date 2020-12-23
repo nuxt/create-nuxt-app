@@ -17,7 +17,7 @@
     <%_ } _%>
     title: '<%= name %>',
     <%_ if (!pwa) { _%>
-    htmlAttrs, {
+    htmlAttrs: {
       lang: 'en'
     },
     <%_ } _%>
