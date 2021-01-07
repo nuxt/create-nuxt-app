@@ -10,8 +10,8 @@
   },
   "scripts": {
     "lint": "yarn lint:js && yarn lint:style",
-    "lint:js": "eslint --ext .js,.mjs,.vue .",
-    "lint:style": "stylelint **/*.{vue,css}",
+    "lint:js": "eslint --ext \".js,.mjs,.vue\" .",
+    "lint:style": "stylelint \"**/*.{vue,css}\"",
     "test": "ava --verbose",
     "test:snapshot": "ava --verbose --update-snapshots"
   },
