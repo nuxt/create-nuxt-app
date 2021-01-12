@@ -25,7 +25,12 @@
     },
     "types": [
       "@types/node",
+<%_ if (content) { _%>
+      "@nuxt/types",
+      "@nuxt/content"
+<%_ } else { _%>
       "@nuxt/types"
+<%_ } _%>
     ]
   },
   "exclude": [
