@@ -24,13 +24,11 @@
       ]
     },
     "types": [
-      "@types/node",
-      <%_ if (content) { _%>
       "@nuxt/types",
-      "@nuxt/content"
-      <%_ } else { _%>
-      "@nuxt/types"
+      <%_ if (content) { _%>
+      "@nuxt/content",
       <%_ } _%>
+      "@types/node"
     ]
   },
   "exclude": [
