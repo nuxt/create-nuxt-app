@@ -7,7 +7,7 @@
     "lib"
   ],
   "dependencies": {
-    "cac": "^6.6.1",
+    "cac": "^6.7.1",
     "chalk": "^4.1.0",
     "cna-template": "^3.4.0",
     "cross-spawn": "^7.0.3",
