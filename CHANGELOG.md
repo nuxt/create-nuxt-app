@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.5.0](https://github.com/nuxt/create-nuxt-app/compare/v3.4.0...v3.5.0) (2021-01-17)
+
+
+### Bug Fixes
+
+* **link:** add eslint-plugin-vue to devDependency ([7cef146](https://github.com/nuxt/create-nuxt-app/commit/7cef1461933464294857ebad31ea0574d2f23e29))
+* **lint:** use double quotes for glob syntax ([#684](https://github.com/nuxt/create-nuxt-app/issues/684)) ([2e1aff8](https://github.com/nuxt/create-nuxt-app/commit/2e1aff819eac10e7a18588917b06ec5bc611e968))
+* **template:** htmlAttrs typo ([af72313](https://github.com/nuxt/create-nuxt-app/commit/af723137760844299545209973cc237191aba2a8))
+* **types:** add nuxt content support for typescript ([#688](https://github.com/nuxt/create-nuxt-app/issues/688)) ([ecbc960](https://github.com/nuxt/create-nuxt-app/commit/ecbc9607126bc11e82850a959ac463a61694bda4))
+* e2e tests are configured with project's nuxt.config ([#670](https://github.com/nuxt/create-nuxt-app/issues/670)) ([be14839](https://github.com/nuxt/create-nuxt-app/commit/be14839914ccb3b15b5f9ad7a68d8784fd9d8327))
+
+
+### Features
+
+* add BalmUI to UI framework ([#636](https://github.com/nuxt/create-nuxt-app/issues/636)) ([d57c992](https://github.com/nuxt/create-nuxt-app/commit/d57c992b966f2ff0c70cfbfb2eac95c5a4ed65d9))
+* **pwa:** add default language to nuxt.config ([#653](https://github.com/nuxt/create-nuxt-app/issues/653)) ([31dd1a3](https://github.com/nuxt/create-nuxt-app/commit/31dd1a39bb134738a04de93961e6dea16807ef8f))
+* add Nightwatch.js as test framework option ([#572](https://github.com/nuxt/create-nuxt-app/issues/572)) ([75985e4](https://github.com/nuxt/create-nuxt-app/commit/75985e47a841fe8898f6f17b265fe6566984db8e))
+* add Oruga as UI framework option ([#635](https://github.com/nuxt/create-nuxt-app/issues/635)) ([b6facaf](https://github.com/nuxt/create-nuxt-app/commit/b6facaf6383c30699879f7b5e4e2433bf22adfa7))
+* add route page and content fetch ([#632](https://github.com/nuxt/create-nuxt-app/issues/632)) ([d045b20](https://github.com/nuxt/create-nuxt-app/commit/d045b200e69983b56a5ebc679fd35f7c00ea07da))
+* don't install @nuxtjs/eslint-config and @nuxtjs/eslint-config-typescript together ([#633](https://github.com/nuxt/create-nuxt-app/issues/633)) ([60795d1](https://github.com/nuxt/create-nuxt-app/commit/60795d152992b68cd833530068b4549e132ecc19))
+
+
+
+
+
 # [3.4.0](https://github.com/nuxt/create-nuxt-app/compare/v3.3.0...v3.4.0) (2020-10-06)
 
 
