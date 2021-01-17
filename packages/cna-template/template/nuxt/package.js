@@ -30,6 +30,7 @@ module.exports = {
       delete pkg.devDependencies['babel-eslint']
       delete pkg.devDependencies.eslint
       delete pkg.devDependencies['eslint-plugin-nuxt']
+      delete pkg.devDependencies['eslint-plugin-vue']
     }
     if (!lintStaged) {
       delete pkg.husky
