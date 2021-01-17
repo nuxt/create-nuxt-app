@@ -109,7 +109,6 @@ import {
 
 export default {
   name: 'App',
-  inject: ['$chakraColorMode', '$toggleColorMode'],
   components: {
     CBox,
     CButton,
@@ -127,6 +126,7 @@ export default {
     CFlex,
     CHeading
   },
+  inject: ['$chakraColorMode', '$toggleColorMode'],
   data () {
     return {
       showModal: false,
