@@ -25,6 +25,9 @@
     },
     "types": [
       "@nuxt/types",
+      <%_ if (axios) { _%>
+      "@nuxtjs/axios",
+      <%_ } _%>
       <%_ if (content) { _%>
       "@nuxt/content",
       <%_ } _%>
