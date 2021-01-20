@@ -35,7 +35,6 @@ module.exports = [
       { name: 'BalmUI', value: 'balm-ui' },
       { name: 'Bootstrap Vue', value: 'bootstrap' },
       { name: 'Buefy', value: 'buefy' },
-      { name: 'Bulma', value: 'bulma' },
       { name: 'Chakra UI', value: 'chakra-ui' },
       { name: 'Element', value: 'element-ui' },
       { name: 'Framevuerk', value: 'framevuerk' },

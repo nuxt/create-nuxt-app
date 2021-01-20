@@ -105,9 +105,6 @@
     <%_ if (ui === 'bootstrap') { _%>
     // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
-    <%_ } else if (ui === 'bulma') { _%>
-    // https://bulma.io
-    '@nuxtjs/bulma',
     <%_ } else if (ui === 'buefy') { _%>
     // https://go.nuxtjs.dev/buefy
     'nuxt-buefy',
@@ -176,15 +173,7 @@
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    <%_ if (ui === 'bulma') { _%>
-    postcss: {
-      preset: {
-        features: {
-          customProperties: false
-        }
-      }
-    },
-    <%_ } else if (ui === 'element-ui') { _%>
+    <%_ if (ui === 'element-ui') { _%>
     transpile: [/^element-ui/],
     <%_ } _%>
   }
