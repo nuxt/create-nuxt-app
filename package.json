@@ -24,7 +24,7 @@
     "eslint": "^7.18.0",
     "husky": "^4.3.8",
     "lerna": "^3.22.1",
-    "stylelint": "^13.8.0",
+    "stylelint": "^13.9.0",
     "stylelint-config-standard": "^20.0.0"
   },
   "name": "create-nuxt-app"
