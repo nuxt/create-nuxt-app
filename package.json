@@ -4,6 +4,7 @@
   "workspaces": [
     "packages/*"
   ],
+  "homepage": "https://github.com/nuxt/create-nuxt-app#readme",
   "repository": {
     "url": "https://github.com/nuxt/create-nuxt-app.git",
     "type": "git"
