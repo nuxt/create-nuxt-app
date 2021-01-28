@@ -2,6 +2,11 @@
   "name": "create-nuxt-app",
   "version": "3.5.1",
   "description": "Create a Nuxt.js App in seconds.",
+  "homepage": "https://github.com/nuxt/create-nuxt-app#readme",
+  "repository": {
+    "url": "https://github.com/nuxt/create-nuxt-app.git",
+    "type": "git"
+  },
   "bin": "lib/cli.js",
   "files": [
     "lib"
