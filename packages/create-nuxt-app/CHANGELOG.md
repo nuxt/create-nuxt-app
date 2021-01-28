@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.5.1](https://github.com/nuxt/create-nuxt-app/compare/v3.5.0...v3.5.1) (2021-01-28)
+
+
+### Bug Fixes
+
+* **ui:** remove @nuxtjs/bulma ([#695](https://github.com/nuxt/create-nuxt-app/issues/695)) ([371bb59](https://github.com/nuxt/create-nuxt-app/commit/371bb5999acaf68bf29acc994ded130bd6c0c9ce))
+
+
+
+
+
 # [3.5.0](https://github.com/nuxt/create-nuxt-app/compare/v3.4.0...v3.5.0) (2021-01-17)
 
 
