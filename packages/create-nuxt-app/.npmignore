@@ -1,0 +1,17 @@
+# Dependencies
+node_modules
+
+# Logs
+npm-debug.log
+yarn-error.log
+
+# Coverage
+coverage
+.nyc_output
+
+# Editors
+.vscode
+.idea
+
+# Misc
+.DS_Store
