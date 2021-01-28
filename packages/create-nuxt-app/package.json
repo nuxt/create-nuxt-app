@@ -1,6 +1,6 @@
 {
   "name": "create-nuxt-app",
-  "version": "3.5.1",
+  "version": "3.5.2",
   "description": "Create a Nuxt.js App in seconds.",
   "homepage": "https://github.com/nuxt/create-nuxt-app#readme",
   "repository": {
@@ -14,7 +14,7 @@
   "dependencies": {
     "cac": "^6.7.1",
     "chalk": "^4.1.0",
-    "cna-template": "^3.5.1",
+    "cna-template": "^3.5.2",
     "cross-spawn": "^7.0.3",
     "envinfo": "^7.7.3",
     "lodash": "^4.17.20",
