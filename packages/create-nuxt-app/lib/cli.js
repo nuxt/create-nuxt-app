@@ -44,7 +44,7 @@ cli
 
     const { verbose, answers } = cliOptions
     const logLevel = verbose ? 4 : 2
-    // See https://saojs.org/api.html#standalone-cli
+    // See https://sao.vercel.app/api.html#standalone-cli
     sao({ generator, outDir, logLevel, answers, cliOptions })
       .run()
       .catch((err) => {
