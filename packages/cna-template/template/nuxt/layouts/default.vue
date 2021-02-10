@@ -6,15 +6,8 @@
 
 <style>
 html {
-  font-family:
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -30,7 +23,21 @@ html {
   box-sizing: border-box;
   margin: 0;
 }
+<%_ if (typescript) { _%>
+.button--green {
+  display: inline-block;
+  border-radius: 4px;
+  border: 1px solid #085d97;
+  color: #085d97;
+  text-decoration: none;
+  padding: 10px 30px;
+}
 
+.button--green:hover {
+  color: #fff;
+  background-color: #085d97;
+}
+<%_ } else { _%>
 .button--green {
   display: inline-block;
   border-radius: 4px;
@@ -44,7 +51,7 @@ html {
   color: #fff;
   background-color: #3b8070;
 }
-
+<%_ } _%>
 .button--grey {
   display: inline-block;
   border-radius: 4px;
