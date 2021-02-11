@@ -42,8 +42,8 @@
   css: [
     <%_ if (ui === 'element-ui') { _%>
     'element-ui/lib/theme-chalk/index.css'
-    <%_ } else if (ui === 'iview') { _%>
-    'iview/dist/styles/iview.css'
+    <%_ } else if (ui === 'view-ui') { _%>
+    'view-design/dist/styles/iview.css'
     <%_ } else if (ui === 'ant-design-vue') { _%>
     'ant-design-vue/dist/antd.css'
     <%_ } else if (ui === 'balm-ui') { _%>
@@ -61,8 +61,8 @@
   plugins: [
     <%_ if (ui === 'element-ui') { _%>
     '@/plugins/element-ui'
-    <%_ } else if (ui === 'iview') { _%>
-    '@/plugins/iview'
+    <%_ } else if (ui === 'view-ui') { _%>
+    '@/plugins/view-ui'
     <%_ } else if (ui === 'ant-design-vue') { _%>
     '@/plugins/antd-ui'
     <%_ } else if (ui === 'balm-ui') { _%>

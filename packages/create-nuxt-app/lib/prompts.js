@@ -38,7 +38,7 @@ module.exports = [
       { name: 'Chakra UI', value: 'chakra-ui' },
       { name: 'Element', value: 'element-ui' },
       { name: 'Framevuerk', value: 'framevuerk' },
-      { name: 'iView', value: 'iview' },
+      { name: 'View UI', value: 'view-ui' },
       { name: 'Tachyons', value: 'tachyons' },
       { name: 'Tailwind CSS', value: 'tailwind' },
       { name: 'Vuesax', value: 'vuesax' },
