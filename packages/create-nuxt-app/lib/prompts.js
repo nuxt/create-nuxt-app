@@ -38,13 +38,13 @@ module.exports = [
       { name: 'Chakra UI', value: 'chakra-ui' },
       { name: 'Element', value: 'element-ui' },
       { name: 'Framevuerk', value: 'framevuerk' },
-      { name: 'View UI', value: 'view-ui' },
+      { name: 'Oruga', value: 'oruga' },
       { name: 'Tachyons', value: 'tachyons' },
       { name: 'Tailwind CSS', value: 'tailwind' },
       { name: 'Vant', value: 'vant' },
+      { name: 'View UI', value: 'view-ui' },
       { name: 'Vuesax', value: 'vuesax' },
-      { name: 'Vuetify.js', value: 'vuetify' },
-      { name: 'Oruga', value: 'oruga' }
+      { name: 'Vuetify.js', value: 'vuetify' }
     ],
     default: 'none'
   },

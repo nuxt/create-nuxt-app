@@ -45,10 +45,11 @@ yarn create nuxt-app <my-project>
     - [Chakra UI](https://github.com/chakra-ui/chakra-ui-vue)
     - [Element](https://github.com/ElemeFE/element)
     - [Framevuerk](https://github.com/framevuerk/framevuerk)
-    - [View UI](https://www.iviewui.com/)
+    - [Oruga](https://oruga.io/)
     - [Tachyons](https://github.com/tachyons-css/tachyons)
     - [Tailwind CSS](https://github.com/tailwindcss/tailwindcss)
     - [Vant](https://github.com/youzan/vant)
+    - [View UI](https://www.iviewui.com/)
     - [Vuesax](https://github.com/lusaxweb/vuesax)
     - [Vuetify](https://github.com/vuetifyjs/vuetify)
 1. Nuxt.js modules:
