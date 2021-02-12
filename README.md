@@ -48,6 +48,7 @@ yarn create nuxt-app <my-project>
     - [View UI](https://www.iviewui.com/)
     - [Tachyons](https://github.com/tachyons-css/tachyons)
     - [Tailwind CSS](https://github.com/tailwindcss/tailwindcss)
+    - [Vant](https://github.com/youzan/vant)
     - [Vuesax](https://github.com/lusaxweb/vuesax)
     - [Vuetify](https://github.com/vuetifyjs/vuetify)
 1. Nuxt.js modules:

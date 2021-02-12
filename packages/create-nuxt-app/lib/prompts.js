@@ -41,6 +41,7 @@ module.exports = [
       { name: 'View UI', value: 'view-ui' },
       { name: 'Tachyons', value: 'tachyons' },
       { name: 'Tailwind CSS', value: 'tailwind' },
+      { name: 'Vant', value: 'vant' },
       { name: 'Vuesax', value: 'vuesax' },
       { name: 'Vuetify.js', value: 'vuetify' },
       { name: 'Oruga', value: 'oruga' }
