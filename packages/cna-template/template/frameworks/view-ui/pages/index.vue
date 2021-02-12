@@ -6,7 +6,7 @@
         <%= name %>
       </h1>
       <h2 class="subtitle">
-        Welcome to the iView + Nuxt.js template
+        Welcome to the View UI + Nuxt.js template
       </h2>
       <div class="links">
         <Button type="primary" target="_blank" rel="noopener noreferrer" to="https://nuxtjs.org/">
@@ -16,7 +16,7 @@
           GitHub
         </Button>
         <Button target="_blank" rel="noopener noreferrer" to="https://www.iviewui.com/">
-          iView
+          View UI
         </Button>
       </div>
     </div>
