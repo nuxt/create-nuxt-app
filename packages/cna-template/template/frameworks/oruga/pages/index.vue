@@ -8,10 +8,10 @@
       Oruga UI is like a caterpillar, minimal and yet functional.<br>It's in your hands turning it into a butterfly.
     </p>
     <div class="buttons">
-      <o-button size="large" variant="primary" @click="goToDocs()">
+      <o-button root-class="button" variant-class="button-" variant="light" @click="goToDocs()">
         Documentation
       </o-button>
-      <o-button size="large" variant="info" @click="goToGithub()">
+      <o-button root-class="button" variant-class="button-" variant="dark" @click="goToGithub()">
         GitHub
       </o-button>
     </div>
@@ -23,7 +23,7 @@ export default {
   name: 'HomePage',
   methods: {
     goToDocs () {
-      window.location = 'https://oruga.io/documentation/'
+      window.location = 'https://oruga.io/documentation/#nuxt-module'
     },
     goToGithub () {
       window.location = 'https://github.com/oruga-ui/oruga'
@@ -80,5 +80,18 @@ export default {
 
 .buttons {
   padding-top: 15px;
+}
+
+.button {
+  padding: 1rem;
+  min-width: 10rem;
+}
+
+.button-light {
+  background-color: #9dbe43;
+}
+
+.button-dark {
+  background-color: #293923;
 }
 </style>
