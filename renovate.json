@@ -60,6 +60,10 @@
     {
       "packagePatterns": ["nightwatch", "chromedriver"],
       "groupName": "nightwatch packages"
+    },
+    {
+      "packagePatterns": ["boxicons", "vuesax"],
+      "groupName": "vuesax packages"
     }
   ]
 }
