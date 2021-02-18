@@ -8,7 +8,6 @@ module.exports = {
       pkg.dependencies['nuxt-edge'] = 'latest'
     }
 
-    const { scripts } = pkg
     const { features, language = [], linter = [] } = generator.answers
 
     // Linter
@@ -81,18 +80,12 @@ module.exports = {
     if (!typescript) {
       delete pkg.devDependencies['@nuxt/types']
       delete pkg.devDependencies['@nuxt/typescript-build']
-      delete pkg.dependencies['@nuxt/typescript-runtime']
     }
     if (!typescript || !eslint) {
       delete pkg.devDependencies['@nuxtjs/eslint-config-typescript']
     }
     if (typescript && eslint) {
       delete pkg.devDependencies['@nuxtjs/eslint-config']
-    }
-    if (typescript) {
-      for (const key of Object.keys(scripts)) {
-        scripts[key] = scripts[key].replace(/^nuxt( |$)/, 'nuxt-ts$1')
-      }
     }
     return pkg
   }
