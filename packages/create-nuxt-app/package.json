@@ -12,12 +12,12 @@
     "lib"
   ],
   "dependencies": {
-    "cac": "^6.7.1",
+    "cac": "^6.7.2",
     "chalk": "^4.1.0",
     "cna-template": "^3.5.2",
     "cross-spawn": "^7.0.3",
-    "envinfo": "^7.7.3",
-    "lodash": "^4.17.20",
+    "envinfo": "^7.7.4",
+    "lodash": "^4.17.21",
     "sao": "^1.7.1",
     "validate-npm-package-name": "^3.0.0"
   },
@@ -28,6 +28,6 @@
   ],
   "license": "MIT",
   "engines": {
-    "node": ">=10.20.0"
+    "node": ">=v10.24.0"
   }
 }
