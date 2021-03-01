@@ -16,8 +16,6 @@ module.exports = {
     '@nuxtjs',
     <%_ } _%>
     <%_ if (prettier) { _%>
-    'prettier',
-    'prettier/vue',
     'plugin:prettier/recommended',
     <%_ } _%>
     <%_ if (test === 'webdriverio') { _%>
@@ -26,9 +24,6 @@ module.exports = {
     'plugin:nuxt/recommended'
   ],
   plugins: [
-    <%_ if (prettier) {_%>
-    'prettier',
-    <%_ } _%>
     <%_ if (test === 'webdriverio') { _%>
     'wdio'
     <%_ } _%>
