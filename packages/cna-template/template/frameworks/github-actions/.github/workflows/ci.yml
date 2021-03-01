@@ -27,6 +27,7 @@ jobs:
         uses: actions/setup-node@v2.1.2
         with:
           node-version: ${{ matrix.node }}
+          check-latest: true
 
       <%_ if (pm === 'yarn') { _%>
       - name: Get yarn cache directory path 🛠
