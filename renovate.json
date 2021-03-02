@@ -54,7 +54,7 @@
       "groupName": "webdriverio packages"
     },
     {
-      "packagePatterns": ["oruga"],
+      "packagePatterns": ["@oruga-ui", "oruga"],
       "groupName": "oruga packages"
     },
     {
