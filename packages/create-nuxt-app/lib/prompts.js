@@ -103,7 +103,7 @@ module.exports = [
     type: 'list',
     choices: [
       { name: 'Server (Node.js hosting)', value: 'server' },
-      { name: 'Static (Static/JAMStack hosting)', value: 'static' }
+      { name: 'Static (Static/Jamstack hosting)', value: 'static' }
     ],
     default: 'server'
   },
