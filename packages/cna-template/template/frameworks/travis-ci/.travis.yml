@@ -1,0 +1,27 @@
+language: node_js
+node_js:
+  - lts/*
+
+os:
+  - linux
+dist: focal
+
+branches:
+  only:
+    - main
+    - master
+
+<%_ if (pm === 'yarn') { _%>
+cache: yarn
+<%_ } _%>
+<%_ if (pm === 'npm') { _%>
+cache: npm
+<%_ } _%>
+
+script:
+  <%_ if (linter.length > 0) { _%>
+  - <%= pmRun  %> lint
+  <%_ } _%>
+  <%_ if (test !== 'none') { _%>
+  - <%= pmRun  %> test
+  <%_ } _%>

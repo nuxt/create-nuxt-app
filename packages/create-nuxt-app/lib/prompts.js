@@ -125,7 +125,9 @@ module.exports = [
     type: 'list',
     choices: [
       { name: 'None', value: 'none' },
-      { name: 'GitHub Actions (GitHub only)', value: 'github-actions' }
+      { name: 'GitHub Actions (GitHub only)', value: 'github-actions' },
+      { name: 'Travis CI', value: 'travis-ci' },
+      { name: 'CircleCI', value: 'circleci' }
     ],
     default: 'none'
   },
