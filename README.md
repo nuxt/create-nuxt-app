@@ -80,6 +80,8 @@ yarn create nuxt-app <my-project>
     - [Dependabot (for GitHub only)](https://dependabot.com/)
 1. Continous Integration
     - [GitHub Actions](https://github.com/features/actions)
+    - [Travis CI](https://travis-ci.com)
+    - [CircleCI](https://circleci.com)
 
 ## CLI Options
 
