@@ -79,7 +79,6 @@ module.exports = {
 
     if (!typescript) {
       delete pkg.devDependencies['@nuxt/types']
-      delete pkg.devDependencies['@nuxt/typescript-build']
     }
     if (!typescript || !eslint) {
       delete pkg.devDependencies['@nuxtjs/eslint-config-typescript']

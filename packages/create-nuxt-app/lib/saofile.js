@@ -61,6 +61,17 @@ module.exports = {
       }
     }]
 
+    // rename config for ts
+    if (this.answers.language.includes('ts')) {
+      actions.push({
+        type: 'move',
+        templateDir: join(templateDir, 'nuxt'),
+        patterns: {
+          'nuxt.config.js': 'nuxt.config.ts',
+        }
+      })
+    }
+
     if (this.answers.ui !== 'none') {
       actions.push({
         type: 'add',

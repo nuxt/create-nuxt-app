@@ -83,10 +83,6 @@
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    <%_ if (typescript) { _%>
-    // https://go.nuxtjs.dev/typescript
-    '@nuxt/typescript-build',
-    <%_ } _%>
     <%_ if (eslint && !typescript) { _%>
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
