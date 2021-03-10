@@ -67,7 +67,7 @@ module.exports = {
         type: 'move',
         templateDir: join(templateDir, 'nuxt'),
         patterns: {
-          'nuxt.config.js': 'nuxt.config.ts',
+          'nuxt.config.js': 'nuxt.config.ts'
         }
       })
     }
