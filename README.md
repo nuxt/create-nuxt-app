@@ -48,6 +48,7 @@ yarn create nuxt-app <my-project>
     - [Oruga](https://oruga.io/)
     - [Tachyons](https://github.com/tachyons-css/tachyons)
     - [Tailwind CSS](https://github.com/tailwindcss/tailwindcss)
+    - [Windi CSS](https://github.com/windicss/windicss)
     - [Vant](https://github.com/youzan/vant)
     - [View UI](https://www.iviewui.com/)
     - [Vuesax](https://github.com/lusaxweb/vuesax)

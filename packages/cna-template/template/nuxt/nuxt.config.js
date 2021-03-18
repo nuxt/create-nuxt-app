@@ -95,6 +95,9 @@
     // https://go.nuxtjs.dev/stylelint
     '@nuxtjs/stylelint-module',
     <%_ } _%>
+    <%_ if (ui === 'windicss') { _%>
+      'nuxt-windicss',
+    <%_ } _%>
     <%_ if (ui === 'tailwind') { _%>
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
