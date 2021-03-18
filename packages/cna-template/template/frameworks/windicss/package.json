@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "nuxt-windicss": "^0.4.1"
+  }
+}
