@@ -41,6 +41,7 @@ module.exports = [
       { name: 'Oruga', value: 'oruga' },
       { name: 'Tachyons', value: 'tachyons' },
       { name: 'Tailwind CSS', value: 'tailwind' },
+      { name: 'Windi CSS', value: 'windicss' },
       { name: 'Vant', value: 'vant' },
       { name: 'View UI', value: 'view-ui' },
       { name: 'Vuesax', value: 'vuesax' },
