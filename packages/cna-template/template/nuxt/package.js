@@ -73,6 +73,9 @@ module.exports = {
     if (!features.includes('content')) {
       delete pkg.dependencies['@nuxt/content']
     }
+    if (!features.includes('composition')) {
+      delete pkg.dependencies['@nuxtjs/composition-api']
+    }
 
     // TS
     const typescript = language.includes('ts')

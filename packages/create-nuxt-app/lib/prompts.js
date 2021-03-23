@@ -57,7 +57,8 @@ module.exports = [
     choices: [
       { name: 'Axios - Promise based HTTP client', value: 'axios' },
       { name: 'Progressive Web App (PWA)', value: 'pwa' },
-      { name: 'Content - Git-based headless CMS', value: 'content' }
+      { name: 'Content - Git-based headless CMS', value: 'content' },
+      { name: 'Composition API - with Nuxt-specific features', value: 'composition' }
     ],
     default: []
   },

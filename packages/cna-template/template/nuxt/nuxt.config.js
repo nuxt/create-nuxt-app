@@ -105,6 +105,10 @@
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
     <%_ } _%>
+    <%_ if (composition) { _%>
+    // https://composition-api.nuxtjs.org/
+    '@nuxtjs/composition-api',
+    <%_ } _%>
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
