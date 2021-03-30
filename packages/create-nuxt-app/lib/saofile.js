@@ -17,6 +17,7 @@ module.exports = {
     const lintStaged = eslint && this.answers.linter.includes('lintStaged')
     const stylelint = this.answers.linter.includes('stylelint')
     const commitlint = this.answers.linter.includes('commitlint')
+    const husky = this.answers.devTools.includes('husky')
     const axios = this.answers.features.includes('axios')
     const content = this.answers.features.includes('content')
     const pm = this.answers.pm === 'yarn' ? 'yarn' : 'npm'
@@ -33,6 +34,7 @@ module.exports = {
       lintStaged,
       stylelint,
       commitlint,
+      husky,
       axios,
       edge,
       pm,
@@ -82,6 +84,17 @@ module.exports = {
         type: 'add',
         files: '**',
         templateDir: join(frameworksDir, this.answers.ci)
+      })
+    }
+
+    if (this.answers.devTools && this.answers.devTools !== 'none') {
+      this.answers.devTools.forEach((tool) => {
+        console.log('frameworksDir: ', frameworksDir)
+        actions.push({
+          type: 'add',
+          files: '**',
+          templateDir: join(frameworksDir, tool)
+        })
       })
     }
 
