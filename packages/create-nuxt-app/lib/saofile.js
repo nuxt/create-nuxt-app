@@ -89,7 +89,6 @@ module.exports = {
 
     if (this.answers.devTools && this.answers.devTools !== 'none') {
       this.answers.devTools.forEach((tool) => {
-        console.log('frameworksDir: ', frameworksDir)
         actions.push({
           type: 'add',
           files: '**',
