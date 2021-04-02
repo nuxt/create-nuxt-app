@@ -72,7 +72,7 @@ module.exports = {
         '.husky/.gitignore': husky,
         '.husky/commit-msg': commitlint,
         '.husky/pre-commit': lintStaged,
-        '.husky/common.sh': husky && isWindows
+        '.husky/common.sh': husky
       }
     }]
 

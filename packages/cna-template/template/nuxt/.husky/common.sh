@@ -1,3 +1,4 @@
+<%_ if (isWindows === true) { _%>
 command_exists () {
   command -v "$1" >/dev/null 2>&1
 }
@@ -6,3 +7,4 @@ command_exists () {
 if command_exists winpty && test -t 1; then
   exec < /dev/tty
 fi
+<%_ } _%>
