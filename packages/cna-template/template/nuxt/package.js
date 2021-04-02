@@ -32,9 +32,7 @@ module.exports = {
       delete pkg.devDependencies['eslint-plugin-vue']
     }
     if (!lintStaged) {
-      delete pkg.husky
       delete pkg['lint-staged']
-      delete pkg.devDependencies.husky
       delete pkg.devDependencies['lint-staged']
     }
     if (!stylelint) {
@@ -53,9 +51,12 @@ module.exports = {
       delete pkg.devDependencies.prettier
     }
     if (!commitlint) {
-      lintStaged && delete pkg.husky.hooks['commit-msg']
       delete pkg.devDependencies['@commitlint/config-conventional']
       delete pkg.devDependencies['@commitlint/cli']
+    }
+    if (!lintStaged && !commitlint) {
+      delete pkg.devDependencies.husky
+      delete pkg.scripts.postinstall
     }
 
     const lintScript = Object.values(lintScripts).join(' && ')

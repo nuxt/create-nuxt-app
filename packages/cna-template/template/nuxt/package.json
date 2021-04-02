@@ -5,17 +5,12 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
-    "lint:style": "stylelint \"**/*.{vue,css}\" --ignore-path .gitignore"
+    "lint:style": "stylelint \"**/*.{vue,css}\" --ignore-path .gitignore",
+    "postinstall": "husky install"
   },
   "lint-staged": {
     "*.{js,vue}": "eslint",
     "*.{css,vue}": "stylelint"
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "lint-staged"
-    }
   },
   "dependencies": {
     "@nuxt/content": "^1.14.0",
@@ -39,7 +34,7 @@
     "eslint-plugin-nuxt": "^2.0.0",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^7.7.0",
-    "husky": "^4.3.8",
+    "husky": "^6.0.0",
     "lint-staged": "^10.5.4",
     "prettier": "^2.2.1",
     "stylelint": "^13.12.0",

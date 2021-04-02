@@ -1,4 +1,5 @@
 const { dirname, join, relative } = require('path')
+const fs = require('fs')
 const spawn = require('cross-spawn')
 const validate = require('validate-npm-package-name')
 const pkg = require('./package')
@@ -6,6 +7,9 @@ const pkg = require('./package')
 const cnaTemplateDir = join(dirname(require.resolve('cna-template/package.json')))
 const templateDir = join(cnaTemplateDir, 'template')
 const frameworksDir = join(templateDir, 'frameworks')
+const addExecutable = filename => new Promise(
+  resolve => fs.chmod(filename, 0o755, resolve)
+)
 
 module.exports = {
   prompts: require('./prompts'),
@@ -50,6 +54,11 @@ module.exports = {
     })
     validation.errors && validation.errors.length && process.exit(1)
 
+    const { linter } = this.answers
+    const eslint = linter.includes('eslint')
+    const lintStaged = eslint && linter.includes('lintStaged')
+    const commitlint = linter.includes('commitlint')
+
     const actions = [{
       type: 'add',
       files: '**',
@@ -57,7 +66,10 @@ module.exports = {
       filters: {
         'static/icon.png': 'features.includes("pwa")',
         'content/hello.md': 'features.includes("content")',
-        'pages/content.vue': 'features.includes("content")'
+        'pages/content.vue': 'features.includes("content")',
+        '.husky/.gitignore': lintStaged || commitlint,
+        '.husky/commit-msg': commitlint,
+        '.husky/pre-commit': lintStaged
       }
     }]
 
@@ -142,6 +154,14 @@ module.exports = {
   async completed () {
     if (this.answers.vcs === 'git') {
       this.gitInit()
+    }
+
+    const huskyDir = join(this.outDir, '.husky')
+    if (this.answers.linter.includes('lintStaged')) {
+      await addExecutable(join(huskyDir, 'pre-commit'))
+    }
+    if (this.answers.linter.includes('commitlint')) {
+      await addExecutable(join(huskyDir, 'commit-msg'))
     }
 
     await this.npmInstall({ npmClient: this.answers.pm })
