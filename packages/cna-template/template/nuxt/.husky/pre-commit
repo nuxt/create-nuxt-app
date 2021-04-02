@@ -1,4 +1,7 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
+<%_ if (isWindows === true) { _%>
+. "$(dirname "$0")/common.sh"
+<%_ } _%>
 
 <%= pmRun %> lint-staged
