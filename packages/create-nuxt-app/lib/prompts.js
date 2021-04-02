@@ -41,6 +41,7 @@ module.exports = [
       { name: 'Oruga', value: 'oruga' },
       { name: 'Tachyons', value: 'tachyons' },
       { name: 'Tailwind CSS', value: 'tailwind' },
+      { name: 'Windi CSS', value: 'windicss' },
       { name: 'Vant', value: 'vant' },
       { name: 'View UI', value: 'view-ui' },
       { name: 'Vuesax', value: 'vuesax' },
@@ -103,7 +104,7 @@ module.exports = [
     type: 'list',
     choices: [
       { name: 'Server (Node.js hosting)', value: 'server' },
-      { name: 'Static (Static/JAMStack hosting)', value: 'static' }
+      { name: 'Static (Static/Jamstack hosting)', value: 'static' }
     ],
     default: 'server'
   },
@@ -125,7 +126,9 @@ module.exports = [
     type: 'list',
     choices: [
       { name: 'None', value: 'none' },
-      { name: 'GitHub Actions (GitHub only)', value: 'github-actions' }
+      { name: 'GitHub Actions (GitHub only)', value: 'github-actions' },
+      { name: 'Travis CI', value: 'travis-ci' },
+      { name: 'CircleCI', value: 'circleci' }
     ],
     default: 'none'
   },

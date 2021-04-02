@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.6.0](https://github.com/nuxt/create-nuxt-app/compare/v3.5.2...v3.6.0) (2021-03-19)
+
+
+### Bug Fixes
+
+* **prompts:** change JAMstack to Jamstack ([#742](https://github.com/nuxt/create-nuxt-app/issues/742)) ([904a26f](https://github.com/nuxt/create-nuxt-app/commit/904a26fad2a584fc722cda62ecc04dafe3a4ead4))
+* **ts:** remove @nuxt/typescript-runtime ([#721](https://github.com/nuxt/create-nuxt-app/issues/721)) ([cbd58dc](https://github.com/nuxt/create-nuxt-app/commit/cbd58dc3242c90668f771d9d68bc5e48606a4274))
+* **vuesax:** add boxicons ([#722](https://github.com/nuxt/create-nuxt-app/issues/722)) ([d121169](https://github.com/nuxt/create-nuxt-app/commit/d12116967a7bed3d96d4543bdd56561c4126e72c))
+* update sao link ([#707](https://github.com/nuxt/create-nuxt-app/issues/707)) ([3f548e5](https://github.com/nuxt/create-nuxt-app/commit/3f548e5de4a6fec4be2b987795b1a5bf29da4b4e))
+
+
+### Features
+
+* Add CircleCI and Travis CI ([#737](https://github.com/nuxt/create-nuxt-app/issues/737)) ([1cfe0d4](https://github.com/nuxt/create-nuxt-app/commit/1cfe0d4b161593db986995bb2e677700ac83f457))
+* Add nuxt windicss. ([#753](https://github.com/nuxt/create-nuxt-app/issues/753)) ([a0da946](https://github.com/nuxt/create-nuxt-app/commit/a0da9468f0f95b4577e1dbbc7bb303396d99c1b8))
+* add vant ui framework ([#710](https://github.com/nuxt/create-nuxt-app/issues/710)) ([37bfea3](https://github.com/nuxt/create-nuxt-app/commit/37bfea3a7f16e2e92941053b8bff40e5ed414abf))
+* update @nuxtjs/tailwindcss to v4 ([#751](https://github.com/nuxt/create-nuxt-app/issues/751)) ([691bd8a](https://github.com/nuxt/create-nuxt-app/commit/691bd8a1d2cbcc3807c7b2acb19f7369216bd579))
+* update iview to viewui ([#714](https://github.com/nuxt/create-nuxt-app/issues/714)) ([43da555](https://github.com/nuxt/create-nuxt-app/commit/43da55582dc87bb1a1f80747b70181bc6f5fb174))
+* upgrade @oruga-ui/oruga to version 0.3.3 ([#717](https://github.com/nuxt/create-nuxt-app/issues/717)) ([77f948c](https://github.com/nuxt/create-nuxt-app/commit/77f948cca6e3eab3c16e7ed8ed8b1539a726fb27))
+
+
+
+
+
 ## [3.5.2](https://github.com/nuxt/create-nuxt-app/compare/v3.5.1...v3.5.2) (2021-01-28)
 
 **Note:** Version bump only for package create-nuxt-app

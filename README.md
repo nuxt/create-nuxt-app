@@ -48,6 +48,7 @@ yarn create nuxt-app <my-project>
     - [Oruga](https://oruga.io/)
     - [Tachyons](https://github.com/tachyons-css/tachyons)
     - [Tailwind CSS](https://github.com/tailwindcss/tailwindcss)
+    - [Windi CSS](https://github.com/windicss/windicss)
     - [Vant](https://github.com/youzan/vant)
     - [View UI](https://www.iviewui.com/)
     - [Vuesax](https://github.com/lusaxweb/vuesax)
@@ -80,6 +81,8 @@ yarn create nuxt-app <my-project>
     - [Dependabot (for GitHub only)](https://dependabot.com/)
 1. Continous Integration
     - [GitHub Actions](https://github.com/features/actions)
+    - [Travis CI](https://travis-ci.com)
+    - [CircleCI](https://circleci.com)
 
 ## CLI Options
 
