@@ -1,5 +1,5 @@
 {
   "devDependencies": {
-    "nuxt-windicss": "^0.4.5"
+    "nuxt-windicss": "^0.5.3"
   }
 }
