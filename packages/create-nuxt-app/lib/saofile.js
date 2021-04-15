@@ -5,6 +5,7 @@ const validate = require('validate-npm-package-name')
 const pkg = require('./package')
 
 const cnaTemplateDir = join(dirname(require.resolve('cna-template/package.json')))
+const isWindows = process.platform === 'win32'
 const templateDir = join(cnaTemplateDir, 'template')
 const frameworksDir = join(templateDir, 'frameworks')
 const addExecutable = filename => new Promise(
@@ -25,7 +26,6 @@ module.exports = {
     const content = this.answers.features.includes('content')
     const pm = this.answers.pm === 'yarn' ? 'yarn' : 'npm'
     const pmRun = this.answers.pm === 'yarn' ? 'yarn' : 'npm run'
-
     const { cliOptions = {} } = this.sao.opts
     const edge = cliOptions.edge ? '-edge' : ''
 
@@ -41,7 +41,8 @@ module.exports = {
       edge,
       pm,
       pmRun,
-      content
+      content,
+      isWindows
     }
   },
   actions () {
@@ -58,6 +59,7 @@ module.exports = {
     const eslint = linter.includes('eslint')
     const lintStaged = eslint && linter.includes('lintStaged')
     const commitlint = linter.includes('commitlint')
+    const husky = lintStaged || commitlint
 
     const actions = [{
       type: 'add',
@@ -67,9 +69,10 @@ module.exports = {
         'static/icon.png': 'features.includes("pwa")',
         'content/hello.md': 'features.includes("content")',
         'pages/content.vue': 'features.includes("content")',
-        '.husky/.gitignore': lintStaged || commitlint,
+        '.husky/.gitignore': husky,
         '.husky/commit-msg': commitlint,
-        '.husky/pre-commit': lintStaged
+        '.husky/pre-commit': lintStaged,
+        '.husky/common.sh': husky
       }
     }]
 
