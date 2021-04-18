@@ -15,7 +15,7 @@
     "lint:style": "stylelint \"**/*.{vue,css}\"",
     "test": "ava --verbose",
     "test:snapshot": "ava --verbose --update-snapshots",
-    "postinstall": "husky install"
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@ava/babel": "^1.0.1",
