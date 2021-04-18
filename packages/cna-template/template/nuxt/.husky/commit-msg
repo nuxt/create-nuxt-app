@@ -2,4 +2,4 @@
 . "$(dirname "$0")/_/husky.sh"
 . "$(dirname "$0")/common.sh"
 
-<%= pmRun %> commitlint --edit $1
+<%= pmRun === 'yarn' ? 'yarn' : 'npx' %> commitlint --edit $1
