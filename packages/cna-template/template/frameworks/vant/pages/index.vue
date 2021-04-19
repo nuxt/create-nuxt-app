@@ -6,13 +6,13 @@
         Welcome to the Vant + Nuxt.js template
       </h1>
       <div class="links">
-        <van-button type="primary"  url="https://nuxtjs.org/">
+        <van-button type="primary" url="https://nuxtjs.org/">
           Documentation
         </van-button>
-        <van-button  url="https://github.com/nuxt/nuxt.js">
+        <van-button url="https://github.com/nuxt/nuxt.js">
           GitHub
         </van-button>
-        <van-button  url="https://vant-contrib.gitee.io/vant">
+        <van-button url="https://vant-contrib.gitee.io/vant">
           Vant UI
         </van-button>
       </div>
