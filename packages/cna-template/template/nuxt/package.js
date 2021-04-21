@@ -56,7 +56,7 @@ module.exports = {
     }
     if (!lintStaged && !commitlint) {
       delete pkg.devDependencies.husky
-      delete pkg.scripts.postinstall
+      delete pkg.scripts.prepare
     }
 
     const lintScript = Object.values(lintScripts).join(' && ')
