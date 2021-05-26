@@ -42,7 +42,7 @@
       "groupName": "webdriverio packages"
     },
     {
-      "matchPackagePatterns": ["^@oruga-ui"],
+      "matchPackageNames": ["@oruga-ui/oruga"],
       "groupName": "oruga packages"
     },
     {
