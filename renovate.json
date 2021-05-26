@@ -10,59 +10,47 @@
   },
   "packageRules": [
     {
-      "packagePatterns": ["nuxt"],
+      "matchPackagePatterns": ["nuxt"],
       "groupName": "nuxt packages"
     },
     {
-      "packagePatterns": ["adonisjs"],
-      "groupName": "adonisjs packages"
-    },
-    {
-      "packagePatterns": ["ant-design"],
+      "matchPackagePatterns": ["^ant-design"],
       "groupName": "ant design packages"
     },
     {
-      "packagePatterns": ["ava"],
-      "groupName": "ava packages"
-    },
-    {
-      "packagePatterns": ["balm-ui"],
+      "matchPackagePatterns": ["balm-ui"],
       "groupName": "balm-ui packages"
     },
     {
-      "packagePatterns": ["bootstrap"],
+      "matchPackagePatterns": ["bootstrap"],
       "groupName": "bootstrap packages"
     },
     {
-      "packagePatterns": ["element-ui"],
+      "matchPackagePatterns": ["element-ui"],
       "groupName": "element-ui packages"
     },
     {
-      "packagePatterns": ["feathersjs"],
-      "groupName": "feathersjs packages"
-    },
-    {
-      "packagePatterns": ["jest"],
+      "matchPackagePatterns": ["jest"],
       "groupName": "jest packages"
     },
     {
-      "packagePatterns": ["ava", "require-extension-hooks"],
+      "matchPackagePatterns": ["ava", "require-extension-hooks"],
       "groupName": "ava packages"
     },
     {
-      "packagePatterns": ["wdio", "webdriver"],
+      "matchPackagePatterns": ["^@wdio", "eslint-plugin-wdio", "webdriverio"],
       "groupName": "webdriverio packages"
     },
     {
-      "packagePatterns": ["@oruga-ui"],
+      "matchPackagePatterns": ["^@oruga-ui"],
       "groupName": "oruga packages"
     },
     {
-      "packagePatterns": ["nightwatch", "chromedriver"],
+      "matchPackageNames": ["nightwatch", "chromedriver"],
       "groupName": "nightwatch packages"
     },
     {
-      "packagePatterns": ["boxicons", "vuesax"],
+      "matchPackageNames": ["boxicons", "vuesax"],
       "groupName": "vuesax packages"
     }
   ]
