@@ -75,10 +75,3 @@
     </v-col>
   </v-row>
 </template>
-
-<style>
-.logo > * {
-  width: 180px;
-  height: 180px;
-}
-</style>
