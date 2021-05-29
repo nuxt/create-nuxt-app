@@ -48,10 +48,6 @@
     {
       "matchPackageNames": ["nightwatch", "chromedriver"],
       "groupName": "nightwatch packages"
-    },
-    {
-      "matchPackageNames": ["boxicons", "vuesax"],
-      "groupName": "vuesax packages"
     }
   ]
 }
