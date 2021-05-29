@@ -53,8 +53,6 @@
     'tachyons/css/tachyons.css'
     <%_ } else if (ui === 'framevuerk') { _%>
     'framevuerk/dist/framevuerk-nuxt.min.css'
-    <%_ } else if (ui === 'vuesax') { _%>
-    'vuesax/dist/vuesax.css'
     <%_ } else if (ui === 'vant') { _%>
     'vant/lib/index.css'
     <%_ } _%>
@@ -72,8 +70,6 @@
     '@/plugins/balm-ui'
     <%_ } else if (ui === 'framevuerk') { _%>
     '@/plugins/framevuerk'
-    <%_ } else if (ui === 'vuesax') { _%>
-    '@/plugins/vuesax'
     <%_ } else if (ui === 'vant') { _%>
     '@/plugins/vant'
     <%_ } _%>
