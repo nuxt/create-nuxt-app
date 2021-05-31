@@ -29,6 +29,15 @@
 
 <%_ if (typescript) { _%>
 <script lang="ts">
+<%_ } else { _%>
+<script>
+<%_ } _%>
+<%_ if (composition) { _%>
+import { defineComponent } from '@nuxtjs/composition-api'
+
+export default defineComponent({})
+</script>
+<%_ } else if (typescript) { _%>
 import Vue from 'vue'
 
 export default Vue.extend({})
