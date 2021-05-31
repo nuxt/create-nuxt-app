@@ -24,6 +24,7 @@ module.exports = {
     const commitlint = this.answers.linter.includes('commitlint')
     const axios = this.answers.features.includes('axios')
     const content = this.answers.features.includes('content')
+    const composition = this.answers.features.includes('composition')
     const pm = this.answers.pm === 'yarn' ? 'yarn' : 'npm'
     const pmRun = this.answers.pm === 'yarn' ? 'yarn' : 'npm run'
     const { cliOptions = {} } = this.sao.opts
@@ -42,6 +43,7 @@ module.exports = {
       pm,
       pmRun,
       content,
+      composition,
       isWindows
     }
   },

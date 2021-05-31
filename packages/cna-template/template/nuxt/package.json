@@ -13,6 +13,7 @@
     "*.{css,vue}": "stylelint"
   },
   "dependencies": {
+    "@nuxtjs/composition-api": "^0.24.2",
     "@nuxt/content": "^1.14.0",
     "@nuxtjs/axios": "^5.13.5",
     "@nuxtjs/pwa": "^3.3.5",
