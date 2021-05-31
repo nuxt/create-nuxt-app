@@ -34,12 +34,15 @@ cli
     if (cliOptions.info) {
       return showEnvInfo()
     }
-    const files = fs.existsSync(outDir) ? fs.readdirSync(outDir) : []
     console.log()
     console.log(chalk`{cyan create-nuxt-app v${version}}`)
-    if (files.length) {
-      return console.log(chalk.red(`Can't create ${outDir} because there's already a non-empty directory ${outDir} existing in path.`))
+
+    if (fs.existsSync(outDir) && fs.readdirSync(outDir).length) {
+      const baseDir = outDir === '.' ? path.basename(process.cwd()) : outDir
+      return console.error(chalk.red(
+        `Could not create project in ${chalk.bold(baseDir)} because the directory is not empty.`))
     }
+
     console.log(chalk`✨  Generating Nuxt.js project in {cyan ${outDir}}`)
 
     const { verbose, answers } = cliOptions

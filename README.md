@@ -51,7 +51,6 @@ yarn create nuxt-app <my-project>
     - [Windi CSS](https://github.com/windicss/windicss)
     - [Vant](https://github.com/youzan/vant)
     - [View UI](https://www.iviewui.com/)
-    - [Vuesax](https://github.com/lusaxweb/vuesax)
     - [Vuetify](https://github.com/vuetifyjs/vuetify)
 1. Nuxt.js modules:
     - [Axios - Promise based HTTP client](https://github.com/nuxt-community/axios-module)

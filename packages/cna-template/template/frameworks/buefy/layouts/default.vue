@@ -35,18 +35,18 @@
             v-for="(item, key) of items"
             :key="key"
           >
-            <nuxt-link
+            <NuxtLink
               :to="item.to"
               exact-active-class="is-active"
             >
               <b-icon :icon="item.icon" /> {{ item.title }}
-            </nuxt-link>
+            </NuxtLink>
           </li>
         </ul>
       </aside>
 
       <div class="container column is-10">
-        <nuxt />
+        <Nuxt />
       </div>
     </section>
   </div>

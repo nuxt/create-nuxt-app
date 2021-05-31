@@ -1,4 +1,4 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-yarn test -u && git add *.md *.snap
+yarn lint && yarn test -u && git add ./packages/*/test/snapshots/*
