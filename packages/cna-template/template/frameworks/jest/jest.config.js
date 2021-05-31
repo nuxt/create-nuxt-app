@@ -2,12 +2,7 @@ module.exports = {
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/$1',
     '^~/(.*)$': '<rootDir>/$1',
-    '^vue$': 'vue/dist/vue.common.js',
-    <%_ if (composition) { _%>
-    '@nuxtjs/composition-api': '@nuxtjs/composition-api/lib/entrypoint.js',
-    // alternatively, depending on your node version
-    // '@nuxtjs/composition-api': '@nuxtjs/composition-api/entrypoint',
-    <%_ } _%>
+    '^vue$': 'vue/dist/vue.common.js'
   },
   moduleFileExtensions: [
     <%_ if (typescript) { _%>

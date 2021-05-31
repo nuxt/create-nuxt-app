@@ -104,7 +104,7 @@
     <%_ } _%>
     <%_ if (composition) { _%>
     // https://composition-api.nuxtjs.org/
-    '@nuxtjs/composition-api',
+    '@nuxtjs/composition-api/module',
     <%_ } _%>
   ],
 
