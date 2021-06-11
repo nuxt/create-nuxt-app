@@ -30,6 +30,7 @@ cli
   .option('-i, --info', 'Print out debugging information relating to the local environment')
   .option('--answers <json>', 'Skip all the prompts and use the provided answers')
   .option('--verbose', 'Show debug logs')
+  .option('--overwrite-dir', 'Overwrite the target directory')
   .action((outDir = '.', cliOptions) => {
     if (cliOptions.info) {
       return showEnvInfo()
@@ -37,7 +38,8 @@ cli
     console.log()
     console.log(chalk`{cyan create-nuxt-app v${version}}`)
 
-    if (fs.existsSync(outDir) && fs.readdirSync(outDir).length) {
+    const { answers, overwriteDir, verbose } = cliOptions
+    if (fs.existsSync(outDir) && fs.readdirSync(outDir).length && !overwriteDir) {
       const baseDir = outDir === '.' ? path.basename(process.cwd()) : outDir
       return console.error(chalk.red(
         `Could not create project in ${chalk.bold(baseDir)} because the directory is not empty.`))
@@ -45,7 +47,6 @@ cli
 
     console.log(chalk`✨  Generating Nuxt.js project in {cyan ${outDir}}`)
 
-    const { verbose, answers } = cliOptions
     const logLevel = verbose ? 4 : 2
     // See https://sao.vercel.app/api.html#standalone-cli
     sao({ generator, outDir, logLevel, answers, cliOptions })
