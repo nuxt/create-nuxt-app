@@ -69,7 +69,7 @@
         <div class="fv-margin-bottom fv-hidden-xs fv-hidden-sm" />
         <div class="content__header fv-margin-bottom fv-padding">
           <div class="fv-padding fv-margin-bottom fv-text-center">
-            <Logo />
+            <NuxtLogo />
           </div>
           <p>
             <b>Framevuerk</b> is a Fast, Responsive, Without Dependencies, Both Direction Support and Configurable UI Framework based on <b>Vue.js</b>.
@@ -134,12 +134,10 @@
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
 import FramevuerkLogo from '~/components/FramevuerkLogo.vue'
 
 export default {
   components: {
-    Logo,
     FramevuerkLogo
   },
   data () {
