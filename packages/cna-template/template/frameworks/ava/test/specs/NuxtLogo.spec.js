@@ -1,8 +1,8 @@
 import test from 'ava'
 import { mount } from '@vue/test-utils'
-import Logo from '@/components/Logo.vue'
+import NuxtLogo from '@/components/NuxtLogo.vue'
 
 test('is a Vue instance', (t) => {
-  const wrapper = mount(Logo)
+  const wrapper = mount(NuxtLogo)
   t.truthy(wrapper.vm)
 })
