@@ -26,7 +26,7 @@ module.exports = {
       delete pkg.scripts['lint:js']
       delete pkg.devDependencies['@nuxtjs/eslint-config']
       delete pkg.devDependencies['@nuxtjs/eslint-module']
-      delete pkg.devDependencies['babel-eslint']
+      delete pkg.devDependencies['@babel/eslint-parser']
       delete pkg.devDependencies.eslint
       delete pkg.devDependencies['eslint-plugin-nuxt']
       delete pkg.devDependencies['eslint-plugin-vue']

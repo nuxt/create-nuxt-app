@@ -6,7 +6,7 @@ module.exports = {
   },
   <%_ if (!typescript) { _%>
   parserOptions: {
-    parser: 'babel-eslint'
+    parser: '@babel/eslint-parser'
   },
   <%_ } _%>
   extends: [
