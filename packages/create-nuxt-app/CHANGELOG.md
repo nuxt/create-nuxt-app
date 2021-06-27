@@ -3,6 +3,34 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.7.0](https://github.com/nuxt/create-nuxt-app/compare/v3.6.0...v3.7.0) (2021-06-27)
+
+
+### Bug Fixes
+
+* **cli:** rephrase not empty directory error message ([#778](https://github.com/nuxt/create-nuxt-app/issues/778)) ([8186168](https://github.com/nuxt/create-nuxt-app/commit/81861685b08cdb3887fcf30f3708b387b0e1f017))
+* **husky:** stdin is not a tty in git bash ([#766](https://github.com/nuxt/create-nuxt-app/issues/766)) ([807546d](https://github.com/nuxt/create-nuxt-app/commit/807546d65f107378c15503c5f1585b9131a7e469))
+* **template:** nodemismatch error in ios safari ([#770](https://github.com/nuxt/create-nuxt-app/issues/770)) ([41463d1](https://github.com/nuxt/create-nuxt-app/commit/41463d16912e0026ac533cb0b8441cb7a9e5c8b8))
+* **templates:** remove not being maintained vuesax ([#795](https://github.com/nuxt/create-nuxt-app/issues/795)) ([e7211b3](https://github.com/nuxt/create-nuxt-app/commit/e7211b3c1d2a683c2376cfa8f2437555ccf526c7))
+* **templates:** remove not recommended eslint-plugin-prettier ([#797](https://github.com/nuxt/create-nuxt-app/issues/797)) ([5d8c498](https://github.com/nuxt/create-nuxt-app/commit/5d8c49878c98cc2842b65fa8edaa201d9d3bc0aa))
+* add vuetify to dependencies ([#787](https://github.com/nuxt/create-nuxt-app/issues/787)) ([3610d12](https://github.com/nuxt/create-nuxt-app/commit/3610d123fb9f2725bf7fd9c15137568159240c6d))
+
+
+### Features
+
+* **create-nuxt-app:** add --overwrite-dir flag ([#799](https://github.com/nuxt/create-nuxt-app/issues/799)) ([e45bdbb](https://github.com/nuxt/create-nuxt-app/commit/e45bdbb433fbb8d242630f8062dc5d76c65f8f2f))
+* update design ([#792](https://github.com/nuxt/create-nuxt-app/issues/792)) ([b7d2db9](https://github.com/nuxt/create-nuxt-app/commit/b7d2db9f10ff2bb1fedbe65800f1ac43cb84fad1))
+* **template:** update to husky v6 ([#715](https://github.com/nuxt/create-nuxt-app/issues/715)) ([5ee3feb](https://github.com/nuxt/create-nuxt-app/commit/5ee3feb3dd9ae776f335d835c93ad9f609344a8b))
+
+
+### Performance Improvements
+
+* use npm ci instead of npm i in GH Action Workflow ([#762](https://github.com/nuxt/create-nuxt-app/issues/762)) ([8c9b77d](https://github.com/nuxt/create-nuxt-app/commit/8c9b77deb7ef64f5a4b7a484c4a9e3ef4d0a3208))
+
+
+
+
+
 # [3.6.0](https://github.com/nuxt/create-nuxt-app/compare/v3.5.2...v3.6.0) (2021-03-19)
 
 

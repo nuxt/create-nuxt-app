@@ -3,6 +3,36 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.7.0](https://github.com/nuxt/create-nuxt-app/compare/v3.6.0...v3.7.0) (2021-06-27)
+
+
+### Bug Fixes
+
+* **cna-template:** use npx to invoke locally installed binaries ([#774](https://github.com/nuxt/create-nuxt-app/issues/774)) ([a9844ee](https://github.com/nuxt/create-nuxt-app/commit/a9844eec09262138f364e03aa4165bf580f6fc8a))
+* **husky:** stdin is not a tty in git bash ([#766](https://github.com/nuxt/create-nuxt-app/issues/766)) ([807546d](https://github.com/nuxt/create-nuxt-app/commit/807546d65f107378c15503c5f1585b9131a7e469))
+* **jest:** jest 27 changed the default test environment to node ([8c27b44](https://github.com/nuxt/create-nuxt-app/commit/8c27b44ade0b3750cacc3a31f2c8934f6d80f515))
+* **template:** nodemismatch error in ios safari ([#770](https://github.com/nuxt/create-nuxt-app/issues/770)) ([41463d1](https://github.com/nuxt/create-nuxt-app/commit/41463d16912e0026ac533cb0b8441cb7a9e5c8b8))
+* **template:** update vant template demo ([#776](https://github.com/nuxt/create-nuxt-app/issues/776)) ([de45005](https://github.com/nuxt/create-nuxt-app/commit/de45005e276ce2882b4294dbb3cb40504228cb45))
+* **templates:** remove not being maintained vuesax ([#795](https://github.com/nuxt/create-nuxt-app/issues/795)) ([e7211b3](https://github.com/nuxt/create-nuxt-app/commit/e7211b3c1d2a683c2376cfa8f2437555ccf526c7))
+* **templates:** remove not recommended eslint-plugin-prettier ([#797](https://github.com/nuxt/create-nuxt-app/issues/797)) ([5d8c498](https://github.com/nuxt/create-nuxt-app/commit/5d8c49878c98cc2842b65fa8edaa201d9d3bc0aa))
+* **templates:** use PascalCase component names in single-file components ([ed17e67](https://github.com/nuxt/create-nuxt-app/commit/ed17e67e1499a69f9c6eb364c0df6b64cd5a2a19))
+* add vuetify to dependencies ([#787](https://github.com/nuxt/create-nuxt-app/issues/787)) ([3610d12](https://github.com/nuxt/create-nuxt-app/commit/3610d123fb9f2725bf7fd9c15137568159240c6d))
+
+
+### Features
+
+* update design ([#792](https://github.com/nuxt/create-nuxt-app/issues/792)) ([b7d2db9](https://github.com/nuxt/create-nuxt-app/commit/b7d2db9f10ff2bb1fedbe65800f1ac43cb84fad1))
+* **template:** update to husky v6 ([#715](https://github.com/nuxt/create-nuxt-app/issues/715)) ([5ee3feb](https://github.com/nuxt/create-nuxt-app/commit/5ee3feb3dd9ae776f335d835c93ad9f609344a8b))
+
+
+### Performance Improvements
+
+* use npm ci instead of npm i in GH Action Workflow ([#762](https://github.com/nuxt/create-nuxt-app/issues/762)) ([8c9b77d](https://github.com/nuxt/create-nuxt-app/commit/8c9b77deb7ef64f5a4b7a484c4a9e3ef4d0a3208))
+
+
+
+
+
 # [3.6.0](https://github.com/nuxt/create-nuxt-app/compare/v3.5.2...v3.6.0) (2021-03-19)
 
 
