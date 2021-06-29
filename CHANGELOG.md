@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.7.1](https://github.com/nuxt/create-nuxt-app/compare/v3.7.0...v3.7.1) (2021-06-29)
+
+
+### Bug Fixes
+
+* **eslint:** no babel config file detected ([#806](https://github.com/nuxt/create-nuxt-app/issues/806)) ([4ce06e6](https://github.com/nuxt/create-nuxt-app/commit/4ce06e62aa666de9071c69d7fd17439669b55c46))
+
+
+
+
+
 # [3.7.0](https://github.com/nuxt/create-nuxt-app/compare/v3.6.0...v3.7.0) (2021-06-27)
 
 
