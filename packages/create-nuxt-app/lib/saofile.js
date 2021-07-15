@@ -5,7 +5,6 @@ const validate = require('validate-npm-package-name')
 const pkg = require('./package')
 
 const cnaTemplateDir = join(dirname(require.resolve('cna-template/package.json')))
-const isWindows = process.platform === 'win32'
 const templateDir = join(cnaTemplateDir, 'template')
 const frameworksDir = join(templateDir, 'frameworks')
 const addExecutable = filename => new Promise(
@@ -41,8 +40,7 @@ module.exports = {
       edge,
       pm,
       pmRun,
-      content,
-      isWindows
+      content
     }
   },
   actions () {
@@ -72,7 +70,7 @@ module.exports = {
         '.husky/.gitignore': husky,
         '.husky/commit-msg': commitlint,
         '.husky/pre-commit': lintStaged,
-        '.husky/common.sh': husky
+        '.husky/common.sh': husky && this.answers.pm === 'yarn'
       }
     }]
 
