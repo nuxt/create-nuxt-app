@@ -21,7 +21,7 @@ module.exports = {
     <%_ } _%>
     'plugin:nuxt/recommended',
     <%_ if (prettier) { _%>
-    'prettier'
+    'plugin:prettier/recommended'
     <%_ } _%>
   ],
   plugins: [

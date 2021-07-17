@@ -44,6 +44,9 @@ module.exports = {
       delete pkg.devDependencies['stylelint-config-standard']
       delete pkg.devDependencies['stylelint-config-prettier']
     }
+    if (!eslint || !prettier) {
+      delete pkg.devDependencies['eslint-plugin-prettier']
+    }
     if (!prettier) {
       delete pkg.devDependencies['eslint-config-prettier']
       delete pkg.devDependencies['stylelint-config-prettier']
