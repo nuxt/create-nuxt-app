@@ -4,6 +4,8 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
+    "update:check": "npx npm-check-updates@latest --packageFile package.json",
+    "update:major": "<%= pmRun %> update:check <%= pm === 'yarn' ? '' : '-- ' %>-u && <%= pm === 'yarn' ? 'yarn' : 'npm install' %> && npx browserslist@latest --update-db",
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
     "lint:style": "stylelint \"**/*.{vue,css}\" --ignore-path .gitignore",
     "prepare": "husky install"
