@@ -14,7 +14,7 @@ module.exports = {
   ],
   transform: {
     <%_ if (typescript) { _%>
-    "^.+\\.ts$": "ts-jest",
+    '^.+\\.ts$': 'ts-jest',
     <%_ } _%>
     '^.+\\.js$': 'babel-jest',
     '.*\\.(vue)$': 'vue-jest'
