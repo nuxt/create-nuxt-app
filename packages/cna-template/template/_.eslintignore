@@ -1,0 +1,4 @@
+<%_ if (pwa) { _%>
+# Service worker
+sw.*
+<%_ } _%>
