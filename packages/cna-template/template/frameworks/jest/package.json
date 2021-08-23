@@ -5,9 +5,9 @@
   "devDependencies": {
     "@vue/test-utils": "^1.2.2",
     "babel-core": "7.0.0-bridge.0",
-    "babel-jest": "^27.0.5",
-    "jest": "^27.0.5",
-    "ts-jest": "^27.0.3",
+    "babel-jest": "^27.0.6",
+    "jest": "^27.0.6",
+    "ts-jest": "^27.0.5",
     "vue-jest": "^3.0.4"
   }
 }
