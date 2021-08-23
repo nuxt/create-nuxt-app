@@ -1,6 +1,6 @@
 {
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^4.2.0",
-    "postcss": "^8.3.5"
+    "postcss": "^8.3.6"
   }
 }
