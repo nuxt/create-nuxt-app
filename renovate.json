@@ -1,5 +1,6 @@
 {
   "extends": ["@nuxtjs"],
+  "dependencyDashboardApproval": true,
   "lockFileMaintenance": {
     "enabled": true
   },
