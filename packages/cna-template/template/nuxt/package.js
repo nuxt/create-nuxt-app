@@ -22,9 +22,11 @@ module.exports = {
       prettier: '<%= pmRun %> lint:prettier'
     }
     const lintfixScripts = {
+      // prettier before eslint to avoid conflicting rules like no-return-assign
+      // without having to use prettier via eslint (plugin:prettier/recommended)
+      prettier: 'prettier --write --list-different .',
       eslint: "<%= pmRun %> lint:js <%= pm === 'npm' ? '-- ' : '' %>--fix",
-      stylelint: "<%= pmRun %> lint:style <%= pm === 'npm' ? '-- ' : '' %>--fix",
-      prettier: 'prettier --write --list-different .'
+      stylelint: "<%= pmRun %> lint:style <%= pm === 'npm' ? '-- ' : '' %>--fix"
     }
 
     if (!eslint) {
