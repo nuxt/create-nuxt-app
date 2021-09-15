@@ -1,5 +1,3 @@
-![create-nuxt-app](https://user-images.githubusercontent.com/904724/85284101-daf3fc00-b48e-11ea-93e2-8a9df49153c1.png)
-
 # Create Nuxt App
 
 [![NPM version](https://img.shields.io/npm/v/create-nuxt-app.svg?style=flat)](https://npmjs.com/package/create-nuxt-app)
