@@ -60,4 +60,11 @@ for (const prompt of saoConfig.prompts) {
       })
     }
   }
+
+  if (prompt.name === 'srcDir') {
+    test('verify srcDir: src', async (t) => {
+      const answers = { [prompt.name]: 'src' }
+      await verifyAnswers(t, answers)
+    })
+  }
 }

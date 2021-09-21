@@ -150,6 +150,25 @@ module.exports = {
       files: 'package.js'
     })
 
+    // It's safer to move files after other actions
+    if (this.answers.srcDir !== '') {
+      const srcDir = this.answers.srcDir
+
+      actions.push({
+        type: 'move',
+        patterns: {
+          'assets/': join(srcDir, 'assets/'),
+          'components/': join(srcDir, 'components/'),
+          'layouts/': join(srcDir, 'layouts/'),
+          'middleware/': join(srcDir, 'middleware/'),
+          'pages/': join(srcDir, 'pages/'),
+          'plugins/': join(srcDir, 'plugins/'),
+          'static/': join(srcDir, 'static/'),
+          'store/': join(srcDir, 'store/')
+        }
+      })
+    }
+
     return actions
   },
   async completed () {

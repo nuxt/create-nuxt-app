@@ -9,6 +9,10 @@
   // Target: https://go.nuxtjs.dev/config-target
   target: '<%= target %>',
 
+  <%_ } _%><%_ if (srcDir !== '') { _%>
+  // https://nuxtjs.org/docs/directory-structure/nuxt-config#srcdir
+  srcDir: '<%= srcDir %>',
+
   <%_ } _%>
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {

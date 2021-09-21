@@ -108,6 +108,11 @@ module.exports = [
     default: 'server'
   },
   {
+    name: 'srcDir',
+    message: 'Src directory:',
+    default: '' // rootDir
+  },
+  {
     name: 'devTools',
     message: 'Development tools:',
     type: 'checkbox',
