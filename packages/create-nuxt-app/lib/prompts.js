@@ -109,7 +109,7 @@ module.exports = [
   },
   {
     name: 'srcDir',
-    message: 'Src directory:',
+    message: 'Source directory, relative to root:',
     default: '' // rootDir
   },
   {

@@ -76,7 +76,7 @@ yarn create nuxt-app <my-project>
     - [jsconfig.json](https://code.visualstudio.com/docs/languages/jsconfig)
     - [Semantic PR](https://probot.github.io/apps/semantic-pull-requests/)
     - [Dependabot (for GitHub only)](https://dependabot.com/)
-1. Src Directory
+1. Source Directory
     - [Nuxt's `srcDir` option](https://nuxtjs.org/docs/directory-structure/nuxt-config#srcdir)
 1. Continuous Integration
     - [GitHub Actions](https://github.com/features/actions)
