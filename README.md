@@ -44,6 +44,7 @@ yarn create nuxt-app <my-project>
     - [Element](https://github.com/ElemeFE/element)
     - [Framevuerk](https://github.com/framevuerk/framevuerk)
     - [Oruga](https://oruga.io/)
+    - [Primevue/](https://www.primefaces.org/primevue/)
     - [Tachyons](https://github.com/tachyons-css/tachyons)
     - [Tailwind CSS](https://github.com/tailwindcss/tailwindcss)
     - [Windi CSS](https://github.com/windicss/windicss)
