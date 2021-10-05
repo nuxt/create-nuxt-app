@@ -180,9 +180,8 @@
         }
       }
     }
-  },  
+  },
   <%_ } _%>
-
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     <%_ if (ui === 'element-ui') { _%>
