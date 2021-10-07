@@ -70,8 +70,8 @@ yarn create nuxt-app <my-project>
     - [Universal (SSR / Static)](https://nuxtjs.org/docs/features/rendering-modes#server-side-rendered-sites-and-static-sites)
     - [SPA](https://nuxtjs.org/docs/features/rendering-modes#client-side-rendering-only)
 1. Deployment target
-    - [Server (Node.js hosting)](https://nuxtjs.org/api/configuration-target)
-    - [Static (Static/JAMStack hosting)](https://nuxtjs.org/api/configuration-target)
+    - [Server (Node.js hosting)](https://nuxtjs.org/docs/configuration-glossary/configuration-target)
+    - [Static (Static/JAMStack hosting)](https://nuxtjs.org/docs/configuration-glossary/configuration-target)
 1. Development tools
     - [jsconfig.json](https://code.visualstudio.com/docs/languages/jsconfig)
     - [Semantic PR](https://probot.github.io/apps/semantic-pull-requests/)
