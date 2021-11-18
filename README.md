@@ -1,5 +1,3 @@
-![create-nuxt-app](https://user-images.githubusercontent.com/904724/85284101-daf3fc00-b48e-11ea-93e2-8a9df49153c1.png)
-
 # Create Nuxt App
 
 [![NPM version](https://img.shields.io/npm/v/create-nuxt-app.svg?style=flat)](https://npmjs.com/package/create-nuxt-app)
@@ -69,11 +67,11 @@ yarn create nuxt-app <my-project>
     - [WebdriverIO](https://webdriver.io)
     - [Nightwatch](https://nightwatchjs.org)
 1. Rendering mode
-    - [Universal (SSR / Static)](https://nuxtjs.org/guide/#server-rendered-universal-ssr-)
-    - [SPA](https://nuxtjs.org/guide/#single-page-applications-spa-)
+    - [Universal (SSR / Static)](https://nuxtjs.org/docs/features/rendering-modes#server-side-rendered-sites-and-static-sites)
+    - [SPA](https://nuxtjs.org/docs/features/rendering-modes#client-side-rendering-only)
 1. Deployment target
-    - [Server (Node.js hosting)](https://nuxtjs.org/api/configuration-target)
-    - [Static (Static/JAMStack hosting)](https://nuxtjs.org/api/configuration-target)
+    - [Server (Node.js hosting)](https://nuxtjs.org/docs/configuration-glossary/configuration-target)
+    - [Static (Static/JAMStack hosting)](https://nuxtjs.org/docs/configuration-glossary/configuration-target)
 1. Development tools
     - [jsconfig.json](https://code.visualstudio.com/docs/languages/jsconfig)
     - [Semantic PR](https://probot.github.io/apps/semantic-pull-requests/)
