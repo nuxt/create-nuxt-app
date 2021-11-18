@@ -55,6 +55,8 @@
     'framevuerk/dist/framevuerk-nuxt.min.css'
     <%_ } else if (ui === 'vant') { _%>
     'vant/lib/index.css'
+    <%_ } else if (ui === 'primevue') { _%>
+      'primeflex/primeflex.css'
     <%_ } _%>
   ],
 
@@ -120,6 +122,9 @@
     '@chakra-ui/nuxt',
     // https://go.nuxtjs.dev/emotion
     '@nuxtjs/emotion',
+    <%_ } else if (ui === 'primevue') { _%>
+      // Doc: https://www.primefaces.org/primevue/showcase-v2/#/setup
+      '@primevue/nuxt',
     <%_ } _%>
     <%_ if (axios) { _%>
     // https://go.nuxtjs.dev/axios
@@ -182,6 +187,9 @@
   build: {
     <%_ if (ui === 'element-ui') { _%>
     transpile: [/^element-ui/],
+    <%_ } else if (ui === 'primevue') { _%>
+    // https://github.com/primefaces/primevue/issues/844
+    transpile: ['primevue'],
     <%_ } _%>
   }
 }
