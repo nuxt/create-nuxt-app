@@ -12,8 +12,8 @@
     "lib"
   ],
   "dependencies": {
-    "cac": "^6.7.3",
-    "chalk": "^4.1.1",
+    "cac": "^6.7.12",
+    "chalk": "^4.1.2",
     "cna-template": "^3.7.1",
     "cross-spawn": "^7.0.3",
     "envinfo": "^7.8.1",

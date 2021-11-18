@@ -5,7 +5,6 @@ const validate = require('validate-npm-package-name')
 const pkg = require('./package')
 
 const cnaTemplateDir = join(dirname(require.resolve('cna-template/package.json')))
-const isWindows = process.platform === 'win32'
 const templateDir = join(cnaTemplateDir, 'template')
 const frameworksDir = join(templateDir, 'frameworks')
 const addExecutable = filename => new Promise(
@@ -41,8 +40,7 @@ module.exports = {
       edge,
       pm,
       pmRun,
-      content,
-      isWindows
+      content
     }
   },
   actions () {
@@ -72,7 +70,7 @@ module.exports = {
         '.husky/.gitignore': husky,
         '.husky/commit-msg': commitlint,
         '.husky/pre-commit': lintStaged,
-        '.husky/common.sh': husky
+        '.husky/common.sh': husky && this.answers.pm === 'yarn'
       }
     }]
 
@@ -105,6 +103,7 @@ module.exports = {
       files: '*',
       filters: {
         '_.eslintrc.js': 'linter.includes("eslint")',
+        '_.prettierignore': 'linter.includes("prettier")',
         '_.prettierrc': 'linter.includes("prettier")',
         '_jsconfig.json': 'devTools.includes("jsconfig.json")',
         'tsconfig.json': 'language.includes("ts")',
@@ -121,6 +120,7 @@ module.exports = {
       patterns: {
         gitignore: '.gitignore',
         '_package.json': 'package.json',
+        '_.prettierignore': '.prettierignore',
         '_.prettierrc': '.prettierrc',
         '_.eslintrc.js': '.eslintrc.js',
         '_jsconfig.json': 'jsconfig.json',
@@ -169,23 +169,8 @@ module.exports = {
 
     await this.npmInstall({ npmClient: this.answers.pm })
 
-    if (this.answers.linter.includes('eslint')) {
-      const options = ['run', 'lint:js', '--', '--fix']
-      if (this.answers.pm === 'yarn') {
-        options.splice(2, 1)
-      }
-      spawn.sync(this.answers.pm, options, {
-        cwd: this.outDir,
-        stdio: 'inherit'
-      })
-    }
-
-    if (this.answers.linter.includes('stylelint')) {
-      const options = ['run', 'lint:style', '--', '--fix']
-      if (this.answers.pm === 'yarn') {
-        options.splice(2, 1)
-      }
-      spawn.sync(this.answers.pm, options, {
+    if (['eslint', 'stylelint', 'prettier'].some(linter => this.answers.linter.includes(linter))) {
+      spawn.sync(this.answers.pm, ['run', 'lintfix'], {
         cwd: this.outDir,
         stdio: 'inherit'
       })
