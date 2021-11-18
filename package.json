@@ -18,7 +18,7 @@
     "prepare": "husky install"
   },
   "devDependencies": {
-    "@ava/babel": "^1.0.1",
+    "@ava/babel": "^2.0.0",
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-conventional": "^12.1.4",
     "@nuxtjs/eslint-config": "^7.0.0",
