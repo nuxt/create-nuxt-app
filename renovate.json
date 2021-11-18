@@ -6,7 +6,7 @@
   },
   "ignoreDeps": ["vue-jest"],
   "postUpgradeTasks": {
-    "commands": ["ava --verbose --update-snapshots"],
+    "commands": ["yarn test --update-snapshots"],
     "fileFilters": ["**/*.snap", "**/*.md"]
   },
   "packageRules": [
