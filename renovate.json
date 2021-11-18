@@ -6,8 +6,11 @@
   },
   "ignoreDeps": ["vue-jest"],
   "postUpgradeTasks": {
-    "commands": ["yarn test --update-snapshots"],
-    "fileFilters": ["**/*.snap", "**/*.md"]
+    "commands": [
+      "yarn install --frozen-lockfile --ignore-scripts",
+      "yarn test --update-snapshots"
+    ],
+    "fileFilters": ["**/**"]
   },
   "packageRules": [
     {
