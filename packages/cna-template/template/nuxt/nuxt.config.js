@@ -123,8 +123,8 @@
     // https://go.nuxtjs.dev/emotion
     '@nuxtjs/emotion',
     <%_ } else if (ui === 'primevue') { _%>
-      // Doc: https://www.primefaces.org/primevue/showcase-v2/#/setup
-      '@primevue/nuxt',
+    // Doc: https://www.primefaces.org/primevue/showcase-v2/#/setup
+    'primevue/nuxt',
     <%_ } _%>
     <%_ if (axios) { _%>
     // https://go.nuxtjs.dev/axios
