@@ -4,6 +4,10 @@
   "lockFileMaintenance": {
     "enabled": true
   },
+  "allowedPostUpgradeCommands": [
+    "^yarn install",
+    "^yarn test"
+  ],
   "ignoreDeps": ["vue-jest"],
   "postUpgradeTasks": {
     "commands": [
