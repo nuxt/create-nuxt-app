@@ -44,8 +44,7 @@
 import Card from '~/components/Card'
 
 export default {
-  name: 'HomePage',
-
+  name: 'IndexPage',
   components: {
     Card
   }

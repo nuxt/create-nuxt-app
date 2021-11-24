@@ -28,6 +28,7 @@
 
 <script>
 export default {
+  name: 'BuefyCard',
   props: {
     title: {
       type: String,

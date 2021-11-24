@@ -19,7 +19,7 @@ import {
 } from '@chakra-ui/vue'
 
 export default {
-  name: 'App',
+  name: 'DefaultLayout',
   components: {
     CThemeProvider,
     CColorModeProvider,

@@ -137,6 +137,7 @@
 import FramevuerkLogo from '~/components/FramevuerkLogo.vue'
 
 export default {
+  name: 'IndexPage',
   components: {
     FramevuerkLogo
   },

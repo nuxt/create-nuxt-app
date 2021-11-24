@@ -20,7 +20,7 @@
 
 <script>
 export default {
-  name: 'HomePage',
+  name: 'IndexPage',
   methods: {
     goToDocs () {
       window.location = 'https://oruga.io/documentation/#nuxt-module'

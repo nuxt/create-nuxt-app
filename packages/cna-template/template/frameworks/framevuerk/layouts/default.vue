@@ -2,6 +2,12 @@
   <Nuxt />
 </template>
 
+<script>
+export default {
+  name: 'DefaultLayout'
+}
+</script>
+
 <style>
 html {
   font-family:

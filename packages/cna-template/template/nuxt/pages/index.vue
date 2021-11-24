@@ -6,10 +6,14 @@
 <script lang="ts">
 import Vue from 'vue'
 
-export default Vue.extend({})
+export default Vue.extend({
+  name: 'IndexPage'
+})
 </script>
 <%_ } else { _%>
 <script>
-export default {}
+export default {
+  name: 'IndexPage'
+}
 </script>
 <%_ } _%>

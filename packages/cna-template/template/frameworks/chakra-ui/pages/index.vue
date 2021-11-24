@@ -108,7 +108,7 @@ import {
 } from '@chakra-ui/vue'
 
 export default {
-  name: 'App',
+  name: 'IndexPage',
   components: {
     CBox,
     CButton,
