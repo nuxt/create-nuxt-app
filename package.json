@@ -19,8 +19,8 @@
   },
   "devDependencies": {
     "@ava/babel": "^2.0.0",
-    "@commitlint/cli": "^12.1.4",
-    "@commitlint/config-conventional": "^12.1.4",
+    "@commitlint/cli": "^15.0.0",
+    "@commitlint/config-conventional": "^15.0.0",
     "@nuxtjs/eslint-config": "^7.0.0",
     "ava": "^3.15.0",
     "eslint": "^8.2.0",
