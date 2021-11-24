@@ -24,7 +24,8 @@
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      { hid: 'description', name: 'description', content: '' },
+      { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
       <%_ if (ui === 'framevuerk') { _%>
@@ -52,10 +53,10 @@
     'tachyons/css/tachyons.css'
     <%_ } else if (ui === 'framevuerk') { _%>
     'framevuerk/dist/framevuerk-nuxt.min.css'
-    <%_ } else if (ui === 'vuesax') { _%>
-    'vuesax/dist/vuesax.css'
     <%_ } else if (ui === 'vant') { _%>
     'vant/lib/index.css'
+    <%_ } else if (ui === 'primevue') { _%>
+      'primeflex/primeflex.css'
     <%_ } _%>
   ],
 
@@ -71,8 +72,6 @@
     '@/plugins/balm-ui'
     <%_ } else if (ui === 'framevuerk') { _%>
     '@/plugins/framevuerk'
-    <%_ } else if (ui === 'vuesax') { _%>
-    '@/plugins/vuesax'
     <%_ } else if (ui === 'vant') { _%>
     '@/plugins/vant'
     <%_ } _%>
@@ -96,7 +95,7 @@
     '@nuxtjs/stylelint-module',
     <%_ } _%>
     <%_ if (ui === 'windicss') { _%>
-      'nuxt-windicss',
+    'nuxt-windicss',
     <%_ } _%>
     <%_ if (ui === 'tailwind') { _%>
     // https://go.nuxtjs.dev/tailwindcss
@@ -116,13 +115,16 @@
     // https://go.nuxtjs.dev/buefy
     'nuxt-buefy',
     <%_ } else if (ui === 'oruga') { _%>
-      // Doc: https://oruga.io/documentation/#nuxt
-      '@oruga-ui/oruga/nuxt',
+    // Doc: https://oruga.io/documentation/#nuxt
+    '@oruga-ui/oruga/nuxt',
     <%_ } else if (ui === 'chakra-ui') { _%>
     // https://go.nuxtjs.dev/chakra
     '@chakra-ui/nuxt',
     // https://go.nuxtjs.dev/emotion
     '@nuxtjs/emotion',
+    <%_ } else if (ui === 'primevue') { _%>
+    // Doc: https://www.primefaces.org/primevue/showcase-v2/#/setup
+    'primevue/nuxt',
     <%_ } _%>
     <%_ if (axios) { _%>
     // https://go.nuxtjs.dev/axios
@@ -140,7 +142,10 @@
   <%_ if (axios) { _%>
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
+    baseURL: '/',
+  },
   <%_ } _%>
   <%_ if (pwa) { _%>
 
@@ -182,6 +187,9 @@
   build: {
     <%_ if (ui === 'element-ui') { _%>
     transpile: [/^element-ui/],
+    <%_ } else if (ui === 'primevue') { _%>
+    // https://github.com/primefaces/primevue/issues/844
+    transpile: ['primevue'],
     <%_ } _%>
   }
 }

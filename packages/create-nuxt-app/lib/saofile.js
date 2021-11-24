@@ -1,4 +1,5 @@
 const { dirname, join, relative } = require('path')
+const fs = require('fs')
 const spawn = require('cross-spawn')
 const validate = require('validate-npm-package-name')
 const pkg = require('./package')
@@ -6,6 +7,9 @@ const pkg = require('./package')
 const cnaTemplateDir = join(dirname(require.resolve('cna-template/package.json')))
 const templateDir = join(cnaTemplateDir, 'template')
 const frameworksDir = join(templateDir, 'frameworks')
+const addExecutable = filename => new Promise(
+  resolve => fs.chmod(filename, 0o755, resolve)
+)
 
 module.exports = {
   prompts: require('./prompts'),
@@ -21,7 +25,6 @@ module.exports = {
     const content = this.answers.features.includes('content')
     const pm = this.answers.pm === 'yarn' ? 'yarn' : 'npm'
     const pmRun = this.answers.pm === 'yarn' ? 'yarn' : 'npm run'
-
     const { cliOptions = {} } = this.sao.opts
     const edge = cliOptions.edge ? '-edge' : ''
 
@@ -50,6 +53,12 @@ module.exports = {
     })
     validation.errors && validation.errors.length && process.exit(1)
 
+    const { linter } = this.answers
+    const eslint = linter.includes('eslint')
+    const lintStaged = eslint && linter.includes('lintStaged')
+    const commitlint = linter.includes('commitlint')
+    const husky = lintStaged || commitlint
+
     const actions = [{
       type: 'add',
       files: '**',
@@ -57,7 +66,11 @@ module.exports = {
       filters: {
         'static/icon.png': 'features.includes("pwa")',
         'content/hello.md': 'features.includes("content")',
-        'pages/content.vue': 'features.includes("content")'
+        'pages/content.vue': 'features.includes("content")',
+        '.husky/.gitignore': husky,
+        '.husky/commit-msg': commitlint,
+        '.husky/pre-commit': lintStaged,
+        '.husky/common.sh': husky && this.answers.pm === 'yarn'
       }
     }]
 
@@ -90,6 +103,7 @@ module.exports = {
       files: '*',
       filters: {
         '_.eslintrc.js': 'linter.includes("eslint")',
+        '_.prettierignore': 'linter.includes("prettier")',
         '_.prettierrc': 'linter.includes("prettier")',
         '_jsconfig.json': 'devTools.includes("jsconfig.json")',
         'tsconfig.json': 'language.includes("ts")',
@@ -106,6 +120,7 @@ module.exports = {
       patterns: {
         gitignore: '.gitignore',
         '_package.json': 'package.json',
+        '_.prettierignore': '.prettierignore',
         '_.prettierrc': '.prettierrc',
         '_.eslintrc.js': '.eslintrc.js',
         '_jsconfig.json': 'jsconfig.json',
@@ -144,25 +159,18 @@ module.exports = {
       this.gitInit()
     }
 
-    await this.npmInstall({ npmClient: this.answers.pm })
-
-    if (this.answers.linter.includes('eslint')) {
-      const options = ['run', 'lint:js', '--', '--fix']
-      if (this.answers.pm === 'yarn') {
-        options.splice(2, 1)
-      }
-      spawn.sync(this.answers.pm, options, {
-        cwd: this.outDir,
-        stdio: 'inherit'
-      })
+    const huskyDir = join(this.outDir, '.husky')
+    if (this.answers.linter.includes('lintStaged')) {
+      await addExecutable(join(huskyDir, 'pre-commit'))
+    }
+    if (this.answers.linter.includes('commitlint')) {
+      await addExecutable(join(huskyDir, 'commit-msg'))
     }
 
-    if (this.answers.linter.includes('stylelint')) {
-      const options = ['run', 'lint:style', '--', '--fix']
-      if (this.answers.pm === 'yarn') {
-        options.splice(2, 1)
-      }
-      spawn.sync(this.answers.pm, options, {
+    await this.npmInstall({ npmClient: this.answers.pm })
+
+    if (['eslint', 'stylelint', 'prettier'].some(linter => this.answers.linter.includes(linter))) {
+      spawn.sync(this.answers.pm, ['run', 'lintfix'], {
         cwd: this.outDir,
         stdio: 'inherit'
       })

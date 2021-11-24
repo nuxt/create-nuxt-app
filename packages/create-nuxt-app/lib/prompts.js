@@ -39,12 +39,12 @@ module.exports = [
       { name: 'Element', value: 'element-ui' },
       { name: 'Framevuerk', value: 'framevuerk' },
       { name: 'Oruga', value: 'oruga' },
+      { name: 'Primevue', value: 'primevue' },
       { name: 'Tachyons', value: 'tachyons' },
       { name: 'Tailwind CSS', value: 'tailwind' },
       { name: 'Windi CSS', value: 'windicss' },
       { name: 'Vant', value: 'vant' },
       { name: 'View UI', value: 'view-ui' },
-      { name: 'Vuesax', value: 'vuesax' },
       { name: 'Vuetify.js', value: 'vuetify' }
     ],
     default: 'none'

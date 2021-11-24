@@ -1,0 +1,7 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+<%_ if (pm === 'yarn') { _%>
+. "$(dirname "$0")/common.sh"
+<%_ } _%>
+
+<%= pm === 'yarn' ? 'yarn' : 'npx --no-install' %> lint-staged

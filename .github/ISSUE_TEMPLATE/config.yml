@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: GitHub Discussions
+    url: https://github.com/nuxt/create-nuxt-app/discussions
+    about: Consider asking questions about the module here.
+  - name: Nuxt Community Discord
+    url: https://discord.nuxtjs.org/
+    about: Consider asking questions about the module here too.

@@ -12,34 +12,43 @@ module.exports = {
 
     // Linter
     const eslint = linter.includes('eslint')
-    const lintStaged = eslint && linter.includes('lintStaged')
+    const lintStaged = linter.includes('lintStaged')
     const stylelint = linter.includes('stylelint')
     const prettier = linter.includes('prettier')
     const commitlint = linter.includes('commitlint')
     const lintScripts = {
       eslint: '<%= pmRun %> lint:js',
-      stylelint: '<%= pmRun %> lint:style'
+      stylelint: '<%= pmRun %> lint:style',
+      prettier: '<%= pmRun %> lint:prettier'
+    }
+    const lintfixScripts = {
+      // prettier before eslint to avoid conflicting rules like no-return-assign
+      // without having to use prettier via eslint (plugin:prettier/recommended)
+      prettier: 'prettier --write --list-different .',
+      eslint: "<%= pmRun %> lint:js <%= pm === 'npm' ? '-- ' : '' %>--fix",
+      stylelint: "<%= pmRun %> lint:style <%= pm === 'npm' ? '-- ' : '' %>--fix"
     }
 
     if (!eslint) {
+      lintStaged && delete pkg['lint-staged']["*.{js,<%= typescript ? 'ts,' : '' %>vue}"]
       delete lintScripts.eslint
+      delete lintfixScripts.eslint
       delete pkg.scripts['lint:js']
       delete pkg.devDependencies['@nuxtjs/eslint-config']
       delete pkg.devDependencies['@nuxtjs/eslint-module']
-      delete pkg.devDependencies['babel-eslint']
+      delete pkg.devDependencies['@babel/eslint-parser']
       delete pkg.devDependencies.eslint
       delete pkg.devDependencies['eslint-plugin-nuxt']
       delete pkg.devDependencies['eslint-plugin-vue']
     }
     if (!lintStaged) {
-      delete pkg.husky
       delete pkg['lint-staged']
-      delete pkg.devDependencies.husky
       delete pkg.devDependencies['lint-staged']
     }
     if (!stylelint) {
-      lintStaged && delete pkg['lint-staged']['*.{css,vue}']
+      lintStaged && delete pkg['lint-staged']['*.{css,scss,sass,html,vue}']
       delete lintScripts.stylelint
+      delete lintfixScripts.stylelint
       delete pkg.scripts['lint:style']
       delete pkg.devDependencies['@nuxtjs/stylelint-module']
       delete pkg.devDependencies.stylelint
@@ -47,13 +56,15 @@ module.exports = {
       delete pkg.devDependencies['stylelint-config-prettier']
     }
     if (!prettier) {
+      lintStaged && delete pkg['lint-staged']['*.**']
+      delete pkg.scripts['lint:prettier']
+      delete lintScripts.prettier
+      delete lintfixScripts.prettier
       delete pkg.devDependencies['eslint-config-prettier']
-      delete pkg.devDependencies['eslint-plugin-prettier']
       delete pkg.devDependencies['stylelint-config-prettier']
       delete pkg.devDependencies.prettier
     }
     if (!commitlint) {
-      lintStaged && delete pkg.husky.hooks['commit-msg']
       delete pkg.devDependencies['@commitlint/config-conventional']
       delete pkg.devDependencies['@commitlint/cli']
     }
@@ -61,6 +72,20 @@ module.exports = {
     const lintScript = Object.values(lintScripts).join(' && ')
     if (lintScript) {
       pkg.scripts.lint = lintScript
+    }
+    const lintfixScript = Object.values(lintfixScripts).join(' && ')
+    if (lintfixScript) {
+      pkg.scripts.lintfix = lintfixScript
+    }
+
+    if (!lintStaged && !commitlint) {
+      delete pkg.devDependencies.husky
+      delete pkg.scripts.prepare
+    } else {
+      // Move prepare to make it the last script
+      const prepare = pkg.scripts.prepare
+      delete pkg.scripts.prepare
+      pkg.scripts.prepare = prepare
     }
 
     // Modules
