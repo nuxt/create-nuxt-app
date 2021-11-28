@@ -33,7 +33,7 @@
     "@babel/eslint-parser": "^7.16.3",
     "eslint": "^8.3.0",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-nuxt": "^3.0.0",
+    "eslint-plugin-nuxt": "^3.1.0",
     "eslint-plugin-vue": "^8.1.1",
     "husky": "^7.0.4",
     "lint-staged": "^12.1.2",
