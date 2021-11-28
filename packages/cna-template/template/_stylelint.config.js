@@ -1,6 +1,7 @@
 module.exports = {
   extends: [
     'stylelint-config-standard',
+    "stylelint-config-recommended-vue",
     <%_ if (prettier) { _%>
     'stylelint-config-prettier'
     <%_ } _%>

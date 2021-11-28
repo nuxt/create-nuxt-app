@@ -51,9 +51,11 @@ module.exports = {
       delete lintfixScripts.stylelint
       delete pkg.scripts['lint:style']
       delete pkg.devDependencies['@nuxtjs/stylelint-module']
+      delete pkg.devDependencies['postcss-html']
       delete pkg.devDependencies.stylelint
       delete pkg.devDependencies['stylelint-config-standard']
       delete pkg.devDependencies['stylelint-config-prettier']
+      delete pkg.devDependencies['stylelint-config-recommended-vue']
     }
     if (!prettier) {
       lintStaged && delete pkg['lint-staged']['*.**']
