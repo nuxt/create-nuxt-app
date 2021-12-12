@@ -3,6 +3,42 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.0.0](https://github.com/nuxt/create-nuxt-app/compare/v3.7.1...v4.0.0) (2021-12-12)
+
+
+### Bug Fixes
+
+* **ava:** revert require-extension-hooks-vue for fixing peer dep error on vue-template-compiler ([4b6247d](https://github.com/nuxt/create-nuxt-app/commit/4b6247d3968668dd045757ca1a08a8ff7f8ae5f9))
+* **axios:** avoid hard-coded base URL localhost:3000, fixes [#641](https://github.com/nuxt/create-nuxt-app/issues/641) ([#830](https://github.com/nuxt/create-nuxt-app/issues/830)) ([93297e5](https://github.com/nuxt/create-nuxt-app/commit/93297e55a142cebb61c09ac1f7f7f3ca68c5a2da))
+* **deps:** add nuxt required deps to root for avoiding hosting issue ([ca5e6b4](https://github.com/nuxt/create-nuxt-app/commit/ca5e6b47db23dc6c4b16a73b98ca1d8d3743b82d))
+* **husky:** revert stdin tty workaround of [#766](https://github.com/nuxt/create-nuxt-app/issues/766) for npm ([#825](https://github.com/nuxt/create-nuxt-app/issues/825)) ([1520453](https://github.com/nuxt/create-nuxt-app/commit/152045398e95dc08e5a38f35d4c8ea7ec1cff266))
+* **nightwatch:** use correct css selector ([f19bc15](https://github.com/nuxt/create-nuxt-app/commit/f19bc15836a9866f499312b40f54a0d90bb632cc))
+* **primevue:** fix primevue nuxt module name ([c12c1ee](https://github.com/nuxt/create-nuxt-app/commit/c12c1eed9f4b5201bc5e785813ae7f1bbada5e3f))
+* **stylelint:** unknown word on scss file ([9461143](https://github.com/nuxt/create-nuxt-app/commit/94611434d63fc334260592c2e25b06a1169695f4))
+* **vuetify:** update @nuxtjs/vuetify for using sass-loader v10 ([c897e1a](https://github.com/nuxt/create-nuxt-app/commit/c897e1ae60cc646c92749b2ad7c4e5282152609b))
+
+
+### chore
+
+* remove node 10 support ([#905](https://github.com/nuxt/create-nuxt-app/issues/905)) ([a12df38](https://github.com/nuxt/create-nuxt-app/commit/a12df38fccd45103cdc64f770b5a7dca3bab88a8))
+
+
+### Features
+
+* add lintfix and prettier scripts ([#829](https://github.com/nuxt/create-nuxt-app/issues/829)) ([f3e61cd](https://github.com/nuxt/create-nuxt-app/commit/f3e61cdad360e8837c66555b763bf4e29076c8a2)), closes [#827](https://github.com/nuxt/create-nuxt-app/issues/827)
+* add primevue ui framework ([#859](https://github.com/nuxt/create-nuxt-app/issues/859)) ([0fa8a67](https://github.com/nuxt/create-nuxt-app/commit/0fa8a67317491e0543799b07fdee58c70eef1545))
+* **cli:** add user-friendly exit for unknown options ([#854](https://github.com/nuxt/create-nuxt-app/issues/854)) ([b734105](https://github.com/nuxt/create-nuxt-app/commit/b73410519234c3ce3b97e5032d78d5e235b6b8f9))
+* **frameworks:** remove framevuerk ([#904](https://github.com/nuxt/create-nuxt-app/issues/904)) ([c54809d](https://github.com/nuxt/create-nuxt-app/commit/c54809d1b0553bc0b942f9393714284df4b911f9))
+
+
+### BREAKING CHANGES
+
+* minimum node version is 12
+
+
+
+
+
 ## [3.7.1](https://github.com/nuxt/create-nuxt-app/compare/v3.7.0...v3.7.1) (2021-06-29)
 
 
