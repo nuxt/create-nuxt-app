@@ -1,8 +1,8 @@
 {
   "dependencies": {
-    "vuetify": "^2.6.0"
+    "vuetify": "^2.6.1"
   },
   "devDependencies": {
-    "@nuxtjs/vuetify": "^1.12.1"
+    "@nuxtjs/vuetify": "^1.12.2"
   }
 }
