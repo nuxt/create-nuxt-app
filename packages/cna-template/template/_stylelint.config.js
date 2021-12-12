@@ -1,7 +1,8 @@
 module.exports = {
+  customSyntax: 'postcss-html',
   extends: [
     'stylelint-config-standard',
-    "stylelint-config-recommended-vue",
+    'stylelint-config-recommended-vue',
     <%_ if (prettier) { _%>
     'stylelint-config-prettier'
     <%_ } _%>

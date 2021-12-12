@@ -12,7 +12,7 @@
   "scripts": {
     "lint": "yarn lint:js && yarn lint:style",
     "lint:js": "eslint --ext \".js,.mjs,.vue\" .",
-    "lint:style": "stylelint \"**/*.{vue,css}\"",
+    "lint:style": "stylelint \"**/*.{vue,css,scss}\"",
     "test": "ava --verbose",
     "test:snapshot": "ava --verbose --update-snapshots",
     "prepare": "husky install"
