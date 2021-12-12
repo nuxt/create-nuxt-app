@@ -1,5 +1,5 @@
 import { resolve } from 'path'
-import test from 'ava'
+import test, { before, after } from 'ava'
 import { Nuxt, Builder } from 'nuxt'
 import config from '../../nuxt.config'
 
@@ -8,7 +8,7 @@ import config from '../../nuxt.config'
 let nuxt = null
 
 // Init Nuxt.js and create a server listening on localhost:4000
-test.before(async () => {
+before(async () => {
   nuxt = new Nuxt({
     ...config,
     dev: false,
@@ -25,6 +25,6 @@ test('Route / exits and render HTML', async (t) => {
 })
 
 // Close server and ask nuxt to stop listening to file changes
-test.after('Closing server and nuxt.js', () => {
+after('Closing server and nuxt.js', () => {
   nuxt.close()
 })
