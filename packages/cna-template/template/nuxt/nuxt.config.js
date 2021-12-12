@@ -28,13 +28,6 @@
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      <%_ if (ui === 'framevuerk') { _%>
-      {
-        rel: 'stylesheet',
-        href:
-          'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons'
-      },
-      <%_ } _%>
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
@@ -51,8 +44,6 @@
     'balm-ui/dist/balm-ui.css'
     <%_ } else if (ui === 'tachyons') { _%>
     'tachyons/css/tachyons.css'
-    <%_ } else if (ui === 'framevuerk') { _%>
-    'framevuerk/dist/framevuerk-nuxt.min.css'
     <%_ } else if (ui === 'vant') { _%>
     'vant/lib/index.css'
     <%_ } else if (ui === 'primevue') { _%>
@@ -70,8 +61,6 @@
     '@/plugins/antd-ui'
     <%_ } else if (ui === 'balm-ui') { _%>
     '@/plugins/balm-ui'
-    <%_ } else if (ui === 'framevuerk') { _%>
-    '@/plugins/framevuerk'
     <%_ } else if (ui === 'vant') { _%>
     '@/plugins/vant'
     <%_ } _%>
