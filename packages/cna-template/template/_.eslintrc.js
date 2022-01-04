@@ -29,6 +29,15 @@ module.exports = {
     'wdio'
     <%_ } _%>
   ],
+  <%_ if (typescript) { _%>
+  overrides: [
+    {
+      "files": ["*.ts"],
+      "parser": "@typescript-eslint/parser",
+      "extends": ["plugin:@typescript-eslint/recommended"]
+    }
+  ]
+  <%_ } _%>
   // add your custom rules here
   rules: {}
 }
