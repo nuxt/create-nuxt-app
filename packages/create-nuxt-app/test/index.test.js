@@ -1,7 +1,7 @@
-import path from 'path'
-import test from 'ava'
-import sao from 'sao'
-import saoConfig from '../lib/saofile'
+const path = require('path')
+const test = require('ava')
+const sao = require('sao')
+const saoConfig = require('../lib/saofile')
 
 const generator = path.join(__dirname, '../lib')
 
