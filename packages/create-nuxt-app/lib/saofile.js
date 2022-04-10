@@ -103,6 +103,7 @@ module.exports = {
       files: '*',
       filters: {
         '_.eslintrc.js': 'linter.includes("eslint")',
+        '_.gitattributes': 'vcs.includes("git")',
         '_.prettierignore': 'linter.includes("prettier")',
         '_.prettierrc': 'linter.includes("prettier")',
         '_jsconfig.json': 'devTools.includes("jsconfig.json")',
@@ -123,6 +124,7 @@ module.exports = {
         '_.prettierignore': '.prettierignore',
         '_.prettierrc': '.prettierrc',
         '_.eslintrc.js': '.eslintrc.js',
+        '_.gitattributes': '.gitattributes',
         '_jsconfig.json': 'jsconfig.json',
         '_stylelint.config.js': 'stylelint.config.js',
         '_commitlint.config.js': 'commitlint.config.js',
