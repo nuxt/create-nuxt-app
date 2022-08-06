@@ -114,6 +114,13 @@ module.exports = {
     if (typescript && eslint) {
       delete pkg.devDependencies['@nuxtjs/eslint-config']
     }
+
+    // Pug
+    const pug = template.includes('pug')
+
+    if (!pug) {
+      delete pkg.devDependencies['pug']
+    }
     return pkg
   }
 }

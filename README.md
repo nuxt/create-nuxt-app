@@ -50,6 +50,9 @@ yarn create nuxt-app <my-project>
     - [Vant](https://github.com/youzan/vant)
     - [View UI](https://www.iviewui.com/)
     - [Vuetify](https://github.com/vuetifyjs/vuetify)
+1. Template engine
+    - HTML
+    - Pug
 1. Nuxt.js modules:
     - [Axios - Promise based HTTP client](https://github.com/nuxt-community/axios-module)
     - [Progressive Web App (PWA)](https://github.com/nuxt-community/pwa-module)

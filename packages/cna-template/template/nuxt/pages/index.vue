@@ -1,6 +1,12 @@
-<template>
-  <Tutorial/>
+<%_ if (pug) { _%>
+<template lang="pug">
+  Tutorial
 </template>
+<%_ } else { _%>
+<template>
+  <Tutorial />
+</template>
+<%_ } _%>
 
 <%_ if (typescript) { _%>
 <script lang="ts">
