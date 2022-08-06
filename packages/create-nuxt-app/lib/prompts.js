@@ -54,7 +54,7 @@ module.exports = [
     type: 'list',
     choices: [
       { name: 'HTML', value: 'html' },
-      { name: 'Pug', value: 'pug' },
+      { name: 'Pug', value: 'pug' }
     ],
     default: 'HTML'
   },

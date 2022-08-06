@@ -8,7 +8,7 @@ module.exports = {
       pkg.dependencies['nuxt-edge'] = 'latest'
     }
 
-    const { features, language = [], linter = [] } = generator.answers
+    const { features, language = [], template = [], linter = [] } = generator.answers
 
     // Linter
     const eslint = linter.includes('eslint')
@@ -119,7 +119,7 @@ module.exports = {
     const pug = template.includes('pug')
 
     if (!pug) {
-      delete pkg.devDependencies['pug']
+      delete pkg.devDependencies.pug
     }
     return pkg
   }
