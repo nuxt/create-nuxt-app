@@ -120,6 +120,7 @@ module.exports = {
 
     if (!pug) {
       delete pkg.devDependencies.pug
+      delete pkg.devDependencies['pug-plain-loader']
     }
     return pkg
   }
