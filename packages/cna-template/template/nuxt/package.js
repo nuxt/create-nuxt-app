@@ -8,7 +8,7 @@ module.exports = {
       pkg.dependencies['nuxt-edge'] = 'latest'
     }
 
-    const { features, language = [], template = [], linter = [] } = generator.answers
+    const { features, language = [], linter = [], template = [] } = generator.answers
 
     // Linter
     const eslint = linter.includes('eslint')
