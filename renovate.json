@@ -4,18 +4,7 @@
   "lockFileMaintenance": {
     "enabled": true
   },
-  "allowedPostUpgradeCommands": [
-    "^yarn install --frozen-lockfile --ignore-scripts$",
-    "^yarn test --update-snapshots$"
-  ],
   "ignoreDeps": ["vue-jest"],
-  "postUpgradeTasks": {
-    "commands": [
-      "yarn install --frozen-lockfile --ignore-scripts",
-      "yarn test --update-snapshots"
-    ],
-    "fileFilters": ["**/**"]
-  },
   "packageRules": [
     {
       "matchPackagePatterns": ["nuxt"],
