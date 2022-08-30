@@ -5,8 +5,8 @@
     "enabled": true
   },
   "allowedPostUpgradeCommands": [
-    "^yarn install",
-    "^yarn test"
+    "^yarn install --frozen-lockfile --ignore-scripts$",
+    "^yarn test --update-snapshots$"
   ],
   "ignoreDeps": ["vue-jest"],
   "postUpgradeTasks": {
