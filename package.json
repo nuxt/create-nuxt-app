@@ -21,7 +21,7 @@
     "@commitlint/cli": "^16.3.0",
     "@commitlint/config-conventional": "^16.2.4",
     "@nuxtjs/eslint-config": "^9.0.0",
-    "ava": "^4.1.0",
+    "ava": "^4.3.3",
     "eslint": "^8.23.0",
     "husky": "^7.0.4",
     "lerna": "^4.0.0",
