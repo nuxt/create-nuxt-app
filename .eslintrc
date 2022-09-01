@@ -2,11 +2,17 @@
   "extends": [
     "@nuxtjs"
   ],
+  "env": {
+    "jest/globals": true
+  },
   "globals": {
     "use": true,
     "browser": true
   },
   "rules": {
     "no-console": "off"
-  }
+  },
+  "plugins": [
+    "jest"
+  ]
 }

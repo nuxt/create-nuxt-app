@@ -2,6 +2,9 @@ module.exports = {
   root: true,
   env: {
     browser: true,
+    <%_ if (test === 'jest') { _%>
+    "jest/globals": true,
+    <%_ } _%>
     node: true
   },
   <%_ if (!typescript) { _%>
@@ -15,6 +18,9 @@ module.exports = {
     '@nuxtjs/eslint-config-typescript',
     <%_ } else {_%>
     '@nuxtjs',
+    <%_ } _%>
+    <%_ if (test === 'jest') { _%>
+    "jest",
     <%_ } _%>
     <%_ if (test === 'webdriverio') { _%>
     'plugin:wdio/recommended',
