@@ -19,9 +19,6 @@ module.exports = {
     <%_ } else {_%>
     '@nuxtjs',
     <%_ } _%>
-    <%_ if (test === 'jest') { _%>
-    "jest",
-    <%_ } _%>
     <%_ if (test === 'webdriverio') { _%>
     'plugin:wdio/recommended',
     <%_ } _%>
@@ -33,6 +30,8 @@ module.exports = {
   plugins: [
     <%_ if (test === 'webdriverio') { _%>
     'wdio'
+    <%_ } else if (test === 'jest') { _%>
+    "jest"
     <%_ } _%>
   ],
   // add your custom rules here
