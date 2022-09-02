@@ -4,7 +4,7 @@
   "lockFileMaintenance": {
     "enabled": true
   },
-  "ignoreDeps": ["vue-jest"],
+  "ignoreDeps": ["vue-jest", "@nuxt/content"],
   "packageRules": [
     {
       "matchPackagePatterns": ["nuxt"],
