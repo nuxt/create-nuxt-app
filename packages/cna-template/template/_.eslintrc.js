@@ -2,6 +2,9 @@ module.exports = {
   root: true,
   env: {
     browser: true,
+    <%_ if (test === 'jest') { _%>
+    "jest/globals": true,
+    <%_ } _%>
     node: true
   },
   <%_ if (!typescript) { _%>
@@ -27,6 +30,8 @@ module.exports = {
   plugins: [
     <%_ if (test === 'webdriverio') { _%>
     'wdio'
+    <%_ } else if (test === 'jest') { _%>
+    "jest"
     <%_ } _%>
   ],
   // add your custom rules here
