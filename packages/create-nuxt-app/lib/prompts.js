@@ -56,7 +56,7 @@ module.exports = [
       { name: 'HTML', value: 'html' },
       { name: 'Pug', value: 'pug' }
     ],
-    default: 'HTML'
+    default: 'html'
   },
   {
     name: 'features',

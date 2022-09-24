@@ -22,9 +22,10 @@ module.exports = {
   },
   load (generator) {
     const nuxtPkg = this.loadPackage('nuxt', generator)
+    const templatePkg = this.loadPackage(generator.answers.template, generator)
     const uiPkg = this.loadPackage(generator.answers.ui, generator)
     const testPkg = this.loadPackage(generator.answers.test, generator)
-    const pkg = merge(nuxtPkg, uiPkg, testPkg)
+    const pkg = merge(nuxtPkg, templatePkg, uiPkg, testPkg)
     pkg.dependencies = sortByKey(pkg.dependencies)
     pkg.devDependencies = sortByKey(pkg.devDependencies)
     return pkg

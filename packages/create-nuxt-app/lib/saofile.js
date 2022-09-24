@@ -15,7 +15,6 @@ module.exports = {
   prompts: require('./prompts'),
   templateData () {
     const typescript = this.answers.language.includes('ts')
-    const pug = this.answers.template.includes('pug')
     const pwa = this.answers.features.includes('pwa')
     const eslint = this.answers.linter.includes('eslint')
     const prettier = this.answers.linter.includes('prettier')
@@ -31,7 +30,6 @@ module.exports = {
 
     return {
       typescript,
-      pug,
       pwa,
       eslint,
       prettier,
@@ -75,6 +73,14 @@ module.exports = {
         '.husky/common.sh': husky && this.answers.pm === 'yarn'
       }
     }]
+
+    if (this.answers.template !== 'html') {
+      actions.push({
+        type: 'add',
+        files: '**',
+        templateDir: join(frameworksDir, this.answers.template)
+      })
+    }
 
     if (this.answers.ui !== 'none') {
       actions.push({

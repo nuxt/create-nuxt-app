@@ -42,8 +42,6 @@
     "lint-staged": "^12.5.0",
     "postcss-html": "^1.5.0",
     "prettier": "^2.7.1",
-    "pug": "^3.0.2",
-    "pug-plain-loader": "^1.1.0",
     "stylelint": "^14.11.0",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-recommended-vue": "^1.4.0",
