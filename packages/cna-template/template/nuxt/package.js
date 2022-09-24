@@ -114,7 +114,6 @@ module.exports = {
     if (typescript && eslint) {
       delete pkg.devDependencies['@nuxtjs/eslint-config']
     }
-
     return pkg
   }
 }
