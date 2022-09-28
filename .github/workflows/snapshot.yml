@@ -1,4 +1,4 @@
-name: snapshots
+name: ci-with-updating-snapshots
 
 on: [pull_request, pull_request_target]
 
@@ -11,8 +11,7 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node }}
-          check-latest: true
+          node-version: latest
 
       - name: Checkout
         uses: actions/checkout@v3
@@ -29,8 +28,14 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: yarn --frozen-lockfile --non-interactive
 
+      - name: Lint
+        run: yarn lint
+
       - name: Test with update-snapshots
         run: AVA_FORCE_CI="not-ci" yarn ava --verbose --update-snapshots
+
+      - name: Test
+        run: yarn test
 
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v4.14.1
