@@ -1,6 +1,6 @@
 name: ci-with-updating-snapshots
 
-on: [pull_request, pull_request_target]
+on: [pull_request]
 
 jobs:
   snapshots:
