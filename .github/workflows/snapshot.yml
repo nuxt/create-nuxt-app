@@ -1,9 +1,9 @@
-name: ci-with-updating-snapshots
+name: snapshots
 
 on: [pull_request]
 
 jobs:
-  snapshots:
+  ci-and-update-snapshots:
     runs-on: ubuntu-latest
     if: ${{ github.actor == 'renovate[bot]' }}
 
@@ -32,12 +32,13 @@ jobs:
         run: yarn lint
 
       - name: Test with update-snapshots
-        run: AVA_FORCE_CI="not-ci" yarn ava --verbose --update-snapshots
+        run: AVA_FORCE_CI="not-ci" yarn test:snapshot
 
       - name: Test
         run: yarn test
 
-      - name: Commit changes
+      - name: Commit test snapshots
+        if: steps.auto-commit-action.outputs.changes_detected == 'true'
         uses: stefanzweifel/git-auto-commit-action@v4.15.0
         env:
           HUSKY: 0
