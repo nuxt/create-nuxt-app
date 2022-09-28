@@ -19,7 +19,7 @@
     "envinfo": "^7.8.1",
     "lodash": "^4.17.21",
     "sao": "^1.7.1",
-    "validate-npm-package-name": "^3.0.0"
+    "validate-npm-package-name": "^4.0.0"
   },
   "authors": [
     "Egoist <0x142857@gmail.com>",
