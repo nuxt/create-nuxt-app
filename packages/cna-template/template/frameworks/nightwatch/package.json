@@ -3,7 +3,7 @@
     "test:e2e": "nightwatch"
   },
   "devDependencies": {
-    "nightwatch": "^2.3.4",
+    "nightwatch": "^2.3.9",
     "chromedriver": "^104.0.0"
   }
 }
