@@ -49,6 +49,16 @@ module.exports = [
     default: 'none'
   },
   {
+    name: 'template',
+    message: 'Template engine:',
+    type: 'list',
+    choices: [
+      { name: 'HTML', value: 'html' },
+      { name: 'Pug', value: 'pug' }
+    ],
+    default: 'html'
+  },
+  {
     name: 'features',
     message: 'Nuxt.js modules:',
     type: 'checkbox',
