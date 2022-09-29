@@ -25,7 +25,7 @@
     "eslint": "^8.24.0",
     "eslint-plugin-jest": "^27.0.4",
     "husky": "^8.0.1",
-    "lerna": "^4.0.0",
+    "lerna": "^5.5.4",
     "postcss-html": "^1.5.0",
     "stylelint": "^14.13.0",
     "stylelint-config-recommended-vue": "^1.4.0",
