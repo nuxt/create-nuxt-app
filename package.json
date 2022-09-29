@@ -24,7 +24,7 @@
     "ava": "^4.3.3",
     "eslint": "^8.24.0",
     "eslint-plugin-jest": "^27.0.4",
-    "husky": "^7.0.4",
+    "husky": "^8.0.1",
     "lerna": "^4.0.0",
     "postcss-html": "^1.5.0",
     "stylelint": "^14.13.0",
