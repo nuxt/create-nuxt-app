@@ -1,9 +1,9 @@
-name: ci-with-updating-snapshots
+name: snapshots
 
 on: [pull_request]
 
 jobs:
-  snapshots:
+  ci-and-update-snapshots:
     runs-on: ubuntu-latest
     if: ${{ github.actor == 'renovate[bot]' }}
 
@@ -19,7 +19,8 @@ jobs:
           ref: ${{ github.head_ref }}
 
       - name: Cache node_modules
-        uses: actions/cache@v2
+        id: cache
+        uses: actions/cache@v3
         with:
           path: node_modules
           key: deps-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
@@ -32,13 +33,14 @@ jobs:
         run: yarn lint
 
       - name: Test with update-snapshots
-        run: AVA_FORCE_CI="not-ci" yarn ava --verbose --update-snapshots
+        run: AVA_FORCE_CI="not-ci" yarn test:snapshot
 
       - name: Test
         run: yarn test
 
-      - name: Commit changes
-        uses: stefanzweifel/git-auto-commit-action@v4.14.1
+      - name: Commit test snapshots
+        id: auto-commit-action
+        uses: stefanzweifel/git-auto-commit-action@v4.15.0
         env:
           HUSKY: 0
         with:

@@ -18,18 +18,18 @@
     "prepare": "husky install"
   },
   "devDependencies": {
-    "@commitlint/cli": "^16.3.0",
-    "@commitlint/config-conventional": "^16.2.4",
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
     "@nuxtjs/eslint-config": "^11.0.0",
     "ava": "^4.3.3",
-    "eslint": "^8.23.0",
+    "eslint": "^8.24.0",
     "eslint-plugin-jest": "^27.0.4",
-    "husky": "^7.0.4",
-    "lerna": "^4.0.0",
+    "husky": "^8.0.1",
+    "lerna": "^5.5.4",
     "postcss-html": "^1.5.0",
-    "stylelint": "^14.11.0",
+    "stylelint": "^14.13.0",
     "stylelint-config-recommended-vue": "^1.4.0",
-    "stylelint-config-standard": "^25.0.0"
+    "stylelint-config-standard": "^28.0.0"
   },
   "name": "create-nuxt-app"
 }
