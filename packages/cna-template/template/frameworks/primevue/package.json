@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "primevue": "^2.10.0",
-    "primeicons": "^5.0.0",
+    "primeicons": "^6.0.1",
     "primeflex": "^3.2.1"
   }
 }
