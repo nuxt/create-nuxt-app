@@ -19,6 +19,7 @@ jobs:
           ref: ${{ github.head_ref }}
 
       - name: Cache node_modules
+        id: cache
         uses: actions/cache@v3
         with:
           path: node_modules
@@ -38,7 +39,7 @@ jobs:
         run: yarn test
 
       - name: Commit test snapshots
-        if: steps.auto-commit-action.outputs.changes_detected == 'true'
+        id: auto-commit-action
         uses: stefanzweifel/git-auto-commit-action@v4.15.0
         env:
           HUSKY: 0

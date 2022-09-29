@@ -28,6 +28,8 @@ jobs:
         uses: actions/checkout@master
 
       - name: cache node_modules
+        id: cache
+        if: steps.cache.outputs.cache-hit != 'true'
         uses: actions/cache@v3
         with:
           path: node_modules
