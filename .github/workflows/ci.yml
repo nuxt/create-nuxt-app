@@ -29,13 +29,13 @@ jobs:
 
       - name: cache node_modules
         id: cache
-        if: steps.cache.outputs.cache-hit != 'true'
         uses: actions/cache@v3
         with:
           path: node_modules
           key: ${{ matrix.os }}-node-v${{ matrix.node }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
 
       - name: install
+        if: steps.cache.outputs.cache-hit != 'true'
         run: yarn --check-files --frozen-lockfile --non-interactive
 
       - name: lint
