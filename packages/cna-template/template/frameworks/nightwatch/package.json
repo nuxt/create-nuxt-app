@@ -4,6 +4,6 @@
   },
   "devDependencies": {
     "nightwatch": "^2.3.9",
-    "chromedriver": "^106.0.0"
+    "chromedriver": "^106.0.1"
   }
 }
