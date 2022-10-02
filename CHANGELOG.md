@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [5.0.0](https://github.com/nuxt/create-nuxt-app/compare/v4.0.0...v5.0.0) (2022-10-02)
+
+
+### Bug Fixes
+
+* **ava:** vue-template-compiler version conflict on require-extension-hooks-vue ([6757cb8](https://github.com/nuxt/create-nuxt-app/commit/6757cb8844a1fd50b3fd7d6efc9711363758f6e5))
+* **deps:** cannot find module issue ([#918](https://github.com/nuxt/create-nuxt-app/issues/918)) ([#919](https://github.com/nuxt/create-nuxt-app/issues/919)) ([d816416](https://github.com/nuxt/create-nuxt-app/commit/d816416e22ac559bdcd20c98510910c157b04eef))
+
+
+### chore
+
+* drop support for Node.js 12 ([9f8b21c](https://github.com/nuxt/create-nuxt-app/commit/9f8b21ccfc9050e57ad8ac4b3c2251fcd27cbce1))
+
+
+### Features
+
+* **template:** support pug template ([#960](https://github.com/nuxt/create-nuxt-app/issues/960)) ([49c7a80](https://github.com/nuxt/create-nuxt-app/commit/49c7a80070c5357b308ddea3fcb24aebd2c1bed9))
+
+
+### BREAKING CHANGES
+
+* minimum Node.js version is 14
+
+
+
+
+
 # [4.0.0](https://github.com/nuxt/create-nuxt-app/compare/v3.7.1...v4.0.0) (2021-12-12)
 
 
