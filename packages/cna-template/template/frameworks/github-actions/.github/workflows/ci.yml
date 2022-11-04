@@ -32,7 +32,7 @@ jobs:
       <%_ if (pm === 'yarn') { _%>
       - name: Get yarn cache directory path 🛠
         id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn cache dir)"
+        run: echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
 
       - name: Cache node_modules 📦
         uses: actions/cache@v2.1.7
