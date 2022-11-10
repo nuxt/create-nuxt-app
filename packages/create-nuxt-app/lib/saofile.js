@@ -115,7 +115,6 @@ module.exports = {
         '_.prettierrc': 'linter.includes("prettier")',
         '_jsconfig.json': 'devTools.includes("jsconfig.json")',
         'tsconfig.json': 'language.includes("ts")',
-        'semantic.yml': 'devTools.includes("semantic-pull-requests")',
         '_stylelint.config.js': 'linter.includes("stylelint")',
         '_commitlint.config.js': 'linter.includes("commitlint")',
         'dependabot.yml': 'devTools.includes("dependabot")'
@@ -134,7 +133,6 @@ module.exports = {
         '_jsconfig.json': 'jsconfig.json',
         '_stylelint.config.js': 'stylelint.config.js',
         '_commitlint.config.js': 'commitlint.config.js',
-        'semantic.yml': '.github/semantic.yml',
         'dependabot.yml': '.github/dependabot.yml'
       }
     })
