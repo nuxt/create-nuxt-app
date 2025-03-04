@@ -1,3 +1,9 @@
+# 🚧 Repository update 🚧
+
+The repository for `create-nuxt-app` has updated to be https://github.com/nuxt/cli - please raise new issues, discussions and pull requests there 🙏
+
+<hr>
+
 # Create Nuxt App
 
 [![NPM version](https://img.shields.io/npm/v/create-nuxt-app.svg?style=flat)](https://npmjs.com/package/create-nuxt-app)
